@@ -22,9 +22,10 @@ public interface D {
 	public static final String SQL_BOARD_SELECT = "SELECT * FROM board";
 	public static final String SQL_BOARD_DELETE = "DELETE FROM board WHERE b_num = ?";
 	
-	public static final String SQL_THEATER_INSERT = "INSERT INTO theater (th_TheaterCode, th_name, th_AreaCode) VALUES (?, ?, ?)";
+	public static final String SQL_THEATER_INSERT = "INSERT INTO theater (theaterCode, theaterName, AreaCode, theaterAddress) VALUES (?, ?, ?, ?)";
 	public static final String SQL_THEATER_ALL = "SELECT * FROM theater";
-	public static final String SQL_THEATER_SELECT = "SELECT * FROM theater WHERE th_TheaterCode = ?";
+	public static final String SQL_THEATER_SELECT = "SELECT * FROM theater WHERE theaterCode = ?";
+	public static final String SQL_THEATER_UPDATE = "UPDATE theater SET theaterAddress = ? WHERE theaterCode = ?";
 	
 	public static final String SQL_MOVIE_INSERT = "INSERT INTO movie (m_name) VALUES (?)";
 	public static final String SQL_MOVIE_UPDATE = "UPDATE movie SET m_db_id = ?, m_kobis_id = ? WHERE m_name = ?";

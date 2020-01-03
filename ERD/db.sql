@@ -1,4 +1,5 @@
 SET SESSION FOREIGN_KEY_CHECKS=0;
+SET SESSION FOREIGN_KEY_CHECKS=1;
 
 /* Drop Tables */
 
@@ -104,6 +105,7 @@ CREATE TABLE theater
 	theaterCode varchar(10) NOT NULL,
 	theaterName varchar(40) NOT NULL,
 	AreaCode varchar(30) NOT NULL,
+	theaterAddress text,
 	PRIMARY KEY (theaterCode)
 );
 
@@ -176,9 +178,16 @@ ALTER TABLE reserve
 	ON DELETE RESTRICT
 ;
 
+INSERT INTO theater (theaterCode, theaterName, AreaCode, theaterAddress) VALUES (1, 2, 3, 4); 
+
 show TABLES;
 describe board;
 describe ticket;
+describe theater;
+select * from theater;
+delete from theater where theaterCode = 1;
+TRUNCATE table theater;
+
 
 show databases;
 
@@ -188,5 +197,6 @@ grant all privileges on movie_catcher.* to 'myuser'@'localhost';
 flush privileges;
 
 show grants for 'myuser'@'localhost';
+
 
 
