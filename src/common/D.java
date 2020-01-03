@@ -5,6 +5,7 @@ public interface D {
 	public static final String URL = "jdbc:mariadb://localhost:3306/movie_catcher";
 	public static final String USERID = "myuser";
 	public static final String USERPW = "1234";
+//	public static final String USERPW = "0707";
 	
 	// 게시글 관련 쿼리문
 	public static final String SQL_MC_USER_INSERT = "INSERT INTO mc_user (u_id, u_pw, u_name, u_email, u_phone, u_date) VALUES (?, ?, ?, ?, ?, ?)";
