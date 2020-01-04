@@ -81,7 +81,7 @@ public class TheaterDAO {
 	public TheaterDTO[] select() throws SQLException {
 		TheaterDTO[] arr = null;
 		try {
-			pstmt = conn.prepareStatement(D.SQL_THEATER_SELECT);
+			pstmt = conn.prepareStatement(D.SQL_THEATER_ALL);
 			rs = pstmt.executeQuery();
 			
 			arr = createArray(rs);
@@ -95,7 +95,7 @@ public class TheaterDAO {
 		int cnt = 0;
 		TheaterDTO[] arr = null;
 		try {
-			pstmt = conn.prepareStatement(D.SQL_THEATER_UPDATE);
+			pstmt = conn.prepareStatement(D.SQL_THEATER_SELECT);
 			pstmt.setInt(1, theaterCode);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);

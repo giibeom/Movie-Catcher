@@ -10,7 +10,6 @@ DROP TABLE IF EXISTS ticket;
 DROP TABLE IF EXISTS hall;
 DROP TABLE IF EXISTS mc_admin;
 DROP TABLE IF EXISTS mc_user;
-DROP TABLE IF EXISTS movie;
 DROP TABLE IF EXISTS theater;
 
 
@@ -36,7 +35,7 @@ CREATE TABLE hall
 	hallLocation varchar(40) NOT NULL,
 	hallSize varchar(40) NOT NULL,
 	theaterCode varchar(10) NOT NULL,
-	m_uid int NOT NULL,
+	h_movie varchar(30) NOT NULL,
 	PRIMARY KEY (h_uid)
 );
 
@@ -64,16 +63,6 @@ CREATE TABLE mc_user
 	u_date date NOT NULL,
 	PRIMARY KEY (u_idnum),
 	UNIQUE (u_id)
-);
-
-
-CREATE TABLE movie
-(
-	m_uid int NOT NULL AUTO_INCREMENT,
-	m_name varchar(50) NOT NULL,
-	m_db_id varchar(40),
-	m_kobis_id varchar(40) NOT NULL,
-	PRIMARY KEY (m_uid)
 );
 
 
@@ -147,14 +136,6 @@ ALTER TABLE reserve
 ;
 
 
-ALTER TABLE hall
-	ADD FOREIGN KEY (m_uid)
-	REFERENCES movie (m_uid)
-	ON UPDATE RESTRICT
-	ON DELETE RESTRICT
-;
-
-
 ALTER TABLE review
 	ADD FOREIGN KEY (rs_num)
 	REFERENCES reserve (rs_num)
@@ -171,6 +152,7 @@ ALTER TABLE hall
 ;
 
 
+
 ALTER TABLE reserve
 	ADD FOREIGN KEY (t_uid)
 	REFERENCES ticket (t_uid)
@@ -178,15 +160,17 @@ ALTER TABLE reserve
 	ON DELETE RESTRICT
 ;
 
-INSERT INTO theater (theaterCode, theaterName, AreaCode, theaterAddress) VALUES (1, 2, 3, 4); 
-
 show TABLES;
 describe board;
 describe ticket;
 describe theater;
 select * from theater;
+select * from hall;
+select * from ticket;
 delete from theater where theaterCode = 1;
 TRUNCATE table theater;
+TRUNCATE table hall;
+TRUNCATE table ticket;
 
 
 show databases;

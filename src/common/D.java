@@ -28,11 +28,7 @@ public interface D {
 	public static final String SQL_THEATER_SELECT = "SELECT * FROM theater WHERE theaterCode = ?";
 	public static final String SQL_THEATER_UPDATE = "UPDATE theater SET theaterAddress = ? WHERE theaterCode = ?";
 	
-	public static final String SQL_MOVIE_INSERT = "INSERT INTO movie (m_name) VALUES (?)";
-	public static final String SQL_MOVIE_UPDATE = "UPDATE movie SET m_db_id = ?, m_kobis_id = ? WHERE m_name = ?";
-	public static final String SQL_MOVIE_SELECT = "SELECT m_name FROM movie WHERE m_uid = ?";
-	
-	public static final String SQL_HALL_INSERT = "INSERT INTO hall (hallType, hallLocation, hallSize, theaterCode, m_uid) VALUES (?, ?, ?, ?, ?)";
+	public static final String SQL_HALL_INSERT = "INSERT INTO hall (hallType, hallLocation, hallSize, theaterCode, h_movie) VALUES (?, ?, ?, ?, ?)";
 	public static final String SQL_HALL_SELECT = "SELECT * FROM hall WHERE h_uid = ?";
 	
 	public static final String SQL_TICKET_INSERT = "INSERT INTO ticket (movietime, restSeat, h_uid) VALUES (?, ?, ?)";
