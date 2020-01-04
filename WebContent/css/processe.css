@@ -1,0 +1,76 @@
+.step{
+    position : fixed;
+    bottom: 0;
+    height: 120px;
+    width: 100%;
+    background-color: gray;
+    opacity: 0.9;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.step-state ul li {
+	float:left;
+	position:relative;
+	width:33.33%; 
+	padding-top:65px; 
+	font-size:20px;
+	font-weight:bold;
+	text-align:center;
+	line-height:15px;
+	color:white;
+}
+.step-state ul li span {
+	display:block;
+	margin-top:2px;
+	font-weight:normal;
+	color:#898989;
+	font-size:12px
+}
+
+/* 회색 진행바 생성 */
+.step-state ul li:before {
+	width : 100%;
+	position:absolute;
+	top:35px;
+	left:0;
+	right:0;
+	height:6px;
+	background:#ddd;
+	content:''
+}
+
+
+/* 화살표 상태 아이콘 */
+.step-state ul li:after {
+	position:absolute;
+	top:27px;
+	left:50%;
+	width:25px;
+	height:25px;
+	margin-left:-10px;
+	background:url(https://t1.daumcdn.net/cfile/tistory/241D463E58AFAEAB16) no-repeat 0 0;
+	background-size:auto 30px;
+	background-position:0 0;
+	content:''
+}
+
+
+/* 활성화 진행바 및 활성화 화살표 아이콘 표시 */
+/* 활성화 상태바 */
+.step-state.step2 ul li:nth-child(-n+2):before,
+.step-state.step3 ul li:nth-child(-n+3):before {
+	background:#E31D2E;
+}
+
+/* 도전 중일 경우의 1/2 영역 비활성화 상태바 영역 */
+.step-state ul li p:before {
+    position:absolute;
+    top:35px;
+    left:50%;
+    right:0;
+    height:6px;
+    content:'';
+}
+.step-state.step2 ul li:nth-child(2) p:before {
+    background:#ddd
+}

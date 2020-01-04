@@ -1,0 +1,62 @@
+/* --------------- list bg ------------ */
+.contentWrap { width: 1200px; margin:0 auto;padding:50px 0; }
+.contentWrap h3 { width: 100%;  text-align: center; font-size: 22px;  color: #555; margin-bottom: 50px; }
+
+
+/* --------------- list content ------------ */
+.contentWrap .pager { text-align: center;	padding-top: 50px; }
+.contentWrap .pager ul { overflow: hidden; display: inline-block;	}
+.contentWrap .pager ul li { height: 35px; display: block; float: left; text-align: center; margin: 0 5px;}
+
+
+.faq li { padding: 20px; }
+
+.faq li.q { color:#555; font-weight: bold; font-size: 1rem; border-bottom: 1px #ddd solid; cursor: pointer;} /*의뢰인 수정*/
+.faq li.q b { color: #E31D2E; }
+.faq li.q span{margin-right:5px;}
+
+
+.faq li.a { background: #E31D2E; display: none; color:#f8f8f8; font-size:0.9rem;}
+
+.list .contentWrap .faqBox > ul { display: none; }
+.list .contentWrap .faqBox > ul.active {display: block;}
+.board_background {
+	background-image: url(../images/film1.jpg);
+	width: 100%;
+	height: 380px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	text-align: center;
+	margin: 0 auto;
+	transform: scale(1.0);
+	transition: transform .10s;
+	margin-top: -30px;
+	margin-bottom: 20px;
+  }
+
+@media only screen and (max-width: 1200px) {
+	.list .contentWrap { width: 100%; }
+
+}
+
+@media only screen and (min-width:360px ) and (max-width: 767px) {
+	.contentWrap { width: 100%;}
+	.list .bgWrap {  height: 50px;}
+
+	.faq li.q{font-size:0.9rem;}
+    .faq li.a p{font-size:0.7rem;}
+}
+
+@media only screen and (max-width: 359px) {
+
+	.list .bgWrap {  height: 50px;}
+
+	.list .contentWrap .pager { width: 100%; }
+	.list .contentWrap .pager ul { width: 100%;	text-align: center;	 }
+	.list .contentWrap .pager ul li {margin: 0; width: 8.33%; }
+	.list .contentWrap .pager ul li a { box-sizing: border-box; }
+
+    .faq li.q{font-size:0.8rem;}
+    .faq li.a p{font-size:0.7rem;}
+}

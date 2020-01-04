@@ -1,0 +1,352 @@
+[class*="col-"]{
+	float: left;
+	width: 100%;
+}
+
+
+@media only screen and (min-width: 600px){
+	.col-1 {width: 8.33%; }
+	.col-2 {width: 16.66%; }
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+}
+
+
+
+
+.clear{
+	clear:both;
+}
+input:focus {
+    outline: none;
+}
+
+body {
+	box-sizing: border-box;
+}
+
+.body {
+	max-width: 1200px;
+	margin: 0px auto;
+	min-width:600px;
+  margin-bottom: 30px;
+  height: 100%;
+}
+
+
+
+.selectStep1 {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    height: 80%;
+    justify-content: center;
+    display: -webkit-flex;
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+}
+
+
+/* 영화관 선택 */
+
+.theater {
+    float: left;
+    width: 450px;
+    margin: 5px;
+    text-align:center;
+    }
+
+
+.area1 {
+    color : rgb(179,179,179);
+    width: 90%;
+    text-align: left;
+    margin : 0 auto;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#area2 li {
+    list-style: none;
+    display: block;
+    padding: 2%;
+    font-weight: 20;
+    background-color: whitesmoke;
+    margin:1px auto;
+}
+
+#area2 li:hover {
+    cursor: pointer;
+    background-color: rgb(209, 10, 10);
+}
+
+details > summary {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    transition: .3s;
+    font-weight: 00;
+    border-bottom: 1px solid;
+    user-select: none;
+  }
+
+  details[open] > summary {
+     color: red;
+  }
+
+
+
+/* 날짜,스케줄선택*/
+.schedule{
+    display: none;
+    width: 60%;
+    display: inline-block;
+    margin: 0 auto;
+    text-align:center;
+    background: white;
+}
+
+
+
+/*달력 style*//* placeholder color */
+input:-ms-input-placeholder {
+  color: #000;
+}
+input::-webkit-input-placeholder {
+  color: #000;
+}
+input::-moz-placeholder {
+  color: #000;
+}
+input::-moz-placeholder {
+  color: #000;
+}
+.wrapper {
+  display: inline;
+}
+.ion-calendar {
+  right: 20px;
+  top: 14px;
+}
+/* input */
+#datepicker {
+  border: 1px solid #E31D2E;
+  padding: 3px;
+  margin-left: 10px;
+  border-radius: 5px;
+  font-size: 17px;
+  text-align: center;
+  cursor: pointer;
+}
+#datepicker:hover {
+  background-color: rgb(255, 220, 223);
+}
+#datepicker:focus {
+  outline: none;
+}
+/* calendar table */
+.ui-datepicker {
+  display: none;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-left: 42.5px;
+  margin-right: 42.5px;
+  padding: 20px;
+  width: 360px;
+}
+#datepicker:focus>.ui-datepicker {
+  display: block;
+}
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  cursor: pointer;
+}
+.ui-datepicker-next {
+  float: right;
+}
+.ui-state-disabled {
+  cursor: auto;
+  color: hsla(0, 0%, 80%, 1);
+}
+.ui-datepicker-title {
+  text-align: center;
+  padding: 10px;
+  font-weight: 100;
+  font-size: 20px;
+}
+.ui-datepicker-calendar {
+  width: 100%;
+}
+/* day of week cell */
+.ui-datepicker-calendar>thead>tr>th {
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 400;
+}
+/* day cell */
+.ui-datepicker-calendar>tbody>tr>td {
+  border-radius: 100%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  padding: 5px;
+  font-weight: 100;
+  text-align: center;
+}
+.ui-datepicker-calendar>tbody>tr>td:hover {
+  background-color: rgb(255, 220, 223);
+}
+.ui-datepicker-calendar>tbody>tr>td>a {
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+}
+/* past days */
+.ui-datepicker-calendar>tbody>tr>.ui-state-disabled:hover {
+  cursor: auto;
+  background-color: #fff;
+}
+
+
+
+  /*날짜 스케줄 선택 style*/
+
+#selectScd {
+    width: 100%;
+    height: 400px;
+    padding: 20px 0px;
+    padding: 10px;
+    background-color: whitesmoke;
+    border: 0.1px solid black;
+}
+
+.time {
+  margin: 13px;
+  margin-top: 10px;
+  float : left;
+  border: 0.1px solid black;
+  padding: 5px;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.time:hover {
+  cursor: pointer;
+  background-color: rgb(209, 10, 10);
+}
+
+
+
+/*step2 좌석선택 style*/
+.number {
+    margin: 18px;
+    font-size: 20px;
+}
+
+.number select {
+    /*padding:5px 0;*/
+    margin: auto;
+    width : 65px;
+    font-size: 17px;
+    text-align-last : center; 
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+.seatSelect {
+  width: 100%;
+  height: 500px;
+  margin-top: 10px;
+  margin: 0 auto;
+  padding: 10px;
+  text-align:center;
+  background-color: whitesmoke;
+  border-top: 0.1px solid black;
+  border-bottom: 0.1px solid black;
+}
+
+
+
+
+.seatSelect .seat{
+    background-color:gray;
+    height: 400px;
+    width : 50%;
+    margin: auto;
+}
+
+.bookingChk {
+    background-color:#f0f0f0;
+    height: 200px;
+    width : 100%;
+    margin: auto;
+}
+
+h2 {
+    font-size:25px;
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: black;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+
+
+
+
+
+/* media */
+@media(max-width: 600px) {
+    .wrapper {
+      width: calc(100vw - 20px);
+    }
+    .ui-datepicker {
+      margin-right: 0;
+      margin-left: 0;
+      padding: 80px;
+      width: calc(100vw - 20px);
+      margin: 80px auto;
+    }
+    .ui-datepicker-calendar>tbody>tr>td {
+      width: 38px;
+      height: 38px;
+    }
+    .selectStep1 {
+      margin-right: 0;
+      margin-left: 0;
+      width: calc(100vw - 20px);
+    }
+
+    .time {
+      margin: 12px;
+    }
+
+    .theater {
+      width:100%;
+      margin: 10px;
+       }
+      
+    .schedule  {
+      width:90%;
+    }
+    .schedule > .selectScd {
+      width: 60px;
+    }
+
+    .seatSelect .seat{
+      width : 90%;
+  }
+       
+    }
+    

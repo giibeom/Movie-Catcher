@@ -1,0 +1,118 @@
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+.boxwrap{
+    display: table;
+    table-layout: fixed;
+    width: 500%;
+    height: 100%;
+}
+
+.box{
+    display: table-cell;
+    position: relative;
+}
+
+.haeder-content {
+    text-align: center;
+}
+
+.main_img1 {
+    background-image: url(../images/main_img1.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    text-align: center;
+
+}
+#main_img2 {
+    width: 700px;
+    height: auto;
+    position: absolute;
+    left: 430px;
+    bottom: -10px;
+}
+
+#logo {
+    width: 310px;
+    margin: 0 auto;
+    top: 70px;
+    left: 40%;
+    position: absolute;
+
+}
+.clear {
+    clear: both;
+}
+
+.main_wrap2 {
+    background-color: #E31D2E ;
+}
+
+.content1 {
+    position: absolute;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2.5em;
+    color: white;
+    text-align: left;
+    width: 1100px;
+    height: auto;
+    margin-left: 200px;
+}
+
+#content_subtitle {
+    margin-top: 200px;
+}
+#content1_img {
+    width: 300px;
+    height: auto;
+    float: right;
+    margin-top: -300px;
+}
+
+#description {
+    font-size: 0.6em;
+    margin-top: 50px;
+}
+#content2_img {
+    width: 500px;
+    height: auto;
+    float: right;
+    margin-top: -250px;
+}
+
+#content3_img {
+    width: 500px;
+    height: auto;
+    float: right;
+    margin-top: -200px;
+}
+
+.main_wrap3 {
+    background-color: #E31D2E;
+}
+
+.main_wrap4 {
+    background-color:#E31D2E;
+}
+
+.main_wrap5 {
+    background-color:whitesmoke;
+   
+}
+

@@ -1,0 +1,139 @@
+/* ------------ review  -------------- */
+
+.review .contentWrap { width: 1200px; margin: 0 auto;  padding-bottom: 60px;}
+.review .contentWrap h3 { text-align: center; padding:10px 0;  font-size: 22px; color: #777;  margin-bottom: 10px;}
+.review.mt50 { margin-top: 50px; }
+
+.review .contentWrap .pager { text-align: center;	padding-top: 50px; }
+.review .contentWrap .pager ul { overflow: hidden; display: inline-block;	}
+.review .contentWrap .pager ul li { height: 35px; display: block; float: left; text-align: center; margin: 0 5px;}
+.review .contentWrap .pager ul li a { font-size: 14px; display: block; width: 100%; height: 100%; line-height: 35px; color:black;padding: 0 6px; transition: all .5s; outline:0; text-align: center;	}
+.review .contentWrap .pager ul li a:hover { color: #fff; background-color: #E31D2E; }
+.review .contentWrap .pager ul li a.active { font-weight: bold; color: #fff; background-color: #E31D2E;}
+.review .contentWrap .pager .prev a { color: #777; }
+.review .contentWrap .pager .next a { color: #777; }
+
+.review {  padding-bottom: 70px;  }
+.review .contentWrap { width: 1200px; margin: 0 auto;  }
+.review .contentWrap h2 { text-align: center; color: #222; padding-bottom: 20px; }
+.review .contentWrap .reviewBox .reviewWrap { overflow: hidden; }
+.review .contentWrap .reviewBox .reviewWrap li {width: 25%; height: 200px;  overflow: hidden; box-sizing: border-box; padding: 10px; float: left;}
+.review .contentWrap .reviewBox .reviewWrap li .reviewer { width: 100%; height: 100%; border:1px solid #ccc;  background-color: #fff;     box-shadow: 3px 3px 3px 0 rgba(0,0,0,.2); border-radius: 10px;}
+.review .contentWrap .reviewBox .reviewWrap li .rGender { float: left; width: 60px; height: 60px; margin: 5px; }
+.review .contentWrap .reviewBox .reviewWrap li .review_des_title { margin: 0 auto; display: block; width: 100%; height: 80px;}
+.review .contentWrap .reviewBox .reviewWrap li .rGender.gFemale {  background: url(../images/review_ticket.png) no-repeat 0 0; background-size: 50px; margin-left: 20px; margin-top: 12px; }
+.review .contentWrap .reviewBox .reviewWrap li .rName { font-size: 20px; font-weight: bold; color: #222;  float: left; margin-top: 25px; }
+.review .contentWrap .reviewBox .reviewWrap li .rDate { font-size:12px; color: #777; float: left; line-height: 38px; margin-top: 20px; }
+.review .contentWrap .reviewBox .reviewWrap li .rDate::after { content:"|"; display: inline-block; margin:0 5px; }
+.review .contentWrap .reviewBox .reviewWrap li .rDate::before { content: "|"; display: inline-block; margin: 0 5px; }
+.review .contentWrap .reviewBox .reviewWrap li .rReport { float: left; color: #777; font-size: 14px; line-height: 38px; cursor: pointer;}
+.review .contentWrap .reviewBox .reviewWrap li .rDesc { clear: both;  }
+.review .contentWrap .reviewBox .reviewWrap li .rDesc p { box-sizing: border-box; width: 100%; height: 100%; padding: 10px 20px; color: #555; font-size: 14px;}
+
+.review_background {
+  background-image: url(../images/film5.jpg);
+  width: 100%;
+  height: 380px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  text-align: center;
+  margin: 0 auto;
+  transform: scale(1.0);
+  transition: transform .10s;
+  margin-top: -30px;
+  margin-bottom: 20px;
+}
+
+form {
+    position: relative;
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  .d1 input {
+    width: 100%;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #E31D2E;
+    border-radius: 5px;
+    outline: none;
+    background: white;
+    color: #9E9C9C;
+    margin-bottom: 50px;
+  }
+  .d1 button {
+    position: absolute; 
+    top: 0;
+    right: 0px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: #E31D2E;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  .d1 button:before {
+  
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #F9F0DA;
+  }
+  #m_icon {
+      width: 20px;
+      margin-top: 3px;
+  }
+
+
+@media only screen and (max-width:1200px){
+    .reviewWrite .contentWrap { width: 100%;}
+}
+/*--------------------------- review Write Form by.AJB ---------------------------*/
+@media only screen and (min-width: 960px) and (max-width: 1200px) {
+	
+	.review .contentWrap { width: 100%; margin: 0 auto;	 }
+	.review .contentWrap .reviewBox .reviewWrap li { width: 33.3333%; padding: 10px 20px; }
+
+	.review .reviewBox table td .rDesc p { font-size: 14px; }
+	
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	
+	.review .contentWrap { width: 100%; margin: 0 auto;	 }
+	.review .contentWrap .reviewBox .reviewWrap li { width: 50%; padding: 10px 30px; }
+
+	.review .reviewBox table td .rDesc p { font-size: 14px;}
+	
+}
+
+@media only screen and (max-width: 767px) {
+	
+	.review .bgWrap  { height: 50px; }	
+
+	.review .contentWrap { width: 100%; margin: 0 auto;	 }
+	.review .contentWrap .reviewBox .reviewWrap li { width: 100%; float:none;  padding: 10px; }
+
+	.review .contentWrap .pager { width: 100%; }
+	.review .contentWrap .pager ul { width: 100%;	text-align: center;	 }
+	.review .contentWrap .pager ul li {margin: 0; width: 8.33%; }
+	.review .contentWrap .pager ul li a { box-sizing: border-box; }
+		
+	.review .reviewBox .btnArea { text-align: center;	 }
+    /* AJB */
+    .formwrap{width:100%;}
+    /* AJB */
+
+    .review .reviewBox table td { padding: 10px 0; }
+    .review .reviewBox table td .rGrade { width: 20%; }
+    .review .reviewBox table td .rGrade .star { margin: 5px auto; width: 35px; height: 35px; }
+    .review .reviewBox table td .rAuthor { font-size: 14px; width: 80%; padding: 0 10px;}
+    .review .reviewBox table td .rDesc { width: 80%; padding: 0 10px;}
+    .review .reviewBox table td .rDesc p { font-size: 12px;}
+}
+/*--------------------------- review Write Form by.AJB ---------------------------*/
+@media only screen and (max-width:550px){
+    .formwrap{width:90%;margin-left:5%;}
+    
+}
+/*--------------------------- review Write Form by.AJB ---------------------------*/

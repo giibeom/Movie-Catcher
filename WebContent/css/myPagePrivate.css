@@ -1,0 +1,57 @@
+.container{
+    width:80%;
+    margin:0 auto;
+	padding-top:30px;
+
+}
+#mypage {
+	height: 500px;
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 20px;
+
+
+
+}
+
+.box {
+	position: relative;
+}
+
+.subject {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#info input[type=text], #info input[type=password] {
+	width: 100%;
+	height: 15px;
+	border: none;
+	border-bottom: 1px solid rgb(179, 179, 179);
+	padding: 20px;
+	font-size: 14px;
+	margin: 10px auto;
+}
+
+#update {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	cursor: pointer;
+	font-size: 12px;
+
+}
+
+#submit {
+	width: 40%;
+	height: 40px;
+	float: right;
+	border: none;
+	background-color: #E31D2E;
+	color: white;
+	margin-top: 20px;
+}
+
+.clear {
+	clear: both;
+}

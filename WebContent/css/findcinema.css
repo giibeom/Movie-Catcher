@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+[class*="col-"]{
+	float: left;
+	width: 100%;
+}
+
+@media only screen and (min-width: 600px){
+    .col-6{
+        width :50%;
+    }
+
+    .col-62{
+        width: 50%;
+    }
+
+    #find_title h2{
+        display: inline-block;
+        margin-top : 30px;
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+
+}
+
+#window {
+    max-width : 1024px;
+    margin : auto;
+}
+
+#find_title{
+    display: block;
+    margin-bottom: 20px;
+}
+
+#find_title h2{
+    text-align: center;
+}
+
+
+#cinema {
+    height: 350px;
+}
+
+#map {
+    height: 350px;
+}
+
+
+#find {
+    width : 90%;
+    height: 90%;
+    margin: 20px;
+}
+
+#find-a {
+    display: block;
+    width : 100%;
+}
+
+input[type=text] {
+    width : 100%;
+    border: none;
+    padding : 8px;
+    border-radius: 4px;
+    border-bottom: 1px solid rgb(179,179,179);
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+
+label {
+    margin-left: 10px;
+}
+
+
+#addr-d{
+    width : 35%;
+}
+
+
+#addr-s {
+    width : 35%;
+}
+
+input[type=button] {
+    width : 80%;
+    margin-left: 40px;
+    border : none;
+    background-color: #E31D2E;
+    color: white;
+    opacity: 0.5;
+    padding : 5px;
+}
+
+input[type=button]:hover{
+    cursor: pointer;
+    opacity: 1;
+}

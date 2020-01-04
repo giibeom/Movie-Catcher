@@ -1,0 +1,155 @@
+[class*="col-"]{
+    float: left;
+    width: 100%;
+}
+
+
+@media only screen and (min-width: 600px){
+	.col-1 {width: 8.33%; }
+	.col-2 {width: 16.66%; }
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+}
+
+.clear {
+    clear: both;
+}
+
+body {
+	box-sizing: border-box;
+}
+
+.container {
+	/* outline: 1px solid red; */
+	height: 300px;
+	margin: 0px;
+	position: relative;
+}
+
+.body {
+	max-width: 1100px;
+	margin: 0px auto;
+	min-width:600px;
+	margin-bottom: 30px;
+}
+
+
+/* 영화 제목, 평점 */
+#mv_title {
+	font-weight: bolder;
+	font-size: large;
+
+}
+
+#mv_avg{
+	display: inline-block;
+	
+}
+
+#mainPoster {
+	padding: 10% 0 0  10%;
+}
+
+#mv {
+	padding-top: 10%;
+	padding-left: 3%;
+}
+
+/* 
+#mv_resv {
+	display: inline-block;
+	margin-left: 80%;
+	padding : 5px 10px;
+	border : none;
+	border-radius: 4px;
+	background-color: #E31D2E;
+	color: white;
+} */
+
+#mv_resv:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+span {
+	display: inline-block;
+	padding-bottom: 3px;
+}
+
+
+/* 줄거리 */
+#overview {
+	padding-top: 5%;
+	padding-left: 3%;
+}
+
+
+
+
+/* 스틸컷 버튼 */
+#leftBtn {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	left: 30px; 
+	top: 40%; 
+	z-index: 1;
+	opacity: 0.5;
+}
+
+#rightBtn {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	right: 10px; 
+	top: 40%;
+	z-index: 1;
+	opacity: 0.5;
+}
+
+#leftBtn :hover{
+	cursor: pointer;
+}
+
+#rightBtn :hover {
+	cursor : pointer;
+}
+
+
+/*티저*/
+
+#mv_teaser{
+	padding : 3%;
+	border-radius: 4px;
+	border : 1px solid rgb(179,179,179);
+}
+
+
+/* 리뷰 */
+
+#review {
+	margin-top : 30px;
+}
+
+#review_title {
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
+
+#review-a, #review-b {
+	margin-left: 20px;
+	margin-bottom: 20px;
+	width : 90%;
+	height: 80px;
+	border: 1px solid rgb(179,179,179);
+	border-radius: 4px;
+	
+}

@@ -1,0 +1,239 @@
+html body {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header div {
+    width: 100%;
+    background-color: white;
+}
+#logo_image {
+    float: left;
+    width: 30px;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+#topmenu {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    display: inline-block;
+    margin-top: 10px;
+}
+#topmenu nav {
+    margin-left: 10px;
+}
+.bold1 {
+    color: black;
+    float: left;
+    padding: 20px 5px;
+}
+#n {
+    margin-left: 0;
+}
+#container {
+    display: flex;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+}
+/* 좌측 컨텐츠 */
+#rule-box {
+    width: 450px;
+    height: 100%;
+}
+
+h2 {
+    margin-top: 50px;
+    text-align: left;
+    font-size:40px;
+    text-align: center;
+    color: black;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+input[type=text], #cardRadio {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+#card_info1,
+#card_info2 {
+    width: 49%;
+}
+#pay {
+    font-size: 13px;
+}
+
+#button {
+    width: 100%;
+    height: 40px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+input[type=submit] {
+    background: #E31D2E;
+    color: #fff;
+    border: none;
+    width: 250px;
+    height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+}
+
+input[type=submit]:hover {
+    background: #fff;
+    color: black;
+}
+/* 중앙 공백 */
+#margin-box {
+    width: 0;
+    height: 100%;
+}
+/* 우측 컨텐츠 */
+#pay-box {
+    display: none;
+    width: 450px;
+    height: 100%;
+}
+#popup {
+    margin-top: 70px;
+    border: 1px solid gainsboro;
+    background: white;
+}
+#popup form {
+    margin: 32px;
+}
+#popup_img {
+    width: 20px;
+    vertical-align: auto;
+    margin-bottom: -5px;
+}
+
+
+#popup p {
+    font-size: 14px;
+    margin-top: 40px;
+    line-height: 1em;
+}
+
+
+h3 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 13px;
+    font-weight: normal;
+    color: darkgray;
+    border-bottom: 1px solid darkgray;
+    margin-top: 10px;
+}
+
+.content3 {
+    margin-top: 30px;
+    border-top: 1px solid darkgray;
+}
+.content3_1 {
+    font-size: 14px;
+    line-height: 2em;
+    font-weight: 100p;
+}
+.content3_2 {
+    margin-top: 30px;
+}
+.money {
+    float: right;
+}
+.content3_3 {
+    margin-bottom: 20px;
+}
+.content3_4 {
+    margin-top: 20px;
+    line-height: 1.5em;
+}
+
+@media screen and (min-width:760px) {
+    /* 상단 바 */
+    #topmenu {
+        font-size: 14px;
+    }
+    #topmenu nav {
+        margin-left: 30px;
+    }
+    .bold1 {
+        padding: 20px;
+    }
+    .bold2 {
+        padding: 20px;
+    }
+    #n {
+        margin-left: 30px;
+    }
+    /* 중앙 공백 */
+    #margin-box {
+        width: 0.5%;
+    }
+    /* 우측 컨텐츠 */
+    #pay-box {
+        display: block;
+        width: 350px;
+    }
+    h4 {
+        font-size: 15px;
+    }
+    #popuptitle {
+        font-size: 12px;
+    }
+}
+
+/* -992px 이상 */
+@media screen and (min-width:992px) {
+    /* 상단 바 */
+    #topmenu {
+        font-size: 14px;
+    }
+    #topmenu nav {
+        margin-left: 30px;
+    }
+    .bold1 {
+        padding: 20px;
+    }
+    .bold2 {
+        padding: 20px;
+    }
+    #n {
+        margin-left: 30px;
+    }
+    /* 중앙 공백 */
+    #margin-box {
+        width: 10%;
+        height: 100%;
+    }
+    /* 우측 컨텐츠 */
+    #pay-box {
+        display: block;
+        width: 450px;
+        height: 100%;
+    }
+    h4 {
+        font-size: 16px;
+    }
+    #popuptitle {
+        font-size: 13px;
+    }
+}
