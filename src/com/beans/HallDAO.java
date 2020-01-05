@@ -21,17 +21,7 @@ public class HallDAO {
 	
 	// DAO 객체가 생성될때 Connection도 생성된다.
 	public HallDAO() {
-		try {
-			Class.forName(D.DRIVER);
-			conn = DriverManager.getConnection(D.URL, D.USERID, D.USERPW);
-			System.out.println("HallDAO 객체 생성, 데이터베이스 연결");
-			
-			
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		conn = ConnectionDAO.getConnection();
 	}
 	//DB 자원반납 메소드
 	public void close() throws SQLException {
@@ -46,12 +36,12 @@ public class HallDAO {
 		String hallLocation = dto.getHallLocation();
 		String hallSize = dto.getHallSize();
 		String theaterCode = dto.getTheaterCode();
-		String h_movie = dto.getH_movie();
+		int m_uid = dto.getM_uid();
 		
-		return this.insert(hallType, hallLocation, hallSize, theaterCode, h_movie);
+		return this.insert(hallType, hallLocation, hallSize, theaterCode, m_uid);
 	}
 	
-	public int insert(String hallType, String hallLocation, String hallSize, String theaterCode, String h_movie) throws SQLException{
+	public int insert(String hallType, String hallLocation, String hallSize, String theaterCode,int m_uid) throws SQLException{
 		int cnt = 0 ;
 		try {
 			pstmt = conn.prepareStatement(D.SQL_HALL_INSERT);
@@ -59,7 +49,7 @@ public class HallDAO {
 			pstmt.setString(2, hallLocation);
 			pstmt.setString(3, hallSize);
 			pstmt.setString(4, theaterCode);
-			pstmt.setString(5, h_movie);
+			pstmt.setInt(5, m_uid);
 			cnt = pstmt.executeUpdate();			
 		} finally {
 			close();
@@ -75,8 +65,8 @@ public class HallDAO {
 			String hallLocation = rs.getString("hallLocation");
 			String hallSize = rs.getString("hallSize");
 			String theaterCode = rs.getString("theaterCode");
-			String h_movie = rs.getString("h_movie");
-			HallDTO dto = new HallDTO(h_uid, hallType, hallLocation, hallSize, theaterCode, h_movie);
+			int m_uid = rs.getInt("m_uid");
+			HallDTO dto = new HallDTO(h_uid, hallType, hallLocation, hallSize, theaterCode, m_uid);
 			list.add(dto);
 		}
 		int size = list.size();

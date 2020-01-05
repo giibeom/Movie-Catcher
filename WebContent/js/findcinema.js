@@ -45,6 +45,20 @@ function sample6_execDaumPostcode() {
             document.getElementById("sample6_address").value = addr;
             // 커서를 상세주소 필드로 이동한다.
             document.getElementById("sample6_detailAddress").focus();
+            
+            
+    		var geocoder = new kakao.maps.services.Geocoder();
+    		geocoder.addressSearch(data.address, function(result, status) {
+        	     if (status === kakao.maps.services.Status.OK) {
+        	        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+        	        map.setLevel(5);
+        	        map.setCenter(coords);
+        	        var marker = new kakao.maps.Marker({
+        	        	position: coords
+        	        });
+        	        marker.setMap(map);
+        	    }
+    		});
         }
     }).open();
 }

@@ -6,19 +6,18 @@ public class HallDTO {
 	private String hallLocation;
 	private String hallSize;
 	private String theaterCode;
-	private String h_movie;
+	private int m_uid;
 	public HallDTO() {
 		super();
 	}
-	public HallDTO(int h_uid, String hallType, String hallLocation, String hallSize, String theaterCode,
-			String h_movie) {
+	public HallDTO(int h_uid, String hallType, String hallLocation, String hallSize, String theaterCode, int m_uid) {
 		super();
 		this.h_uid = h_uid;
 		this.hallType = hallType;
 		this.hallLocation = hallLocation;
 		this.hallSize = hallSize;
 		this.theaterCode = theaterCode;
-		this.h_movie = h_movie;
+		this.m_uid = m_uid;
 	}
 	public int getH_uid() {
 		return h_uid;
@@ -50,11 +49,11 @@ public class HallDTO {
 	public void setTheaterCode(String theaterCode) {
 		this.theaterCode = theaterCode;
 	}
-	public String getH_movie() {
-		return h_movie;
+	public int getM_uid() {
+		return m_uid;
 	}
-	public void setH_movie(String h_movie) {
-		this.h_movie = h_movie;
+	public void setM_uid(int m_uid) {
+		this.m_uid = m_uid;
 	}
 	
 	

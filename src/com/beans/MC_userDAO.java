@@ -21,17 +21,7 @@ public class MC_userDAO {
 	
 	// DAO 객체가 생성될때 Connection도 생성된다.
 	public MC_userDAO() {
-		try {
-			Class.forName(D.DRIVER);
-			conn = DriverManager.getConnection(D.URL, D.USERID, D.USERPW);
-			System.out.println("WriteDAO 객체 생성, 데이터베이스 연결");
-			
-			
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		conn = ConnectionDAO.getConnection();
 	}
 	//DB 자원반납 메소드
 	public void close() throws SQLException {

@@ -14,22 +14,13 @@ import java.util.Date;
 import common.D;
 
 public class BoardDAO {
-
 	Connection conn;
 	PreparedStatement pstmt;
 	Statement stmt;
 	ResultSet rs;
 	
 	public BoardDAO() {
-		try {
-			Class.forName(D.DRIVER);
-			conn = DriverManager.getConnection(D.URL, D.USERID, D.USERPW);
-			System.out.println("BoardDAO 객체 생성,데이터 베이스 연결");
-		}catch(ClassNotFoundException e) {
-			e.printStackTrace();
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}
+		conn = ConnectionDAO.getConnection();
 	}
 	
 	// DB 자원 반납 메소드 
