@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -25,6 +26,7 @@
 
 <title>영화 예매하기</title>
 </head>
+
 <body>
 	<!-- header -->
 	<div class="topnav" id="myTopnav">
@@ -89,12 +91,20 @@
 				<option value="7">7</option>
 				<option value="8">8</option>
 			</select>
+			<div id="totalNumber"></div>
 		</div>
 
 
 		<!--좌석선택-->
 		<div class="seat">
 			<p>좌석선택</p>
+			<div id="selectSeat">
+			<c:if test="">
+			
+			</c:if>
+			
+			
+			</div>
 		</div>
 	</div>
 

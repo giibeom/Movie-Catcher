@@ -222,7 +222,7 @@ function getPoster(jsonObj, movieName, rank){
         getTeaser(arr[0].id, arr[0].title);
     }
 
-        posters[rank] = "<img src='http://image.tmdb.org/t/p/w500" + poster +"' width='200px' height='280px'>";
+        posters[rank] = "<img src='http://image.tmdb.org/t/p/w500" + poster +"' width='200px' height='280px' id='rankposter" + rank + ">";
         nowchk ++;
         if(nowchk == 10){
             doNowIn();

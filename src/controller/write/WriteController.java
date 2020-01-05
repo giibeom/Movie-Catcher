@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import command.write.Command;
+import command.write.loginCommand;
+import command.write.signupCommand;
 
 
 @WebServlet("*.mc")
@@ -43,12 +45,34 @@ public class WriteController extends HttpServlet {
 		String com = uri.substring(conPath.length());
 		
 		switch(com) {
-		case "/":
-			//command = new Command();
+		case "/welcome.mc":
+			viewPage = "welcome.jsp";
+			break;
+		case "/login.mc":
+			viewPage = "login.jsp";
+			break;
+		case "/main.mc":
+			viewPage = "main.jsp";
+			break;
+		case "/loginOk.mc":
+			command = new loginCommand();
 			command.execute(request, response);
-			viewPage = "";
+			viewPage = "loginOk.jsp";
 		break;
+		case "/signup.mc":
+			viewPage = "signup.jsp";
+			break;
+		case "/signupOk.mc":
+			command = new signupCommand();
+			command.execute(request, response);
+			viewPage = "signupOk.jsp";
+		break;
+			
+			
+			
+			
 		}
+	
 		
 		
 		if(viewPage != null) {
