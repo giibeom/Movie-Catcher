@@ -1,3 +1,4 @@
+<%@page import="com.beans.TheaterDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,6 +22,12 @@
     <link href="css/findcinema.css" rel="stylesheet" type="text/css">
     <link href="css/footer.css" rel="stylesheet" type="text/css">
 </head>
+
+
+<%
+	TheaterDTO[] list = (TheaterDTO[])request.getAttribute("list");
+%>
+
 <body>
     <header>
     <div class="topnav" id="myTopnav">
@@ -54,32 +61,12 @@
         <div class = "col-6" id = "cinema"> 
             <!-- 다음 주소 검색 이용하기 -->
             <form id = "find">
-                <!-- <div id = "find-a">
-                <label for = "addr">주소검색</label>
-                </div>
-                <input type = "text" id = "addr" name ="address" placeholder="주소검색">
-           
-                <label for = "addr-d"> 도 </label>
-                <input type = "text" id = "addr-d" name = "address-d" placeholder="서울">
-
-                <label for = "addr-s">시 / 군 / 구</label>
-                <input type = "text" id = "addr-s" name = "address-s" placeholder="강남구">
-
-                <label for = "addr-r">도로명 주소</label>
-                <input type = "text" id = "addr-r" name = "address-r" placeholder="...">
-
-
-                <input type ="submit" value = "검색하기">
-            </form> -->
-
-            <input type="text" id="sample6_postcode" value = "" placeholder="우편번호">
-            <input type="text" id="sample6_address" value = "" placeholder="주소"><br>
-            <input type="text" id="sample6_detailAddress"  value = "" placeholder="상세주소">
-            <input type="text" id="sample6_extraAddress" value = "" placeholder="참고항목">
-            <input type="submit" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-
-            
-            
+	            <input type="text" id="sample6_postcode" value = "" placeholder="우편번호">
+	            <input type="text" id="sample6_address" value = "" placeholder="주소"><br>
+	            <input type="text" id="sample6_detailAddress"  value = "" placeholder="상세주소">
+	            <input type="text" id="sample6_extraAddress" value = "" placeholder="참고항목">
+	            <input type="button" onclick="sample6_execDaumPostcode()" value="검색하기"><br>
+            </form>
         </div>
 
 
@@ -135,16 +122,34 @@
                     </div>
                 </div>
     </footer>
-<!--     
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8d892eed4bc5524e1f6fc7e3e00e7ab4"></script>
-    <script>
-		var container = document.getElementById('map');
-		var options = {
-			center: new kakao.maps.LatLng(33.450701, 126.570667),
-			level: 3
-		};
 
-		var map = new kakao.maps.Map(container, options);
-	</script> -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8d892eed4bc5524e1f6fc7e3e00e7ab4&libraries=services,clusterer"></script>
+    <script>
+	var map;
+    $(function(){
+    	var mapContainer = document.getElementById('map'),
+        mapOption = {
+            center: new kakao.maps.LatLng(33.450701, 126.570667),
+            level: 13
+        };    
+    	map = new kakao.maps.Map(mapContainer, mapOption);
+        
+    	
+		var geocoder = new kakao.maps.services.Geocoder();
+		geocoder.addressSearch("충북 괴산군 칠성면 쌍곡리", function(result, status) {
+    	     if (status === kakao.maps.services.Status.OK) {
+    	        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+    	        map.setCenter(coords);
+    	    	} 
+		});
+		
+		<%for(TheaterDTO tmp : list){%>
+	        var marker = new kakao.maps.Marker({
+	        	position: new kakao.maps.LatLng(<%=tmp.getTheaterY()%>, <%=tmp.getTheaterX()%>)
+	        });
+	        marker.setMap(map);
+		<%}%>
+	});
+	</script>
 </body>
 </html>
