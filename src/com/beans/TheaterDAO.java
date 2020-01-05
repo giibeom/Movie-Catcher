@@ -17,17 +17,7 @@ public class TheaterDAO {
 	
 	// DAO 객체가 생성될때 Connection도 생성된다.
 	public TheaterDAO() {
-		try {
-			Class.forName(D.DRIVER);
-			conn = DriverManager.getConnection(D.URL, D.USERID, D.USERPW);
-			System.out.println("TheaterDAO 객체 생성, 데이터베이스 연결");
-			
-			
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		conn = ConnectionDAO.getConnection();
 	}
 	//DB 자원반납 메소드
 	public void close() throws SQLException {
@@ -68,8 +58,10 @@ public class TheaterDAO {
 			String theaterName = rs.getString("theaterName");
 			String areaCode = rs.getString("areaCode");
 			String theaterAddress = rs.getString("theaterAddress");
+			double theaterX = rs.getDouble("theaterX");
+			double theaterY = rs.getDouble("theaterY");
 			if(theaterAddress == null) theaterAddress = "";
-			TheaterDTO dto = new TheaterDTO(theaterCode, theaterName, areaCode, theaterAddress);
+			TheaterDTO dto = new TheaterDTO(theaterCode, theaterName, areaCode, theaterAddress, theaterX, theaterY);
 			list.add(dto);
 		}
 		int size = list.size();
@@ -95,7 +87,7 @@ public class TheaterDAO {
 		int cnt = 0;
 		TheaterDTO[] arr = null;
 		try {
-			pstmt = conn.prepareStatement(D.SQL_THEATER_SELECT);
+			pstmt = conn.prepareStatement(D.SQL_THEATER_UPDATE);
 			pstmt.setInt(1, theaterCode);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
