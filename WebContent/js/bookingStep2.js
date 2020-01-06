@@ -59,6 +59,7 @@ $(document).ready(function(){
 			row ++;
 		}
 		$('#selectSeat').html(seats);
+		doRandom();
 	}
 	if(400 < hallSeat){
 		seatRow = hallSeat % 40;
@@ -74,17 +75,88 @@ $(document).ready(function(){
 			row ++;
 		}
 		$('#selectSeat').html(seats);
+		doRandom();
 	}
 });
 
 function doRandom(){
-	for(var i = 0; i < reatSeat; i++){
+	for(var i = 0; i < restSeat; i++){
 		while(true){
-			
+			var doRan = makeX();
+			if (doRan == 1){
+				break;
+			}
 		}
 	}
 }
 
 function makeX(){
-	
+	if(hallSeat < 80){
+		var rSeat = Math.floor(Math.random() * hallSeat) + 1;
+		var rRow = (rSeat / 8) + 1;
+		var rColumn = rSeat % 8;
+		var seatChk = $(".seat" + seatArray[rRow] + rColumn).text();
+		if(seatChk == "X"){
+			return 0;
+		}else{
+			$(".seat" + seatArray[rRow] + rColumn).text("X");
+			return 1;
+		}
+		
+	}
+	if(80 < hallSeat && hallSeat <= 196){
+		var rSeat = Math.floor(Math.random() * hallSeat) + 1;
+		var rRow = parseInt(rSeat / 12) + 1;
+		var rColumn = rSeat % 12;
+		var seatChk = $(".seat" + seatArray[rRow] + rColumn).text();
+		if(seatChk == "X"){
+			return 0;
+		}else{
+			$(".seat" + seatArray[rRow] + rColumn).css("background-color", "black")
+			$(".seat" + seatArray[rRow] + rColumn).text("X");
+			return 1;
+		}
+
+	}
+	if(196 < hallSeat && hallSeat <= 250){
+		var rSeat = Math.floor(Math.random() * hallSeat) + 1;
+		var rRow = parseInt(rSeat / 16) + 1;
+		var rColumn = rSeat % 16;
+		var seatChk = $(".seat" + seatArray[rRow] + rColumn).text();
+		if(seatChk == "X"){
+			return 0;
+		}else{
+			$(".seat" + seatArray[rRow] + rColumn).css("background-color", "black")
+			$(".seat" + seatArray[rRow] + rColumn).text("X");
+			return 1;
+		}
+
+	}
+	if(250 < hallSeat && hallSeat <= 400){
+		var rSeat = Math.floor(Math.random() * hallSeat) + 1;
+		var rRow = parseInt(rSeat / 24) + 1;
+		var rColumn = rSeat % 24;
+		var seatChk = $(".seat" + seatArray[rRow] + rColumn).text();
+		if(seatChk == "X"){
+			return 0;
+		}else{
+			$(".seat" + seatArray[rRow] + rColumn).css("background-color", "black")
+			$(".seat" + seatArray[rRow] + rColumn).text("X");
+			return 1;
+		}
+	}
+	if(400 < hallSeat){
+		var rSeat = Math.floor(Math.random() * hallSeat) + 1;
+		var rRow = parseInt(rSeat / 40) + 1;
+		var rColumn = rSeat % 40;
+		var seatChk = $(".seat" + seatArray[rRow] + rColumn).text();
+		if(seatChk == "X"){
+			return 0;
+		}else{
+			$(".seat" + seatArray[rRow] + rColumn).css("background-color", "black")
+			$(".seat" + seatArray[rRow] + rColumn).text("X");
+			return 1;
+		}
+
+	}
 }

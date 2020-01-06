@@ -5,7 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%!
 	int restSeat = 80;
-	int hallSeat = 80;
+	int hallSeat = 400;
 %>
 <script>
 var hallSeat = <%= hallSeat %>;

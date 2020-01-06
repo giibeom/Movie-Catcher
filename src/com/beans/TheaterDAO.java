@@ -68,10 +68,8 @@ public class TheaterDAO {
 			String theaterName = rs.getString("theaterName");
 			String areaCode = rs.getString("areaCode");
 			String theaterAddress = rs.getString("theaterAddress");
-			double theaterX = rs.getDouble("theaterX");
-			double theaterY = rs.getDouble("theaterY");
 			if(theaterAddress == null) theaterAddress = "";
-			TheaterDTO dto = new TheaterDTO(theaterCode, theaterName, areaCode, theaterAddress, theaterX, theaterY);
+			TheaterDTO dto = new TheaterDTO(theaterCode, theaterName, areaCode, theaterAddress);
 			list.add(dto);
 		}
 		int size = list.size();
@@ -97,7 +95,7 @@ public class TheaterDAO {
 		int cnt = 0;
 		TheaterDTO[] arr = null;
 		try {
-			pstmt = conn.prepareStatement(D.SQL_THEATER_UPDATE);
+			pstmt = conn.prepareStatement(D.SQL_THEATER_SELECT);
 			pstmt.setInt(1, theaterCode);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
@@ -122,25 +120,7 @@ public class TheaterDAO {
 		}
 		
 		return cnt;
-	}
-	
-	public int update(String theaterCode, String theaterX, String theaterY) throws SQLException{
-		int cnt = 0;
-		try {
-			pstmt = conn.prepareStatement(D.SQL_THEATER_ADDRESS);
-			pstmt.setString(1, theaterCode);
-			pstmt.setString(2, theaterX);
-			pstmt.setString(3, theaterY);
-			cnt = pstmt.executeUpdate();
-			
-		} finally {
-			close();
-		}
-		
-		return cnt;
-	}
-	
-	
+	}	
 }
 
 
