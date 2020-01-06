@@ -28,7 +28,7 @@
 <body>
     <header>
         <div class="topnav" id="myTopnav">
-            <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
+            <h1 id="title"><a href="welcome.mc">MOVIE CATCHER</a></h1>
             <div id="nav_ul">
                 <ul>
                     <li class="icon clear"><a href="javascript:void(0);" onclick="myFunction()">

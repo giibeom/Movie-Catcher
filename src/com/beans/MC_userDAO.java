@@ -21,7 +21,21 @@ public class MC_userDAO {
 	
 	// DAO 객체가 생성될때 Connection도 생성된다.
 	public MC_userDAO() {
+
 		conn = ConnectionDAO.getConnection();
+
+		try {
+			Class.forName(D.DRIVER);
+			conn = DriverManager.getConnection(D.URL, D.USERID, D.USERPW);
+			System.out.println("MC_userDAO 객체 생성, 데이터베이스 연결");
+			
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 	}
 	//DB 자원반납 메소드
 	public void close() throws SQLException {
@@ -141,21 +155,26 @@ public class MC_userDAO {
 	}
 	
 	
-	public MC_userDTO [] password(String u_id) throws SQLException {
-		MC_userDTO [] arr = null;
+	public String password(String u_id) throws SQLException {
+		String pw = null;
 		
 		
 		try {
 			pstmt = conn.prepareStatement(D.SQL_MC_USER_PASSWORD);
 			pstmt.setString(1, u_id);
 			rs = pstmt.executeQuery();
-			arr = createArray(rs);
+			if(rs.next()) {
+				pw = rs.getString("u_pw");
+			}else {
+				pw = "";	
+			}
+
 			
 		}finally {
 			close();
 		}
 		
-		return arr; 
+		return pw; 
 	}
 }
 

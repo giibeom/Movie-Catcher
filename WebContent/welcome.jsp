@@ -156,9 +156,9 @@ function fnMove(seq){
         <div class="navigation">
             <nav class="navigation-list">
               <ul>
-                    <li><a href="welcome.html">HOME</a></li>
-                    <li><a href="login.html">LOGIN</a></li>
-                    <li id="id01" class="modal"><a href="join.html">JOIN US</a></li>
+                    <li><a href="welcome.mc">HOME</a></li>
+                    <li><a href="login.mc">LOGIN</a></li>
+                    <li id="id01" class="modal"><a href="signup.mc">JOIN US</a></li>
           
                 </ul>
             </nav>
