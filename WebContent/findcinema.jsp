@@ -1,67 +1,23 @@
-<%@page import="com.beans.TheaterDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>writeBoard</title>
-    <link href="https://fonts.googleapis.com/css?family=Bad+Script&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
+      <meta charset="UTF-8">
+      <title>map</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/header.js" type="text/javascript"></script>
     <script src="js/findcinema.js" type="text/javascript"></script>
 
-
     <link rel="stylesheet" href="css/header.css">
     <link href="css/findcinema.css" rel="stylesheet" type="text/css">
     <link href="css/footer.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<style>
-.map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
-.map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
-.map_wrap {position:relative;width:100%;height:500px;}
-#menu_wrap {position:absolute;top:0;left:0;bottom:0;width:250px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
-.bg_white {background:#fff;}
-#menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
-#menu_wrap .option{text-align: center;}
-#menu_wrap .option p {margin:10px 0;}  
-#menu_wrap .option button {margin-left:5px;}
-#placesList li {list-style: none;}
-#placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
-#placesList .item span {display: block;margin-top:4px;}
-#placesList .item h5, #placesList .item .info {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
-#placesList .item .info{padding:10px 0 10px 55px;}
-#placesList .info .gray {color:#8a8a8a;}
-#placesList .info .jibun {padding-left:26px;background:url(http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;}
-#placesList .info .tel {color:#009900;}
-#placesList .item .markerbg {float:left;position:absolute;width:36px; height:37px;margin:10px 0 0 10px;background:url(http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;}
-#placesList .item .marker_1 {background-position: 0 -10px;}
-#placesList .item .marker_2 {background-position: 0 -56px;}
-#placesList .item .marker_3 {background-position: 0 -102px}
-#placesList .item .marker_4 {background-position: 0 -148px;}
-#placesList .item .marker_5 {background-position: 0 -194px;}
-#placesList .item .marker_6 {background-position: 0 -240px;}
-#placesList .item .marker_7 {background-position: 0 -286px;}
-#placesList .item .marker_8 {background-position: 0 -332px;}
-#placesList .item .marker_9 {background-position: 0 -378px;}
-#placesList .item .marker_10 {background-position: 0 -423px;}
-#placesList .item .marker_11 {background-position: 0 -470px;}
-#placesList .item .marker_12 {background-position: 0 -516px;}
-#placesList .item .marker_13 {background-position: 0 -562px;}
-#placesList .item .marker_14 {background-position: 0 -608px;}
-#placesList .item .marker_15 {background-position: 0 -654px;}
-#pagination {margin:10px auto;text-align: center;}
-#pagination a {display:inline-block;margin-right:10px;}
-#pagination .on {font-weight: bold; cursor: default;color:#777;}
-</style>
-<body>
-    <header>
+
+ <header>
     <div class="topnav" id="myTopnav">
         <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
             
@@ -79,40 +35,31 @@
             </ul> 
         </div>
     </div>
-    </header>
-
-    <!-- 게시판 작성 시작 -->
-
-    <div id = "window">
-    <!--
-        <div id = "find_title">
-            <h2>극장찾기</h2>
-        </div>
-        
-        <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
-        <div class = "col-6" id = "cinema"> 
-           
-            <form id = "find">
-	            <input type="text" id="sample6_postcode" value = "" placeholder="우편번호">
-	            <input type="text" id="sample6_address" value = "" placeholder="주소"><br>
-	            <input type="text" id="sample6_detailAddress"  value = "" placeholder="상세주소">
-	            <input type="text" id="sample6_extraAddress" value = "" placeholder="참고항목">
-	            <input type="button" onclick="sample6_execDaumPostcode()" value="검색하기"><br>
-            </form>
-        </div>
-          -->
+</header>
 
 
-        <div class="map_wrap">
-    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
-
+<body>
+ <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	 <div class = "col-6" id = "cinema"> 
+	<form name="addressForm" method="post" > 
+	<p>우편번호 : <input type="text" size="5" name="m_zipcode" id="sample6_postcode" placeholder="우편번호" readonly>
+	<p>주소 : <input type="text" name="m_address1" id="sample6_address" placeholder="주소" readonly></p>
+	<p>상세주소 : <input type="text" name="m_address2" id="sample6_detailAddress" placeholder="상세주소" ></p>
+	<p><input type="text" name="m_address3" id="sample6_extraAddress" placeholder="참고항목"></p>
+	<input type="button" onclick="sample6_execDaumPostcode()" value="주소 찾기"></p>
+	</form>
+	</div>
+	
+<div class="map_first">
+<div class="map_wrap">
+    <div id="map" style="width:100%;height:100%;position:position;overflow:hidden;"></div>
+	
     <div id="menu_wrap" class="bg_white">
         <div class="option">
             <div>
-                <form onsubmit="searchPlaces(); return false;">
-                    키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15"> 
-                    <button type="submit">검색하기</button> 
+                <form onsubmit="searchPlaces(); return false;" style="width:100%;">
+                    키워드 : <input type="text" value="cgv" id="keyword" size="15"> 
+                    <button type="submit">검색하기 111gggg1</button> 
                 </form>
             </div>
         </div>
@@ -121,55 +68,11 @@
         <div id="pagination"></div>
     </div>
 </div>
+</div>
 
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8d892eed4bc5524e1f6fc7e3e00e7ab4&libraries=services"></script>
+<script>
 
-
-    </div>
-
-
-
-
-    <footer>
-            <div class="policy">
-                    <ul>
-                        <li>회사소개</li>
-                        <li>채용정보</li>
-                        <li>광고/프로모션문의</li>
-                        <li>제휴문의</li>
-                        <li>이용약관</li>
-                        <li>편성기준</li>
-                        <li>개인정보처리방침</li>
-                        <li>법적고지</li>
-                        <li>상생경영</li>
-                        <li>사이트맵</li>
-                    </ul>
-                </div>
-                <div class="clear"></div>
-                <div class="comInfo">
-                    <div class="comlogo"></div>
-                    <div class="sns_link">
-                        <div class="facebook"></div>
-                        <div class="twitter"></div>
-                        <div class="instagram"></div>
-                    </div>
-                    <div class="comAddress">
-                        <address>
-                     기범특별시 성일구 나영동 수진대로 지현길 혜진몰 3층(기범로동)
-                       </address>
-                        <p class="footCom">
-                            <span>대표이사:성연철</span>
-                            <span>사업자등록번호 : 103-80-12345</span>
-                            <span>통신판매업신고번호: 2019-버미레도-1228</span>
-                            <a href="javasript:void(0);" class="btn_goFtc">
-                                <img src="images/btn_reg.png" alt="사업자정보확인">
-                            </a>            
-                        </p>
-                    </div>
-                </div>
-    </footer>
-
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8d892eed4bc5524e1f6fc7e3e00e7ab4&libraries=services"></script>
-   <script>
 // 마커를 담을 배열입니다
 var markers = [];
 
@@ -387,5 +290,6 @@ function removeAllChildNods(el) {
     }
 }
 </script>
+
 </body>
 </html>

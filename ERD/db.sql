@@ -175,10 +175,10 @@ show databases;
 
 create database movie_catcher;
 use movie_catcher;
-grant all privileges on movie_catcher.* to 'myuser'@'localhost';
+grant all privileges on movie_catcher.* to 'root'@'localhost';
 flush privileges;
 
-show grants for 'myuser'@'localhost';
+show grants for 'root'@'localhost';
 
-
+select * from theater;
 
