@@ -11,6 +11,10 @@
 	</c:when>
 	<c:otherwise>
 	<script>
+		<%
+			String id = (String)request.getAttribute("id");
+			session.setAttribute("id", id);
+		%>
 		location.href = "main.mc";
 	</script>
 	</c:otherwise>

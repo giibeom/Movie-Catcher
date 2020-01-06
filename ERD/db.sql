@@ -162,14 +162,16 @@ show TABLES;
 describe board;
 describe ticket;
 describe theater;
+describe mc_user;
 select * from theater;
 select * from hall;
 select * from ticket;
+select * from mc_user mu;
 delete from theater where theaterCode = 1;
 TRUNCATE table theater;
 TRUNCATE table hall;
 TRUNCATE table ticket;
-
+SELECT u_pw FROM mc_user WHERE u_id = "ksi0678";
 
 show databases;
 

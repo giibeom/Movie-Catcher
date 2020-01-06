@@ -258,3 +258,9 @@ form {
 .poster{
 	cursor: pointer;	
 }
+
+#logout{
+    position: absolute;
+    top:0;
+    right:0;
+}

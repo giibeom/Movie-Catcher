@@ -173,7 +173,6 @@ public class MC_userDAO {
 		}finally {
 			close();
 		}
-		
 		return pw; 
 	}
 }

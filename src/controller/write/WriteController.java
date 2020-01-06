@@ -58,7 +58,7 @@ public class WriteController extends HttpServlet {
 			command = new loginCommand();
 			command.execute(request, response);
 			viewPage = "loginOk.jsp";
-		break;
+			break;
 		case "/signup.mc":
 			viewPage = "signup.jsp";
 			break;

@@ -4,7 +4,11 @@
 	String movieName = request.getParameter("movieName");
 	String movieId = request.getParameter("movieId");
 %>
+<%
+	String a = (String)session.getAttribute("id");
+%>
 <script>
+	alert("<%= a%>");
 	var mvName = "<%= movieName %>";
 	var mvId = "<%= movieId %>";
 </script>

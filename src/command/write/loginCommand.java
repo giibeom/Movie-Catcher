@@ -29,12 +29,11 @@ public class loginCommand implements Command {
 				e.printStackTrace();
 			} 
 		}
-		if(userPw == pw) {
+		if(userPw.equals(pw)) {
 			cnt = 1;
 		}
-		
 		request.setAttribute("result", cnt);
-
+		request.setAttribute("id", id);
 	}
 
 }

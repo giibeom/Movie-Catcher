@@ -20,7 +20,7 @@ public class signupCommand implements Command {
 		if(u_name == null || u_name.trim().length() == 0) u_name = "";
 		String u_email = request.getParameter("email");
 		String u_phone = request.getParameter("phoneNum");
-		String u_date = request.getParameter("datepicker");
+		String u_date = request.getParameter("birth");
 		if (u_id != null && u_pw != null && u_id.trim().length() > 0 && u_pw.trim().length() > 0) {
 			try {
 				cnt = dao.insert(u_id, u_pw, u_name, u_email, u_phone, u_date);
