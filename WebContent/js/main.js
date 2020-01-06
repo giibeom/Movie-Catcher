@@ -76,7 +76,11 @@ $(document).ready(function(){
         $("#upComing").css("display", "inline-block");
         $("#nowIn").css("display", "none");
     });
+    
+   
 });
+
+
 
 function doNowIn() {
     jQuery("#nowIn").srolling({
@@ -208,21 +212,27 @@ function getPoster(jsonObj, movieName, rank){
     var arr = jsonObj.results;
     var poster;
     var vote;
+    var id;
+    var mdbName;
     for(var i = 0; i < arr.length; i++){
         if(((arr[i].title) == (movieName)) || (((arr[i].title).toLowerCase().split(" ").join("")).match(movieName.toLowerCase().split(" ").join(""))) ){
             poster =  arr[i].poster_path;
+            mdbName = arr[i].title;
             vote = arr[i].vote_average;
+            id = arr[i].id;
             getTeaserId(arr[i].id, arr[i].title, rank);
             break;
         }
     }
     if(poster == null){
+    	 mdbName = arr[0].title;
+    	id = arr[0].id;
         poster = arr[0].poster_path;
         vote = arr[0].vote_average;
         getTeaser(arr[0].id, arr[0].title);
     }
 
-        posters[rank] = "<img src='http://image.tmdb.org/t/p/w500" + poster +"' width='200px' height='280px'>";
+        posters[rank] = "<div class='"+ mdbName + "&&" + id +"'><img class = 'poster' src='http://image.tmdb.org/t/p/w500" + poster +"' width='200px' height='280px'></div>";
         nowchk ++;
         if(nowchk == 10){
             doNowIn();
@@ -232,7 +242,7 @@ function getPoster(jsonObj, movieName, rank){
 
 function getTeaserId(id, movieName, rank){
     
-    var url = "https://api.themoviedb.org/3/movie/" + id + "/videos?api_key=55d244c83c49693b6fd6606c768103eb&language=ko-KR";
+    var url = "https://api.themoviedb.org/3/movie/" +	 id + "/videos?api_key=55d244c83c49693b6fd6606c768103eb&language=ko-KR";
     $.ajax({
 		url : url,
 		type : "GET",
@@ -274,6 +284,12 @@ function getTeaser(data, movieName, rank){
     if(tchk == 10){
         doUpcoming();
         doTeaser();
+        $('.poster').click(function(){
+        	var info = $(this).closest('div').attr('class');
+        	var clickName = info.split("&&")[0];
+        	var clickid = info.split("&&")[1];
+        	location.href = "mv_info.jsp?movieName=" + clickName + "&movieId=" + clickid;
+        });
     }
 }
 
@@ -304,12 +320,14 @@ function getUpcomingPosters(data, movieName){
     var poster;
     var vote;
     var releasedate;
+    var id;
     for(var i = 0; i < arr.length; i++){
         if(( (arr[i].title) == (movieName) ) || (((arr[i].title).toLowerCase().split(" ").join("")).match(movieName.toLowerCase().split(" ").join(""))) ){
                 if(releasedate == null) releasedate = arr[i].release_date;
                 
                 if(arr[i].release_date >= releasedate){
                     releasedate = arr[i].release_date;
+                    id = arr[i].id;
                     poster =  arr[i].poster_path;
                 }
             
@@ -318,7 +336,7 @@ function getUpcomingPosters(data, movieName){
     }
     
     if(poster != null){
-        upcomings[upcom] = "<img src='http://image.tmdb.org/t/p/w500" + poster +"' width='200px' height='280px'>";
+        upcomings[upcom] = "<div class='"+ movieName + "&&" + id +"'><img class = 'poster' src='http://image.tmdb.org/t/p/w500" + poster +"' width='200px' height='280px'></div>";
         upcom++;
         
     }

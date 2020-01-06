@@ -59,7 +59,6 @@
 
 
 
-
         <!-- Slideshow container-->
         <div class="col-9">
             <div id = "Teasers">

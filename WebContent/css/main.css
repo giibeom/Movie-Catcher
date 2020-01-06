@@ -255,3 +255,6 @@ form {
       margin-top: 3px;
   }
 
+.poster{
+	cursor: pointer;	
+}

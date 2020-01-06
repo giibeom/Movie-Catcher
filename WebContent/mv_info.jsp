@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String movieName = request.getParameter("movieName");
+	String movieId = request.getParameter("movieId");
+%>
+<script>
+	var mvName = "<%= movieName %>";
+	var mvId = "<%= movieId %>";
+</script>
 <!DOCTYPE html>
 <html lang="ko">
 <head>

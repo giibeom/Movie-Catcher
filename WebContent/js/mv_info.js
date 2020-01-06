@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
-  var mvName = "시동";
+
   var api_key = "55d244c83c49693b6fd6606c768103eb";
 
-  url = "https://api.themoviedb.org/3/search/movie?api_key=" + api_key + "&language=ko-KR&query=" + mvName +"&page=1";
+  var url = "https://api.themoviedb.org/3/search/movie?api_key=" + api_key + "&language=ko-KR&query=" + mvName +"&page=1";
 
   $.ajax({
     url : url,
@@ -19,27 +19,6 @@ $(document).ready(function(){
       }
     }
   });
-
-
-  var api_key2 = "430156241533f1d058c603178cc3ca0e";
-  url2 = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=" + api_key2 + "&movieNm=" + mvName;
-
-  $.ajax({
-    url : url2,
-    type : "GET",
-    cache : false,
-    success : function(data, status) {
-      if(status == "success") {
-        // 영화진흥원 영화목록 접근
-        getMovieList(data, api_key2, mvName);
-      } else {
-        alert("에러");
-        history.back();
-      }
-    }
-  });
-
-
 });
 
 function noMovie() {
@@ -59,7 +38,7 @@ function noMovie() {
     var results = jsonObj.results;
     var chk;
       for(var i = 0; i < results.length; i++) {
-        if(mvName == results[i].title.trim()) {
+        if(mvId == results[i].id) {
           chk = i;
           break;
         }
@@ -88,6 +67,26 @@ function noMovie() {
     } else {
       noMovie();
     }
+    var getMovieName = mvName.split(":").join("");
+    var checkMovieName = getMovieName.split(" ")[0];
+    
+    var api_key2 = "150bfb37a86f8bfb899cdc5192ee9967";
+    url2 = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=" + api_key2 + "&movieNm=" + checkMovieName;
+
+    $.ajax({
+      url : url2,
+      type : "GET",
+      cache : false,
+      success : function(data, status) {
+        if(status == "success") {
+          // 영화진흥원 영화목록 접근
+          getMovieList(data, api_key2, mvName);
+        } else {
+          alert("에러");
+          history.back();
+        }
+      }
+    });
   }
 
   function getIdVideo(mv_id, api_key) {
@@ -201,14 +200,15 @@ function noMovie() {
     if(totCnt != 0) {
       
       var movieList = jsonObj.movieListResult.movieList;
-      var ck;
+      var ck = -1;
       
       for(var i = 0; i < movieList.length; i++) {
-        if(movieNm == movieList[i].movieNm.trim()) {
+        if(( (movieList[i].movieNm) == (movieNm) ) || (((movieList[i].movieNm).toLowerCase().split(" ").join("")).match(movieNm.toLowerCase().split(" ").join(""))) ) {
           ck = i;
           break;
         }
       }
+      if(ck == -1) ck = 0;
 
       movieList = jsonObj.movieListResult.movieList[ck];
 
