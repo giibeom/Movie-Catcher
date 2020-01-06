@@ -59,7 +59,7 @@
             <div>
                 <form onsubmit="searchPlaces(); return false;" style="width:100%;">
                     키워드 : <input type="text" value="cgv" id="keyword" size="15"> 
-                    <button type="submit">검색하기 1</button> 
+                    <button type="submit">검색하기 1111</button> 
                 </form>
             </div>
         </div>
