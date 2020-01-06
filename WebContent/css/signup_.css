@@ -41,11 +41,11 @@ input {
     border-bottom: none;
 }
 
-#check {
+#check, #birthChk {
     position: relative;
 }
 
-#pNum button, #check button {
+#pNum button, #check button, #birthChk button {
     font-size: 14px;
     cursor: pointer;
     position: absolute;

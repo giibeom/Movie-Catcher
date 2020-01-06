@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +29,7 @@
 <body>
     <header>
         <div class="topnav" id="myTopnav">
-            <h1 id="title"><a href="welcome.mc">MOVIE CATCHER</a></h1>
+            <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
             <div id="nav_ul">
                 <ul>
                     <li class="icon clear"><a href="javascript:void(0);" onclick="myFunction()">
@@ -47,15 +48,23 @@
 
     <article>
         <!-- 검색창-->
-        <div class="col-8" id="search">
+        <!-- <div class="col-8" id="search"> -->
+        <div class="col-12 d1">
             <form>
                 <input type="text" placeholder="검색어 입력">
                 <button type="submit"><img id="m_icon" src="images/m_icon_3.png"></button>
             </form>
         </div>
         <div class="clear"></div>
+
+
+
+
         <!-- Slideshow container-->
-        <div class="col-9" id="Teasers">
+        <div class="col-9">
+            <div id = "Teasers">
+
+            </div>
         </div>
 
 

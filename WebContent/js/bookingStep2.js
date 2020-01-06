@@ -1,0 +1,90 @@
+var seatRow;
+var seats = "";
+var seatArray = ["", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q"];
+var row = 1;
+$(document).ready(function(){
+	if(hallSeat <= 80){
+		seatRow = hallSeat % 8;
+		for(var i = 0; i < hallSeat;){
+			seats += "<ul class='seatrow'>";
+			for( var j = 1; j <= 8 ; j ++){
+				seats += "<li class='seatLine'><div class='eachSeat'>" + j + "</div></li>";
+				i++;
+			}
+			seats += "</ul>";
+		}
+		$('#selectSeat').html(seats);
+	}
+	if(80 < hallSeat && hallSeat <= 196){
+		seatRow = hallSeat % 12;
+		for(var i = 0; i < hallSeat;){
+			seats += "<ul class='seatrow'><li class='seatLine'>" + seatArray[row] + "</li>";
+			for(var j = 1; j <= 12 ; j ++){
+				seats += "<li class='seatLine" + j + "'><div class='eachSeat" + j + " seat" + seatArray[row] + j +"'>" + j + "</div></li>";
+				i++;
+				if(i == hallSeat) break;
+			}
+			seats += "</ul>";
+			seats += "<div class='clear'>";
+			row ++;
+		}
+		$('#selectSeat').html(seats);
+	}
+	if(196 < hallSeat && hallSeat <= 250){
+		seatRow = hallSeat % 16;
+		for(var i = 0; i < hallSeat;){
+			seats += "<ul class='seatrow'><li class='seatLine'>" + seatArray[row] + "</li>";
+			for(var j = 1; j <= 16 ; j ++){
+				seats += "<li class='seatLine" + j + "'><div class='eachSeat" + j + " seat" + seatArray[row] + j +"'>" + j + "</div></li>";
+				i++;
+				if(i == hallSeat) break;
+			}
+			seats += "</ul>";
+			seats += "<div class='clear'>";
+			row ++;
+		}
+		$('#selectSeat').html(seats);
+	}
+	if(250< hallSeat && hallSeat <= 400){
+		seatRow = hallSeat % 24;
+		for(var i = 0; i < hallSeat;){
+			seats += "<ul class='seatrow'><li class='seatLine'>" + seatArray[row] + "</li>";
+			for(var j = 1; j <= 24 ; j ++){
+				seats += "<li class='seatLine" + j + "'><div class='eachSeat" + j + " seat" + seatArray[row] + j +"'>" + j + "</div></li>";
+				i++;
+				if(i == hallSeat) break;
+			}
+			seats += "</ul>";
+			seats += "<div class='clear'>";
+			row ++;
+		}
+		$('#selectSeat').html(seats);
+	}
+	if(400 < hallSeat){
+		seatRow = hallSeat % 40;
+		for(var i = 0; i < hallSeat;){
+			seats += "<ul class='seatrow'><li class='seatLine'>" + seatArray[row] + "</li>";
+			for(var j = 1; j <= 20 ; j ++){
+				seats += "<li class='seatLine" + j + "'><div class='eachSeat" + j + " seat" + seatArray[row] + j +"'>" + j + "</div></li>";
+				i++;
+				if(i == hallSeat) break;
+			}
+			seats += "</ul>";
+			seats += "<div class='clear'>";
+			row ++;
+		}
+		$('#selectSeat').html(seats);
+	}
+});
+
+function doRandom(){
+	for(var i = 0; i < reatSeat; i++){
+		while(true){
+			
+		}
+	}
+}
+
+function makeX(){
+	
+}

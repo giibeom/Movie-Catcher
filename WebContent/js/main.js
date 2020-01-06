@@ -27,7 +27,7 @@ today = yyyy+''+mm+dd;
 var weekdate = "20191229";
 
 $(document).ready(function(){
-    var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=" + today;
+    var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=150bfb37a86f8bfb899cdc5192ee9967&targetDt=" + today;
     $.ajax({
 		url : url,
 		type : "GET",
@@ -37,7 +37,7 @@ $(document).ready(function(){
 		}
     }); 
 
-    var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=" + weekdate;
+    var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=150bfb37a86f8bfb899cdc5192ee9967&targetDt=" + weekdate;
     $.ajax({
 		url : url,
 		type : "GET",
@@ -47,7 +47,7 @@ $(document).ready(function(){
 		}
     }); 
 
-    var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=430156241533f1d058c603178cc3ca0e&openStartDt=2020";
+    var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=150bfb37a86f8bfb899cdc5192ee9967&openStartDt=2020";
 
     $.ajax({
 		url : url,
@@ -58,7 +58,7 @@ $(document).ready(function(){
 		}
     }); 
 
-    var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=430156241533f1d058c603178cc3ca0e&openStartDt=2020&curPage=2";
+    var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=150bfb37a86f8bfb899cdc5192ee9967&openStartDt=2020&curPage=2";
     $.ajax({
 		url : url,
 		type : "GET",
@@ -222,7 +222,7 @@ function getPoster(jsonObj, movieName, rank){
         getTeaser(arr[0].id, arr[0].title);
     }
 
-        posters[rank] = "<img src='http://image.tmdb.org/t/p/w500" + poster +"' width='200px' height='280px' id='rankposter" + rank + ">";
+        posters[rank] = "<img src='http://image.tmdb.org/t/p/w500" + poster +"' width='200px' height='280px'>";
         nowchk ++;
         if(nowchk == 10){
             doNowIn();

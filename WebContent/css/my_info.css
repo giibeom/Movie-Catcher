@@ -25,6 +25,7 @@
 
 body {
 	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -45,52 +46,102 @@ body {
 /* 영화 제목, 평점 */
 #mv_title {
 	font-weight: bolder;
-	font-size: large;
-
+	font-size: x-large;
 }
+
 
 #mv_avg{
 	display: inline-block;
-	
+	font-size: large;
 }
 
 #mainPoster {
-	padding: 10% 0 0  10%;
+	border-radius: 4px;
+	border : 1px solid rgb(179,179,179);
+	margin-top: 5%;
+	margin-left: 10%;
+}
+
+.poster img {
+	transform: scale(1.0);
+	transition: transform .3s;
+}
+
+.poster img:hover {
+	cursor: pointer;
+	transform: scale(1.07);
+	/* border : 10px solid #ffffff; */
 }
 
 #mv {
-	padding-top: 10%;
+	padding-top: 5%;
 	padding-left: 3%;
 }
 
-/* 
+#mv hr {
+	width: 80%;
+}
+
 #mv_resv {
+	position: absolute;
 	display: inline-block;
 	margin-left: 80%;
-	padding : 5px 10px;
+	padding: 10px 15px;
+	/* padding : 15px 20px; */
 	border : none;
 	border-radius: 4px;
 	background-color: #E31D2E;
 	color: white;
-} */
+	opacity: 0.6;
+	top: 25%;
+}
 
 #mv_resv:hover {
 	cursor: pointer;
-	opacity: 0.8;
+	opacity: 1;
+	transition: 0.3s;
 }
 
 span {
 	display: inline-block;
+	padding-right: 3px;
 	padding-bottom: 3px;
 }
 
 
 /* 줄거리 */
-#overview {
-	padding-top: 5%;
-	padding-left: 3%;
+
+#mv_content {
+	margin-left: 3%;
+	font-weight: bolder;
 }
 
+.mv_con {
+	border : 1px solid rgb(179,179,179);
+	box-shadow: 1px 1px 1px rgb(179,179,179);
+	border-radius: 4px;
+	padding : 2%;
+	margin-top: 2%;
+	margin-left: 3%;
+	font-size: 14px;
+	opacity: 1;
+	line-height: 1.6em;
+}
+
+#overview {
+	display: inline-block;
+}
+
+
+/* 스틸컷 */
+#steelCut h3 {
+	padding-bottom: 5px;
+}
+
+#scrolling{
+	border-radius: 4px;
+	box-shadow: 5px 5px 5px rgb(179,179,179);
+}
 
 
 
@@ -130,6 +181,7 @@ span {
 	padding : 3%;
 	border-radius: 4px;
 	border : 1px solid rgb(179,179,179);
+	box-shadow: 3px 3px 3px rgb(179,179,179);
 }
 
 
@@ -152,4 +204,26 @@ span {
 	border: 1px solid rgb(179,179,179);
 	border-radius: 4px;
 	
+}
+
+
+/* 별 */
+
+.starR {
+	/* background: url("http://miuu227.godohosting.com/images/icon/ico_review.png") no-repeat right 0; */
+	background: url("../images/star2.png") no-repeat right 0;
+	background-size: auto 100%;
+	width : 15px;
+	height: 15px;
+	display: inline-block;
+	text-indent : -9999px;
+	cursor: pointer;
+}
+
+/* .starR.on{
+	background-position: 0 0 ;
+} */
+
+.starR.off {
+	display :none;
 }

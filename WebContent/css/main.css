@@ -78,89 +78,50 @@
 }
 
 article {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: auto;
 }
 
-
-
-/* search */
-#search {
-    float: none;
-    padding: 30px 0px;
-    margin: 0 auto;
-}
-
-#search form {
-    margin: auto;
-}
-
-#search input {
-    width: 100%;
-    height: 42px;
-    padding-left: 10px;
-    border: 2px solid #E31D2E;
-    border-radius: 5px;
-    outline: none;
-    background: white;
-    color: #9E9C9C;
-}
-
-#search button {
-    position: absolute;
-    width: 42px;
-    height: 42px;
-    border: none;
-    background: #E31D2E;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-}
-
-#search button:before {
-
-    font-family: FontAwesome;
-    font-size: 16px;
-    color: #F9F0DA;
-}
-
-
-#m_icon {
-    width: 20px;
-    margin-top: 3px;
-}
 
 /* 메인 티져들 */
 #Teasers{
     position:relative;
     overflow:hidden;
     height:500px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px rgb(179,179,179);
 }
 
 
 /*box office*/
 
 #box {
-    background-color: aliceblue;
     height: 500px;
 }
 
 #box h2 {
     text-align: center;
-    margin: 20px 5px;
+    margin: 0 5px 5px 5px;
 }
 
+
+#boxrank {
+    margin-left: 5%;
+    border-radius: 4px;
+    background-color: whitesmoke;
+}
 
 #box li {
     list-style: none;
     display: block;
-    padding: 2%;
-    background-color: beige;
-    margin:1px auto;
+    padding: 3%;
+    margin: 3px auto;
 }
 
 #box li:hover {
     cursor: pointer;
-    background-color: antiquewhite;
+    border : 3px solid rgb(179,179,179,0.5);
+    border-radius: 4px;
 }
 
 #resv {
@@ -168,10 +129,13 @@ article {
     width: 90%;
     cursor: pointer;
     border: none;
-    background-color: #f2001a;
+    color : white;
+    background-color: #E31D2E;
+    transition: 0.3s;
     opacity: 0.5;
-    margin: 0 5%;
-    padding: 5px;
+    margin: 3% 5% 5% 5%;
+    padding: 10px;
+    border-radius: 4px;
 }
 
 #resv:hover {
@@ -190,12 +154,18 @@ article {
     position:relative;
     overflow:hidden;
     height:300px;
+    width : 95%;
 }
 
 #upComing {
     display: none;
 }
 /* 최신 상영작, 상영예정작 버튼 */
+
+#tabs {
+    margin-top: 50px;
+}
+
 #tabM{
     text-align: center;
 }
@@ -204,21 +174,21 @@ article {
     width: 100%;
     display:inline-block;
     height: 50px;
-    background-color: #f2f2f2;
-    border-top: 1px solid #e1e1e1;
-    border-bottom: 3px solid #964233;
+    /* background-color: #f2f2f2; */
+    /* border-top: 1px solid #e1e1e1; */
+    /* border-bottom: 3px solid #964233; */
     text-align: center;
 }
 
 
 #showNowIn, #showUpComing {
     display: inline-block;
-    border-top:1px solid #E31D2E;
+    /* border-top:1px solid #E31D2E; */
     height: 50px;
     width: 100px;
     color: black;
     cursor: pointer;
-    margin: 0px 30px;
+    margin: 10px 30px;
     line-height: 50px;
     font-weight: 600;
 }
@@ -226,14 +196,19 @@ article {
 /*누적 관객수에 따른 랭킹*/
 
 .rankAudience{
-    height: 500px;
+    border : 1px solid black;
+    height: 350px;
 }
 
 .rankweek{
-    height: 500px;
+    border : 1px solid black;
+    height: 350px;
 }
 
+.rankAudience h4 {
+    text-align: center;
 
+}
 
 
 
@@ -241,4 +216,42 @@ article {
 -------------------------------------------------------------------------
 */
 
+/* 검색어 입력창 */
+form {
+    position: relative;
+    width: 80%;
+    margin: 0 auto 30px auto ;
+  }
+
+  .d1 input {
+    width: 100%;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #E31D2E;
+    border-radius: 5px;
+    outline: none;
+    background: white;
+    color: #9E9C9C;
+  }
+  .d1 button {
+    position: absolute; 
+    top: 0;
+    right: 0px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: #E31D2E;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  .d1 button:before {
+  
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #F9F0DA;
+  }
+  #m_icon {
+      width: 20px;
+      margin-top: 3px;
+  }
 
