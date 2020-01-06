@@ -27,6 +27,7 @@ public interface D {
 	public static final String SQL_THEATER_ALL = "SELECT * FROM theater";
 	public static final String SQL_THEATER_SELECT = "SELECT * FROM theater WHERE theaterCode = ?";
 	public static final String SQL_THEATER_UPDATE = "UPDATE theater SET theaterAddress = ? WHERE theaterCode = ?";
+	public static final String SQL_THEATER_ADDRESS = "UPDATE theater SET theaterX = ? , theaterY = ? WHERE theaterCode = ?";
 	
 	public static final String SQL_MOVIE_INSERT = "INSERT INTO movie (m_name) VALUES (?)";
 	public static final String SQL_MOVIE_UPDATE = "UPDATE movie SET m_db_id = ?, m_kobis_id = ? WHERE m_name = ?";

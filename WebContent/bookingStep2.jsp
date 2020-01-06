@@ -1,7 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%!
+	int restSeat = 80;
+	int hallSeat = 80;
+%>
+<script>
+var hallSeat = <%= hallSeat %>;
+var restSeat = <%= restSeat %>;
+</script>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -18,15 +27,17 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap"
 	rel="stylesheet">
+
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="js/header.js" type="text/javascript"></script>
+<script src="js/bookingStep2.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="css/booking.css">
 
 <title>영화 예매하기</title>
 </head>
-
 <body>
 	<!-- header -->
 	<div class="topnav" id="myTopnav">
@@ -99,11 +110,8 @@
 		<div class="seat">
 			<p>좌석선택</p>
 			<div id="selectSeat">
-			<c:if test="">
-			
-			</c:if>
-			
-			
+				
+
 			</div>
 		</div>
 	</div>
@@ -118,39 +126,39 @@
 			</ul>
 		</div>
 	</div>
-<footer>
-	<div class="policy">
-		<ul>
-			<li>회사소개</li>
-			<li>채용정보</li>
-			<li>광고/프로모션문의</li>
-			<li>제휴문의</li>
-			<li>이용약관</li>
-			<li>편성기준</li>
-			<li>개인정보처리방침</li>
-			<li>법적고지</li>
-			<li>상생경영</li>
-			<li>사이트맵</li>
-		</ul>
-	</div>
-	<div class="clear"></div>
-	<div class="comInfo">
-		<div class="comlogo"></div>
-		<div class="sns_link">
-			<div class="facebook"></div>
-			<div class="twitter"></div>
-			<div class="instagram"></div>
+	<footer>
+		<div class="policy">
+			<ul>
+				<li>회사소개</li>
+				<li>채용정보</li>
+				<li>광고/프로모션문의</li>
+				<li>제휴문의</li>
+				<li>이용약관</li>
+				<li>편성기준</li>
+				<li>개인정보처리방침</li>
+				<li>법적고지</li>
+				<li>상생경영</li>
+				<li>사이트맵</li>
+			</ul>
 		</div>
-		<div class="comAddress">
-			<address>기범특별시 성일구 나영동 수진대로 지현길 혜진몰 3층(기범로동)</address>
-			<p class="footCom">
-				<span>대표이사:성연철</span> <span>사업자등록번호 : 103-80-12345</span> <span>통신판매업신고번호:
-					2019-버미레도-1228</span> <a href="javasript:void(0);" class="btn_goFtc">
-					<img src="images/btn_reg.png" alt="사업자정보확인">
-				</a>
-			</p>
+		<div class="clear"></div>
+		<div class="comInfo">
+			<div class="comlogo"></div>
+			<div class="sns_link">
+				<div class="facebook"></div>
+				<div class="twitter"></div>
+				<div class="instagram"></div>
+			</div>
+			<div class="comAddress">
+				<address>기범특별시 성일구 나영동 수진대로 지현길 혜진몰 3층(기범로동)</address>
+				<p class="footCom">
+					<span>대표이사:성연철</span> <span>사업자등록번호 : 103-80-12345</span> <span>통신판매업신고번호:
+						2019-버미레도-1228</span> <a href="javasript:void(0);" class="btn_goFtc">
+						<img src="images/btn_reg.png" alt="사업자정보확인">
+					</a>
+				</p>
+			</div>
 		</div>
-	</div>
-</footer>
+	</footer>
 </body>
 </html>
