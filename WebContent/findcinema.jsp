@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
       <meta charset="UTF-8">
-      <title>cgv map</title>
+      <title>map</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/header.js" type="text/javascript"></script>
     <script src="js/findcinema.js" type="text/javascript"></script>
@@ -19,7 +19,7 @@
 
  <header>
     <div class="topnav" id="myTopnav">
-        <h1 id="title"><a href="welcome.html">THEATER SEARCH</a></h1>
+        <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
             
         <div id="nav_ul">
         <ul>
