@@ -11,7 +11,7 @@ public interface D {
 	public static final String SQL_MC_USER_INSERT = "INSERT INTO mc_user (u_id, u_pw, u_name, u_email, u_phone, u_date) VALUES (?, ?, ?, ?, ?, ?)";
 	public static final String SQL_MC_USER_PASSWORD = "SELECT u_pw FROM mc_user WHERE u_id = ?";
 	public static final String SQL_MC_USER_SELECT = "SELECT * FROM mc_user WHERE u_id = ?";
-	public static final String SQL_MC_USER_UPDATE = "UPDATE mc_user SET u_pw = ?,  u_email = ?, u_phone = ? where u_id = ?";
+	public static final String SQL_MC_USER_UPDATE = "UPDATE mc_user SET u_name = ?, u_pw = ?,  u_email = ?, u_phone = ? where u_id = ?";
 	public static final String SQL_MC_USER_DELETE = "DELETE FROM mc_user WHERE u_id = ?";
 	
 	

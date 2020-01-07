@@ -80,15 +80,16 @@ public class MC_userDAO {
 		return cnt;
 	}
 	
-	public int update(String u_pw, String u_email, String u_phone, String u_id ) throws SQLException {
+	public int update(String u_name, String u_pw, String u_email, String u_phone, String u_id ) throws SQLException {
 		int cnt = 0;
 		
 		try {
 			pstmt = conn.prepareStatement(D.SQL_MC_USER_UPDATE);
-			pstmt.setString(1, u_pw);
-			pstmt.setString(2, u_email);
-			pstmt.setString(3, u_phone);
-			pstmt.setString(4, u_id);
+			pstmt.setString(1, u_name);
+			pstmt.setString(2, u_pw);
+			pstmt.setString(3, u_email);
+			pstmt.setString(4, u_phone);
+			pstmt.setString(5, u_id);
 			
 			cnt = pstmt.executeUpdate();
 		}finally {

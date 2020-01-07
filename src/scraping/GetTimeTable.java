@@ -21,7 +21,7 @@ public class GetTimeTable {
 		for (int i = 0; i < tdto.length; i++) {
 			String areacode = tdto[i].getAreaCode();
 			String theatercode = tdto[i].getTheaterCode();
-			String selectDate = "20200102";
+			String selectDate = "20200107";
 			String theaterName = tdto[i].getTheaterName();
 
 			String url = "http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=" + areacode
