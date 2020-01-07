@@ -52,9 +52,9 @@
         <!-- 검색창-->
         <!-- <div class="col-8" id="search"> -->
         <div class="col-12 d1">
-            <form>
-                <input type="text" placeholder="검색어 입력">
-                <button type="submit"><img id="m_icon" src="images/m_icon_3.png"></button>
+            <form name="searchBox">
+                <input type="text" id="movieName" placeholder="검색어 입력">
+                <button type="submit" id="searchButton"><img id="m_icon" src="images/m_icon_3.png"></button>
             </form>
         </div>
         <div class="clear"></div>

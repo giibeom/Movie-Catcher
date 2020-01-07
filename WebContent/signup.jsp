@@ -41,7 +41,8 @@
 			<div id="info">
 				<h5>회원정보 입력</h5>
 				<input id="nickname" type="text" placeholder="아이디 입력" name="id" required> 
-				<input type="password" placeholder="(필수) 비밀번호 입력"	name="pw" required> <input type="password" placeholder="(필수) 비밀번호 재확인" name="pw" required>
+				<input type="password" placeholder="(필수) 비밀번호 입력"	name="pw" required> 
+				<input type="password" placeholder="(필수) 비밀번호 재확인" name="pwchk" required>
 				<div id="birthChk">
 					<input id="birth" type="text" maxlength="10" placeholder="(필수) 생년월일(yyyy-mm-dd)" name="birth" required>
 					<button type="button">확인</button>
@@ -49,21 +50,18 @@
 				<input id="email" type="email" placeholder="(필수) 이메일 입력" name="email" required> 
 				<input id="nick" type="text" placeholder="(선택) 닉네임 입력" name="nick">
 			</div>
-
-			<div id="phone">
+			<div id="phoneform">
 				<h5>휴대폰인증</h5>
 				<div id="pNum">
-					<input type="text" name="phoneNum" placeholder="(필수) 휴대폰 전화번호 입력(-제외)" required>
+					<input type="text" name="phone" placeholder="(필수) 휴대폰 전화번호 입력(-제외)" required>
 					<button type="button">인증</button>
 				</div>
 				<div id="check">
 					<input type="text" name="certificationNum" placeholder="인증번호 입력" required>
 					<button type="button">확인</button>
 				</div>
-
 				<p>* 인증번호가 도착하지 않았을 경우 '인증'버튼을 다시 눌러주세요.</p>
 			</div>
-
 			<div id="agree">
 				<h5>약관동의</h5>
 				<div id="allAgree">

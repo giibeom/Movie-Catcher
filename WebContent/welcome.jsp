@@ -167,7 +167,7 @@ function fnMove(seq){
     </div>
 <script>
 function moveback() {
-    location.href = "welcome.html";
+    location.href = "welcome.mc";
 }
 </script>
 </body>

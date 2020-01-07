@@ -4,8 +4,6 @@ var openYear1 = "";
 
 
 $(document).ready(function(){
-	
-	 var mvName = "엽문";
 	  var api_key = "55d244c83c49693b6fd6606c768103eb";
 
 	  url = "https://api.themoviedb.org/3/search/movie?api_key=" + api_key + "&language=ko-KR&query=" + mvName +"&page=1";
