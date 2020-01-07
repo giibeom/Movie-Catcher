@@ -193,6 +193,16 @@
                 </div>
             </li>
         </ul>
+        
+<%-- 페이징 
+<jsp:include page="pagination.jsp">
+	<jsp:param value="${writePages}" name="writePages"/>
+	<jsp:param value="${totalPage}" name = "totalPage"/>
+	<jsp:param value="${page }" name = "curPage"/>
+</jsp:include>
+--%>        
+    
+        
         <div class="pager">
             <ul>
                 <li class="prev"><a href="">◀</a></li>
