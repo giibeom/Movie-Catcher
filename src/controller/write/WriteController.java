@@ -56,8 +56,6 @@ public class WriteController extends HttpServlet {
 			viewPage = "main.jsp";
 			break;
 		case "/searchPage.mc":
-			//command = new searchPageCommand();
-			//command.execute(request, response);
 			viewPage = "searchPage.jsp";
 			break;
 		case "/mv_info.mc":
