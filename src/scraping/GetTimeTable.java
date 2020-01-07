@@ -21,11 +21,11 @@ public class GetTimeTable {
 		for (int i = 0; i < tdto.length; i++) {
 			String areacode = tdto[i].getAreaCode();
 			String theatercode = tdto[i].getTheaterCode();
-			String selectDate = "20200107";
+			String selectDate = "20200108";
 			String theaterName = tdto[i].getTheaterName();
 
 			String url = "http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=" + areacode
-					+ "&theaterCode=" + theatercode; // 크롤링할 url지정
+					+ "&theaterCode=" + theatercode ; // 크롤링할 url지정
 			Document doc = null; // Document에는 페이지의 전체 소스가 저장된다
 			try {
 				doc = Jsoup.connect(url).get();
