@@ -3,7 +3,7 @@ package common;
 public interface D {
 	public static final String DRIVER = "org.mariadb.jdbc.Driver";
 	public static final String URL = "jdbc:mariadb://localhost:3306/movie_catcher";
-	public static final String USERID = "myuser";
+	public static final String USERID = "root";
 	public static final String USERPW = "1234";
 //	public static final String USERPW = "0707";
 	
