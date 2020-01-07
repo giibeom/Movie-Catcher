@@ -85,6 +85,8 @@ public class HallDAO {
 		return arr;
 	}
 	
+	
+	
 	public HallDTO[] selectByCode(int h_uid) throws SQLException{
 		
 		HallDTO[] arr = null;
@@ -100,4 +102,57 @@ public class HallDAO {
 		
 		return arr;
 	}
+	
+	public HandTDTO []  createTicketArray(ResultSet rs) throws SQLException{
+		ArrayList<HandTDTO> list = new ArrayList<HandTDTO>();
+		while(rs.next()){
+			int h_uid = rs.getInt("h_uid");
+			String hallType = rs.getString("hallType");
+			String hallLocation = rs.getString("hallLocation");
+			String hallSize = rs.getString("hallSize");
+			String theaterCode = rs.getString("theaterCode");
+			String h_movie = rs.getString("h_movie");
+			int t_uid = rs.getInt("t_uid");
+			String movietime = rs.getString("movietime");
+			int restSeat = rs.getInt("restSeat");
+			
+			HandTDTO dto = new HandTDTO(h_uid, hallType, hallLocation
+					, hallSize, theaterCode, h_movie, t_uid, movietime, restSeat);
+			list.add(dto);
+		}
+		int size = list.size();
+		HandTDTO [] arr = new HandTDTO[size];
+		list.toArray(arr);
+		return arr;
+	}
+	
+	public HandTDTO[] selectAll() throws SQLException{
+		
+		HandTDTO[] arr = null;
+		try {
+			pstmt = conn.prepareStatement(D.SQL_HALL_SELECTALL);
+			rs = pstmt.executeQuery();
+			arr = createTicketArray(rs);
+			
+		} finally {
+			close();
+		}
+		
+		return arr;
+	}
+	
+	public int getHallSize() throws SQLException{
+		int cnt = 0;
+		try {
+			pstmt = conn.prepareStatement(D.SQL_HALL_SIZE);
+			rs = pstmt.executeQuery();
+			cnt = rs.getInt("count(*)");
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+	
+	
+	
 }
