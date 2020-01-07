@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import command.write.Command;
 import command.write.loginCommand;
+import command.write.searchPageCommand;
 import command.write.signupCommand;
 
 
@@ -53,6 +54,12 @@ public class WriteController extends HttpServlet {
 			break;
 		case "/main.mc":
 			viewPage = "main.jsp";
+			break;
+		case "/searchPage.mc":
+			viewPage = "searchPage.jsp";
+			break;
+		case "/mv_info.mc":
+			viewPage = "mv_info.jsp";
 			break;
 		case "/loginOk.mc":
 			command = new loginCommand();

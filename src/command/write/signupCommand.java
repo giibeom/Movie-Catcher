@@ -19,7 +19,8 @@ public class signupCommand implements Command {
 		String u_name = request.getParameter("nick");
 		if(u_name == null || u_name.trim().length() == 0) u_name = "";
 		String u_email = request.getParameter("email");
-		String u_phone = request.getParameter("phoneNum");
+		String u_phone = request.getParameter("phone");
+		
 		String u_date = request.getParameter("birth");
 		if (u_id != null && u_pw != null && u_id.trim().length() > 0 && u_pw.trim().length() > 0) {
 			try {

@@ -152,7 +152,7 @@ function fnMove(seq){
 
     <div id="mask">
         
-       <img id="close" src="images/x.JPG" onclick="moveback()">
+       <img id="close" src="images/x.jpg" onclick="moveback()">
         <div class="navigation">
             <nav class="navigation-list">
               <ul>
@@ -167,7 +167,7 @@ function fnMove(seq){
     </div>
 <script>
 function moveback() {
-    location.href = "welcome.jsp";
+    location.href = "welcome.mc";
 }
 </script>
 </body>

@@ -27,6 +27,8 @@ today = yyyy+''+mm+dd;
 var weekdate = "20191229";
 
 $(document).ready(function(){
+	
+	
     var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=150bfb37a86f8bfb899cdc5192ee9967&targetDt=" + today;
     $.ajax({
 		url : url,
@@ -77,7 +79,12 @@ $(document).ready(function(){
         $("#nowIn").css("display", "none");
     });
     
-  
+    
+    $("#searchButton").click(function(e){
+    	e.preventDefault();
+    	var movieName = $("#movieName").val().trim();
+    	window.location.href = "searchPage.mc?movieName="+movieName;
+    });
 });
 
 
