@@ -42,7 +42,7 @@ function chkSubmit(){
       <label for="psw"><b>비밀번호</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
-      <input type="submit" value="login">
+      <input type="submit"  value="login">
 
 	</div>
   </form>

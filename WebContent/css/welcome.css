@@ -224,14 +224,12 @@ button:hover {
 #mask li{
     margin:0 auto;
     text-align: center;
-    border: 1px solid red;
     margin-top: 40px;
 }
 
 .navigation-list {
     width: 50%;
     height: auto;
-    border: 1px solid white;
     margin: 0 auto;
     font-size: 35px;
     font-family: 'Bad Script', cursive;
