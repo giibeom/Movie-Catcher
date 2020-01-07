@@ -61,7 +61,8 @@ span.psw {
   color: #E31D2E;
   cursor: pointer;
 }
-button {
+
+input[type=submit] {
 	background-color: #E31D2E;
 	color: white;
 	padding: 14px 20px;
