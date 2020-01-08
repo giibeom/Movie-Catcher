@@ -152,7 +152,7 @@ function fnMove(seq){
 
     <div id="mask">
         
-       <img id="close" src="images/x.jpg" onclick="moveback()">
+       <img id="close" src="images/x.JPG" onclick="moveback()">
         <div class="navigation">
             <nav class="navigation-list">
               <ul>
