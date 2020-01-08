@@ -34,7 +34,7 @@ var restSeat = <%= restSeat %>;
 <script src="js/header.js" type="text/javascript"></script>
 <script src="js/bookingStep2.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="css/booking.css">
+<link rel="stylesheet" href="css/booking2.css">
 
 <title>영화 예매하기</title>
 </head>

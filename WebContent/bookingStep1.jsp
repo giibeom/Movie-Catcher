@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -23,7 +24,7 @@
 <script src="js/header.js" type="text/javascript"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link rel="stylesheet" href="css/booking.css">
+<link rel="stylesheet" href="css/booking1.css">
 <link rel="stylesheet" href="css/processe.css">
 <script type="text/javascript" language="javascript"
 	src="js/rollingSlider.js"></script>
@@ -72,80 +73,118 @@
 			<!--극장 선택 div-->
 			<div class="theater">
 				<h2>극장선택</h2>
-				<div class="area1">
-					<details>
-						<summary>서울</summary>
-						<ul id="area1">
-							
-						</ul>
-					</details>
+				<ul class="Clickarea">
+					<li>
+						<div class="areaClick area1">서울</div>
+					</li>
+					<li>
+						<div class="areaClick area2">경기</div>
+					</li>
+					<li>
+						<div class="areaClick area3">인천</div>
+					</li>
+					<li>
+						<div class="areaClick area4">강원</div>
+					</li>
+					<li>
+						<div class="areaClick area5">대전/충청</div>
+					</li>
+					<li>
+						<div class="areaClick area6">대구</div>
+					</li>
+					<li>
+						<div class="areaClick area7">부산/울산</div>
+					</li>
+					<li>
+						<div class="areaClick area8">경상</div>
+					</li>
+					<li>
+						<div class="areaClick area9">광주/전라/제주</div>
+					</li>
+				</ul>
+				<div class="tarea1 areaZone">
+					<ul class="theaterList">
+						<c:forEach var="theater" items="${ theater }">
+							<c:if test="${theater.areaCode eq '01'}">
+								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+							</c:if>
+						</c:forEach>
+					</ul>
 				</div>
-				<div class="area1">
-					<details>
-						<summary>경기</summary>
-						<ul id="area2">
-						
-						</ul>
-					</details>
+				<div class="tarea2 areaZone">
+					<ul class="theaterList">
+						<c:forEach var="theater" items="${ theater }">
+							<c:if test="${theater.areaCode eq '02'}">
+								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+							</c:if>
+						</c:forEach>
+					</ul>
 				</div>
-				<div class="area1">
-					<details>
-						<summary>인천</summary>
-						<ul id="area3">
-						
-						</ul>
-					</details>
+				<div class="tarea3 areaZone">
+					<ul class="theaterList">
+						<c:forEach var="theater" items="${ theater }">
+							<c:if test="${theater.areaCode eq '202'}">
+								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+							</c:if>
+						</c:forEach>
+					</ul>
 				</div>
-				<div class="area1">
-					<details>
-						<summary>강원</summary>
-						<ul id="area4">
-							
-						</ul>
-					</details>
+				<div class="tarea4 areaZone">
+					<ul class="theaterList">
+						<c:forEach var="theater" items="${ theater }">
+							<c:if test="${theater.areaCode eq '12'}">
+								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+							</c:if>
+						</c:forEach>
+					</ul>
 				</div>
-				<div class="area1">
-					<details>
-						<summary>대전/충청</summary>
-						<ul id="area5">
-							
-						</ul>
-					</details>
+				<div class="tarea5 areaZone">
+					<ul class="theaterList">
+						<c:forEach var="theater" items="${ theater }">
+							<c:if test="${theater.areaCode eq '03%2C205'}">
+								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+							</c:if>
+						</c:forEach>
+					</ul>
 				</div>
-				<div class="area1">
-					<details>
-						<summary>대구</summary>
-						<ul id="area6">
-						
-						</ul>
-					</details>
+				<div class="tarea6 areaZone">
+					<ul class="theaterList">
+						<c:forEach var="theater" items="${ theater }">
+							<c:if test="${theater.areaCode eq '11'}">
+								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+							</c:if>
+						</c:forEach>
+					</ul>
 				</div>
-				<div class="area1">
-					<details>
-						<summary>부산/울산</summary>
-						<ul id="area7">
-							
-						</ul>
-					</details>
+				<div class="tarea7 areaZone">
+					<ul class="theaterList">
+						<c:forEach var="theater" items="${ theater }">
+							<c:if test="${theater.areaCode eq '05%2C207'}">
+								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+							</c:if>
+						</c:forEach>
+					</ul>
 				</div>
-				<div class="area1">
-					<details>
-						<summary>경상</summary>
-						<ul id="area8">
-							
-						</ul>
-					</details>
+				<div class="tarea8 areaZone">
+					<ul class="theaterList">
+						<c:forEach var="theater" items="${ theater }">
+							<c:if test="${theater.areaCode eq '204'}">
+								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+							</c:if>
+						</c:forEach>
+					</ul>
 				</div>
-				<div class="area1">
-					<details>
-						<summary>광주/전라/제주</summary>
-						<ul id="area9">
-							
-						</ul>
-					</details>
+				<div class="tarea9 areaZone">
+					<ul class="theaterList">
+						<c:forEach var="theater" items="${ theater }">
+							<c:if test="${theater.areaCode eq '206%2C04%2C06'}">
+								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+							</c:if>
+						</c:forEach>
+					</ul>
 				</div>
 			</div>
-
+			
 
 			<!--날짜/ 스케줄 선택 div-->
 			<div class="schedule">
@@ -159,71 +198,8 @@
 				</div>
 				<div id="selectScd">
 					<div class="mv_time">
-						<div class="time">
-							<table>
-								<tr>
-									<td>2관</td>
-								</tr>
-								<tr>
-									<td>09:00</td>
-								</tr>
-								<tr>
-									<td>214석 / 218석</td>
-								</tr>
-							</table>
-						</div>
-						<div class="time">
-							<table>
-								<tr>
-									<td>2관</td>
-								</tr>
-								<tr>
-									<td>09:00</td>
-								</tr>
-								<tr>
-									<td>214석 / 218석</td>
-								</tr>
-							</table>
-						</div>
-						<div class="time">
-							<table>
-								<tr>
-									<td>2관</td>
-								</tr>
-								<tr>
-									<td>09:00</td>
-								</tr>
-								<tr>
-									<td>214석 / 218석</td>
-								</tr>
-							</table>
-						</div>
-						<div class="time">
-							<table>
-								<tr>
-									<td>2관</td>
-								</tr>
-								<tr>
-									<td>09:00</td>
-								</tr>
-								<tr>
-									<td>214석 / 218석</td>
-								</tr>
-							</table>
-						</div>
-						<div class="time">
-							<table>
-								<tr>
-									<td>2관</td>
-								</tr>
-								<tr>
-									<td>09:00</td>
-								</tr>
-								<tr>
-									<td>214석 / 218석</td>
-								</tr>
-							</table>
-						</div>
+						
+						
 					</div>
 				</div>
 			</div>
@@ -239,39 +215,39 @@
 			</ul>
 		</div>
 	</div>
-<footer>
-	<div class="policy">
-		<ul>
-			<li>회사소개</li>
-			<li>채용정보</li>
-			<li>광고/프로모션문의</li>
-			<li>제휴문의</li>
-			<li>이용약관</li>
-			<li>편성기준</li>
-			<li>개인정보처리방침</li>
-			<li>법적고지</li>
-			<li>상생경영</li>
-			<li>사이트맵</li>
-		</ul>
-	</div>
-	<div class="clear"></div>
-	<div class="comInfo">
-		<div class="comlogo"></div>
-		<div class="sns_link">
-			<div class="facebook"></div>
-			<div class="twitter"></div>
-			<div class="instagram"></div>
+	<footer>
+		<div class="policy">
+			<ul>
+				<li>회사소개</li>
+				<li>채용정보</li>
+				<li>광고/프로모션문의</li>
+				<li>제휴문의</li>
+				<li>이용약관</li>
+				<li>편성기준</li>
+				<li>개인정보처리방침</li>
+				<li>법적고지</li>
+				<li>상생경영</li>
+				<li>사이트맵</li>
+			</ul>
 		</div>
-		<div class="comAddress">
-			<address>기범특별시 성일구 나영동 수진대로 지현길 혜진몰 3층(기범로동)</address>
-			<p class="footCom">
-				<span>대표이사:성연철</span> <span>사업자등록번호 : 103-80-12345</span> <span>통신판매업신고번호:
-					2019-버미레도-1228</span> <a href="javasript:void(0);" class="btn_goFtc">
-					<img src="images/btn_reg.png" alt="사업자정보확인">
-				</a>
-			</p>
+		<div class="clear"></div>
+		<div class="comInfo">
+			<div class="comlogo"></div>
+			<div class="sns_link">
+				<div class="facebook"></div>
+				<div class="twitter"></div>
+				<div class="instagram"></div>
+			</div>
+			<div class="comAddress">
+				<address>기범특별시 성일구 나영동 수진대로 지현길 혜진몰 3층(기범로동)</address>
+				<p class="footCom">
+					<span>대표이사:성연철</span> <span>사업자등록번호 : 103-80-12345</span> <span>통신판매업신고번호:
+						2019-버미레도-1228</span> <a href="javasript:void(0);" class="btn_goFtc">
+						<img src="images/btn_reg.png" alt="사업자정보확인">
+					</a>
+				</p>
+			</div>
 		</div>
-	</div>
-</footer>
+	</footer>
 </body>
 </html>

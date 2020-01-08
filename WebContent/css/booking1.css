@@ -74,19 +74,31 @@ body {
 }
 
 /* 영화관 선택 */
-.theater {
-	float: left;
-	width: 450px;
-	margin: 5px;
-	text-align: center;
-}
 
-.area1 {
-	color: rgb(179, 179, 179);
-	width: 90%;
+.theater{	
+	width: 30%;
 	text-align: left;
 	margin: 0 auto;
 	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.Clickarea{
+	width:30%;
+	float:left;
+}
+
+
+
+[class*="tarea"]{
+	width: 70%;
+	color: rgb(179, 179, 179);
+	display:none;
+	float:left;
+}
+
+.tarea1{
+	display: inline-block;
+	
 }
 
 #area2 li {
@@ -266,130 +278,5 @@ input::-moz-placeholder {
 .time:hover {
 	cursor: pointer;
 	background-color: rgb(209, 10, 10);
-}
-
-/*step2 좌석선택 style*/
-.number {
-	margin: 18px;
-	font-size: 20px;
-}
-
-.number select {
-	/*padding:5px 0;*/
-	margin: auto;
-	width: 65px;
-	font-size: 17px;
-	text-align-last: center;
-	font-family: 'Noto Sans KR', sans-serif;
-}
-
-.seatSelect {
-	width: 100%;
-	height: 500px;
-	margin-top: 10px;
-	margin: 0 auto;
-	padding: 10px;
-	text-align: center;
-	background-color: whitesmoke;
-	border-top: 0.1px solid black;
-	border-bottom: 0.1px solid black;
-}
-
-.seatSelect .seat {
-	background-color: gray;
-	height: 400px;
-	width: 50%;
-	margin: auto;
-}
-
-.bookingChk {
-	background-color: #f0f0f0;
-	height: 200px;
-	width: 100%;
-	margin: auto;
-}
-
-h2 {
-	font-size: 25px;
-	text-align: center;
-	font-family: 'Noto Sans KR', sans-serif;
-	color: black;
-	margin-bottom: 20px;
-	margin-top: 30px;
-}
-
-#selectSeat {
-	height: 380px;
-	background-color: white;
-}
-
-/* media */
-@media ( max-width : 600px) {
-	.wrapper {
-		width: calc(100vw - 20px);
-	}
-	.ui-datepicker {
-		margin-right: 0;
-		margin-left: 0;
-		padding: 80px;
-		width: calc(100vw - 20px);
-		margin: 80px auto;
-	}
-	.ui-datepicker-calendar>tbody>tr>td {
-		width: 38px;
-		height: 38px;
-	}
-	.selectStep1 {
-		margin-right: 0;
-		margin-left: 0;
-		width: calc(100vw - 20px);
-	}
-	.time {
-		margin: 12px;
-	}
-	.theater {
-		width: 100%;
-		margin: 10px;
-	}
-	.schedule {
-		width: 90%;
-	}
-	.schedule>.selectScd {
-		width: 60px;
-	}
-	.seatSelect .seat {
-		width: 90%;
-	}
-}
-
-#selectSeat{
-	
-	margin: auto;
-}
-
-.seatrow{
-	text-align: left;
-	display:inline-block;
-}
-
-[class*="seatLine"]{
-	display: inline-block;
-	width:20px;
-	height:20px;
-	line-height:20px;
-}
-
-[class*="eachSeat"]{
-	text-align: center;
-	display:inline-block;
-	border:1px solid black;
-	width:20px;
-	height:20px;
-	font-size:60%;
-	line-height:20px;
-}
-
-.seatLine4, .seatLine8, .seatLine12, .seatLine16, .seatLine20, .seatLine24{
-	margin-right: 10px;
 }
 
