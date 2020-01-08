@@ -111,7 +111,7 @@ $(document).ready(function(){
 			location.href="bookingStep3.mc?selectedSeats="+selectedSeats + "&t_uid="+ t_uid;
 			
 		}else{
-			alert("인원과 좌석을 선택해주세요!");
+			alert("인원과 좌석을 선택해주세요");
 		}
 	});
 	
