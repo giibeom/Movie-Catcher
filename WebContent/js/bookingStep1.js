@@ -116,6 +116,7 @@ $(document).ready(function(){
 	});
 	
 	$(".theaterSelect").click(function(){
+		$("#demoJSON").html("");
 		var theaterName = $(this).attr("class");
 		var theaterCode = theaterName.split(" ")[2];
 		var jsonurl  = "http://localhost:8081/Movie_Catcher/ticket.ajax?reqType=json&theaterCode=" + theaterCode;
@@ -133,19 +134,52 @@ $(document).ready(function(){
 
 function parseJSON(jsonObj){
 	var arr = jsonObj.DataList;
-	var table = "<tr><th>id</th><th>제목</th><th>작성자</th><th>내용</th><th>조회수</th><th>등록일</th></tr>";
+	var timeTable = "<div>";
 	for(var i = 0; i < arr.length ; i++){
-		table += "<tr>";
-		table += "<td>" + arr[i].h_uid + "</td>";
-		table += "<td>" + arr[i].hallType + "</td>";
-		table += "<td>" + arr[i].hallLocation + "</td>";
-		table += "<td>" + arr[i].hallSize + "</td>";
-		table += "<td>" + arr[i].theaterCode + "</td>";
-		table += "<td>" + arr[i].h_movie + "</td>";
-		table += "<td>" + arr[i].t_uid + "</td>";
-		table += "<td>" + arr[i].movietime + "</td>";
-		table += "<td>" + arr[i].restSeat + "</td>";
-		table += "</tr>";
+		var movieName = arr[i].h_movie;
+		if(i > 0){
+			if(arr[i-1].h_movie != arr[i].h_movie){
+				timeTable += "<div class='movietitle'>" + movieName;
+				
+			}
+			
+		}else if(i == 0){
+			timeTable += "<div class='movietitle'>" + movieName;
+		}
+		
+		
+		var hallLocation = arr[i].hallLocation;
+		var hallType = arr[i].hallType;
+		var hallSize = arr[i].hallSize;
+		if(i > 0){
+			if(arr[i-1].hallLocation != arr[i].hallLocation || arr[i-1].hallType != arr[i].hallType || arr[i-1].hallSize != arr[i].hallSize){
+				timeTable += "<div class='hall'><div class='hallinfo'>" + hallLocation + "\t" + hallType + "\t" + hallSize + "</div>";
+			}else if(arr[i-1].h_movie != arr[i].h_movie){
+				timeTable += "<div class='hall'><div class='hallinfo'>"+ hallLocation + "\t" + hallType + "\t" + hallSize + "</div>";
+			} 
+		}else if(i == 0){
+			timeTable += "<div class='hall'><div class='hallinfo'>" + hallLocation + "\t" + hallType + "\t" + hallSize + "</div>";
+		}
+		
+		var movietime = arr[i].movietime;
+		movietime = movietime.substring(0,2) + ":" + movietime.substring(2);
+		var restSeat = arr[i].restSeat;
+		restSeat = restSeat + "석"
+		timeTable += "<div class='ticket'>" + movietime + "\n" + restSeat + "</div>";
+		
+		if(i < arr.length -1){
+			if(arr[i].hallLocation != arr[i+1].hallLocation || arr[i].hallType != arr[i+1].hallType || arr[i].hallSize != arr[i+1].hallSize){
+				timeTable += "</div>";
+			}
+			if(arr[i].h_movie != arr[i+1].h_movie){
+				timeTable += "</div>";
+			}
+		}
+		if(i == arr.length -1){
+			timeTable += "</div></div>";
+		}
+		
 	}
-	$("#demoJSON").html(table);
+	timeTable += "</div>";
+	$("#demoJSON").html(timeTable);
 }

@@ -3,6 +3,13 @@
 	width: 100%;
 }
 
+*{
+	margin:0px;
+	padding:0px;
+	box-sizing: border-box;
+}
+
+
 @media only screen and (min-width: 600px) {
 	.col-1 {
 		width: 8.33%;
@@ -280,3 +287,25 @@ input::-moz-placeholder {
 	background-color: rgb(209, 10, 10);
 }
 
+.movietitle{
+	text-align: left;
+	float:left;
+	width: 100%;
+}
+
+.hall{
+	float:right;
+	width: 80%;
+}
+
+.hallinfo{
+	width:100%;
+	display:inline-block;
+}
+
+.ticket{
+	float:left;
+	width: 25%;
+	height: auto;
+	border:1px solid black;
+}

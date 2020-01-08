@@ -68,8 +68,6 @@ public class AjaxListCommand implements Command {
 		jsonOutput.put("DataList", dataArr);
 		try {
 			String jsonString = jsonOutput.toString();//JSONObject를 문자열로 반환
-			System.out.println(jsonString);// 테스트용
-			
 			response.setContentType("application/json; charset=utf-8");// MIME 타입 설정 
 			response.getWriter().write(jsonString);
 			
