@@ -122,7 +122,7 @@ body {
 	background-color: rgb(209, 10, 10);
 }
 
-details>summary {
+.theaterList {
 	display: block;
 	cursor: pointer;
 	padding: 10px;
@@ -265,11 +265,13 @@ input::-moz-placeholder {
 /*날짜 스케줄 선택 style*/
 #selectScd {
 	width: 100%;
-	height: 400px;
 	padding: 20px 0px;
 	padding: 10px;
 	background-color: whitesmoke;
 	border: 0.1px solid black;
+	min-height: 600px;
+	overflow:hidden;
+	height:auto;
 }
 
 .time {
@@ -287,9 +289,18 @@ input::-moz-placeholder {
 	background-color: rgb(209, 10, 10);
 }
 
+.theaterNameInfo{
+	width:100%;
+}
+
 .movietitle{
 	text-align: left;
 	float:left;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.movieName{
 	width: 100%;
 }
 
@@ -304,8 +315,11 @@ input::-moz-placeholder {
 }
 
 .ticket{
+	cursor:pointer;
+	text-align:center;
 	float:left;
-	width: 25%;
+	width: 70px;
 	height: auto;
 	border:1px solid black;
+	height: 50px;
 }

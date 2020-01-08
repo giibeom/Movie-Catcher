@@ -35,7 +35,7 @@ public interface D {
 	public static final String SQL_HALL_SELECT = "SELECT * FROM hall WHERE h_uid = ?";
 	
 	public static final String SQL_TICKET_INSERT = "INSERT INTO ticket (movietime, restSeat, h_uid) VALUES (?, ?, ?)";
-	public static final String SQL_TICKET_SELECT = "SELECT * FROM ticket WHERE ticket_uid = ?";
+	public static final String SQL_TICKET_SELECT = "SELECT * FROM hall h, ticket t WHERE h.h_uid = t.h_uid AND t.t_uid = ?";
 	
 	public static final String SQL_RESERVE_INSERT = "INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES(?, ?, ?, ?, ?)"; 
 	public static final String SQL_RESERVE_USER = "SELECT * FROM reserve WHERE u_idnum";

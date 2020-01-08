@@ -79,14 +79,37 @@ public class TicketDAO {
 		return arr;
 	}
 	
-	public TicketDTO[] selectByCode(int ticket_uid) throws SQLException{
+	public HandTDTO []  createTicketArray(ResultSet rs) throws SQLException{
+		ArrayList<HandTDTO> list = new ArrayList<HandTDTO>();
+		while(rs.next()){
+			int h_uid = rs.getInt("h_uid");
+			String hallType = rs.getString("hallType");
+			String hallLocation = rs.getString("hallLocation");
+			String hallSize = rs.getString("hallSize");
+			String theaterCode = rs.getString("theaterCode");
+			String h_movie = rs.getString("h_movie");
+			int t_uid = rs.getInt("t_uid");
+			String movietime = rs.getString("movietime");
+			int restSeat = rs.getInt("restSeat");
+			
+			HandTDTO dto = new HandTDTO(h_uid, hallType, hallLocation
+					, hallSize, theaterCode, h_movie, t_uid, movietime, restSeat);
+			list.add(dto);
+		}
+		int size = list.size();
+		HandTDTO [] arr = new HandTDTO[size];
+		list.toArray(arr);
+		return arr;
+	}
+	
+	public HandTDTO[] selectByCode(int ticket_uid) throws SQLException{
 		int cnt = 0;
-		TicketDTO[] arr = null;
+		HandTDTO[] arr = null;
 		try {
 			pstmt = conn.prepareStatement(D.SQL_TICKET_SELECT);
 			pstmt.setInt(1, ticket_uid);
 			rs = pstmt.executeQuery();
-			arr = createArray(rs);
+			arr = createTicketArray(rs);
 			
 		} finally {
 			close();

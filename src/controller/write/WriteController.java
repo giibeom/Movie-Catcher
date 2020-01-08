@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import command.write.Command;
 import command.write.bookingStep1Command;
+import command.write.bookingStep2Command;
 import command.write.loginCommand;
 import command.write.searchPageCommand;
 import command.write.signupCommand;
@@ -80,7 +81,10 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "bookingStep1.jsp";
 		break;
-			
+		case "/bookingStep2.mc":
+			command = new bookingStep2Command();
+			command.execute(request, response);
+			viewPage = "bookingStep2.jsp";
 			
 			
 			

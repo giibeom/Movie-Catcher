@@ -2,16 +2,28 @@ var seatRow;
 var seats = "";
 var seatArray = ["", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q"];
 var row = 1;
+
+function fn(str){
+    var res;
+    res = str.replace(/[^0-9]/g,"");
+    return res;
+}
+
+var hallSeat = fn(hallSize);
+
 $(document).ready(function(){
 	if(hallSeat <= 80){
 		seatRow = hallSeat % 8;
 		for(var i = 0; i < hallSeat;){
-			seats += "<ul class='seatrow'>";
-			for( var j = 1; j <= 8 ; j ++){
-				seats += "<li class='seatLine'><div class='eachSeat'>" + j + "</div></li>";
+			seats += "<ul class='seatrow'><li class='seatLine'>" + seatArray[row] + "</li>";
+			for(var j = 1; j <= 8 ; j ++){
+				seats += "<li class='seatLine" + j + "'><div class='eachSeat" + j + " seat" + seatArray[row] + j +"'>" + j + "</div></li>";
 				i++;
+				if(i == hallSeat) break;
 			}
 			seats += "</ul>";
+			seats += "<div class='clear'>";
+			row ++;
 		}
 		$('#selectSeat').html(seats);
 	}

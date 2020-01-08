@@ -3,13 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%!
-	int restSeat = 80;
-	int hallSeat = 400;
-%>
 <script>
-var hallSeat = <%= hallSeat %>;
-var restSeat = <%= restSeat %>;
+var hallSize = "${list[0].hallSize}";
+var restSeat = "${list[0].restSeat}";
 </script>
 <!DOCTYPE html>
 <html lang="ko">
