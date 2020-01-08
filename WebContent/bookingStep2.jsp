@@ -6,6 +6,7 @@
 <script>
 var hallSize = "${list[0].hallSize}";
 var restSeat = "${list[0].restSeat}";
+var t_uid = "${list[0].t_uid}"
 </script>
 <!DOCTYPE html>
 <html lang="ko">
@@ -99,6 +100,7 @@ var restSeat = "${list[0].restSeat}";
 				<option value="8">8</option>
 			</select>
 			<div id="totalNumber"></div>
+			<button id="pNumChk" >인원 확정</button>
 		</div>
 
 
@@ -109,6 +111,13 @@ var restSeat = "${list[0].restSeat}";
 				
 
 			</div>
+		</div>
+		<div id="reSelectSeat">
+		
+			좌석 다시 고르기
+		</div>
+		<div id="goPayment">
+			결제하기
 		</div>
 	</div>
 
