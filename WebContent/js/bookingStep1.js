@@ -16,7 +16,7 @@ var nowchk = 0;
 $(document)
 		.ready(
 				function() {
-					var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt="
+					var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=150bfb37a86f8bfb899cdc5192ee9967&targetDt="
 							+ today;
 					$.ajax({
 						url : url,
@@ -118,9 +118,9 @@ $(document).ready(function(){
 	$(".theaterSelect").click(function(){
 		var theaterName = $(this).attr("class");
 		var theaterCode = theaterName.split(" ")[2];
-		var url = url = "http://localhost:8081/Movie Catcher/ticket.ajax?reqType=json&theaterCode=" + theaterCode;
+		var jsonurl  = "http://localhost:8081/Movie_Catcher/ticket.ajax?reqType=json&theaterCode=" + theaterCode;
 		$.ajax({
-			url : url,
+			url : jsonurl,
 			type : "GET",
 			cache : false,
 			success : function(data, status){
@@ -129,3 +129,23 @@ $(document).ready(function(){
 		})
 	});
 });
+
+
+function parseJSON(jsonObj){
+	var arr = jsonObj.DataList;
+	var table = "<tr><th>id</th><th>제목</th><th>작성자</th><th>내용</th><th>조회수</th><th>등록일</th></tr>";
+	for(var i = 0; i < arr.length ; i++){
+		table += "<tr>";
+		table += "<td>" + arr[i].h_uid + "</td>";
+		table += "<td>" + arr[i].hallType + "</td>";
+		table += "<td>" + arr[i].hallLocation + "</td>";
+		table += "<td>" + arr[i].hallSize + "</td>";
+		table += "<td>" + arr[i].theaterCode + "</td>";
+		table += "<td>" + arr[i].h_movie + "</td>";
+		table += "<td>" + arr[i].t_uid + "</td>";
+		table += "<td>" + arr[i].movietime + "</td>";
+		table += "<td>" + arr[i].restSeat + "</td>";
+		table += "</tr>";
+	}
+	$("#demoJSON").html(table);
+}

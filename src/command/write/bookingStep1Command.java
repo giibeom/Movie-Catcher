@@ -19,15 +19,6 @@ public class bookingStep1Command implements Command {
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
-		
-		HallDAO hdao = new HallDAO();
-		HandTDTO [] harr = null;
-		try {
-			harr = hdao.selectAll();
-			request.setAttribute("ticket", harr);
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
 	}
 
 }

@@ -141,6 +141,22 @@ public class HallDAO {
 		return arr;
 	}
 	
+	public HandTDTO[] selectTicket(String theaterCode) throws SQLException{
+		
+		HandTDTO[] arr = null;
+		try {
+			pstmt = conn.prepareStatement(D.SQL_HALL_TICKET);
+			pstmt.setString(1, theaterCode);
+			rs = pstmt.executeQuery();
+			arr = createTicketArray(rs);
+			
+		} finally {
+			close();
+		}
+		
+		return arr;
+	}
+	
 	public int getHallSize() throws SQLException{
 		int cnt = 0;
 		try {
