@@ -101,11 +101,6 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "bookingStep1.jsp";
 		break;
-		case "/review.mc":
-			//command = new ReviewCommand();
-			//command.execute(request, response);
-			viewPage = "review.jsp";
-		break;
 		case "/bookingStep2.mc":
 			command = new bookingStep2Command();
 			command.execute(request, response);
