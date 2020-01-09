@@ -89,7 +89,8 @@ CREATE TABLE review
 	rs_num int,
 	PRIMARY KEY (rv_num)
 );
-select * from review
+
+select * from theater;
 
 CREATE TABLE theater
 (

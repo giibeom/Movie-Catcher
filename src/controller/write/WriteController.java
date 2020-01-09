@@ -113,6 +113,8 @@ public class WriteController extends HttpServlet {
 		case "/scraping.mc":
 			command = new TheaterCommand();
 			command.execute(request, response);
+		break;
+		case "/scraping2.mc":
 			command = new TimeTableCommand();
 			command.execute(request, response);			
 		break;	
