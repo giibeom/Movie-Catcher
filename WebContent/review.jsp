@@ -51,158 +51,180 @@
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
             <li>
                 <div class="reviewer">
                     <div class="review_des_title">
-                    <div class="rGender gFemale"></div>
-                    <div class="rName">클로이님</div>
-                    <div class="rDate">2019-12-30</div></div>
+                    <div class="script">
+                        <div class="rName">클로이님</div>
+                        <div class="rStar">평점 1.6</div>
+                        <div class="rDate">2019-12-30</div></div>
+                    </div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
         </ul>
-        
-<%-- 페이징 
-<jsp:include page="pagination.jsp">
-	<jsp:param value="${writePages}" name="writePages"/>
-	<jsp:param value="${totalPage}" name = "totalPage"/>
-	<jsp:param value="${page }" name = "curPage"/>
-</jsp:include>
---%>        
-    
-        
         <div class="pager">
             <ul>
                 <li class="prev"><a href="">◀</a></li>

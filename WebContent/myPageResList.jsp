@@ -55,7 +55,7 @@
                     <th>장소</th>
                     <th>인원</th>
                     <th>결제금액</th>
-                    <th>리뷰 작성하러 가기</th>
+                    <th>리뷰</th>
                 </tr>
                 <tr>
                     <td>1</td>
@@ -64,7 +64,8 @@
                     <td>메가박스 강남점</td>
                     <td>2</td>
                     <td>18,000</td>
-                    <td><a href="writeBoard.html">리뷰 작성</a></td>
+                    <td><div id="review"><a href="writeBoard.jsp">리뷰 작성 | </a>
+                        <a href="reviewdelete.jsp">리뷰 삭제</a></div></td>
                 </tr>
                 <tr>
                     <td>2</th>
@@ -73,7 +74,9 @@
                     <td>CGV 목동점</td>
                     <td>1</td>
                     <td>8,000</td>
-                    <td><a href="writeBoard.html">리뷰 작성</a></td>
+                    <td><div id="review"><a href="writeBoard.jsp">리뷰 작성 |</a>     
+                        <a href="reviewdelete.jsp">리뷰 삭제</a></div></td>
+                   
                 </tr>
                 <tr>
                     <td>3</td>
@@ -82,7 +85,8 @@
                     <td>관람 장소</td>
                     <td>몇명</td>
                     <td>결제 금액</td>
-                    <td><a href="writeBoard.html">리뷰 작성</a></td>
+                    <td><div id="review"><a href="writeBoard.jsp">리뷰 작성 |</a>
+                        <a href="reviewdelete.jsp">리뷰 삭제</a></td></div>
                 </tr>
             </table>
 
@@ -91,8 +95,6 @@
         </div>
     </div>
 </div>
-
-
 
 <footer>
     <div class="policy">

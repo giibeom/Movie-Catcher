@@ -7,7 +7,8 @@
 #menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
 #menu_wrap .option{text-align: center;}
 #menu_wrap .option p {margin:10px 0;}  
-.map_first {width:100%;position:absolut; margin-top:-400px; margin-left:900px; display:block; width:800px;}
+/*.map_first {width:50%;position:absolute; margin-top:100px; margin-left:900px; display:block; width:800px;}*/
+.map_first {width:50%;position:relative:block; margin-top :-410px; margin-left : 650px; width:500px; margin-bottom : 200px;}
 #placesList li {list-style: none;}
 #placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
 #placesList .item span {display: block;margin-top:4px;}
@@ -37,15 +38,10 @@
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
 
 
-form { width:30%; margin-top:150px; margin-left:200px;}
+form { width:30%; margin-top:130px; margin-left:200px;}
 
 @media only screen and (min-width: 600px){
 
-    #find_title h2{
-        display: inline-block;
-        margin-top : 30px;
-        margin-left: 20px;
-    }
 }
 
 @media only screen and (max-width: 600px){
@@ -55,15 +51,6 @@ form { width:100%; margin-top:150px; }
 #window {
     max-width : 1024px;
     margin : auto;
-}
-
-#find_title{
-    display: block;
-    margin-bottom: 20px;
-}
-
-#find_title h2{
-    text-align: center;
 }
 
 
@@ -93,7 +80,7 @@ input[type=text] {
     padding : 8px;
     border-radius: 4px;
     border-bottom: 1px solid rgb(179,179,179);
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     margin-top: 5px;
 }
 
@@ -120,6 +107,8 @@ input[type=button] {
     opacity: 0.5;
     padding : 5px;
     board: 1px solid black;
+    border-radius: 4px;
+    transition : 0.4s;
 }
 
 input[type=button]:hover{
