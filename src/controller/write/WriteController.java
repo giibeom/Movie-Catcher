@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import command.write.Command;
+import command.write.ReviewCommand;
 import command.write.TheaterCommand;
 import command.write.TimeTableCommand;
 import command.write.bookingStep1Command;
@@ -91,18 +92,14 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "signupOk.jsp";
 		break;
-//		case "/review.mc":
-//			command = new 
-//			viewPage = "review.jsp";
+		case "/review.mc":
+			command = new ReviewCommand();
+			command.execute(request, response);
+			viewPage = "review.jsp";
 		case "/bookingStep1.mc":
 			command = new bookingStep1Command();
 			command.execute(request, response);
 			viewPage = "bookingStep1.jsp";
-		break;
-		case "/review.mc":
-			//command = new ReviewCommand();
-			//command.execute(request, response);
-			viewPage = "review.jsp";
 		break;
 		case "/bookingStep2.mc":
 			command = new bookingStep2Command();
