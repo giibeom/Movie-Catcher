@@ -11,11 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import command.write.Command;
+import command.write.TheaterCommand;
+import command.write.TimeTableCommand;
 import command.write.bookingStep1Command;
 import command.write.bookingStep2Command;
 import command.write.loginCommand;
 import command.write.searchPageCommand;
 import command.write.signupCommand;
+import scraping.GetTimeTable;
 
 
 @WebServlet("*.mc")
@@ -96,8 +99,11 @@ public class WriteController extends HttpServlet {
 			command = new bookingStep2Command();
 			command.execute(request, response);
 			viewPage = "bookingStep2.jsp";
-			
-			
+		case "/scraping.mc":
+			command = new TheaterCommand();
+			command.execute(request, response);
+			command = new TimeTableCommand();
+			command.execute(request, response);			
 		}
 	
 		
