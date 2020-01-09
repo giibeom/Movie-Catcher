@@ -27,47 +27,47 @@ today = yyyy+''+mm+dd;
 var weekdate = "20191229";
 
 $(document).ready(function(){
-	
-	
+   
+   
     var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=150bfb37a86f8bfb899cdc5192ee9967&targetDt=" + today;
     $.ajax({
-		url : url,
-		type : "GET",
-		cache : false,
-		success : function(data, status){
-			if(status == "success") getBoxOffice(data);
-		}
+      url : url,
+      type : "GET",
+      cache : false,
+      success : function(data, status){
+         if(status == "success") getBoxOffice(data);
+      }
     }); 
 
     var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=150bfb37a86f8bfb899cdc5192ee9967&targetDt=" + weekdate;
     $.ajax({
-		url : url,
-		type : "GET",
-		cache : false,
-		success : function(data, status){
-			if(status == "success") getWeekBoxOffice(data);
-		}
+      url : url,
+      type : "GET",
+      cache : false,
+      success : function(data, status){
+         if(status == "success") getWeekBoxOffice(data);
+      }
     }); 
 
     var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=150bfb37a86f8bfb899cdc5192ee9967&openStartDt=2020";
 
     $.ajax({
-		url : url,
-		type : "GET",
-		cache : false,
-		success : function(data, status){
-			if(status == "success") getUpcoming(data);
-		}
+      url : url,
+      type : "GET",
+      cache : false,
+      success : function(data, status){
+         if(status == "success") getUpcoming(data);
+      }
     }); 
 
     var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=150bfb37a86f8bfb899cdc5192ee9967&openStartDt=2020&curPage=2";
     $.ajax({
-		url : url,
-		type : "GET",
-		cache : false,
-		success : function(data, status){
-			if(status == "success") getUpcoming(data);
-		}
+      url : url,
+      type : "GET",
+      cache : false,
+      success : function(data, status){
+         if(status == "success") getUpcoming(data);
+      }
     }); 
     $('#showNowIn').click(function(){
         $("#upComing").css("display", "none");
@@ -81,9 +81,9 @@ $(document).ready(function(){
     
     
     $("#searchButton").click(function(e){
-    	e.preventDefault();
-    	var movieName = $("#movieName").val().trim();
-    	window.location.href = "searchPage.mc?movieName="+movieName;
+       e.preventDefault();
+       var movieName = $("#movieName").val().trim();
+       window.location.href = "searchPage.mc?movieName="+movieName;
     });
 });
 
@@ -205,12 +205,12 @@ function getRankPoster(movieName, rank){
     checkMovieName = movieName.split(" ")[0];
     var url = "https://api.themoviedb.org/3/search/movie?api_key=55d244c83c49693b6fd6606c768103eb&language=ko-KR&query=" + checkMovieName +"&include_adult=false";
     $.ajax({
-		url : url,
-		type : "GET",
-		cache : false,
-		success : function(data, status){
-			if(status == "success") getPoster(data, movieName, rank);
-		}
+      url : url,
+      type : "GET",
+      cache : false,
+      success : function(data, status){
+         if(status == "success") getPoster(data, movieName, rank);
+      }
     }); 
     
 };
@@ -232,8 +232,8 @@ function getPoster(jsonObj, movieName, rank){
         }
     }
     if(poster == null){
-    	 mdbName = arr[0].title;
-    	id = arr[0].id;
+        mdbName = arr[0].title;
+       id = arr[0].id;
         poster = arr[0].poster_path;
         vote = arr[0].vote_average;
         getTeaser(arr[0].id, arr[0].title);
@@ -249,14 +249,14 @@ function getPoster(jsonObj, movieName, rank){
 
 function getTeaserId(id, movieName, rank){
     
-    var url = "https://api.themoviedb.org/3/movie/" +	 id + "/videos?api_key=55d244c83c49693b6fd6606c768103eb&language=ko-KR";
+    var url = "https://api.themoviedb.org/3/movie/" +    id + "/videos?api_key=55d244c83c49693b6fd6606c768103eb&language=ko-KR";
     $.ajax({
-		url : url,
-		type : "GET",
-		cache : false,
-		success : function(data, status){
-			if(status == "success") getTeaser(data, movieName, rank);
-		}
+      url : url,
+      type : "GET",
+      cache : false,
+      success : function(data, status){
+         if(status == "success") getTeaser(data, movieName, rank);
+      }
     }); 
 }
 
@@ -292,10 +292,10 @@ function getTeaser(data, movieName, rank){
         doUpcoming();
         doTeaser();
         $('.poster').click(function(){
-        	var info = $(this).closest('div').attr('class');
-        	var clickName = info.split("&&")[0];
-        	var clickid = info.split("&&")[1];
-        	location.href = "mv_info.jsp?movieName=" + clickName + "&movieId=" + clickid;
+           var info = $(this).closest('div').attr('class');
+           var clickName = info.split("&&")[0];
+           var clickid = info.split("&&")[1];
+           location.href = "mv_info.jsp?movieName=" + clickName + "&movieId=" + clickid;
         });
     }
 }
@@ -313,12 +313,12 @@ function getUpcomingPoster(movieName){
     checkMovieName = movieName.split(" ")[0];
     var url = "https://api.themoviedb.org/3/search/movie?api_key=55d244c83c49693b6fd6606c768103eb&language=ko-KR&query=" + checkMovieName +"&include_adult=false";
     $.ajax({
-		url : url,
-		type : "GET",
-		cache : false,
-		success : function(data, status){
-			if(status == "success") getUpcomingPosters(data, movieName);
-		}
+      url : url,
+      type : "GET",
+      cache : false,
+      success : function(data, status){
+         if(status == "success") getUpcomingPosters(data, movieName);
+      }
     }); 
 }
 
