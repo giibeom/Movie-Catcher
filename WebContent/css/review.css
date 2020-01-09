@@ -40,6 +40,8 @@
 .review .contentWrap .reviewBox .reviewWrap li .rReport { float: left; color: #777; font-size: 14px; line-height: 38px; cursor: pointer;}
 .review .contentWrap .reviewBox .reviewWrap li .rDesc { clear: both;  }
 .review .contentWrap .reviewBox .reviewWrap li .rDesc p { box-sizing: border-box; width: 100%; height: 100%; padding: 10px 20px; color: #555; font-size: 14px;}
+.review .contentWrap .reviewBox .reviewWrap li .rMovieTitle { box-sizing: border-box; width: auto; height: auto; 
+  color: #777; margin-top: -15px; font-size: 15px; font-weight: bold; margin-left: 25px;}
 
 .review_background {
   background-image: url(../images/film5.jpg);

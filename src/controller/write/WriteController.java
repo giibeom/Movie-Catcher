@@ -98,7 +98,6 @@ public class WriteController extends HttpServlet {
 			viewPage = "bookingStep2.jsp";
 			
 			
-			
 		}
 	
 		
