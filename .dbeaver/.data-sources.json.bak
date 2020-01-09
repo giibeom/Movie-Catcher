@@ -11,14 +11,41 @@
 				"host": "localhost",
 				"port": "3306",
 				"url": "jdbc:mysql://localhost:3306/",
-				"type": "dev",
-				"handlers": {}
+				"type": "dev"
 			}
 		},
 		"mariaDB-16f654d486a-b5d0a0d3353d3a1": {
 			"provider": "mysql",
 			"driver": "mariaDB",
 			"name": "MariaDB - mydb",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "mydb",
+				"url": "jdbc:mysql://localhost:3306/mydb",
+				"type": "dev"
+			}
+		},
+		"mariaDB-16f669037b1-36b03ad576e3c6ee": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "MariaDB - movie_catcher",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "movie_catcher",
+				"url": "jdbc:mysql://localhost:3306/movie_catcher",
+				"type": "dev"
+			}
+		},
+		"mariaDB-16f89a5a343-7059e4f8f7c22c5f": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "MariaDB - mydb 2",
 			"save-password": true,
 			"read-only": false,
 			"configuration": {

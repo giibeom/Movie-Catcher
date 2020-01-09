@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import command.write.Command;
 import command.write.ReviewCommand;
+import command.write.ReviewCrawlingCommand;
 import command.write.TheaterCommand;
 import command.write.TimeTableCommand;
 import command.write.b_writeCommand;
@@ -129,6 +130,11 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "b_writeOk.jsp";
 			break;
+			
+		case "/reviewCrawling.mc":
+			command = new ReviewCrawlingCommand();
+			command.execute(request, response);
+		break;
 		}
 	
 		
