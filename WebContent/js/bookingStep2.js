@@ -189,7 +189,7 @@ function makeX(){
 			$(".seat" + seatArray[rRow] + rColumn).css("background-color", "#bbb")
 			$(".seat" + seatArray[rRow] + rColumn).text("X");
 			return 1;
-		}
+		} 
 
 	}
 	if(250 < hallSeat && hallSeat <= 400){
