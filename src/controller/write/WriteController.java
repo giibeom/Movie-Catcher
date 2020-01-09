@@ -90,6 +90,9 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "signupOk.jsp";
 		break;
+//		case "/review.mc":
+//			command = new 
+//			viewPage = "review.jsp";
 		case "/bookingStep1.mc":
 			command = new bookingStep1Command();
 			command.execute(request, response);
@@ -99,11 +102,13 @@ public class WriteController extends HttpServlet {
 			command = new bookingStep2Command();
 			command.execute(request, response);
 			viewPage = "bookingStep2.jsp";
+		break;
 		case "/scraping.mc":
 			command = new TheaterCommand();
 			command.execute(request, response);
 			command = new TimeTableCommand();
-			command.execute(request, response);			
+			command.execute(request, response);
+		break;
 		}
 	
 		
