@@ -46,4 +46,16 @@ public interface D {
 	public static final String SQL_REVIEW_SELECT = "SELECT * FROM review";
 	public static final String SQL_REVIEW_UPDATE = "UPDATE review SET rv_title = ?, rv_content = ?, rv_star = ? WHERE rv_num = ?";
 	public static final String SQL_REVIEW_DELETE = "DELETE FROM review WHERE rv_num=?";
+
+	
+	// 페이징용 쿼리 준비
+	// 쿼리: 글 목록 전체 개수 가져오기
+	public static final String SQL_REVIEW_COUNT_ALL = 
+			"SELECT COUNT(*) FROM review";
+	
+	// 쿼리: from 부터 row 만큼 SELECT : LIMIT 은 0 부터 시작 주의!
+	public static final  String SQL_REVIEW_SELECT_FROM_ROW = 
+			"SELECT * FROM review ORDER BY rv_num DESC LIMIT ?, ?";
+
+	
 }
