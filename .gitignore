@@ -5,8 +5,11 @@
 *.jar
 *.war
 *.ear
+*.json
 
 # Eclipse
 .classpath
 .project
 .settings/
+.dbeaver
+.bak
