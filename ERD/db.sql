@@ -84,7 +84,9 @@ CREATE TABLE review
 	rv_title varchar(25) NOT NULL,
 	rv_content text,
 	rv_star double NOT NULL,
-	rs_num int NOT NULL,
+	rv_id varchar(30),
+	rs_date date NOT NULL,
+	rs_num int,
 	PRIMARY KEY (rv_num)
 );
 
@@ -190,4 +192,6 @@ flush privileges;
 show grants for 'root'@'localhost';
 
 select * from theater;
+
+
 
