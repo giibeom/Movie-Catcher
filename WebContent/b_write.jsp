@@ -30,7 +30,7 @@ function chkSubmit(){
 </script>
 <body>
 <h2>글작성</h2>
-<form name="frm" action="b_writeOk.jsp" method="post" onsubmit="return chkSubmit()">
+<form name="frm" action="b_writeOk.mc" method="post" onsubmit="return chkSubmit()">
 
 제목:
 <input type="text" name="b_title"/><br>

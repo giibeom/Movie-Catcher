@@ -1,22 +1,30 @@
 package com.beans;
 
 public class ReviewDTO {
+
+
 	private int rv_num;
 	private String rv_title;
 	private String rv_content;
 	private double rv_star;
+	private String rv_id;
+	private String rs_date;
 	private int rs_num;
+	
 	public ReviewDTO() {
 		super();
 	}
-	public ReviewDTO(int rv_num, String rv_title, String rv_content, double rv_star, int rs_num) {
+	public ReviewDTO(int rv_num, String rv_title, String rv_content, double rv_star, int rs_num, String rv_id, String rs_date) {
 		super();
 		this.rv_num = rv_num;
 		this.rv_title = rv_title;
 		this.rv_content = rv_content;
 		this.rv_star = rv_star;
 		this.rs_num = rs_num;
+		this.rv_id = rv_id;
+		this.rs_date = rs_date;
 	}
+	
 	public int getRv_num() {
 		return rv_num;
 	}
@@ -41,12 +49,22 @@ public class ReviewDTO {
 	public void setRv_star(double rv_star) {
 		this.rv_star = rv_star;
 	}
+	public String getRv_id() {
+		return rv_id;
+	}
+	public void setRv_id(String rv_id) {
+		this.rv_id = rv_id;
+	}
+	public String getRs_date() {
+		return rs_date;
+	}
+	public void setRs_date(String rs_date) {
+		this.rs_date = rs_date;
+	}
 	public int getRs_num() {
 		return rs_num;
 	}
 	public void setRs_num(int rs_num) {
 		this.rs_num = rs_num;
 	}
-	
-	
 }

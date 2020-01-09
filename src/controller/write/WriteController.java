@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import command.write.Command;
+import command.write.ReviewCommand;
 import command.write.TheaterCommand;
 import command.write.TimeTableCommand;
 import command.write.b_writeCommand;
@@ -20,6 +21,7 @@ import command.write.bookingStep2Command;
 import command.write.loginCommand;
 import command.write.searchPageCommand;
 import command.write.signupCommand;
+import command.write.ReviewCommand;
 import scraping.GetTimeTable;
 
 
@@ -92,6 +94,10 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "signupOk.jsp";
 		break;
+		case "/review.mc":
+			command = new ReviewCommand();
+			command.execute(request, response);
+			viewPage = "review.jsp";
 		case "/bookingStep1.mc":
 			command = new bookingStep1Command();
 			command.execute(request, response);
@@ -101,11 +107,14 @@ public class WriteController extends HttpServlet {
 			command = new bookingStep2Command();
 			command.execute(request, response);
 			viewPage = "bookingStep2.jsp";
+		break;	
+
 		case "/scraping.mc":
 			command = new TheaterCommand();
 			command.execute(request, response);
 			command = new TimeTableCommand();
-			command.execute(request, response);			
+			command.execute(request, response);	
+			break;
 		case "/board.mc":
 			command = new boardCommand();
 			command.execute(request, response);
@@ -119,7 +128,6 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "b_writeOk.jsp";
 			break;
-		
 		}
 	
 		
