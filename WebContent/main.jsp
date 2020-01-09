@@ -30,19 +30,19 @@
 <body>
     <header>
         <div class="topnav" id="myTopnav">
-            <h1 id="title"><a href="welcome.mc">MOVIE CATCHER</a></h1>
+            <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
             <div id="logout">로그아웃</div>
             <div id="nav_ul">
                 <ul>
                     <li class="icon clear"><a href="javascript:void(0);" onclick="myFunction()">
                             <i class="fa fa-bars" style="color:black;"></i></a>
                     </li>
-                    <li id="navMovie">영화</li>
-                    <li id="navReserve">예매하기</li>
-                    <li id="navTheater">극장</li>
-                    <li id="navReview">리뷰</li>
-                    <li id="navNotice">공지사항</li>
-                    <li id="navMypage">마이페이지</li>
+                    <li>영화</li>
+                    <li>예매하기</li>
+                    <li>극장</li>
+                    <li>리뷰</li>
+                    <li>공지사항</li>
+                    <li>마이페이지</li>
                 </ul>
             </div>
         </div>
@@ -52,12 +52,19 @@
         <!-- 검색창-->
         <!-- <div class="col-8" id="search"> -->
         <div class="col-12 d1">
-            <form name="searchBox">
-                <input type="text" id="movieName" placeholder="검색어 입력" />
-                <button type="submit" id="searchButton"><img id="m_icon" src="images/m_icon_3.png"></button>
+            <form>
+                <input type="text" placeholder="검색어 입력">
+                <button type="submit"><img id="m_icon" src="images/m_icon_3.png"></button>
             </form>
         </div>
         <div class="clear"></div>
+
+        <!-- <div class="col-8 d1">
+            <form>
+            <input type="text" placeholder="검색어 입력">
+            <button type="submit"><img id="m_icon" src="images/m_icon_3.png"></button>
+            </form>
+          </div> -->
 
 
 
@@ -87,8 +94,12 @@
         <div class="col-12" id="tabs">
             <div id="tabM">
                 <div id="movieSelectButton">
-                    <div id="showNowIn">최신 상영작</div>
-                    <div id="showUpComing">상영 예정작</div>
+                    <div id="showNowIn">최신 상영작
+                        <!-- <hr> -->
+                    </div>
+                    <div id="showUpComing">상영 예정작
+                        <!-- <hr> -->
+                    </div>
                 </div>
 
                 <div id=""></div>
@@ -108,27 +119,60 @@
         <div class="clear"></div>
 
         <!-- 누적관객수 랭킹  -->
-        <div class="col-6 rankAudience">
-            <div class="">
-                누적 관객수 랭킹
+        <div class="col-6 rankAudiencea">
+            <div id = "rankAudiencea">
+
+            <div class = "ranking">
+                <h3>누적 관객수 랭킹</h3>
             </div>
-            <div>
+
+            <div id = "rank">
                 <ul id = "rankAudience">                
                 </ul>
             </div>
+            </div>
 
+
+        <!-- 주말 박스오피스 랭킹 -->
+        <div id = "rankweek">
+        <div class = "ranking">
+           <h3>주말 박스오피스 랭킹</h3>
+        </div>
+        <div id = "rank">
+            <ul id="weekRanking">
+            </ul>
+        </div>
         </div>
         
-        <!-- 주말 박스오피스 랭킹 -->
-        <div class="col-6 rankweek">
-            <div>
-                주말 박스오피스 랭킹
-            </div>
-            <div>
-                <ul id="weekRanking">
-                </ul>
-            </div>
+        <div  id = "dots" style = "text-align: center; height: 20px;">
+                <span class ="dot" id = "dot1" ></span>
+                <span class ="dot" id = "dot2"></span>
         </div>
+    </div>
+    
+        
+
+    <div class="col-6 Event">
+
+        <div class = "Eve">
+            <img src = "images/event1.jpg" style="width: 95%; height: 400px;">
+     
+        </div>
+
+        <div class = "Eve1">
+            <img src = "images/event2.jpg" style="width: 95%; height: 400px;">
+        </div>
+
+        <div class = "Eve2">
+            <img src = "images/event3.jpg" style="width: 95%; height: 400px;">
+        </div>
+
+        <div  id = "dotsa" style = "text-align: center; height: 20px;">
+            <span class ="dota" id = "dota1" ></span>
+            <span class ="dota" id = "dota2"></span>
+            <span class ="dota" id = "dota3"></span>
+    </div>
+    </div>
         
     <div class="clear"></div>
 
