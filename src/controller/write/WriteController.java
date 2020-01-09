@@ -2,6 +2,7 @@ package controller.write;
 
 import java.io.IOException;
 
+import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,14 +29,24 @@ public class WriteController extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		actionDo(request, response);
+		try {
+			actionDo(request, response);
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		actionDo(request, response);
+		try {
+			actionDo(request, response);
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	protected void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, NamingException {
 		request.setCharacterEncoding("utf-8");
 		
 		Command command = null; // 어떠한 커맨드 수행할지.

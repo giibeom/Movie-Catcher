@@ -10,6 +10,11 @@ import java.util.ArrayList;
 
 import common.D;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 public class ReviewDAO {
 	Connection conn;
 	PreparedStatement pstmt;
@@ -17,19 +22,15 @@ public class ReviewDAO {
 	ResultSet rs;
 	
 	// DAO 객체가 생성될때 Connection도 생성된다.
-	public ReviewDAO() {
-		try {
-			Class.forName(D.DRIVER);
-			conn = DriverManager.getConnection(D.URL, D.USERID, D.USERPW);
-			System.out.println("ReviewDAO 객체 생성, 데이터베이스 연결");
-			
-			
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+	public ReviewDAO() {}
+	
+	public static Connection getConnection() throws NamingException, SQLException {
+		Context initContext = new InitialContext();
+		Context envContext = (Context)initContext.lookup("java:/comp/env");
+		DataSource ds = (DataSource)envContext.lookup("jdbc/testDB");
+		return ds.getConnection();
 	}
+	
 	//DB 자원반납 메소드
 	public void close() throws SQLException {
 		if(rs != null) rs.close();
@@ -38,7 +39,7 @@ public class ReviewDAO {
 		if(conn != null) conn.close();
 	}
 	
-	public int insert(ReviewDTO dto) throws SQLException{
+	public int insert(ReviewDTO dto) throws SQLException, NamingException{
 		String rv_title = dto.getRv_title();
 		String rv_content = dto.getRv_content();
 		Double rv_star = dto.getRv_star();
@@ -47,9 +48,10 @@ public class ReviewDAO {
 		return this.insert(rv_title, rv_content, rv_star, rs_num);
 	}
 	
-	public int insert(String rv_title, String rv_content, Double rv_star, int rs_num) throws SQLException{
+	public int insert(String rv_title, String rv_content, Double rv_star, int rs_num) throws SQLException, NamingException{
 		int cnt = 0 ;
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_REVIEW_INSERT);
 			pstmt.setString(1, rv_title);
 			pstmt.setString(2, rv_content);
@@ -79,9 +81,10 @@ public class ReviewDAO {
 		return arr;
 	}
 	
-	public ReviewDTO[] select() throws SQLException {
+	public ReviewDTO[] select() throws SQLException, NamingException {
 		ReviewDTO[] arr = null;
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_REVIEW_SELECT);
 			rs = pstmt.executeQuery();
 			
@@ -92,9 +95,10 @@ public class ReviewDAO {
 		return arr;
 	}
 	
-	public int update(String rv_title , String rv_content , Double rv_star , int rv_num ) throws SQLException{
+	public int update(String rv_title , String rv_content , Double rv_star , int rv_num ) throws SQLException, NamingException{
 		int cnt = 0;
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_REVIEW_UPDATE);
 			pstmt.setString(1, rv_title);
 			pstmt.setString(2, rv_content);
@@ -109,10 +113,11 @@ public class ReviewDAO {
 		return cnt;
 	}
 	
-	public int delete(int rv_num) throws SQLException {
+	public int delete(int rv_num) throws SQLException, NamingException {
 		int cnt = 0;
 		
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_REVIEW_DELETE);
 			pstmt.setInt(1, rv_num);
 			cnt = pstmt.executeUpdate();

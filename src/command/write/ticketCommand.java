@@ -2,6 +2,7 @@ package command.write;
 
 import java.sql.SQLException;
 
+import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -13,7 +14,7 @@ import com.beans.TheaterDTO;
 public class ticketCommand implements Command {
 
 	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws NamingException {
 		HallDAO hdao = new HallDAO();
 		HandTDTO [] harr = null;
 		String theaterCode = request.getParameter("theaterCode");

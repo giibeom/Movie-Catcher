@@ -2,6 +2,7 @@ package command.write;
 
 import java.sql.SQLException;
 
+import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -10,7 +11,7 @@ import com.beans.*;
 public class bookingStep1Command implements Command {
 
 	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws NamingException {
 		TheaterDAO tdao = new TheaterDAO();
 		TheaterDTO [] tarr = null;
 		try {

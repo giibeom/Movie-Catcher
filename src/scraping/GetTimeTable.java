@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import javax.naming.NamingException;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -13,7 +15,7 @@ import org.jsoup.select.Elements;
 import com.beans.*;
 
 public class GetTimeTable {
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) throws SQLException, NamingException {
 		TheaterDAO tdao = new TheaterDAO();
 		TheaterDTO[] tdto = tdao.select();
 		int h_uid = 0;

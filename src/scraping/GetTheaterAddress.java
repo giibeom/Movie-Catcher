@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import javax.naming.NamingException;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -18,7 +20,7 @@ import com.beans.TheaterDAO;
 
 
 public class GetTheaterAddress {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NamingException {
 		ArrayList<String[]> theaterArr = new ArrayList<String[]>() ;
 		try {
 			BufferedReader brA = new BufferedReader(new FileReader("WebContent/source/theater.txt"));

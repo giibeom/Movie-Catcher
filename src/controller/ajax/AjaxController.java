@@ -1,6 +1,8 @@
 package controller.ajax;
 
 import java.io.IOException;
+
+import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,14 +24,24 @@ public class AjaxController extends HttpServlet {
 
 		
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			ajaxAction(request, response);
+			try {
+				ajaxAction(request, response);
+			} catch (NamingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			ajaxAction(request, response);
+			try {
+				ajaxAction(request, response);
+			} catch (NamingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
-		protected void ajaxAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		protected void ajaxAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, NamingException {
 			System.out.println("ajaxAction()");
 	request.setCharacterEncoding("utf-8");
 			

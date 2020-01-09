@@ -11,6 +11,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 import common.D;
 
 public class BoardDAO {
@@ -19,18 +24,13 @@ public class BoardDAO {
 	Statement stmt;
 	ResultSet rs;
 	
-	public BoardDAO() {
-		try {
-			Class.forName(D.DRIVER);
-			conn = DriverManager.getConnection(D.URL, D.USERID, D.USERPW);
-			System.out.println("BoardDAO 객체 생성, 데이터베이스 연결");
-			
-			
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+	public BoardDAO() {}
+	
+	public static Connection getConnection() throws NamingException, SQLException {
+		Context initContext = new InitialContext();
+		Context envContext = (Context)initContext.lookup("java:/comp/env");
+		DataSource ds = (DataSource)envContext.lookup("jdbc/testDB");
+		return ds.getConnection();
 	}
 	
 	// DB 자원 반납 메소드 
@@ -41,7 +41,7 @@ public class BoardDAO {
 		if(conn != null) conn.close();
 	}
 	
-	public int insert(BoardDTO dto) throws SQLException {
+	public int insert(BoardDTO dto) throws SQLException, NamingException {
 		String b_title = dto.getB_title();
 		String b_content = dto.getB_content();
 		String b_regdate = dto.getB_regdate();
@@ -50,10 +50,11 @@ public class BoardDAO {
 		return this.insert(b_title, b_content, b_regdate, b_uid);
 	}
 	
-	public int insert(String b_title, String b_content, String b_regdate, int b_uid) throws SQLException{
+	public int insert(String b_title, String b_content, String b_regdate, int b_uid) throws SQLException, NamingException{
 		int cnt = 0;
 		
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_BOARD_INSERT);
 			pstmt.setString(1, b_title);
 			pstmt.setString(2, b_content);
@@ -67,10 +68,11 @@ public class BoardDAO {
 	}
 	
 	/*"UPDATE board SET b_title = ?, b_content = ? WHERE b_num = ?";*/
-	public int update(String b_title, String b_content, int b_num) throws SQLException{
+	public int update(String b_title, String b_content, int b_num) throws SQLException, NamingException{
 		int cnt = 0;
 		
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_BOARD_UPDATE);
 			pstmt.setString(1, b_title);
 			pstmt.setString(2, b_content);
@@ -83,10 +85,11 @@ public class BoardDAO {
 		return cnt;
 	}
 	
-	public int delete(int b_num) throws SQLException {
+	public int delete(int b_num) throws SQLException, NamingException {
 		int cnt = 0;
 		
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_BOARD_DELETE);
 			pstmt.setInt(1, b_num);
 			cnt = pstmt.executeUpdate();
@@ -122,10 +125,11 @@ public class BoardDAO {
 		
 	}
 	
-	public BoardDTO [] select() throws SQLException {
+	public BoardDTO [] select() throws SQLException, NamingException {
 		BoardDTO [] arr = null;
 		
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_BOARD_SELECT);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
