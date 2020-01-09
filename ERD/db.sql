@@ -155,6 +155,7 @@ ALTER TABLE reserve
 
 
 show TABLES;
+
 describe board;
 describe ticket;
 describe theater;
@@ -163,11 +164,13 @@ select * from theater;
 select * from hall;
 select * from ticket;
 select * from mc_user mu;
+select * from review;
 delete from theater where theaterCode = 1;
 delete from hall where h_uid =1;
 TRUNCATE table theater;
 TRUNCATE table hall;
 TRUNCATE table ticket;
+TRUNCATE table review;
 SELECT u_pw FROM mc_user WHERE u_id = "ksi0678";
 select count(*) from hall;
 select count(*) from ticket;
@@ -179,12 +182,11 @@ show databases;
 
 create database movie_catcher;
 use movie_catcher;
-grant all privileges on movie_catcher.* to 'root'@'localhost';
+grant all privileges on movie_catcher.* to 'myuser'@'localhost';
 flush privileges;
 
-show grants for 'root'@'localhost';
+show grants for 'myuser'@'localhost';
 
 select * from theater;
-
 
 

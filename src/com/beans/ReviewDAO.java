@@ -46,12 +46,12 @@ public class ReviewDAO {
 		int rs_num = dto.getRs_num();	
 		int rv_num = dto.getRv_num();
 		String rv_id = dto.getRv_id();
-		String rs_date = dto.getRs_date();
+		String rv_date = dto.getRv_date();
 
-		return this.insert(rv_title, rv_content, rv_star, rs_num, rv_num, rv_id, rs_date);
+		return this.insert(rv_title, rv_content, rv_star, rs_num, rv_id, rv_date);
 	}
 	
-	public int insert(String rv_title, String rv_content, Double rv_star, int rs_num, int rv_num, String rv_id, String rs_date) throws SQLException, NamingException{
+	public int insert(String rv_title, String rv_content, Double rv_star, int rs_num, String rv_id, String rv_date) throws SQLException, NamingException{
 		int cnt = 0 ;
 		try {
 			conn = getConnection();
@@ -60,9 +60,8 @@ public class ReviewDAO {
 			pstmt.setString(2, rv_content);
 			pstmt.setDouble(3, rv_star);
 			pstmt.setInt(4, rs_num);
-			pstmt.setInt(5, rv_num);
-			pstmt.setString(6, rv_id);
-			pstmt.setString(7, rs_date);
+			pstmt.setString(5, rv_id);
+			pstmt.setString(6, rv_date);
 			cnt = pstmt.executeUpdate();			
 		} finally {
 			close();
@@ -79,10 +78,10 @@ public class ReviewDAO {
 			Double rv_star = rs.getDouble("rv_star");
 			int rs_num = rs.getInt("rs_num");
 			String rv_id = rs.getString("rv_id");
-			String rs_date = rs.getString("rs_date");
+			String rv_date = rs.getString("rv_date");
 			
 			
-			ReviewDTO dto = new ReviewDTO(rv_num, rv_title, rv_content, rv_star, rs_num, rv_id, rs_date );
+			ReviewDTO dto = new ReviewDTO(rv_title, rv_content, rv_star, rs_num, rv_id, rv_date );
 			list.add(dto);
 		} 
 		int size = list.size();
@@ -125,10 +124,11 @@ public class ReviewDAO {
 	
 	// 페이징
 		// 몇번째 from 부터 몇개 rows를 SELECT 
-		public ReviewDTO [] selectFromRow(int from, int rows) throws SQLException {
+		public ReviewDTO [] selectFromRow(int from, int rows) throws SQLException, NamingException {
 			ReviewDTO [] arr = null;
 			
 			try {
+				conn = getConnection();
 				pstmt = conn.prepareStatement(D.SQL_REVIEW_SELECT_FROM_ROW);
 				pstmt.setInt(1, from);
 				pstmt.setInt(2, rows);
@@ -142,9 +142,11 @@ public class ReviewDAO {
 		}
 		
 		// 총 몇개의 글이 있는지 계산
-			public int countAll() throws SQLException {
+			public int countAll() throws SQLException, NamingException {
 				int cnt = 0;
 				try {
+					
+					conn = getConnection();
 					pstmt = conn.prepareStatement(D.SQL_REVIEW_COUNT_ALL);
 					rs = pstmt.executeQuery();
 					rs.next();
