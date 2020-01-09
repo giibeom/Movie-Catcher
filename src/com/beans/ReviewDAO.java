@@ -125,10 +125,11 @@ public class ReviewDAO {
 	
 	// 페이징
 		// 몇번째 from 부터 몇개 rows를 SELECT 
-		public ReviewDTO [] selectFromRow(int from, int rows) throws SQLException {
+		public ReviewDTO [] selectFromRow(int from, int rows) throws SQLException, NamingException {
 			ReviewDTO [] arr = null;
 			
 			try {
+				conn = getConnection();
 				pstmt = conn.prepareStatement(D.SQL_REVIEW_SELECT_FROM_ROW);
 				pstmt.setInt(1, from);
 				pstmt.setInt(2, rows);
@@ -142,13 +143,15 @@ public class ReviewDAO {
 		}
 		
 		// 총 몇개의 글이 있는지 계산
-			public int countAll() throws SQLException {
+			public int countAll() throws SQLException, NamingException {
 				int cnt = 0;
 				try {
+					conn = getConnection();
 					pstmt = conn.prepareStatement(D.SQL_REVIEW_COUNT_ALL);
-					rs = pstmt.executeQuery();
+					rs = pstmt.executeQuery();					
 					rs.next();
-					cnt = rs.getInt(1); //첫번째 컬럼
+					cnt = rs.getInt(1);
+					
 					
 				} finally {
 					close();

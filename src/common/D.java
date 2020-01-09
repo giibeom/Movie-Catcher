@@ -51,8 +51,7 @@ public interface D {
 	
 	// 페이징용 쿼리 준비
 	// 쿼리: 글 목록 전체 개수 가져오기
-	public static final String SQL_REVIEW_COUNT_ALL = 
-			"SELECT COUNT(*) FROM review";
+	public static final String SQL_REVIEW_COUNT_ALL = "SELECT count(*) FROM review";
 	
 	// 쿼리: from 부터 row 만큼 SELECT : LIMIT 은 0 부터 시작 주의!
 	public static final  String SQL_REVIEW_SELECT_FROM_ROW = 

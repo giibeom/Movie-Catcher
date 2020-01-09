@@ -52,17 +52,17 @@
   	
         <ul class="reviewWrap">
         
-        <c:forEach var="dto" items="${list }" varStatus="status">
+        <c:forEach var="list" items="${list }" varStatus="status">
        		    <li>
                 <div class="reviewer">
                     <div class="review_des_title">
                     <div class="script">
-                        <div class="rName">"${rv_num }"</div>
-                        <div class="rStar">평점"${rv_star }"</div>
-                        <div class="rDate">"${rs_date }"</div></div>
+                        //<div class="rName">"${list.rv_num }"</div>
+                        <div class="rStar">평점"${list.rv_star }"</div>
+                        <div class="rDate">"${list.rs_date }"</div></div>
                     </div>
-                    <div class="rMovieTitle">"${rv_title }</div>
-                    <div class="rDesc">"${rv_content }<p></p></div>
+                    <div class="rMovieTitle">"${list.rv_title }</div>
+                    <div class="rDesc">"${list.rv_content }<p></p></div>
                 </div>
             </li>
 	 </c:forEach>
@@ -70,13 +70,8 @@
             
         </ul>
   
-);
-   		<%-- 페이징 --%>
-		<jsp:include page="pagination.jsp">
-		<jsp:param value="${writePages }" name="writePages"/>
-		<jsp:param value="${totalPage }" name="totalPage"/>
-		<jsp:param value="${curPage }" name="curPage"/>
-		</jsp:include>
+
+   	
 </div>  
 
 		<!-- 
