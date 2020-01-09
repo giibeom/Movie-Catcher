@@ -77,17 +77,19 @@ CREATE TABLE reserve
 	PRIMARY KEY (rs_num)
 );
 
-
+select * from review;
 CREATE TABLE review
 (
 	rv_num int NOT NULL AUTO_INCREMENT,
 	rv_title varchar(25) NOT NULL,
 	rv_content text,
 	rv_star double NOT NULL,
-	rs_num int NOT NULL,
+	rv_id varchar(30),
+	rs_date date NOT NULL,
+	rs_num int,
 	PRIMARY KEY (rv_num)
 );
-
+select * from review
 
 CREATE TABLE theater
 (
@@ -190,4 +192,6 @@ flush privileges;
 show grants for 'root'@'localhost';
 
 select * from theater;
+
+
 
