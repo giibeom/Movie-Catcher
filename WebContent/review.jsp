@@ -224,7 +224,7 @@
                         <div class="rStar">평점 1.6</div>
                         <div class="rDate">2019-12-30</div></div>
                     </div>
-                    <div class="rMovieTitle">백두산</div>
+                    <div class="rMovieTitle">백두산(영화제목찍고)</div>
                     <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
                 </div>
             </li>
