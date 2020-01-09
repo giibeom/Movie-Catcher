@@ -20,16 +20,18 @@ public class ReviewUpdateCommand implements Command {
 		String rv_title = request.getParameter("title");
 		String rv_content = request.getParameter("content");
 		Double rv_star = Double.parseDouble(request.getParameter("star"));
-		if(rv_star == null) rv_star = 0.0;
+		if(rv_content == null) rv_content = "";
 		
 		
-		if(rv_title != null && rv_content != null && rv_title.trim().length() > 0 && rv_content.trim().length() >0 ) {
+		if(rv_title != null && rv_star != null && rv_title.trim().length() > 0) {
 			try {
 				cnt = dao.update(rv_title, rv_content, rv_star, rv_num);
 			}catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
+		
+		request.setAttribute("result", cnt);
 	}
 
 }
