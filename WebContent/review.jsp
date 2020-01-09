@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,236 +49,34 @@
         </form>
       </div>
     <div class="reviewBox">
+  	
         <ul class="reviewWrap">
-            <li>
+        
+        <c:forEach var="dto" items="${list }" varStatus="status">
+       		    <li>
                 <div class="reviewer">
                     <div class="review_des_title">
                     <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
+                        <div class="rName">"${rv_num }"</div>
+                        <div class="rStar">평점"${rv_star }"</div>
+                        <div class="rDate">"${rs_date }"</div></div>
                     </div>
-                    <div class="rMovieTitle">백두산</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
+                    <div class="rMovieTitle">"${rv_title }</div>
+                    <div class="rDesc">"${rv_content }<p></p></div>
                 </div>
             </li>
-            <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
-                    </div>
-                    <div class="rMovieTitle">백두산</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
-                </div>
-            </li>
-            <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
-                    </div>
-                    <div class="rMovieTitle">백두산</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
-                </div>
-            </li>
-            <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
-                    </div>
-                    <div class="rMovieTitle">백두산</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
-                </div>
-            </li>
-            <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
-                    </div>
-                    <div class="rMovieTitle">백두산</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
-                </div>
-            </li>
-            <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
-                    </div>
-                    <div class="rMovieTitle">백두산</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
-                </div>
-            </li>
-            <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
-                    </div>
-                    <div class="rMovieTitle">백두산</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
-                </div>
-            </li>
-            <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
-                    </div>
-                    <div class="rMovieTitle">백두산</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
-                </div>
-            </li>
-            <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
-                    </div>
-                    <div class="rMovieTitle">백두산</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
-                </div>
-            </li>
-            <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
-                    </div>
-                    <div class="rMovieTitle">백두산</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
-                </div>
-            </li>
-            <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
-                    </div>
-                    <div class="rMovieTitle">백두산</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
-                </div>
-            </li>
-            <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
-                    </div>
-                    <div class="rMovieTitle">백두산</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
-                </div>
-            </li>
-            <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
-                    </div>
-                    <div class="rMovieTitle">백두산</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
-                </div>
-            </li>
-            <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
-                    </div>
-                    <div class="rMovieTitle">백두산</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
-                </div>
-            </li>
-            <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
-                    </div>
-                    <div class="rMovieTitle">백두산(영화제목찍고)</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
-                </div>
-            </li>
-            <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">클로이님</div>
-                        <div class="rStar">평점 1.6</div>
-                        <div class="rDate">2019-12-30</div></div>
-                    </div>
-                    <div class="rMovieTitle">백두산</div>
-                    <div class="rDesc"><p>너무 재미있습니다 꼭 보세요 여러분!연출도 좋고 배우 연기력도 굿굿 하하하하하하 배고파요 </p></div>
-                </div>
-            </li>
+	 </c:forEach>
+    
+            
         </ul>
-        
-        <div class="pager">
-    <ul>
-        <c:if test="${ curPageNum > 5 && !empty kwd }">
-            <li><a href="/mysite/board?page=${ blockStartNum - 1 }&kwd=${ kwd }">◀</a></li>
-        </c:if>
-        
-        <c:if test="${ curPageNum > 5 }">
-            <li><a href="/mysite/board?page=${ blockStartNum - 1 }">◀</a></li>
-        </c:if>
-        
-        <c:forEach var="i" begin="${ blockStartNum }" end="${ blockLastNum }">
-            <c:choose>
-                <c:when test="${ i > lastPageNum }">
-                    <li>${ i }</li>
-                </c:when>
-                <c:when test="${ i == curPageNum }">
-                    <li class="selected">${ i }</li>
-                </c:when>
-                <c:when test="${ !empty kwd}">
-                    <li><a href="/mysite/board?a=search&page=${ i }&kwd=${ kwd }">${ i }</a></li>
-                </c:when>
-                <c:otherwise>
-                    <li><a href="/mysite/board?page=${ i }">${ i }</a></li>
-                </c:otherwise>
-            </c:choose>
-        </c:forEach>
-        
-        <c:if test="${ lastPageNum > blockLastNum && !empty kwd }">
-            <li><a href="/mysite/board?a=search&page=${ blockLastNum + 1 }&kwd=${ kwd }">▶</a></li>
-        </c:if>
-        
-        <c:if test="${ lastPageNum > blockLastNum }">
-            <li><a href="/mysite/board?page=${ blockLastNum + 1 }">▶</a></li>
-        </c:if>
-    </ul>
+  
+);
+   		<%-- 페이징 --%>
+		<jsp:include page="pagination.jsp">
+		<jsp:param value="${writePages }" name="writePages"/>
+		<jsp:param value="${totalPage }" name="totalPage"/>
+		<jsp:param value="${curPage }" name="curPage"/>
+		</jsp:include>
 </div>  
 
 		<!-- 
