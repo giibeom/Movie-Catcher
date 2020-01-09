@@ -15,13 +15,13 @@ public class ReviewWriteCommand implements Command {
 		ReviewDAO dao = new ReviewDAO();
 		
 		/*rs_num 파라미터를 어디서 받아야하는지 ㅠㅠ */
-		int rs_num = Integer.parseInt(request.getParameter("num"));
+		int rs_num = Integer.parseInt(request.getParameter("rs_num"));
 		String rv_title = request.getParameter("title");
 		String rv_content = request.getParameter("content");
-		Double rv_star = Double.parseDouble(request.getParameter("rv_star"));
-		if(rv_star == null) rv_star = 0.0;
+		Double rv_star = Double.parseDouble(request.getParameter("star"));
+		if(rv_content == null) rv_content = "";
 		
-		if(rv_title != null && rv_content != null && rv_title.trim().length() > 0 && rv_content.trim().length() >0 ) {
+		if(rv_title != null && rv_star != null && rv_title.trim().length() > 0) {
 		
 			try {
 				cnt = dao.insert(rv_title, rv_content, rv_star, rs_num);
@@ -30,6 +30,8 @@ public class ReviewWriteCommand implements Command {
 			}
 	
 		}
+		request.setAttribute("result", cnt);
 	}
+
 
 }
