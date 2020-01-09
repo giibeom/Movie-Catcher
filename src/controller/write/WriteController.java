@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import command.write.Command;
 import command.write.TheaterCommand;
 import command.write.TimeTableCommand;
+import command.write.b_writeCommand;
+import command.write.boardCommand;
 import command.write.bookingStep1Command;
 import command.write.bookingStep2Command;
 import command.write.loginCommand;
@@ -104,6 +106,20 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			command = new TimeTableCommand();
 			command.execute(request, response);			
+		case "/board.mc":
+			command = new boardCommand();
+			command.execute(request, response);
+			viewPage = "board.jsp";
+			break;
+		case "/b_write.mc":
+			viewPage = "b_write.jsp";
+			break;
+		case "/b_writeOk.mc":
+			command = new b_writeCommand();
+			command.execute(request, response);
+			viewPage = "b_writeOk.jsp";
+			break;
+		
 		}
 	
 		
