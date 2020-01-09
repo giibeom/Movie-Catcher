@@ -18,6 +18,7 @@ import command.write.bookingStep2Command;
 import command.write.loginCommand;
 import command.write.searchPageCommand;
 import command.write.signupCommand;
+import command.write.ReviewCommand;
 import scraping.GetTimeTable;
 
 
@@ -95,15 +96,22 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "bookingStep1.jsp";
 		break;
+		case "/review.mc":
+			//command = new ReviewCommand();
+			//command.execute(request, response);
+			viewPage = "review.jsp";
+		break;
 		case "/bookingStep2.mc":
 			command = new bookingStep2Command();
 			command.execute(request, response);
 			viewPage = "bookingStep2.jsp";
+		break;	
 		case "/scraping.mc":
 			command = new TheaterCommand();
 			command.execute(request, response);
 			command = new TimeTableCommand();
 			command.execute(request, response);			
+		break;	
 		}
 	
 		

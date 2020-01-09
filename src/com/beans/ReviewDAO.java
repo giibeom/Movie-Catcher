@@ -44,11 +44,14 @@ public class ReviewDAO {
 		String rv_content = dto.getRv_content();
 		Double rv_star = dto.getRv_star();
 		int rs_num = dto.getRs_num();	
-		
-		return this.insert(rv_title, rv_content, rv_star, rs_num);
+		int rv_num = dto.getRv_num();
+		String rv_id = dto.getRv_id();
+		String rs_date = dto.getRs_date();
+
+		return this.insert(rv_title, rv_content, rv_star, rs_num, rv_num, rv_id, rs_date);
 	}
 	
-	public int insert(String rv_title, String rv_content, Double rv_star, int rs_num) throws SQLException, NamingException{
+	public int insert(String rv_title, String rv_content, Double rv_star, int rs_num, int rv_num, String rv_id, String rs_date) throws SQLException, NamingException{
 		int cnt = 0 ;
 		try {
 			conn = getConnection();
@@ -57,13 +60,16 @@ public class ReviewDAO {
 			pstmt.setString(2, rv_content);
 			pstmt.setDouble(3, rv_star);
 			pstmt.setInt(4, rs_num);
+			pstmt.setInt(5, rv_num);
+			pstmt.setString(6, rv_id);
+			pstmt.setString(7, rs_date);
 			cnt = pstmt.executeUpdate();			
 		} finally {
 			close();
 		}
 		return cnt;
 	}
-	
+
 	public ReviewDTO []  createArray(ResultSet rs) throws SQLException{
 		ArrayList<ReviewDTO> list = new ArrayList<ReviewDTO>();
 		while(rs.next()){
@@ -72,9 +78,13 @@ public class ReviewDAO {
 			String rv_content = rs.getString("rv_content");
 			Double rv_star = rs.getDouble("rv_star");
 			int rs_num = rs.getInt("rs_num");
-			ReviewDTO dto = new ReviewDTO(rv_num, rv_title, rv_content, rv_star, rs_num);
+			String rv_id = rs.getString("rv_id");
+			String rs_date = rs.getString("rs_date");
+			
+			
+			ReviewDTO dto = new ReviewDTO(rv_num, rv_title, rv_content, rv_star, rs_num, rv_id, rs_date );
 			list.add(dto);
-		}
+		} 
 		int size = list.size();
 		ReviewDTO [] arr = new ReviewDTO[size];
 		list.toArray(arr);
@@ -95,23 +105,6 @@ public class ReviewDAO {
 		return arr;
 	}
 	
-	public int update(String rv_title , String rv_content , Double rv_star , int rv_num ) throws SQLException, NamingException{
-		int cnt = 0;
-		try {
-			conn = getConnection();
-			pstmt = conn.prepareStatement(D.SQL_REVIEW_UPDATE);
-			pstmt.setString(1, rv_title);
-			pstmt.setString(2, rv_content);
-			pstmt.setDouble(3, rv_star);
-			pstmt.setInt(4, rv_num);
-			cnt = pstmt.executeUpdate();
-			
-		} finally {
-			close();
-		}
-		
-		return cnt;
-	}
 	
 	public int delete(int rv_num) throws SQLException, NamingException {
 		int cnt = 0;
