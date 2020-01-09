@@ -162,6 +162,7 @@ ALTER TABLE reserve
 ;
 
 show TABLES;
+
 describe board;
 describe ticket;
 describe theater;
@@ -186,12 +187,11 @@ show databases;
 
 create database movie_catcher;
 use movie_catcher;
-grant all privileges on movie_catcher.* to 'root'@'localhost';
+grant all privileges on movie_catcher.* to 'myuser'@'localhost';
 flush privileges;
 
-show grants for 'root'@'localhost';
+show grants for 'myuser'@'localhost';
 
 select * from theater;
-
 
 
