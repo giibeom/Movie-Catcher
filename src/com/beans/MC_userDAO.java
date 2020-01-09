@@ -13,6 +13,11 @@ import java.util.Date;
 
 import common.D;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 public class MC_userDAO {
 	Connection conn;
 	PreparedStatement pstmt;
@@ -20,21 +25,15 @@ public class MC_userDAO {
 	ResultSet rs;
 	
 	// DAO 객체가 생성될때 Connection도 생성된다.
-	public MC_userDAO() {
-
-		try {
-			Class.forName(D.DRIVER);
-			conn = DriverManager.getConnection(D.URL, D.USERID, D.USERPW);
-			System.out.println("MC_userDAO 객체 생성, 데이터베이스 연결");
-			
-			
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
+	public MC_userDAO() {}
+	
+	public static Connection getConnection() throws NamingException, SQLException {
+		Context initContext = new InitialContext();
+		Context envContext = (Context)initContext.lookup("java:/comp/env");
+		DataSource ds = (DataSource)envContext.lookup("jdbc/testDB");
+		return ds.getConnection();
 	}
+	
 	//DB 자원반납 메소드
 	public void close() throws SQLException {
 		if(rs != null) rs.close();
@@ -43,7 +42,7 @@ public class MC_userDAO {
 		if(conn != null) conn.close();
 	}
 	
-	public int insert(MC_userDTO dto) throws SQLException {
+	public int insert(MC_userDTO dto) throws SQLException, NamingException {
 		
 		int u_idnum = dto.getU_idnum();
 		String u_id = dto.getU_id();
@@ -58,10 +57,11 @@ public class MC_userDAO {
 		
 	}
 	
-	public int insert(String u_id, String u_pw, String u_name, String u_email, String u_phone, String u_date) throws SQLException {
+	public int insert(String u_id, String u_pw, String u_name, String u_email, String u_phone, String u_date) throws SQLException, NamingException {
 		int cnt = 0;
 		
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_MC_USER_INSERT);
 			pstmt.setString(1, u_id);
 			pstmt.setString(2, u_pw);
@@ -78,10 +78,11 @@ public class MC_userDAO {
 		return cnt;
 	}
 	
-	public int update(String u_name, String u_pw, String u_email, String u_phone, String u_id ) throws SQLException {
+	public int update(String u_name, String u_pw, String u_email, String u_phone, String u_id ) throws SQLException, NamingException {
 		int cnt = 0;
 		
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_MC_USER_UPDATE);
 			pstmt.setString(1, u_name);
 			pstmt.setString(2, u_pw);
@@ -97,10 +98,11 @@ public class MC_userDAO {
 		return cnt;
 	}
 	
-	public int delete(String u_id) throws SQLException {
+	public int delete(String u_id) throws SQLException, NamingException {
 		int cnt = 0;
 		
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_MC_USER_DELETE);
 			pstmt.setString(1, u_id);
 			cnt = pstmt.executeUpdate();
@@ -137,10 +139,11 @@ public class MC_userDAO {
 		return arr;
 	}
 	
-	public MC_userDTO [] select(String u_id) throws SQLException {
+	public MC_userDTO [] select(String u_id) throws SQLException, NamingException {
 		MC_userDTO [] arr = null;
 		
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_MC_USER_SELECT);
 			pstmt.setString(1, u_id);
 			rs = pstmt.executeQuery();
@@ -154,11 +157,12 @@ public class MC_userDAO {
 	}
 	
 	
-	public String password(String u_id) throws SQLException {
+	public String password(String u_id) throws SQLException, NamingException {
 		String pw = null;
 		
 		
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_MC_USER_PASSWORD);
 			pstmt.setString(1, u_id);
 			rs = pstmt.executeQuery();

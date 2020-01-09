@@ -6,20 +6,25 @@ import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.beans.*;
+import com.beans.HallDAO;
+import com.beans.HandTDTO;
+import com.beans.TheaterDAO;
+import com.beans.TheaterDTO;
 
-public class bookingStep1Command implements Command {
+public class ticketCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws NamingException {
-		TheaterDAO tdao = new TheaterDAO();
-		TheaterDTO [] tarr = null;
+		HallDAO hdao = new HallDAO();
+		HandTDTO [] harr = null;
+		String theaterCode = request.getParameter("theaterCode");
 		try {
-			tarr = tdao.select();
-			request.setAttribute("theater", tarr);
+			harr = hdao.selectTicket(theaterCode);
+			request.setAttribute("ticket", harr);
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
+
 	}
 
 }

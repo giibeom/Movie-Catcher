@@ -13,23 +13,26 @@ import java.util.Date;
 
 import common.D;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 public class ReserveDAO {
 	Connection conn;
 	PreparedStatement pstmt;
 	Statement stmt;
 	ResultSet rs;
 	
-	public ReserveDAO() {
-		try {
-			Class.forName(D.DRIVER);
-			conn = DriverManager.getConnection(D.URL, D.USERID, D.USERPW);
-			System.out.println("ReserveDAO 객체 생성,데이터 베이스 연결");
-		}catch(ClassNotFoundException e) {
-			e.printStackTrace();
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}
+	public ReserveDAO() {}
+	
+	public static Connection getConnection() throws NamingException, SQLException {
+		Context initContext = new InitialContext();
+		Context envContext = (Context)initContext.lookup("java:/comp/env");
+		DataSource ds = (DataSource)envContext.lookup("jdbc/testDB");
+		return ds.getConnection();
 	}
+	
 	
 	// DB 자원 반납 메소드 
 	public void close() throws SQLException {
@@ -39,7 +42,7 @@ public class ReserveDAO {
 		if(conn != null) conn.close();
 	}
 	
-	public int insert(ReserveDTO dto) throws SQLException {
+	public int insert(ReserveDTO dto) throws SQLException, NamingException {
 		String rs_date = dto.getRs_date();
 		String rs_price = dto.getRs_price();
 		String rs_seat = dto.getRs_seat();
@@ -48,10 +51,11 @@ public class ReserveDAO {
 		return this.insert(rs_date, rs_price, rs_seat, u_idnum, t_uid);
 	}
 	
-	public int insert(String rs_date, String rs_price, String rs_seat, int u_idnum, int t_uid) throws SQLException{
+	public int insert(String rs_date, String rs_price, String rs_seat, int u_idnum, int t_uid) throws SQLException, NamingException{
 		int cnt = 0;
 		
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_RESERVE_INSERT);
 			pstmt.setString(1, rs_date);
 			pstmt.setString(2, rs_price);
@@ -88,10 +92,11 @@ public class ReserveDAO {
 		
 	}
 	
-	public ReserveDTO [] getUserRs(int u_idnum) throws SQLException {
+	public ReserveDTO [] getUserRs(int u_idnum) throws SQLException, NamingException {
 		ReserveDTO [] arr = null;
 		
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_RESERVE_USER);
 			pstmt.setInt(1, u_idnum);
 			rs = pstmt.executeQuery();
@@ -105,10 +110,11 @@ public class ReserveDAO {
 		
 	}
 	
-	public ReserveDTO [] get(int rs_num) throws SQLException {
+	public ReserveDTO [] get(int rs_num) throws SQLException, NamingException {
 		ReserveDTO [] arr = null;
 		
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_RESERVE_REVIEW);
 			pstmt.setInt(1, rs_num);
 			rs = pstmt.executeQuery();
@@ -122,10 +128,11 @@ public class ReserveDAO {
 		
 	}
 	
-	public int delete(int rs_num) throws SQLException {
+	public int delete(int rs_num) throws SQLException, NamingException {
 		int cnt = 0;
 		
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_RESERVE_DELETE);
 			pstmt.setInt(1, rs_num);
 			cnt = pstmt.executeUpdate();

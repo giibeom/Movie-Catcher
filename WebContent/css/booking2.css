@@ -1,0 +1,208 @@
+@charset "UTF-8";
+
+[class*="col-"] {
+	float: left;
+	width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+	.col-1 {
+		width: 8.33%;
+	}
+	.col-2 {
+		width: 16.66%;
+	}
+	.col-3 {
+		width: 25%;
+	}
+	.col-4 {
+		width: 33.33%;
+	}
+	.col-5 {
+		width: 41.66%;
+	}
+	.col-6 {
+		width: 50%;
+	}
+	.col-7 {
+		width: 58.33%;
+	}
+	.col-8 {
+		width: 66.66%;
+	}
+	.col-9 {
+		width: 75%;
+	}
+	.col-10 {
+		width: 83.33%;
+	}
+	.col-11 {
+		width: 91.66%;
+	}
+	.col-12 {
+		width: 100%;
+	}
+}
+
+.clear {
+	clear: both;
+}
+
+input:focus {
+	outline: none;
+}
+
+body {
+	box-sizing: border-box;
+}
+
+.body {
+	max-width: 1200px;
+	margin: 0px auto;
+	min-width: 600px;
+	margin-bottom: 30px;
+	height: 100%;
+}
+/*step2 좌석선택 style*/
+.number {
+	margin: 18px;
+	font-size: 20px;
+}
+
+.number select {
+	/*padding:5px 0;*/
+	margin: auto;
+	width: 65px;
+	font-size: 17px;
+	text-align-last: center;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.seatSelect {
+	width: 100%;
+	min-height: 500px;
+	margin-top: 10px;
+	margin: 0 auto;
+	padding: 10px;
+	text-align: center;
+	background-color: whitesmoke;
+	border-top: 0.1px solid black;
+	border-bottom: 0.1px solid black;
+	overflow:hidden;
+	height:auto;
+}
+
+.seat {
+	background-color: gray;
+	min-height: 400px;
+	width: 50%;
+	margin: auto;
+	overflow:hidden;
+	height:auto;
+}
+
+.bookingChk {
+	background-color: #f0f0f0;
+	height: 200px;
+	width: 100%;
+	margin: auto;
+}
+
+h2 {
+	font-size: 25px;
+	text-align: center;
+	font-family: 'Noto Sans KR', sans-serif;
+	color: black;
+	margin-bottom: 20px;
+	margin-top: 30px;
+}
+
+#selectSeat {
+	min-height: 380px;
+	background-color: white;
+	overflow:hidden;
+	height:auto;
+}
+
+/* media */
+@media ( max-width : 600px) {
+	.wrapper {
+		width: calc(100vw - 20px);
+	}
+	.ui-datepicker {
+		margin-right: 0;
+		margin-left: 0;
+		padding: 80px;
+		width: calc(100vw - 20px);
+		margin: 80px auto;
+	}
+	.ui-datepicker-calendar>tbody>tr>td {
+		width: 38px;
+		height: 38px;
+	}
+	.selectStep1 {
+		margin-right: 0;
+		margin-left: 0;
+		width: calc(100vw - 20px);
+	}
+	.time {
+		margin: 12px;
+	}
+	.theater {
+		width: 100%;
+		margin: 10px;
+	}
+	.schedule {
+		width: 90%;
+	}
+	.schedule>.selectScd {
+		width: 60px;
+	}
+	.seatSelect .seat {
+		width: 90%;
+	}
+}
+
+#selectSeat{
+	width: auto;
+	margin: auto;
+	padding-bottom: 30px;
+}
+
+.seatrow{
+	text-align: left;
+	display:inline-block;
+	overflow:hidden;	
+	width: 100%;
+}
+
+.rowfirst{
+}
+
+[class*="seatLine"]{
+	display: inline-block;
+	width:20px;
+	height:20px;
+	line-height:20px;
+}
+
+[class*="eachSeat"]{
+	text-align: center;
+	display:inline-block;
+	border:1px solid black;
+	width:20px;
+	height:20px;
+	font-size:60%;
+	line-height:20px;
+	background-color: #666666;
+	color: #fff;
+}
+
+.onSelect{
+	background-color: red;
+}
+
+.seatLine4, .seatLine8, .seatLine12, .seatLine16, .seatLine20, .seatLine24, .seatLine28{
+	margin-right: 10px;
+}
+

@@ -176,7 +176,9 @@ TRUNCATE table ticket;
 SELECT u_pw FROM mc_user WHERE u_id = "ksi0678";
 select count(*) from hall;
 select count(*) from ticket;
-select * from hall h, ticket t where h.h_uid = t.h_uid; 
+select * from hall h, ticket t where h.h_uid = t.h_uid;
+select * from hall h, ticket t where h.h_uid = t.h_uid and h.`theaterCode` = "0001"; 
+select * from hall h, ticket t where h.h_uid = t.h_uid and t.t_uid = 1; 
 
 show databases;
 

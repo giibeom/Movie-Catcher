@@ -8,6 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import common.D;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 	
 public class TheaterDAO {
 	Connection conn;
@@ -16,19 +21,15 @@ public class TheaterDAO {
 	ResultSet rs;
 	
 	// DAO 객체가 생성될때 Connection도 생성된다.
-	public TheaterDAO() {
-		try {
-			Class.forName(D.DRIVER);
-			conn = DriverManager.getConnection(D.URL, D.USERID, D.USERPW);
-			System.out.println("TheaterDAO 객체 생성, 데이터베이스 연결");
-			
-			
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+	public TheaterDAO() {}
+	
+	public static Connection getConnection() throws NamingException, SQLException {
+		Context initContext = new InitialContext();
+		Context envContext = (Context)initContext.lookup("java:/comp/env");
+		DataSource ds = (DataSource)envContext.lookup("jdbc/testDB");
+		return ds.getConnection();
 	}
+	
 	//DB 자원반납 메소드
 	public void close() throws SQLException {
 		if(rs != null) rs.close();
@@ -37,7 +38,7 @@ public class TheaterDAO {
 		if(conn != null) conn.close();
 	}
 	
-	public int insert(TheaterDTO dto) throws SQLException{
+	public int insert(TheaterDTO dto) throws SQLException, NamingException{
 		String theaterCode = dto.getTheaterCode();
 		String theaterName = dto.getTheaterName();
 		String areaCode = dto.getAreaCode();
@@ -46,9 +47,10 @@ public class TheaterDAO {
 		return this.insert(theaterCode, theaterName, areaCode, theaterAddress);
 	}
 	
-	public int insert(String theaterCode, String theaterName, String areaCode, String theaterAddress) throws SQLException{
+	public int insert(String theaterCode, String theaterName, String areaCode, String theaterAddress) throws SQLException, NamingException{
 		int cnt = 0 ;
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_THEATER_INSERT);
 			pstmt.setString(1, theaterCode);
 			pstmt.setString(2, theaterName);
@@ -78,9 +80,10 @@ public class TheaterDAO {
 		return arr;
 	}
 	
-	public TheaterDTO[] select() throws SQLException {
+	public TheaterDTO[] select() throws SQLException, NamingException {
 		TheaterDTO[] arr = null;
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_THEATER_ALL);
 			rs = pstmt.executeQuery();
 			
@@ -91,10 +94,11 @@ public class TheaterDAO {
 		return arr;
 	}
 	
-	public TheaterDTO[] selectByCode(int theaterCode) throws SQLException{
+	public TheaterDTO[] selectByCode(int theaterCode) throws SQLException, NamingException{
 		int cnt = 0;
 		TheaterDTO[] arr = null;
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_THEATER_SELECT);
 			pstmt.setInt(1, theaterCode);
 			rs = pstmt.executeQuery();
@@ -107,9 +111,10 @@ public class TheaterDAO {
 		return arr;
 	}
 	
-	public int update(String theaterCode, String theaterAddress) throws SQLException{
+	public int update(String theaterCode, String theaterAddress) throws SQLException, NamingException{
 		int cnt = 0;
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_THEATER_UPDATE);
 			pstmt.setString(1, theaterCode);
 			pstmt.setString(2, theaterAddress);

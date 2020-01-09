@@ -2,6 +2,7 @@ package controller.write;
 
 import java.io.IOException;
 
+import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import command.write.Command;
 import command.write.bookingStep1Command;
+import command.write.bookingStep2Command;
 import command.write.loginCommand;
 import command.write.searchPageCommand;
 import command.write.signupCommand;
@@ -27,14 +29,24 @@ public class WriteController extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		actionDo(request, response);
+		try {
+			actionDo(request, response);
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		actionDo(request, response);
+		try {
+			actionDo(request, response);
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	protected void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, NamingException {
 		request.setCharacterEncoding("utf-8");
 		
 		Command command = null; // 어떠한 커맨드 수행할지.
@@ -80,7 +92,10 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "bookingStep1.jsp";
 		break;
-			
+		case "/bookingStep2.mc":
+			command = new bookingStep2Command();
+			command.execute(request, response);
+			viewPage = "bookingStep2.jsp";
 			
 			
 		}

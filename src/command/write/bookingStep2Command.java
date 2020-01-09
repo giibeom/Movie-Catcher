@@ -6,26 +6,23 @@ import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.beans.ReviewDAO;
+import com.beans.HandTDTO;
+import com.beans.TicketDAO;
 
-public class ReviewDeleteCommand implements Command {
+public class bookingStep2Command implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws NamingException {
-		int cnt = 0;
-		
-		ReviewDAO dao = new ReviewDAO();
-		
-		int rv_num = Integer.parseInt(request.getParameter("rv_num"));
-		
+		TicketDAO dao = new TicketDAO();
+		HandTDTO[] arr = null;
+		int t_uid = Integer.parseInt(request.getParameter("t_uid"));
 		try {
-			cnt = dao.delete(rv_num);
-		}catch (SQLException e) {
+			arr = dao.selectByCode(t_uid);
+		} catch(SQLException e) {
 			e.printStackTrace();
 		}
+		request.setAttribute("list", arr);
 		
-		request.setAttribute("result", cnt);
-		request.setAttribute("rv_num", rv_num);
 	}
 
 }
