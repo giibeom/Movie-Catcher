@@ -44,13 +44,12 @@ public class BoardDAO {
 	public int insert(BoardDTO dto) throws SQLException, NamingException {
 		String b_title = dto.getB_title();
 		String b_content = dto.getB_content();
-		String b_regdate = dto.getB_regdate();
 		int b_uid = dto.getA_uid();
 		
-		return this.insert(b_title, b_content, b_regdate, b_uid);
+		return this.insert(b_title, b_content, b_uid);
 	}
 	
-	public int insert(String b_title, String b_content, String b_regdate, int b_uid) throws SQLException, NamingException{
+	public int insert(String b_title, String b_content, int b_uid) throws SQLException, NamingException{
 		int cnt = 0;
 		
 		try {
@@ -58,8 +57,7 @@ public class BoardDAO {
 			pstmt = conn.prepareStatement(D.SQL_BOARD_INSERT);
 			pstmt.setString(1, b_title);
 			pstmt.setString(2, b_content);
-			pstmt.setString(3, b_regdate);
-			pstmt.setInt(4, b_uid);
+			pstmt.setInt(3, b_uid);
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();
@@ -115,7 +113,7 @@ public class BoardDAO {
 			String b_regdate = new SimpleDateFormat("yyyy-MM-dd").format(d) + " "
 					+ new SimpleDateFormat("hh:mm:ss").format(t);
 			
-			BoardDTO dto = new BoardDTO(b_num, b_title, b_content, b_regdate, a_uid);
+			BoardDTO dto = new BoardDTO(b_num, b_title, b_content, a_uid);
 			list.add(dto);
 		}
 		int size = list.size();

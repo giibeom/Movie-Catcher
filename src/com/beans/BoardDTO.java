@@ -9,12 +9,11 @@ public class BoardDTO {
 	public BoardDTO() {
 		super();
 	}
-	public BoardDTO(int b_num, String b_title, String b_content, String b_regdate, int a_uid) {
+	public BoardDTO(int b_num, String b_title, String b_content, int a_uid) {
 		super();
 		this.b_num = b_num;
 		this.b_title = b_title;
 		this.b_content = b_content;
-		this.b_regdate = b_regdate;
 		this.a_uid = a_uid;
 	}
 	public int getB_num() {

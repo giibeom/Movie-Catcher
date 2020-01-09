@@ -19,15 +19,16 @@ public class b_writeCommand implements Command {
 		BoardDAO dao = new BoardDAO();
 		
 		
-		String b_title = request.getParameter("title");
-		String b_content = request.getParameter("content");
-		int b_uid = Integer.parseInt(request.getParameter("uid"));
-		String b_regdate = request.getParameter("regdaete");
+		String b_title = request.getParameter("b_title");
+		String b_content = request.getParameter("b_content");
+		//int b_uid = Integer.parseInt(request.getParameter("uid"));
+		int b_uid = 1;
+		
 		
 		if (b_title != null && b_content != null && b_title.trim().length() > 0 
 				&& b_content.trim().length() >0) {
 		try {
-			cnt = dao.insert(b_title, b_content, b_regdate, b_uid);
+			cnt = dao.insert(b_title, b_content, b_uid);
 		}catch (SQLException e){
 			e.printStackTrace();
 			}
