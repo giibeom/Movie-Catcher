@@ -7,6 +7,7 @@ public class HandTDTO {
 	private String hallSize;
 	private String theaterCode;
 	private String h_movie;
+	private String h_grade;
 	private int t_uid;
 	private String movietime;
 	private int restSeat;
@@ -15,7 +16,7 @@ public class HandTDTO {
 		// TODO Auto-generated constructor stub
 	}
 	public HandTDTO(int h_uid, String hallType, String hallLocation, String hallSize, String theaterCode,
-			String h_movie, int t_uid, String movietime, int restSeat) {
+			String h_movie, String h_grade, int t_uid, String movietime, int restSeat) {
 		super();
 		this.h_uid = h_uid;
 		this.hallType = hallType;
@@ -23,6 +24,7 @@ public class HandTDTO {
 		this.hallSize = hallSize;
 		this.theaterCode = theaterCode;
 		this.h_movie = h_movie;
+		this.h_grade = h_grade;
 		this.t_uid = t_uid;
 		this.movietime = movietime;
 		this.restSeat = restSeat;
@@ -62,6 +64,12 @@ public class HandTDTO {
 	}
 	public void setH_movie(String h_movie) {
 		this.h_movie = h_movie;
+	}
+	public String getH_grade() {
+		return h_grade;
+	}
+	public void setH_grade(String h_grade) {
+		this.h_grade = h_grade;
 	}
 	public int getT_uid() {
 		return t_uid;

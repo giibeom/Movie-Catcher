@@ -93,12 +93,12 @@ body h2 {
 }
 
 .Clickarea{
-	width:100%;
+	width:35%;
 	float:left;
 	background-color: #e3e3e3;
 	text-align: center;
 }
-.Clickarea div {
+.areaClick{
 	border: 1px solid white;
 	width: 100%;
 	height: 50px;
@@ -111,7 +111,7 @@ body h2 {
 
 
 [class*="tarea"]{
-	width: 100%;
+	width: 65%;
 	color: rgb(179, 179, 179);
 	display:none;
 	float:left;
