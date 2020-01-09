@@ -11,8 +11,8 @@
 	</page_setting>
 	<category_index>0</category_index>
 	<zoom>1.0</zoom>
-	<x>155</x>
-	<y>90</y>
+	<x>633</x>
+	<y>67</y>
 	<default_color>
 		<r>128</r>
 		<g>128</g>
@@ -135,7 +135,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2020-01-02 23:38:01</creation_date>
-			<updated_date>2020-01-09 19:32:32</updated_date>
+			<updated_date>2020-01-09 20:32:37</updated_date>
 			<model_property>
 				<name>프로젝트명</name>
 				<value></value>
@@ -440,9 +440,9 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>등록일</logical_name>
+			<logical_name>예약등록일</logical_name>
 			<physical_name>rs_date</physical_name>
-			<type>date</type>
+			<type>datetime</type>
 		</word>
 		<word>
 			<id>17</id>
@@ -456,9 +456,9 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>예약등록일</logical_name>
-			<physical_name>rs_date</physical_name>
-			<type>datetime</type>
+			<logical_name>예약번호</logical_name>
+			<physical_name>rs_num</physical_name>
+			<type>integer</type>
 		</word>
 		<word>
 			<id>18</id>
@@ -488,28 +488,12 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>예약번호</logical_name>
-			<physical_name>rs_num</physical_name>
-			<type>integer</type>
-		</word>
-		<word>
-			<id>20</id>
-			<length>null</length>
-			<decimal>null</decimal>
-			<array>false</array>
-			<array_dimension>null</array_dimension>
-			<unsigned>false</unsigned>
-			<zerofill>false</zerofill>
-			<binary>false</binary>
-			<args></args>
-			<char_semantics>false</char_semantics>
-			<description></description>
 			<logical_name>가격</logical_name>
 			<physical_name>rs_price</physical_name>
 			<type>integer</type>
 		</word>
 		<word>
-			<id>21</id>
+			<id>20</id>
 			<length>40</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -525,7 +509,7 @@
 			<type>varchar(n)</type>
 		</word>
 		<word>
-			<id>22</id>
+			<id>21</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -539,6 +523,22 @@
 			<logical_name>리뷰내용</logical_name>
 			<physical_name>rv_content</physical_name>
 			<type>text</type>
+		</word>
+		<word>
+			<id>22</id>
+			<length>null</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<zerofill>false</zerofill>
+			<binary>false</binary>
+			<args></args>
+			<char_semantics>false</char_semantics>
+			<description></description>
+			<logical_name>등록일</logical_name>
+			<physical_name>rv_date</physical_name>
+			<type>date</type>
 		</word>
 		<word>
 			<id>23</id>
@@ -1556,7 +1556,7 @@
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>19</word_id>
+					<word_id>17</word_id>
 					<id>17</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1589,7 +1589,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>17</word_id>
+					<word_id>16</word_id>
 					<id>18</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1622,7 +1622,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>20</word_id>
+					<word_id>19</word_id>
 					<id>19</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1655,7 +1655,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>21</word_id>
+					<word_id>20</word_id>
 					<id>20</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2470,7 +2470,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>22</word_id>
+					<word_id>21</word_id>
 					<id>39</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2569,7 +2569,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>16</word_id>
+					<word_id>22</word_id>
 					<id>42</id>
 					<description></description>
 					<unique_key_name></unique_key_name>

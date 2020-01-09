@@ -4,12 +4,12 @@ SET SESSION FOREIGN_KEY_CHECKS=1;
 /* Drop Tables */
 
 DROP TABLE IF EXISTS board;
+DROP TABLE IF EXISTS review;
 DROP TABLE IF EXISTS reserve;
 DROP TABLE IF EXISTS ticket;
 DROP TABLE IF EXISTS hall;
 DROP TABLE IF EXISTS mc_admin;
 DROP TABLE IF EXISTS mc_user;
-DROP TABLE IF EXISTS review;
 DROP TABLE IF EXISTS theater;
 
 
@@ -77,23 +77,19 @@ CREATE TABLE reserve
 	PRIMARY KEY (rs_num)
 );
 
-
+select * from review;
 CREATE TABLE review
 (
 	rv_num int NOT NULL AUTO_INCREMENT,
 	rv_title varchar(25) NOT NULL,
 	rv_content text,
 	rv_star double NOT NULL,
-	rv_id varchar(30) NOT NULL,
+	rv_id varchar(30),
 	rs_date date NOT NULL,
 	rs_num int,
 	PRIMARY KEY (rv_num)
 );
-
-<<<<<<< HEAD
-select * from theater;
-=======
->>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
+select * from review
 
 CREATE TABLE theater
 (
@@ -142,6 +138,14 @@ ALTER TABLE reserve
 ;
 
 
+ALTER TABLE review
+	ADD FOREIGN KEY (rs_num)
+	REFERENCES reserve (rs_num)
+	ON UPDATE RESTRICT
+	ON DELETE RESTRICT
+;
+
+
 ALTER TABLE hall
 	ADD FOREIGN KEY (theaterCode)
 	REFERENCES theater (theaterCode)
@@ -157,8 +161,8 @@ ALTER TABLE reserve
 	ON DELETE RESTRICT
 ;
 
-
 show TABLES;
+
 describe board;
 describe ticket;
 describe theater;
@@ -167,11 +171,13 @@ select * from theater;
 select * from hall;
 select * from ticket;
 select * from mc_user mu;
+select * from review;
 delete from theater where theaterCode = 1;
 delete from hall where h_uid =1;
 TRUNCATE table theater;
 TRUNCATE table hall;
 TRUNCATE table ticket;
+TRUNCATE table review;
 SELECT u_pw FROM mc_user WHERE u_id = "ksi0678";
 select count(*) from hall;
 select count(*) from ticket;
@@ -183,12 +189,11 @@ show databases;
 
 create database movie_catcher;
 use movie_catcher;
-grant all privileges on movie_catcher.* to 'root'@'localhost';
+grant all privileges on movie_catcher.* to 'myuser'@'localhost';
 flush privileges;
 
-show grants for 'root'@'localhost';
+show grants for 'myuser'@'localhost';
 
 select * from theater;
-
 
 

@@ -18,7 +18,7 @@ public interface D {
 	public static final String SQL_MC_ADMIN_INSERT = "INSERT INTO mc_admin(a_id, a_pw) VALUES (?, ?)";
 	public static final String SQL_MC_ADMIN_DELETE = "DELETE FROM mc_admin WHERE a_id = ?";
 	
-	public static final String SQL_BOARD_INSERT = "INSERT INTO board (b_title, b_content, b_regdate, a_uid) VALUES (?, ?, ?, ?)";
+	public static final String SQL_BOARD_INSERT = "INSERT INTO board (b_title, b_content, a_uid) VALUES (?, ?, ?)";
 	public static final String SQL_BOARD_UPDATE = "UPDATE board SET b_title = ?, b_content = ? WHERE b_num = ?";
 	public static final String SQL_BOARD_SELECT = "SELECT * FROM board";
 	public static final String SQL_BOARD_DELETE = "DELETE FROM board WHERE b_num = ?";
@@ -42,7 +42,7 @@ public interface D {
 	public static final String SQL_RESERVE_REVIEW = "SELECT * FROM reserve WHERE rs_num = ?";
 	public static final String SQL_RESERVE_DELETE = "DELETE FROM reserve WHERE rs_num = ?";
 	
-	public static final String SQL_REVIEW_INSERT = "INSERT INTO review (rv_title, rv_content, rv_star, rs_num, rv_num, rv_id, rs_date) VALUES (?, ?, ?, ?, ?, ?, ?)";
+	public static final String SQL_REVIEW_INSERT = "INSERT INTO review (rv_title, rv_content, rv_star, rs_num, rv_id, rs_date) VALUES (?, ?, ?, ?, ?, ?)";
 	public static final String SQL_REVIEW_SELECT = "SELECT * FROM review";
 	public static final String SQL_REVIEW_SELECT_USER = "SELECT * FROM review where rv_id = ?";
 	public static final String SQL_REVIEW_DELETE = "DELETE FROM review WHERE rv_num=?";
