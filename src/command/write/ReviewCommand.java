@@ -2,6 +2,7 @@ package command.write;
 
 import java.sql.SQLException;
 
+import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,7 +12,7 @@ import com.beans.ReviewDTO;
 public class ReviewCommand implements Command {
 
 	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws NamingException {
 		ReviewDAO dao = new ReviewDAO();
 		ReviewDTO [] arr = null;
 		
