@@ -27,6 +27,19 @@ body {
 #title a:hover { color: black; text-decoration: none;}
 #title a:visited { color: black; text-decoration: none;}
 
+#logout {
+	font-size: small;
+	margin-top : 10px;
+	margin-right: 10px;
+}
+
+#logout:hover {
+	cursor: pointer;
+	color: #E31D2E;
+	/*border-bottom : 1px solid #e94e59;*/
+	border-bottom : 1px solid rgba(227, 29, 46, 0.623);
+}
+
 .topnav{
 	overflow: hidden;
 	background-color: white;

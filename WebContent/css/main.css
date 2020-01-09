@@ -97,6 +97,7 @@ article {
 
 #box {
     height: 500px;
+    /* border : 1px solid red; */
 }
 
 #box h2 {
@@ -114,13 +115,14 @@ article {
 #box li {
     list-style: none;
     display: block;
-    padding: 3%;
+    /* padding: 3%; */
+    padding : 8px;
     margin: 3px auto;
 }
 
 #box li:hover {
     cursor: pointer;
-    border : 3px solid rgb(179,179,179,0.5);
+    border : 2px solid rgb(179,179,179,0.5);
     border-radius: 4px;
 }
 
@@ -146,14 +148,16 @@ article {
 
 #posterLines {
     text-align: center;
-    height:400px;
+    height: 350px;
 }
 
 #nowIn, #upComing {
     display: inline-block;
     position:relative;
     overflow:hidden;
-    height:300px;
+    height:280px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px rgb(179,179,179);
     width : 95%;
 }
 
@@ -183,35 +187,125 @@ article {
 
 #showNowIn, #showUpComing {
     display: inline-block;
-    /* border-top:1px solid #E31D2E; */
-    height: 50px;
+    border-bottom:3px solid rgb(179,179,179,0.623);
+    /* border-bottom:3px solid rgba(227, 29, 46, 0.623); */
+    height: 30px;
     width: 100px;
     color: black;
     cursor: pointer;
     margin: 10px 30px;
-    line-height: 50px;
+    line-height: 30px;
     font-weight: 600;
+}
+
+#showNowIn:hover{
+    /* border-bottom:3px solid rgba(227, 29, 46, 0.623); */
+    border-bottom: 3px solid #E31D2E;
+    transition: 0.4s;
+}
+
+#showUpComing:hover{
+    /* border-bottom:3px solid rgba(227, 29, 46, 0.623); */
+    border-bottom: 3px solid #E31D2E;
+    transition: 0.4s;
 }
 
 /*누적 관객수에 따른 랭킹*/
 
-.rankAudience{
-    border : 1px solid black;
-    height: 350px;
+.rankAudiencea{
+    border-radius: 4px;
+    border : 1px solid rgb(179,179,179);
+    box-shadow: 3px 3px 3px rgb(179,179,179,0.4);
+    height: 450px;
 }
 
-.rankweek{
-    border : 1px solid black;
-    height: 350px;
+.ranking  {
+    padding : 10px;
+    color: white;
+    background-color: #E31D2E;
+    opacity: 0.9;
+    border-radius: 4px;
+    margin-bottom: 5px;
 }
-
-.rankAudience h4 {
+.ranking h3 {
     text-align: center;
+}
 
+#rank {
+    height: 380px;
 }
 
 
+#rank li {
+    display : inline-block;
+    width : 90%;
+    border-bottom: 1px solid rgb(179,179,179);
+    border-radius: 4px;
+    margin: 6px 5%;
+}
 
+#rank li:hover {
+    cursor: pointer;
+    border-bottom: 1px solid rgba(227, 29, 46, 0.623);
+}
+
+#rankweek {
+    display:  none;
+}
+
+
+.dot {
+    cursor : pointer;
+    height: 12px;
+    width : 12px;
+    margin : 0 3px;
+    background-color: #bbb;
+    border-radius : 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot:hover{
+    cursor: pointer;
+    background-color: #717171;
+    opacity: 0.8;
+}
+
+.Event {
+    height: 450px;
+    /* border : 1px solid red; */
+}
+
+.Eve {
+   width : 100%;
+   margin-left: 3%;
+}
+.Eve img {
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px rgb(179,179,179);
+}
+
+.Eve1{
+    display: none;
+    width : 100%;
+    margin-left: 3%;
+}
+
+.Eve1 img{
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px rgb(179,179,179);
+}
+
+.Eve2{
+    display: none;
+    width : 100%;
+    margin-left: 3%;
+}
+
+.Eve2 img {
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px rgb(179,179,179);
+}
 /*
 -------------------------------------------------------------------------
 */
@@ -255,12 +349,30 @@ form {
       margin-top: 3px;
   }
 
-.poster{
-	cursor: pointer;	
-}
-
 #logout{
     position: absolute;
     top:0;
     right:0;
+}
+
+#dotsa{
+    margin-top: 30px;
+}
+
+
+.dota {
+    cursor : pointer;
+    height: 12px;
+    width : 12px;
+    margin : 0 3px;
+    background-color: #bbb;
+    border-radius : 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dota:hover{
+    cursor: pointer;
+    background-color: #717171;
+    opacity: 0.8;
 }

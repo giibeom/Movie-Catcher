@@ -11,8 +11,13 @@
 	</page_setting>
 	<category_index>0</category_index>
 	<zoom>1.0</zoom>
+<<<<<<< HEAD
+	<x>440</x>
+	<y>260</y>
+=======
 	<x>215</x>
 	<y>90</y>
+>>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
 	<default_color>
 		<r>128</r>
 		<g>128</g>
@@ -135,7 +140,11 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2020-01-02 23:38:01</creation_date>
+<<<<<<< HEAD
+			<updated_date>2020-01-09 15:43:35</updated_date>
+=======
 			<updated_date>2020-01-09 15:06:11</updated_date>
+>>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
 			<model_property>
 				<name>프로젝트명</name>
 				<value></value>

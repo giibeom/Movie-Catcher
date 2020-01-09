@@ -77,7 +77,7 @@ CREATE TABLE reserve
 	PRIMARY KEY (rs_num)
 );
 
-
+select * from review;
 CREATE TABLE review
 (
 	rv_num int NOT NULL AUTO_INCREMENT,
@@ -89,7 +89,7 @@ CREATE TABLE review
 	rs_num int,
 	PRIMARY KEY (rv_num)
 );
-
+select * from review
 
 CREATE TABLE theater
 (
