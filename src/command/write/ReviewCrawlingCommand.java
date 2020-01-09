@@ -11,6 +11,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import com.beans.ReviewDAO;
+import com.beans.ReviewDTO;
+
 public class ReviewCrawlingCommand implements Command {
 
 	static String [] movieId = {
@@ -33,10 +36,14 @@ public class ReviewCrawlingCommand implements Command {
 			"천문", "백두산", "미드웨이", "시동", "겨울왕국2", "신비아파트", "포드v페라리", "21브릿지", "나이브스 아웃", "눈의 여왕4", "닥터 두리틀", "스타워즈"
 	};
 	
+	ReviewDAO rdao = new ReviewDAO();
+	ReviewDTO [] rdto = null;
+	
+	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws NamingException {
 			
-			 
+		
 			for(int i = 0; i < movieId.length; i++) {
 				
 				String url = "https://movie.naver.com/movie/point/af/list.nhn?st=mcode&sword="+ movieId[i] +"&target=after";

@@ -4,12 +4,12 @@ SET SESSION FOREIGN_KEY_CHECKS=1;
 /* Drop Tables */
 
 DROP TABLE IF EXISTS board;
-DROP TABLE IF EXISTS review;
 DROP TABLE IF EXISTS reserve;
 DROP TABLE IF EXISTS ticket;
 DROP TABLE IF EXISTS hall;
 DROP TABLE IF EXISTS mc_admin;
 DROP TABLE IF EXISTS mc_user;
+DROP TABLE IF EXISTS review;
 DROP TABLE IF EXISTS theater;
 
 
@@ -77,19 +77,19 @@ CREATE TABLE reserve
 	PRIMARY KEY (rs_num)
 );
 
-select * from review;
+
 CREATE TABLE review
 (
 	rv_num int NOT NULL AUTO_INCREMENT,
 	rv_title varchar(25) NOT NULL,
 	rv_content text,
 	rv_star double NOT NULL,
-	rv_id varchar(30),
+	rv_id varchar(30) NOT NULL,
 	rs_date date NOT NULL,
 	rs_num int,
 	PRIMARY KEY (rv_num)
 );
-select * from review
+
 
 CREATE TABLE theater
 (
@@ -138,14 +138,6 @@ ALTER TABLE reserve
 ;
 
 
-ALTER TABLE review
-	ADD FOREIGN KEY (rs_num)
-	REFERENCES reserve (rs_num)
-	ON UPDATE RESTRICT
-	ON DELETE RESTRICT
-;
-
-
 ALTER TABLE hall
 	ADD FOREIGN KEY (theaterCode)
 	REFERENCES theater (theaterCode)
@@ -160,6 +152,7 @@ ALTER TABLE reserve
 	ON UPDATE RESTRICT
 	ON DELETE RESTRICT
 ;
+
 
 show TABLES;
 
