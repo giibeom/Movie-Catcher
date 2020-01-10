@@ -7,6 +7,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<script>
+	var totalSeats = "${param.selectedSeats}";
+	var totalPeople = "${param.pNum}";
+</script>
 
 
 <link
@@ -27,7 +31,7 @@
 <script src="js/header.js" type="text/javascript"></script>
 <script src="js/bookingStep3.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="css/booking.css">
+<link rel="stylesheet" href="css/booking1.css">
 <link rel="stylesheet" href="css/booking3.css">
 <link rel="stylesheet" href="css/processe.css">
 
@@ -94,8 +98,8 @@
 					<div id="button">
 						<input type="submit" value="결제하기" onsubmit="return sandit()">
 					</div>
-			</div>
 			</form>
+			</div>
 		</div>
 
 
@@ -104,30 +108,27 @@
 			<div id="popup">
 				<form method="post">
 					<div id="popuptitle">
-						<h3>
-							백두산 <br>2D
-						</h3>
-						<h5>12세 관람가</h5>
+						<h3 id="movieName">${list[0].h_movie }<br>${list[0].hallType }</h3>
+						<h5 id="movieGrade">${list[0].h_grade }</h5>
 						<p>
-							<img src="images/booking1.png" id="popup_img">극장 <strong>CGV강남</strong>
+							<img src="images/booking1.png" id="popup_img">극장 <strong id="theaterName">${theater[0].theaterName } ${list[0].hallLocation }</strong>
 						</p>
 						<p>
-							<img src="images/booking2.png" id="popup_img">일시 <strong>2019.12.29(일)
-								21:05</strong>
+							<img src="images/booking2.png" id="popup_img">일시 <strong id="date">${list[0].movietime }</strong>
 						</p>
 						<p>
-							<img src="images/booking3.png" id="popup_img">상영관 <strong>4관
-								8층</strong>
+							<img src="images/booking3.png" id="popup_img">좌석 <strong id="totalSeats"></strong>
 						</p>
 						<p>
-							<img src="images/booking4.png" id="popup_img">인원 <strong>0명</strong>
+							<img src="images/booking4.png" id="popup_img">인원 <strong id="totalPeople"></strong>
 						</p>
 					</div>
 					<div class="content3">
 						<div class="content3_1 content3_2 content3_3">
-							₩8,000 X 2명 <span class="money">₩16,000</span><br> <strong>총
-								합계(KRW) <span class="money">₩16,000
-							</strong></span>
+							<span class="generalCal"></span> <span class="money generalMoney"></span><br> 
+							<span class="teenagerCal"></span> <span class="money teenagerMoney"></span><br> 
+							<span class="specialCal"></span> <span class="money specialMoney"></span><br> 
+							<strong>총 합계(KRW)<span class="money totalMoney"></span></strong>
 						</div>
 					</div>
 					<div class="content3">

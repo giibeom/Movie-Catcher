@@ -48,11 +48,12 @@ public class HallDAO {
 		String hallSize = dto.getHallSize();
 		String theaterCode = dto.getTheaterCode();
 		String h_movie = dto.getH_movie();
+		String h_grade = dto.getH_grade();
 		
-		return this.insert(hallType, hallLocation, hallSize, theaterCode, h_movie);
+		return this.insert(hallType, hallLocation, hallSize, theaterCode, h_movie, h_grade);
 	}
 	
-	public int insert(String hallType, String hallLocation, String hallSize, String theaterCode,String h_movie) throws SQLException, NamingException{
+	public int insert(String hallType, String hallLocation, String hallSize, String theaterCode,String h_movie, String h_grade) throws SQLException, NamingException{
 		int cnt = 0 ;
 		try {
 			conn = getConnection();
@@ -62,6 +63,7 @@ public class HallDAO {
 			pstmt.setString(3, hallSize);
 			pstmt.setString(4, theaterCode);
 			pstmt.setString(5, h_movie);
+			pstmt.setString(6, h_grade);
 			cnt = pstmt.executeUpdate();			
 		} finally {
 			close();
@@ -78,7 +80,8 @@ public class HallDAO {
 			String hallSize = rs.getString("hallSize");
 			String theaterCode = rs.getString("theaterCode");
 			String h_movie = rs.getString("h_movie");
-			HallDTO dto = new HallDTO(h_uid, hallType, hallLocation, hallSize, theaterCode, h_movie);
+			String h_grade = rs.getString("h_grade");
+			HallDTO dto = new HallDTO(h_uid, hallType, hallLocation, hallSize, theaterCode, h_movie, h_grade);
 			list.add(dto);
 		}
 		int size = list.size();
@@ -115,12 +118,13 @@ public class HallDAO {
 			String hallSize = rs.getString("hallSize");
 			String theaterCode = rs.getString("theaterCode");
 			String h_movie = rs.getString("h_movie");
+			String h_grade = rs.getString("h_grade");
 			int t_uid = rs.getInt("t_uid");
 			String movietime = rs.getString("movietime");
 			int restSeat = rs.getInt("restSeat");
 			
 			HandTDTO dto = new HandTDTO(h_uid, hallType, hallLocation
-					, hallSize, theaterCode, h_movie, t_uid, movietime, restSeat);
+					, hallSize, theaterCode, h_movie, h_grade, t_uid, movietime, restSeat);
 			list.add(dto);
 		}
 		int size = list.size();

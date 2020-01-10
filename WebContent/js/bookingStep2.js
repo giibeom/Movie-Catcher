@@ -1,6 +1,7 @@
 var seatRow;
 var pNum = 0;
 var selectNum = 0;
+var totalPeople = "";
 var seats = "";
 var seatArray = ["", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "U"];
 var row = 1;
@@ -95,6 +96,20 @@ $(document).ready(function(){
 		var general = $("#general").val();
 		var teenager = $("#teenager").val();
 		var special = $("#special").val();
+		var totalNumber = "";
+		if(general != 0){
+			totalNumber += "성인 " + general + "명 ";
+			totalPeople += "g"+general;
+		}
+		if(teenager != 0){
+			totalNumber += "청소년 " + teenager + "명 ";
+			totalPeople += "t"+ teenager;
+		}
+		if(special != 0){
+			totalNumber += "우대 " + special + "명 "
+			totalPeople += "s"+special;
+		}
+		$("#totalNumber").text(totalNumber);
 		pNum = general*1 + teenager*1 + special*1;
 		selectingSeat(pNum);
 	});
@@ -108,7 +123,7 @@ $(document).ready(function(){
 					selectedSeats += ",";
 				}
 			}
-			location.href="bookingStep3.mc?selectedSeats="+selectedSeats + "&t_uid="+ t_uid;
+			location.href="bookingStep3.mc?selectedSeats="+selectedSeats + "&t_uid="+ t_uid+ "&pNum=" + totalPeople;
 			
 		}else{
 			alert("인원과 좌석을 선택해주세요");
@@ -117,6 +132,7 @@ $(document).ready(function(){
 	
 	$("#reSelectSeat").click(function(){
 		selectNum = 0;
+		selectSeats = [];
 		$(".onSelect").removeClass("onSelect");
 	});
 });
@@ -129,6 +145,9 @@ function selectingSeat(pNum){
 			var seatName = $(this).attr("class");
 			$(this).addClass("onSelect");
 			seatName = seatName.split(" ")[2];
+			seatName = seatName.replace("seat", "");	
+			var nowSelectSeat = $("#nowSelectSeat").text();
+			$("#nowSelectSeat").text(nowSelectSeat + " " + seatName);
 			selectSeats[selectNum] = seatName; 
 			selectNum ++;		
 		}
@@ -153,7 +172,7 @@ function makeX(){
 	if(hallSeat < 80){
 		var rSeat = Math.floor(Math.random() * hallSeat) + 1;
 		var rRow = parseInt(rSeat / 8) + 1;
-		var rColumn = rSeat % 8;
+		var rColumn = rSeat % 8 +1 ;
 		var seatChk = $(".seat" + seatArray[rRow] + rColumn).text();
 		if(seatChk == "X"){
 			return 0;
@@ -167,7 +186,7 @@ function makeX(){
 	if(80 < hallSeat && hallSeat <= 196){
 		var rSeat = Math.floor(Math.random() * hallSeat) + 1;
 		var rRow = parseInt(rSeat / 12) + 1;
-		var rColumn = rSeat % 12;
+		var rColumn = rSeat % 12 +1;
 		var seatChk = $(".seat" + seatArray[rRow] + rColumn).text();
 		if(seatChk == "X"){
 			return 0;
@@ -181,7 +200,7 @@ function makeX(){
 	if(196 < hallSeat && hallSeat <= 250){
 		var rSeat = Math.floor(Math.random() * hallSeat) + 1;
 		var rRow = parseInt(rSeat / 16) + 1;
-		var rColumn = rSeat % 16;
+		var rColumn = rSeat % 16 + 1;
 		var seatChk = $(".seat" + seatArray[rRow] + rColumn).text();
 		if(seatChk == "X"){
 			return 0;
@@ -195,7 +214,7 @@ function makeX(){
 	if(250 < hallSeat && hallSeat <= 400){
 		var rSeat = Math.floor(Math.random() * hallSeat) + 1;
 		var rRow = parseInt(rSeat / 24) + 1;
-		var rColumn = rSeat % 24;
+		var rColumn = rSeat % 24 + 1;
 		var seatChk = $(".seat" + seatArray[rRow] + rColumn).text();
 		if(seatChk == "X"){
 			return 0;
@@ -208,7 +227,7 @@ function makeX(){
 	if(400 < hallSeat){
 		var rSeat = Math.floor(Math.random() * hallSeat) + 1;
 		var rRow = parseInt(rSeat / 32) + 1;
-		var rColumn = rSeat % 32;
+		var rColumn = rSeat % 32 + 1;
 		var seatChk = $(".seat" + seatArray[rRow] + rColumn).text();
 		if(seatChk == "X"){
 			return 0;

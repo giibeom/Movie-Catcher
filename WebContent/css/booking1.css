@@ -60,7 +60,10 @@ input:focus {
 body {
 	box-sizing: border-box;
 }
-
+body h2 {
+	margin-bottom: 30px;
+	text-align: center;
+}
 .body {
 	max-width: 1200px;
 	margin: 0px auto;
@@ -90,17 +93,29 @@ body {
 }
 
 .Clickarea{
-	width:30%;
+	width:35%;
 	float:left;
+	background-color: #e3e3e3;
+	text-align: center;
+}
+.areaClick{
+	border: 1px solid white;
+	width: 100%;
+	height: 50px;
+	padding-top: 15px;
+	font-size: 16px;
+	font-weight: bold;
+	
 }
 
 
 
 [class*="tarea"]{
-	width: 70%;
+	width: 65%;
 	color: rgb(179, 179, 179);
 	display:none;
 	float:left;
+	text-align: center;
 }
 
 .tarea1{
@@ -126,10 +141,10 @@ body {
 	display: block;
 	cursor: pointer;
 	padding: 10px;
-	font-size: 18px;
+	font-size: 16px;
 	transition: .3s;
 	font-weight: 00;
-	border-bottom: 1px solid;
+	border-bottom: 1px solid #ccc;
 	user-select: none;
 }
 
@@ -146,6 +161,7 @@ details[open]>summary {
 	text-align: center;
 	background: white;
 }
+
 
 /*달력 style*/ /* placeholder color */
 input:-ms-input-placeholder {
@@ -176,11 +192,12 @@ input::-moz-placeholder {
 #datepicker {
 	border: 1px solid #E31D2E;
 	padding: 3px;
-	margin-left: 10px;
+	margin-left: 20px;
 	border-radius: 5px;
 	font-size: 17px;
 	text-align: center;
 	cursor: pointer;
+	margin-bottom: 7px;
 }
 
 #datepicker:hover {
@@ -282,6 +299,7 @@ input::-moz-placeholder {
 	padding: 5px;
 	border-collapse: collapse;
 	background-color: white;
+	
 }
 
 .time:hover {
@@ -301,17 +319,22 @@ input::-moz-placeholder {
 }
 
 .movieName{
-	width: 100%;
+	width: 50%;
+	font-weight: bold;
+	margin-left: 50px;
+	font-size: 18px;
+	display: inline-block;
 }
 
 .hall{
-	float:right;
 	width: 80%;
+	margin: 0 auto;
 }
 
 .hallinfo{
 	width:100%;
 	display:inline-block;
+
 }
 
 .ticket{
@@ -322,4 +345,21 @@ input::-moz-placeholder {
 	height: auto;
 	border:1px solid black;
 	height: 50px;
+	padding-top: 5px;
+	margin: 10px;
 }
+.theaterNameInfo {
+	font-weight: bold;
+	margin-bottom: 20px;
+	font-size: 17px;
+}
+
+.hall {
+	margin-bottom: 30px;
+}
+.hallinfo {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+

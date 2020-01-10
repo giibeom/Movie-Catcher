@@ -121,7 +121,8 @@ $(document).ready(function() {
 										var theaterName = $(this).attr("class");
 										theaterNameInfo = theaterName.split(" ")[1];
 										var theaterCode = theaterName.split(" ")[2];
-										var jsonurl = "http://localhost:8080/Movie_Catcher/ticket.ajax?reqType=json&theaterCode="+ theaterCode;
+										var jsonurl = "http://localhost:8082/Movie_Catcher/ticket.ajax?reqType=json&theaterCode="
+												+ theaterCode;
 										$.ajax({
 											url : jsonurl,
 											type : "GET",
@@ -160,16 +161,17 @@ function parseJSON(jsonObj) {
 			+ "점의 상영 시간표입니다.</div><div>";
 	for (var i = 0; i < arr.length; i++) {
 		var movieName = arr[i].h_movie;
+		var movieGrade = arr[i].h_grade;
 		if (i > 0) {
 			if (arr[i - 1].h_movie != arr[i].h_movie) {
 				timeTable += "<div class='movietitle'><div class='movieName'>"
-						+ movieName + "</div>";
+						+ movieName + "</div><div class='movieGrade'>관람등급" + movieGrade + "</div>";
 
 			}
 
 		} else if (i == 0) {
 			timeTable += "<div class='movietitle'><div class='movieName'>"
-					+ movieName + "</div>";
+					+ movieName + "</div><div class='movieGrade'>관람등급" + movieGrade + "</div>";
 		}
 
 		var hallLocation = arr[i].hallLocation;

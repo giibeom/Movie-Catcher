@@ -85,6 +85,34 @@ $(document).ready(function(){
        var movieName = $("#movieName").val().trim();
        window.location.href = "searchPage.mc?movieName="+movieName;
     });
+    
+    $("#dot1").click(function(){
+        $("#rankweek").css("display","none");
+        $("#rankAudiencea").css("display","inline-block");
+    });
+
+    $("#dot2").click(function(){
+        $("#rankweek").css("display","inline-block");
+        $("#rankAudiencea").css("display","none");
+    });
+
+    $("#dota1").click(function(){
+        $(".Eve1").css("display","none");
+        $(".Eve2").css("display","none");
+        $(".Eve").css("display","inline-block");
+    });
+
+    $("#dota2").click(function(){
+        $(".Eve").css("display","none");
+        $(".Eve2").css("display","none");
+        $(".Eve1").css("display","inline-block");
+    });
+
+    $("#dota3").click(function(){
+        $(".Eve").css("display","none");
+        $(".Eve1").css("display","none");
+        $(".Eve2").css("display","inline-block");
+    });
 });
 
 
