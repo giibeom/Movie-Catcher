@@ -15,7 +15,7 @@ public class MpUserDeleteCommand implements Command {
 		int cnt = 0;
 		MC_userDAO dao = new MC_userDAO();
 		
-		String u_id = request.getParameter("id");
+		String u_id = request.getParameter("u_id");
 		
 		try {
 			cnt = dao.delete(u_id);
@@ -24,7 +24,7 @@ public class MpUserDeleteCommand implements Command {
 		}
 		
 		request.setAttribute("result", cnt);
-		request.setAttribute("id", u_id);
+		request.setAttribute("u_id", u_id);
 	}
 
 }
