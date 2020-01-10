@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import command.write.Command;
+import command.write.MpUserDeleteCommand;
 import command.write.MpUserViewCommand;
 import command.write.ReviewCommand;
 import command.write.ReviewCrawlingCommand;
@@ -150,6 +151,11 @@ public class WriteController extends HttpServlet {
 		case "/reviewScraping.mc":
 			command = new ReviewCrawlingCommand();
 			command.execute(request, response);
+			break;
+		case "/MyuserDeleteOk.mc":
+			command = new MpUserDeleteCommand();
+			command.execute(request, response);
+			viewPage = "MyuserDeleteOk.jsp";
 			break;
 		}
 		

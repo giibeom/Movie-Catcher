@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	String id = (String)session.getAttribute("u_id");
-	request.setAttribute("u_id", id);
+	String u_id = (String)session.getAttribute("u_id");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -52,7 +51,7 @@
         <p class="id">
         <div class="content_box">
                <div class="content">
-               <a href="myPagePrivate.mc?u_id=${param.id } ">
+               <a href="myPagePrivate.mc?u_id=${u_id }">
                <h3>개인정보 &gt</h3>
                <p>개인정보 및 연락처를 알려주세요</p>
                </a></div>
@@ -69,7 +68,7 @@
         <div class="disabled_container">
             <p>계정을 비활성화하셔야 하나요?</p>
             <p class="box">
-                <a href="#">지금 처리하기</a>
+                <a href="MyuserDeleteOk.mc?u_id=${u_id }">지금 처리하기</a>
             </p>
         </div>
                
