@@ -164,6 +164,7 @@ select * from theater;
 select * from hall;
 select * from ticket;
 select * from mc_user mu;
+select * from mc_admin ma;
 select * from review;
 delete from theater where theaterCode = 1;
 delete from hall where h_uid =1;
@@ -188,8 +189,4 @@ flush privileges;
 show grants for 'myuser'@'localhost';
 
 select * from theater;
-
-
-
-
 
