@@ -16,8 +16,9 @@ public class ReviewCommand implements Command {
 		ReviewDAO dao = new ReviewDAO();
 		ReviewDTO[] arr = null;
 
+		
 		String movieName = request.getParameter("movieName");
-
+		System.out.println(movieName);
 		// 페이징 관련 세팅 값들
 		int page = 1; // 현재 페이지 (디폴트 1 page)
 		int writePages = 10; // 한 [페이징] 에 몇개의 '페이지' 를 표현할 것인가?
@@ -34,38 +35,36 @@ public class ReviewCommand implements Command {
 				// 별도의 처리는 안함
 			}
 		}
-
-		if (movieName.trim().length() == 0) {
-
-			try {
-				// 글 전체 개수 구하기
-				cnt = dao.countAll();
-
-				// 총 몇페이지 분량인가?
-				totalPage = (int) Math.ceil(cnt / (double) pageRows);
-
-				// 몇번째 row 부터?
-				int fromRow = (page - 1) * pageRows; // MySQL은 0부터 시작!
-
-				dao = new ReviewDAO();
-				arr = dao.selectFromRow(fromRow, pageRows);
-
-				request.setAttribute("list", arr);
-				request.setAttribute("page", page);
-				request.setAttribute("totalPage", totalPage);
-				request.setAttribute("writePages", writePages);
-				request.setAttribute("pageRows", pageRows);
-
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+		
+		if(movieName == null) {
+		
+		
+		try {
+			// 글 전체 개수 구하기
+			cnt = dao.countAll();
+			
+			// 총 몇페이지 분량인가?
+			totalPage = (int) Math.ceil(cnt / (double) pageRows);
+			
+			// 몇번째 row 부터?
+			int fromRow = (page - 1) * pageRows; // MySQL은 0부터 시작!
+			
+			arr = dao.selectFromRow(fromRow, pageRows);
+			
+			request.setAttribute("list", arr);
+			request.setAttribute("page", page);
+			request.setAttribute("totalPage", totalPage);
+			request.setAttribute("writePages", writePages);
+			request.setAttribute("pageRows", pageRows);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 		} else {
-
-			
 			try {
-				// 글 전체 개수 구하기
-				cnt = dao.countAll();
+				movieName = "%" + movieName + "%";
+				cnt = dao.countMovie(movieName);
 
 				// 총 몇페이지 분량인가?
 				totalPage = (int) Math.ceil(cnt / (double) pageRows);
@@ -73,22 +72,29 @@ public class ReviewCommand implements Command {
 				// 몇번째 row 부터?
 				int fromRow = (page - 1) * pageRows; // MySQL은 0부터 시작!
 
-				dao = new ReviewDAO();
-				arr = dao.selectFromRow(fromRow, pageRows);
+
+				arr = dao.selectFromRow(fromRow, pageRows, movieName);
+				System.out.println("들어옴");
 
 				request.setAttribute("list", arr);
 				request.setAttribute("page", page);
 				request.setAttribute("totalPage", totalPage);
 				request.setAttribute("writePages", writePages);
 				request.setAttribute("pageRows", pageRows);
+				
+				
 
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+
+
+
+
 			
 			
-			
-		} // end else
+		}
+		
 		
 	} // end excute()
 

@@ -2,6 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<% String movieName = request.getParameter("movieName");
+if(movieName == null){
+	movieName = "";
+}
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,6 +52,7 @@
     </header>
     
     
+
     
 	<section class="review">
 	    <div class="review_background"></div>
@@ -81,20 +88,24 @@
 	        </ul>
   
 
-
-   		<%-- 페이징 --%>
+   		
 	<jsp:include page="pagination.jsp">
 		<jsp:param value="${writePages }" name="writePages"/>
 		<jsp:param value="${totalPage }" name="totalPage"/>
-		<jsp:param value="${page }" name="curPage"/>
+		<jsp:param value="${page }" name="page"/>
+		<jsp:param value="${param.movieName }" name="movieName"/>
 	</jsp:include>
-		
-</div>  
+	
+	</div>  
 
 </div>
 
 
 </section>
+	
+	
+
+
 
 
 

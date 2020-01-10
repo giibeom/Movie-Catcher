@@ -146,7 +146,13 @@ public class WriteController extends HttpServlet {
 			command = new MpUserViewCommand();
 			command.execute(request, response);
 			viewPage = "myPagePrivate.jsp";
+			break;
+		case "/reviewScraping.mc":
+			command = new ReviewCrawlingCommand();
+			command.execute(request, response);
+			break;
 		}
+		
 	
 		
 		

@@ -44,7 +44,6 @@ public interface D {
 	
 	public static final String SQL_REVIEW_INSERT = "INSERT INTO review (rv_title, rv_content, rv_star, rs_num, rv_id, rv_date) VALUES (?, ?, ?, ?, ?, ?)";
 	public static final String SQL_REVIEW_SELECT = "SELECT * FROM review";
-	public static final String SQL_REVIEW_MOVIE = "SELECT * FROM review WHERE rv_title LIKE '%?%'";
 	public static final String SQL_REVIEW_SELECT_USER = "SELECT * FROM review where rv_id = ?";
 	public static final String SQL_REVIEW_DELETE = "DELETE FROM review WHERE rv_num=?";
 	
@@ -58,6 +57,13 @@ public interface D {
 	// 쿼리: from 부터 row 만큼 SELECT : LIMIT 은 0 부터 시작 주의!
 	public static final  String SQL_REVIEW_SELECT_FROM_ROW = 
 			"SELECT * FROM review ORDER BY rv_num DESC LIMIT ?, ?";
+	
+	// 특정 영화의 리뷰
+	public static final String SQL_REVIEW_COUNT_MOVIE = 
+			"SELECT COUNT(*) FROM review where rv_title LIKE ?";
+	
+	public static final  String SQL_REVIEW_SELECT_MOVIE_FROM_ROW = 
+			"SELECT * FROM review where rv_title LIKE ? ORDER BY rv_num DESC LIMIT ?, ?";
 
 	
 }

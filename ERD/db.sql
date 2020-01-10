@@ -176,10 +176,12 @@ TRUNCATE table review;
 SELECT u_pw FROM mc_user WHERE u_id = "ksi0678";
 select count(*) from hall;
 select count(*) from ticket;
+select count(*) from review;
 select * from hall h, ticket t where h.h_uid = t.h_uid;
 select * from hall h, ticket t where h.h_uid = t.h_uid and h.`theaterCode` = "0001"; 
 select * from hall h, ticket t where h.h_uid = t.h_uid and t.t_uid = 1; 
 select * from review where rv_title like '%스타워즈%';
+SELECT * FROM review where rv_title LIKE '시동' ORDER BY rv_num DESC LIMIT 0, 8 ;
 show databases;
 
 create database movie_catcher;
