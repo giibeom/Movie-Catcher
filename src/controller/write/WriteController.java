@@ -148,12 +148,17 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "myPagePrivate.jsp";
 			break;
+		case "/reviewScraping.mc":
+			command = new ReviewCrawlingCommand();
+			command.execute(request, response);
+			break;
 		case "/userDeleteOk.mc":
 			command = new MpUserDeleteCommand();
 			command.execute(request, response);
 			viewPage = "userDeleteOk.jsp";
 			break;
 		}
+		
 	
 		
 		

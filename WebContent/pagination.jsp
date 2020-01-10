@@ -7,11 +7,16 @@
 	int totalPage = (Integer)request.getAttribute("totalPage");
 	int writePages = Integer.parseInt(request.getParameter("writePages"));
 	int curPage = Integer.parseInt(request.getParameter("page"));
+	String add = request.getParameter("movieName");
 	// ※ 사실 위 단계에서도 파라미터 검증 필요하다
 	
 	// 위 url에 추가로 붙어야 할 것들.  (옵션)
-	String add = request.getParameter("add"); 
-	if(add == null){ add = ""; }
+	//String add = request.getParameter("add"); 
+	if(add == null || add.trim().length() == 0){ 
+		add = "";
+	} else {
+		add = "&movieName=" + add;
+	}
 	
 	// 페이징 버튼 링크 url 주소에 넣을 문자열 준비
 	String url = "review.mc?page=";
