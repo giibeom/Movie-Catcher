@@ -85,7 +85,7 @@ CREATE TABLE review
 	rv_content text,
 	rv_star double NOT NULL,
 	rv_id varchar(30) NOT NULL,
-	rs_date date NOT NULL,
+	rv_date date NOT NULL DEFAULT now(),
 	rs_num int,
 	PRIMARY KEY (rv_num)
 );
@@ -153,7 +153,6 @@ ALTER TABLE reserve
 	ON DELETE RESTRICT
 ;
 
-
 show TABLES;
 
 describe board;
@@ -188,5 +187,8 @@ flush privileges;
 show grants for 'myuser'@'localhost';
 
 select * from theater;
+
+
+
 
 
