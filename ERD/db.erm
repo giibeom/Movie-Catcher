@@ -12,7 +12,7 @@
 	<category_index>0</category_index>
 	<zoom>1.0</zoom>
 	<x>271</x>
-	<y>173</y>
+	<y>252</y>
 	<default_color>
 		<r>128</r>
 		<g>128</g>
@@ -135,7 +135,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2020-01-02 23:38:01</creation_date>
-			<updated_date>2020-01-10 02:21:19</updated_date>
+			<updated_date>2020-01-10 17:22:32</updated_date>
 			<model_property>
 				<name>프로젝트명</name>
 				<value></value>
@@ -456,9 +456,9 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>등록일</logical_name>
+			<logical_name>예약등록일</logical_name>
 			<physical_name>rs_date</physical_name>
-			<type>date</type>
+			<type>datetime</type>
 		</word>
 		<word>
 			<id>18</id>
@@ -472,9 +472,9 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>예약등록일</logical_name>
-			<physical_name>rs_date</physical_name>
-			<type>datetime</type>
+			<logical_name>예약번호</logical_name>
+			<physical_name>rs_num</physical_name>
+			<type>integer</type>
 		</word>
 		<word>
 			<id>19</id>
@@ -504,28 +504,12 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>예약번호</logical_name>
-			<physical_name>rs_num</physical_name>
-			<type>integer</type>
-		</word>
-		<word>
-			<id>21</id>
-			<length>null</length>
-			<decimal>null</decimal>
-			<array>false</array>
-			<array_dimension>null</array_dimension>
-			<unsigned>false</unsigned>
-			<zerofill>false</zerofill>
-			<binary>false</binary>
-			<args></args>
-			<char_semantics>false</char_semantics>
-			<description></description>
 			<logical_name>가격</logical_name>
 			<physical_name>rs_price</physical_name>
 			<type>integer</type>
 		</word>
 		<word>
-			<id>22</id>
+			<id>21</id>
 			<length>40</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -541,7 +525,7 @@
 			<type>varchar(n)</type>
 		</word>
 		<word>
-			<id>23</id>
+			<id>22</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -555,6 +539,22 @@
 			<logical_name>리뷰내용</logical_name>
 			<physical_name>rv_content</physical_name>
 			<type>text</type>
+		</word>
+		<word>
+			<id>23</id>
+			<length>null</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<zerofill>false</zerofill>
+			<binary>false</binary>
+			<args></args>
+			<char_semantics>false</char_semantics>
+			<description></description>
+			<logical_name>등록일</logical_name>
+			<physical_name>rv_date</physical_name>
+			<type>date</type>
 		</word>
 		<word>
 			<id>24</id>
@@ -1349,7 +1349,7 @@
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>20</word_id>
+					<word_id>18</word_id>
 					<id>12</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1382,7 +1382,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>18</word_id>
+					<word_id>17</word_id>
 					<id>13</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1415,7 +1415,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>21</word_id>
+					<word_id>20</word_id>
 					<id>14</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1448,7 +1448,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>22</word_id>
+					<word_id>21</word_id>
 					<id>15</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2007,7 +2007,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>23</word_id>
+					<word_id>22</word_id>
 					<id>28</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2106,18 +2106,18 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>17</word_id>
+					<word_id>23</word_id>
 					<id>31</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
 					<physical_name></physical_name>
 					<type>date</type>
-					<constraint></constraint>
+					<constraint>default now()</constraint>
 					<default_value></default_value>
 					<auto_increment>false</auto_increment>
 					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
+					<not_null>false</not_null>
 					<primary_key>false</primary_key>
 					<unique_key>false</unique_key>
 					<character_set></character_set>

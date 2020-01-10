@@ -79,7 +79,7 @@ public class ReviewDAO {
 			Double rv_star = rs.getDouble("rv_star");
 			int rs_num = rs.getInt("rs_num");
 			String rv_id = rs.getString("rv_id");
-			Date d = rs.getDate("rs_date");
+			Date d = rs.getDate("rv_date");
 			String rv_date = new SimpleDateFormat("yyyy-MM-dd").format(d);
 			
 			

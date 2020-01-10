@@ -17,6 +17,7 @@
 <link href = "css/public.css" rel="stylesheet" type="text/css">
 </head>
 
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
 <script src="https://kit.fontawesome.com/bb29575d31.js"></script>
 
 <body>
@@ -64,9 +65,9 @@
                 <div class="reviewer">
                     <div class="review_des_title">
                     <div class="script">
-                        <div class="rName">"${dto.rv_num }"</div>
+                        <div class="rName">"${dto.rv_id }"</div>
                         <div class="rStar">평점"${dto.rv_star }"</div>
-                        <div class="rDate">"${dto.rs_date }"</div></div>
+                        <div class="rDate">"${dto.rv_date }"</div></div>
                     </div>
                     <div class="rMovieTitle">"${dto.rv_title }</div>
                     <div class="rDesc">"${dto.rv_content }<p></p></div>
