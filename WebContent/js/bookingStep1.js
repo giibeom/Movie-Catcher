@@ -14,84 +14,6 @@ if (mm < 10) {
 today = yyyy + '' + mm + dd;
 var nowchk = 0;
 
-$(document).ready(function() {
-	var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=150bfb37a86f8bfb899cdc5192ee9967&targetDt="+ today;
-	$.ajax({
-		url : url,
-		type : "GET",
-		cache : false,
-		success : function(data, status) {
-		if (status == "success")
-		getBoxOffice(data);
-		}
-	});
-});
-
-function getBoxOffice(jsonObj) {
-	var arr = jsonObj.boxOfficeResult.dailyBoxOfficeList;
-	for (var i = 0; i < 10; i++) {
-		getRankPoster(arr[i].movieNm, i);
-	}
-}
-
-function getRankPoster(movieName, rank) {
-	checkMovieName = movieName.split(" ")[0];
-	var url = "https://api.themoviedb.org/3/search/movie?api_key=55d244c83c49693b6fd6606c768103eb&language=ko-KR&query="
-			+ checkMovieName + "&include_adult=false";
-	$.ajax({
-		url : url,
-		type : "GET",
-		cache : false,
-		success : function(data, status) {
-			if (status == "success")
-				getPoster(data, movieName, rank);
-		}
-	});
-
-};
-
-function getPoster(jsonObj, movieName, rank) {
-	var arr = jsonObj.results;
-	var poster;
-	var vote;
-	for (var i = 0; i < arr.length; i++) {
-		if (((arr[i].title) == (movieName))
-				|| (((arr[i].title).toLowerCase().split(" ").join(""))
-						.match(movieName.toLowerCase().split(" ").join("")))) {
-			poster = arr[i].poster_path;
-
-			break;
-		}
-	}
-	if (poster == null) {
-		poster = arr[0].poster_path;
-
-	}
-
-	data[rank] = "<img src='http://image.tmdb.org/t/p/w500" + poster
-			+ "' width='200px' height='280px'>";
-	nowchk++;
-	if (nowchk == 10) {
-		bookingStep();
-	}
-
-};
-
-function bookingStep() {
-
-	jQuery("#scrolling").srolling({
-		data : data,
-		auto : true,
-		item_count : 1,
-		cache_count : 5,
-		width : 200,
-		height : 280,
-		delay_frame : 500,
-		move : 'left',
-		prev : '#leftBtn',
-		next : '#rightBtn',
-	});
-};
 
 $(function() {
 	$("#datepicker").datepicker({
@@ -108,21 +30,19 @@ $(function() {
 $(document).ready(function() {
 
 							$(".areaClick").click(function() {
+								$(".onClick").removeClass("onClick");
+								$(this).addClass("onClick");
 								var areaName = $(this).attr("class");
 								var areaCode = areaName.split(" ")[1];
 								$(".areaZone").hide();
 								$(".t" + areaCode).show();
 							});
 
-					$(".theaterSelect")
-							.click(
-									function() {
+					$(".theaterSelect").click(function() {
 										$("#demoJSON").html("");
 										var theaterName = $(this).attr("class");
-										theaterNameInfo = theaterName
-												.split(" ")[1];
-										var theaterCode = theaterName
-												.split(" ")[2];
+										theaterNameInfo = theaterName.split(" ")[1];
+										var theaterCode = theaterNames.split(" ")[2];
 										var jsonurl = "http://localhost:8082/Movie_Catcher/ticket.ajax?reqType=json&theaterCode="
 												+ theaterCode;
 										$.ajax({
@@ -134,7 +54,16 @@ $(document).ready(function() {
 													parseJSON(data);
 											}
 										})
-									});
+									
+					
+					
+					
+					});
+					
+					
+					
+					
+					
 				});
 
 
@@ -187,7 +116,6 @@ function parseJSON(jsonObj) {
 						+ hallLocation + "\t" + hallType + "\t" + hallSize
 						+ "</div>";
 			} else if (arr[i - 1].h_movie != arr[i].h_movie) {
-				timeTable += "<div class='hall'><div class='hallinfo'>"
 						+ hallLocation + "\t" + hallType + "\t" + hallSize
 						+ "</div>";
 			}

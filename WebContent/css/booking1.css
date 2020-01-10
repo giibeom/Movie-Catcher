@@ -57,13 +57,48 @@ input:focus {
 	outline: none;
 }
 
+#window {
+	max-width: 1024px;
+	margin: auto;
+}
+
+#booking_title { 
+	display: block;
+	margin-bottom: 20px;
+	padding: 10px; 
+	display: inline-block; 
+	border-right: 30px solid transparent; 
+	border-bottom: 30px solid #E31D2E; 
+	height: 0; 
+	line-height: 50px;
+	}
+
+#booking_title h2 {
+	text-align: center;
+	text-decoration: none; 
+	color: white; 
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 22px;
+}
+
+#content {
+	border: 1px solid #4c4c4c; 
+	border-top: 3px solid #E31D2E;
+	padding: 10px;
+	margin-top: -20px;
+	width: 100%; 
+	display: inline-block;
+}
+
+
 body {
 	box-sizing: border-box;
 }
-body h2 {
-	margin-bottom: 30px;
-	text-align: center;
-}
+
+
+
+
+
 .body {
 	max-width: 1200px;
 	margin: 0px auto;
@@ -85,27 +120,32 @@ body h2 {
 
 /* 영화관 선택 */
 
-.theater{	
-	width: 30%;
-	text-align: left;
-	margin: 0 auto;
+.theater{
+	width: 100%;
 	font-family: 'Noto Sans KR', sans-serif;
+	
+	
 }
 
+
 .Clickarea{
-	width:35%;
-	float:left;
-	background-color: #e3e3e3;
+	width:100%;
 	text-align: center;
+	cursor: pointer;
+	overflow: auto;
+	margin : 0 auto;
 }
+
 .areaClick{
+	background-color: #e3e3e3;
+	width : 110px;
+	float : left;
 	border: 1px solid white;
-	width: 100%;
 	height: 50px;
 	padding-top: 15px;
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: bold;
-	
+	display : inline-block;
 }
 
 
@@ -118,23 +158,15 @@ body h2 {
 	text-align: center;
 }
 
+
+.tarea1, .tarea2, .tarea3, .tarea4, 
+.tarea5, .tarea6, .tarea7, .tarea8, .tarea9{	
+	width : 100%; 
+}
+
+
 .tarea1{
 	display: inline-block;
-	
-}
-
-#area2 li {
-	list-style: none;
-	display: block;
-	padding: 2%;
-	font-weight: 20;
-	background-color: whitesmoke;
-	margin: 1px auto;
-}
-
-#area2 li:hover {
-	cursor: pointer;
-	background-color: rgb(209, 10, 10);
 }
 
 .theaterList {
@@ -144,18 +176,20 @@ body h2 {
 	font-size: 16px;
 	transition: .3s;
 	font-weight: 00;
-	border-bottom: 1px solid #ccc;
 	user-select: none;
+	
 }
 
-details[open]>summary {
-	color: red;
+.theaterSelect {
+	float : left;
+	padding-bottom : 10px;
+	padding : 15px;
 }
 
 /* 날짜,스케줄선택*/
 .schedule {
 	display: none;
-	width: 60%;
+	width: 100%;
 	display: inline-block;
 	margin: 0 auto;
 	text-align: center;
@@ -190,14 +224,14 @@ input::-moz-placeholder {
 }
 /* input */
 #datepicker {
+	
+	margin : 50px 20px 50px;
 	border: 1px solid #E31D2E;
 	padding: 3px;
-	margin-left: 20px;
 	border-radius: 5px;
 	font-size: 17px;
 	text-align: center;
 	cursor: pointer;
-	margin-bottom: 7px;
 }
 
 #datepicker:hover {
@@ -285,27 +319,12 @@ input::-moz-placeholder {
 	padding: 20px 0px;
 	padding: 10px;
 	background-color: whitesmoke;
-	border: 0.1px solid black;
+	
 	min-height: 600px;
 	overflow:hidden;
 	height:auto;
 }
 
-.time {
-	margin: 13px;
-	margin-top: 10px;
-	float: left;
-	border: 0.1px solid black;
-	padding: 5px;
-	border-collapse: collapse;
-	background-color: white;
-	
-}
-
-.time:hover {
-	cursor: pointer;
-	background-color: rgb(209, 10, 10);
-}
 
 .theaterNameInfo{
 	width:100%;
@@ -316,6 +335,8 @@ input::-moz-placeholder {
 	float:left;
 	width: 100%;
 	margin-bottom: 30px;
+	padding-bottom: 30px;
+	border-bottom-style: double;
 }
 
 .movieName{
@@ -324,6 +345,11 @@ input::-moz-placeholder {
 	margin-left: 50px;
 	font-size: 18px;
 	display: inline-block;
+}
+
+.movieGrade {
+	margin-left: 50px;
+	margin-bottom: 30px;
 }
 
 .hall{
@@ -363,3 +389,31 @@ input::-moz-placeholder {
 	font-weight: bold;
 }
 
+
+
+@media only screen and (max-width: 600px){
+
+#content {
+	width : 100%;
+	border-left: none;
+	border-right : none;
+}
+
+#window {
+    max-width : 1024px;
+    margin : auto;
+}
+
+
+.areaClick{
+	width : 150px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
+
+}
+.onClick{
+	background-color: #E31D2E; 
+}

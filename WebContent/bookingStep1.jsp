@@ -56,15 +56,7 @@
 		</div>
 	</header>
 
-	<div class="body">
-
-		<!--영화 선택 div-->
-		<div class="mv_wrap" id="mv_wrap">
-			<div id="scrolling"
-				style="position: relative; overflow: hidden; width: 100%; height: 280px;"></div>
-			<div id="leftBtn"></div>
-			<div id="rightBtn"></div>
-		</div>
+	<div id="window">
 
 
 		<div class="selectStep1">
@@ -72,119 +64,131 @@
 
 			<!--극장 선택 div-->
 			<div class="theater">
-				<h2>극장선택</h2>
-				<ul class="Clickarea">
-					<li>
-						<div class="areaClick area1">서울</div>
-					</li>
-					<li>
-						<div class="areaClick area2">경기</div>
-					</li>
-					<li>
-						<div class="areaClick area3">인천</div>
-					</li>
-					<li>
-						<div class="areaClick area4">강원</div>
-					</li>
-					<li>
-						<div class="areaClick area5">대전/충청</div>
-					</li>
-					<li>
-						<div class="areaClick area6">대구</div>
-					</li>
-					<li>
-						<div class="areaClick area7">부산/울산</div>
-					</li>
-					<li>
-						<div class="areaClick area8">경상</div>
-					</li>
-					<li>
-						<div class="areaClick area9">광주/전라/제주</div>
-					</li>
-				</ul>
-				<div class="tarea1 areaZone">
-					<ul class="theaterList">
-						<c:forEach var="theater" items="${ theater }">
-							<c:if test="${theater.areaCode eq '01'}">
-								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
-							</c:if>
-						</c:forEach>
-					</ul>
+			
+			
+				<div id="booking_title">
+					<h2>극장별 상영시간표</h2>
 				</div>
-				<div class="tarea2 areaZone">
-					<ul class="theaterList">
-						<c:forEach var="theater" items="${ theater }">
-							<c:if test="${theater.areaCode eq '02'}">
-								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
-							</c:if>
-						</c:forEach>
+				<div id=content>
+				
+					<div class="area1">
+					<ul class="Clickarea">
+						<li>
+							<div class="areaClick area1">서울</div>
+						</li>
+						<li>
+							<div class="areaClick area2">경기</div>
+						</li>
+						<li>
+							<div class="areaClick area3">인천</div>
+						</li>
+						<li>
+							<div class="areaClick area4">강원</div>
+						</li>
+						<li>
+							<div class="areaClick area5">대전/충청</div>
+						</li>
+						<li>
+							<div class="areaClick area6">대구</div>
+						</li>
+						<li>
+							<div class="areaClick area7">부산/울산</div>
+						</li>
+						<li>
+							<div class="areaClick area8">경상</div>
+						</li>
+						<li>
+							<div class="areaClick area9">광주/전라/제주</div>
+						</li>
 					</ul>
-				</div>
-				<div class="tarea3 areaZone">
-					<ul class="theaterList">
-						<c:forEach var="theater" items="${ theater }">
-							<c:if test="${theater.areaCode eq '202'}">
-								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
-							</c:if>
-						</c:forEach>
-					</ul>
-				</div>
-				<div class="tarea4 areaZone">
-					<ul class="theaterList">
-						<c:forEach var="theater" items="${ theater }">
-							<c:if test="${theater.areaCode eq '12'}">
-								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
-							</c:if>
-						</c:forEach>
-					</ul>
-				</div>
-				<div class="tarea5 areaZone">
-					<ul class="theaterList">
-						<c:forEach var="theater" items="${ theater }">
-							<c:if test="${theater.areaCode eq '03%2C205'}">
-								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
-							</c:if>
-						</c:forEach>
-					</ul>
-				</div>
-				<div class="tarea6 areaZone">
-					<ul class="theaterList">
-						<c:forEach var="theater" items="${ theater }">
-							<c:if test="${theater.areaCode eq '11'}">
-								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
-							</c:if>
-						</c:forEach>
-					</ul>
-				</div>
-				<div class="tarea7 areaZone">
-					<ul class="theaterList">
-						<c:forEach var="theater" items="${ theater }">
-							<c:if test="${theater.areaCode eq '05%2C207'}">
-								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
-							</c:if>
-						</c:forEach>
-					</ul>
-				</div>
-				<div class="tarea8 areaZone">
-					<ul class="theaterList">
-						<c:forEach var="theater" items="${ theater }">
-							<c:if test="${theater.areaCode eq '204'}">
-								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
-							</c:if>
-						</c:forEach>
-					</ul>
-				</div>
-				<div class="tarea9 areaZone">
-					<ul class="theaterList">
-						<c:forEach var="theater" items="${ theater }">
-							<c:if test="${theater.areaCode eq '206%2C04%2C06'}">
-								<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
-							</c:if>
-						</c:forEach>
-					</ul>
+					
+					
+					<div class="tarea1 areaZone">
+						<ul class="theaterList">
+							<c:forEach var="theater" items="${ theater }">
+								<c:if test="${theater.areaCode eq '01'}">
+									<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+								</c:if>
+							</c:forEach>
+						</ul>
+					</div>
+					<div class="tarea2 areaZone">
+						<ul class="theaterList">
+							<c:forEach var="theater" items="${ theater }">
+								<c:if test="${theater.areaCode eq '02'}">
+									<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+								</c:if>
+							</c:forEach>
+						</ul>
+					</div>
+					<div class="tarea3 areaZone">
+						<ul class="theaterList">
+							<c:forEach var="theater" items="${ theater }">
+								<c:if test="${theater.areaCode eq '202'}">
+									<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+								</c:if>
+							</c:forEach>
+						</ul>
+					</div>
+					<div class="tarea4 areaZone">
+						<ul class="theaterList">
+							<c:forEach var="theater" items="${ theater }">
+								<c:if test="${theater.areaCode eq '12'}">
+									<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+								</c:if>
+							</c:forEach>
+						</ul>
+					</div>
+					<div class="tarea5 areaZone">
+						<ul class="theaterList">
+							<c:forEach var="theater" items="${ theater }">
+								<c:if test="${theater.areaCode eq '03%2C205'}">
+									<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+								</c:if>
+							</c:forEach>
+						</ul>
+					</div>
+					<div class="tarea6 areaZone">
+						<ul class="theaterList">
+							<c:forEach var="theater" items="${ theater }">
+								<c:if test="${theater.areaCode eq '11'}">
+									<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+								</c:if>
+							</c:forEach>
+						</ul>
+					</div>
+					<div class="tarea7 areaZone">
+						<ul class="theaterList">
+							<c:forEach var="theater" items="${ theater }">
+								<c:if test="${theater.areaCode eq '05%2C207'}">
+									<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+								</c:if>
+							</c:forEach>
+						</ul>
+					</div>
+					<div class="tarea8 areaZone">
+						<ul class="theaterList">
+							<c:forEach var="theater" items="${ theater }">
+								<c:if test="${theater.areaCode eq '204'}">
+									<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+								</c:if>
+							</c:forEach>
+						</ul>
+					</div>
+					<div class="tarea9 areaZone">
+						<ul class="theaterList">
+							<c:forEach var="theater" items="${ theater }">
+								<c:if test="${theater.areaCode eq '206%2C04%2C06'}">
+									<li class="theaterSelect ${theater.theaterName } ${theater.theaterCode }">${theater.theaterName }</li>
+								</c:if>
+							</c:forEach>
+						</ul>
+					</div>
 				</div>
 			</div>
-			
+
+						
+
 
 			<!--날짜/ 스케줄 선택 div-->
 			<div class="schedule">
@@ -196,13 +200,16 @@
 					</h2>
 					<i class="ion-calendar"></i>
 				</div>
+				
+				
 				<div id="selectScd">
 					<div class="mv_time" id="demoJSON">
-						
+					
 						
 					</div>
-				</div>
 			</div>
+		</div>
+		</div>
 		</div>
 	</div>
 	<!--하단 상태바-->
