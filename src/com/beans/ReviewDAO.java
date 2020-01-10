@@ -106,7 +106,6 @@ public class ReviewDAO {
 		return arr;
 	}
 	
-	
 	public int delete(int rv_num) throws SQLException, NamingException {
 		int cnt = 0;
 		
@@ -159,6 +158,50 @@ public class ReviewDAO {
 				}
 				return cnt;
 			}
+			
+			
+			// 특정 영화의 리뷰
+			
+			public ReviewDTO [] selectFromRow(int from, int rows, String movieName) throws SQLException, NamingException {
+				ReviewDTO [] arr = null;
+				
+				try {
+					conn = getConnection();
+					pstmt = conn.prepareStatement(D.SQL_REVIEW_SELECT_MOVIE_FROM_ROW);
+					pstmt.setString(1, movieName);
+					pstmt.setInt(2, from);
+					pstmt.setInt(3, rows);
+					rs = pstmt.executeQuery();
+					arr = createArray(rs);
+					
+				} finally { 
+					close();
+				}
+				return arr;
+			}
+			
+			// 총 몇개의 글이 있는지 계산
+				public int countMovie(String movieName) throws SQLException, NamingException {
+					int cnt = 0;
+					try {
+						
+						conn = getConnection();
+						pstmt = conn.prepareStatement(D.SQL_REVIEW_COUNT_MOVIE);
+						pstmt.setString(1, movieName);
+						rs = pstmt.executeQuery();
+						rs.next();
+						cnt = rs.getInt(1); //첫번째 컬럼
+						
+					} finally {
+						close();
+					}
+					return cnt;
+				}
+			
+			
+			
+			
+			
 	
 	
 }

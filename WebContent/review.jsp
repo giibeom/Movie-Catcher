@@ -2,6 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<% String movieName = request.getParameter("movieName");
+if(movieName == null){
+	movieName = "";
+}
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +21,14 @@
 <link href="css/footer.css" rel="stylesheet" type="text/css">
 <link href="css/header.css" rel="stylesheet" type="text/css">
 <link href = "css/public.css" rel="stylesheet" type="text/css">
+<script src="js/header.js" type="text/javascript"></script>
+<script src="js/review.js" type="text/javascript"></script>
+
 </head>
 
 <link rel="stylesheet" type="text/css" href="css/common.css"/>
 <script src="https://kit.fontawesome.com/bb29575d31.js"></script>
+
 
 <body>
     <header>
@@ -42,57 +52,65 @@
     </header>
     
     
+
     
 	<section class="review">
-
-    <div class="review_background"></div>
-    
-    <div class="contentWrap">
-    <h3>영화 리뷰</h3>
-    <div class="d1">
-        <form>
-        <input type="text" placeholder="영화 제목">
-        <button type="submit"><img id="m_icon" src="images/m_icon_3.png"></button>
-        </form>
-      </div>
-      
-      
-    <div class="reviewBox">
-        <ul class="reviewWrap">
-        
-        <c:forEach var="dto" items="${list }" varStatus="status">
-       		    <li>
-                <div class="reviewer">
-                    <div class="review_des_title">
-                    <div class="script">
-                        <div class="rName">"${dto.rv_id }"</div>
-                        <div class="rStar">평점"${dto.rv_star }"</div>
-                        <div class="rDate">"${dto.rv_date }"</div></div>
-                    </div>
-                    <div class="rMovieTitle">"${dto.rv_title }</div>
-                    <div class="rDesc">"${dto.rv_content }<p></p></div>
-                </div>
-            </li>
-	 </c:forEach>
-    
-            
-        </ul>
+	    <div class="review_background"></div>
+	    <div class="contentWrap">
+	    <h3>영화 리뷰</h3>
+	    <div class="d1">
+	    	<form>
+		        <input id="searchMovieReview" type="text" placeholder="영화 제목">
+		        <button id="submit"><img id="m_icon" src="images/m_icon_3.png"></button>
+	        </form>
+	      </div>
+	      
+	      
+	      
+	      
+	    <div class="reviewBox">
+	        <ul class="reviewWrap">
+	        
+		        <c:forEach var="dto" items="${list }" varStatus="status">
+		       		    <li>
+		                <div class="reviewer">
+		                    <div class="review_des_title">
+		                    <div class="script">
+		                        <div class="rName">"${dto.rv_id }"</div>
+		                        <div class="rStar">평점 : ${dto.rv_star }</div>
+		                    </div>
+		                    <div class="rMovieTitle">${dto.rv_title }</div>
+		                    <div class="rDesc"><p>${dto.rv_content }</p></div>
+		                        <div class="rDate">${dto.rv_date }</div></div>
+		                </div>
+		            </li>
+			 	</c:forEach>
+	        </ul>
   
 
 
-   		<%-- 페이징 --%>
-	<jsp:include page="pagination.jsp" flush="false">
+
+
+
+
+   		
+	
+	<jsp:include page="pagination.jsp">
 		<jsp:param value="${writePages }" name="writePages"/>
 		<jsp:param value="${totalPage }" name="totalPage"/>
-		<jsp:param value="${page }" name="curPage"/>
+		<jsp:param value="${page }" name="page"/>
+		<jsp:param value="${param.movieName }" name="movieName"/>
 	</jsp:include>
-		
-</div>  
-
+	
+	</div>  
 </div>
 
 
 </section>
+	
+	
+
+
 
 
 
