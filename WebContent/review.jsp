@@ -80,13 +80,18 @@
   
 
 
-   		<%-- 페이징 --%>
+
+
+
+   		
 	<jsp:include page="pagination.jsp" flush="false">
 		<jsp:param value="${writePages }" name="writePages"/>
 		<jsp:param value="${totalPage }" name="totalPage"/>
-		<jsp:param value="${page }" name="curPage"/>
+		<jsp:param value="${page }" name="page"/>
 	</jsp:include>
 		
+
+ 
 </div>  
 
 </div>
