@@ -99,8 +99,16 @@ var t_uid = "${list[0].t_uid}"
 				<option value="7">7</option>
 				<option value="8">8</option>
 			</select>
+			<div id="seatSelectAbout">
+			<div id="personNum">
 			<div id="totalNumber"></div>
 			<button id="pNumChk" >인원 확정</button>
+			</div>
+			<div id="seatNum">
+			<div id="nowSelectSeat"></div>
+			<div id="reSelectSeat">좌석 다시 고르기</div>
+			</div>
+			</div>
 		</div>
 
 
@@ -112,10 +120,7 @@ var t_uid = "${list[0].t_uid}"
 
 			</div>
 		</div>
-		<div id="reSelectSeat">
 		
-			좌석 다시 고르기
-		</div>
 		<div id="goPayment">
 			결제하기
 		</div>

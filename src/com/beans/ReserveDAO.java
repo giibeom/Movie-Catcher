@@ -43,25 +43,23 @@ public class ReserveDAO {
 	}
 	
 	public int insert(ReserveDTO dto) throws SQLException, NamingException {
-		String rs_date = dto.getRs_date();
 		String rs_price = dto.getRs_price();
 		String rs_seat = dto.getRs_seat();
 		int u_idnum = dto.getU_idnum();
 		int t_uid = dto.getT_uid();
-		return this.insert(rs_date, rs_price, rs_seat, u_idnum, t_uid);
+		return this.insert(rs_price, rs_seat, u_idnum, t_uid);
 	}
 	
-	public int insert(String rs_date, String rs_price, String rs_seat, int u_idnum, int t_uid) throws SQLException, NamingException{
+	public int insert(String rs_price, String rs_seat, int u_idnum, int t_uid) throws SQLException, NamingException{
 		int cnt = 0;
 		
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_RESERVE_INSERT);
-			pstmt.setString(1, rs_date);
-			pstmt.setString(2, rs_price);
-			pstmt.setString(3, rs_seat);
-			pstmt.setInt(4, u_idnum);
-			pstmt.setInt(5, t_uid);
+			pstmt.setString(1, rs_price);
+			pstmt.setString(2, rs_seat);
+			pstmt.setInt(3, u_idnum);
+			pstmt.setInt(4, t_uid);
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();

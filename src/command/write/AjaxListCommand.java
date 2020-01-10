@@ -56,6 +56,7 @@ public class AjaxListCommand implements Command {
 			dataObj.put("hallSize", arr[i].getHallSize());
 			dataObj.put("theaterCode", arr[i].getTheaterCode());
 			dataObj.put("h_movie", arr[i].getH_movie());
+			dataObj.put("h_grade", arr[i].getH_grade());
 			dataObj.put("t_uid", arr[i].getT_uid());
 			dataObj.put("movietime", arr[i].getMovietime());
 			dataObj.put("restSeat", arr[i].getRestSeat());

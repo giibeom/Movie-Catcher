@@ -36,6 +36,7 @@ CREATE TABLE hall
 	hallSize varchar(40) NOT NULL,
 	theaterCode varchar(10) NOT NULL,
 	h_movie varchar(30) NOT NULL,
+	h_grade varchar(30) NOT NULL,
 	PRIMARY KEY (h_uid)
 );
 
@@ -153,7 +154,6 @@ ALTER TABLE reserve
 	ON DELETE RESTRICT
 ;
 
-
 show TABLES;
 
 describe board;
@@ -188,5 +188,8 @@ flush privileges;
 show grants for 'myuser'@'localhost';
 
 select * from theater;
+
+
+
 
 
