@@ -1,7 +1,7 @@
 {
 	"folders": {},
 	"connections": {
-		"mariaDB-16f89cb3ee1-216b769ea610198f": {
+		"mariaDB-16f8e5368ff-7a7eb2d9fedd69f6": {
 			"provider": "mysql",
 			"driver": "mariaDB",
 			"name": "MariaDB - movie_catcher",

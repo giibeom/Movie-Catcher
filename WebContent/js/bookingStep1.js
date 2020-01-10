@@ -114,15 +114,12 @@ $(document).ready(function() {
 								$(".t" + areaCode).show();
 							});
 
-					$(".theaterSelect")
-							.click(
-									function() {
+					$(".theaterSelect").click(function() {
 										$("#demoJSON").html("");
 										var theaterName = $(this).attr("class");
 										theaterNameInfo = theaterName.split(" ")[1];
 										var theaterCode = theaterName.split(" ")[2];
-										var jsonurl = "http://localhost:8082/Movie_Catcher/ticket.ajax?reqType=json&theaterCode="
-												+ theaterCode;
+										var jsonurl = "http://localhost:8082/Movie_Catcher/ticket.ajax?reqType=json&theaterCode="+ theaterCode;
 										$.ajax({
 											url : jsonurl,
 											type : "GET",
@@ -143,7 +140,7 @@ window.onload = function() {
 }
 
 function getTheater1() {
-	var jsonurl = "http://localhost:8080/Movie_Catcher/ticket.ajax?reqType=json&theaterCode=0001";
+	var jsonurl = "http://localhost:8082/Movie_Catcher/ticket.ajax?reqType=json&theaterCode=0001";
 	$.ajax({
 		url : jsonurl,
 		type : "GET",

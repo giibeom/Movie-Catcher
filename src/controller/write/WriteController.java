@@ -132,6 +132,7 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "board.jsp";
 			break;
+			
 		case "/b_write.mc":
 			viewPage = "b_write.jsp";
 			break;
