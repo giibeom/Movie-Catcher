@@ -47,7 +47,7 @@
     
 <form action="#" method="GET" id="info">
     <div class="box">
-        <div class="subject">실명</div>
+        <div class="subject">닉네임</div>
         <input type="text" name = "nink" value="${list.u_name }"    required>
         <div id="update">수정</div>
     </div>

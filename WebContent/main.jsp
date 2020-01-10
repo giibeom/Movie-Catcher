@@ -42,7 +42,7 @@
                     <li id="navTheater">극장</li>
                     <li id="navReview">리뷰</li>
                     <li id="navNotice">공지사항</li>
-                    <li id="navMyPage">마이페이지</li>
+                    <li id="navMypage">마이페이지</li>
                 </ul>
             </div>
         </div>
