@@ -14,9 +14,9 @@ public class MpUserDeleteCommand implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws NamingException {
 		int cnt = 0;
 		MC_userDAO dao = new MC_userDAO();
-		
-		String u_id = request.getParameter("id");
-		
+		System.out.println("제발");
+		String u_id = request.getParameter("u_id");
+		System.out.println(u_id);
 		try {
 			cnt = dao.delete(u_id);
 		}catch (SQLException e) {
@@ -24,7 +24,7 @@ public class MpUserDeleteCommand implements Command {
 		}
 		
 		request.setAttribute("result", cnt);
-		request.setAttribute("id", u_id);
+		request.setAttribute("u_id", u_id);
 	}
 
 }

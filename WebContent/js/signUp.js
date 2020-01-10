@@ -47,8 +47,7 @@ $("#check > button").click(function(){
     if($("#check > input").val().trim().length != 0 && $.isNumeric($("#check > input").val().trim()) ) {
         $("#check > input").val("");
         $("#check > input").attr({
-            "placeholder" : "인증이 완료되었습니다",
-            "disabled" : true
+            "placeholder" : "인증이 완료되었습니다"
         });
         $("#pNum").css("background-color", "gray" );
     } else {
