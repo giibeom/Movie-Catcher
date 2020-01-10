@@ -4,9 +4,9 @@
 	// 한페이징에 표시될 페이지수 --> writePages
 	// 총 페이지수 --> totalPage
 	// 현재 페이지 --> curPage
+	int totalPage = (Integer)request.getAttribute("totalPage");
 	int writePages = Integer.parseInt(request.getParameter("writePages"));
-	int totalPage = Integer.parseInt(request.getParameter("totalPage"));
-	int curPage = Integer.parseInt(request.getParameter("curPage"));
+	int curPage = Integer.parseInt(request.getParameter("page"));
 	// ※ 사실 위 단계에서도 파라미터 검증 필요하다
 	
 	// 위 url에 추가로 붙어야 할 것들.  (옵션)

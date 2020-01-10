@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String id = (String)session.getAttribute("u_id");
+	request.setAttribute("u_id", id);
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -48,7 +52,7 @@
         <p class="id">
         <div class="content_box">
                <div class="content">
-               <a href="myPagePrivate.jsp">
+               <a href="myPagePrivate.mc?u_id=${param.id } ">
                <h3>개인정보 &gt</h3>
                <p>개인정보 및 연락처를 알려주세요</p>
                </a></div>

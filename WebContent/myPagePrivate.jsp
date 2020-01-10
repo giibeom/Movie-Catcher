@@ -47,28 +47,28 @@
     
 <form action="#" method="GET" id="info">
     <div class="box">
-        <div class="subject">실명</div>
-        <input type="text" name = "nink" required>
+        <div class="subject">닉네임</div>
+        <input type="text" name = "nink" value="${list.u_name }"    required>
         <div id="update">수정</div>
     </div>
     <div class="box">
         <div class="subject">아이디</div>
-        <input type="text" name = "id" required>
+        <input type="text" name = "id" value="${list.u_id }" required>
        
     </div>
     <div class="box">
         <div class="subject">비밀번호</div>
-        <input type="password" name = "pw" required>
+        <input type="password" name = "pw" value="${list.u_pw }" required>
         <div id="update">수정</div>
     </div>
     <div class="box">
         <div class="subject">이메일 주소</div>
-        <input type="text" name = "email" required>
+        <input type="text" name = "email" value="${list.u_email }" required>
         <div id="update">수정</div>
     </div>
     <div class="box">
         <div class="subject">휴대폰 번호</div>
-        <input type="text" name = "phoneNum" required>
+        <input type="text" name = "phoneNum" value="${list.u_phone }"required>
         <div id="update">수정</div>
     </div>
     <input type="submit" id="submit" value="저장하기">

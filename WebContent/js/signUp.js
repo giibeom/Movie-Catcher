@@ -50,7 +50,7 @@ $("#check > button").click(function(){
             "placeholder" : "인증이 완료되었습니다",
             "disabled" : true
         });
-        $("#pNum > input").attr("disabled", true);
+        $("#pNum").css("background-color", "gray" );
     } else {
         alert("인증번호를 다시 확인해주세요");
     }

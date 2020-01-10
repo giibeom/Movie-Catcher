@@ -70,7 +70,7 @@ CREATE TABLE mc_user
 CREATE TABLE reserve
 (
 	rs_num int NOT NULL AUTO_INCREMENT,
-	rs_date datetime NOT NULL DEFAULT now(),
+	rs_date datetime DEFAULT now(),
 	rs_price int NOT NULL,
 	rs_seat varchar(40) NOT NULL,
 	u_idnum int NOT NULL,
@@ -155,6 +155,7 @@ ALTER TABLE reserve
 ;
 
 
+
 show TABLES;
 
 describe board;
@@ -178,7 +179,7 @@ select count(*) from ticket;
 select * from hall h, ticket t where h.h_uid = t.h_uid;
 select * from hall h, ticket t where h.h_uid = t.h_uid and h.`theaterCode` = "0001"; 
 select * from hall h, ticket t where h.h_uid = t.h_uid and t.t_uid = 1; 
-
+select * from review where rv_title like '%스타워즈%';
 show databases;
 
 create database movie_catcher;

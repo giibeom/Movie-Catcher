@@ -89,7 +89,6 @@
 		<jsp:param value="${page }" name="curPage"/>
 	</jsp:include>
 		
-		
 </div>  
 
 </div>

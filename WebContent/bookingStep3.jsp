@@ -93,7 +93,7 @@
 						required> <br>국가/지역<br>
 					<input type="text" id="country" name="country" placeholder="한국"
 						required>
-
+					<input type="hidden" name="">
 
 					<div id="button">
 						<input type="submit" value="결제하기" onsubmit="return sandit()">
