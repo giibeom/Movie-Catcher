@@ -70,7 +70,7 @@ CREATE TABLE mc_user
 CREATE TABLE reserve
 (
 	rs_num int NOT NULL AUTO_INCREMENT,
-	rs_date datetime NOT NULL DEFAULT now(),
+	rs_date datetime DEFAULT now(),
 	rs_price int NOT NULL,
 	rs_seat varchar(40) NOT NULL,
 	u_idnum int NOT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE review
 	rv_content text,
 	rv_star double NOT NULL,
 	rv_id varchar(30) NOT NULL,
-	rs_date date NOT NULL,
+	rv_date date default now(),
 	rs_num int,
 	PRIMARY KEY (rv_num)
 );
@@ -154,6 +154,8 @@ ALTER TABLE reserve
 	ON DELETE RESTRICT
 ;
 
+
+
 show TABLES;
 
 describe board;
@@ -164,7 +166,6 @@ select * from theater;
 select * from hall;
 select * from ticket;
 select * from mc_user mu;
-select * from mc_admin ma;
 select * from review;
 delete from theater where theaterCode = 1;
 delete from hall where h_uid =1;
@@ -178,7 +179,7 @@ select count(*) from ticket;
 select * from hall h, ticket t where h.h_uid = t.h_uid;
 select * from hall h, ticket t where h.h_uid = t.h_uid and h.`theaterCode` = "0001"; 
 select * from hall h, ticket t where h.h_uid = t.h_uid and t.t_uid = 1; 
-
+select * from review where rv_title like '%스타워즈%';
 show databases;
 
 create database movie_catcher;
@@ -189,4 +190,5 @@ flush privileges;
 show grants for 'myuser'@'localhost';
 
 select * from theater;
+
 

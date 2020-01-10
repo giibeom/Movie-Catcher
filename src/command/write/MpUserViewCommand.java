@@ -17,7 +17,7 @@ public class MpUserViewCommand implements Command {
 		
 		MC_userDTO [] arr = null;
 		
-		String u_id = request.getParameter("id");
+		String u_id = request.getParameter("u_id");
 		
 		try {
 			arr = dao.select(u_id);
