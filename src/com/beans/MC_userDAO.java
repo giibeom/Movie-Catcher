@@ -147,7 +147,7 @@ public class MC_userDAO {
 			pstmt = conn.prepareStatement(D.SQL_MC_USER_SELECT);
 			pstmt.setString(1, u_id);
 			rs = pstmt.executeQuery();
-			
+			arr = createArray(rs);
 		}finally {
 			close();
 		}
