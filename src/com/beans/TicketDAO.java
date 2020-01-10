@@ -90,12 +90,13 @@ public class TicketDAO {
 			String hallSize = rs.getString("hallSize");
 			String theaterCode = rs.getString("theaterCode");
 			String h_movie = rs.getString("h_movie");
+			String h_grade = rs.getString("h_grade");
 			int t_uid = rs.getInt("t_uid");
 			String movietime = rs.getString("movietime");
 			int restSeat = rs.getInt("restSeat");
 			
 			HandTDTO dto = new HandTDTO(h_uid, hallType, hallLocation
-					, hallSize, theaterCode, h_movie, t_uid, movietime, restSeat);
+					, hallSize, theaterCode, h_movie, h_grade, t_uid, movietime, restSeat);
 			list.add(dto);
 		}
 		int size = list.size();

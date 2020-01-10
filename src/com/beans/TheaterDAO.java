@@ -95,13 +95,13 @@ public class TheaterDAO {
 		return arr;
 	}
 	
-	public TheaterDTO[] selectByCode(int theaterCode) throws SQLException, NamingException{
+	public TheaterDTO[] selectByCode(String theaterCode) throws SQLException, NamingException{
 		int cnt = 0;
 		TheaterDTO[] arr = null;
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(D.SQL_THEATER_SELECT);
-			pstmt.setInt(1, theaterCode);
+			pstmt.setString(1, theaterCode);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
 			

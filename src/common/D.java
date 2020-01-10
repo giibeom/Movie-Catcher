@@ -28,7 +28,7 @@ public interface D {
 	public static final String SQL_THEATER_SELECT = "SELECT * FROM theater WHERE theaterCode = ?";
 	public static final String SQL_THEATER_UPDATE = "UPDATE theater SET theaterAddress = ? WHERE theaterCode = ?";
 	
-	public static final String SQL_HALL_INSERT = "INSERT INTO hall (hallType, hallLocation, hallSize, theaterCode, h_movie) VALUES (?, ?, ?, ?, ?)";
+	public static final String SQL_HALL_INSERT = "INSERT INTO hall (hallType, hallLocation, hallSize, theaterCode, h_movie, h_grade) VALUES (?, ?, ?, ?, ?, ?)";
 	public static final String SQL_HALL_SIZE = "SELECT count(*) FROM hall";
 	public static final String SQL_HALL_SELECTALL = "SELECT * FROM hall h, ticket t WHERE h.h_uid = t.h_uid";
 	public static final String SQL_HALL_TICKET = "SELECT * FROM hall h, ticket t WHERE h.h_uid = t.h_uid AND theaterCode = ?";
@@ -37,7 +37,7 @@ public interface D {
 	public static final String SQL_TICKET_INSERT = "INSERT INTO ticket (movietime, restSeat, h_uid) VALUES (?, ?, ?)";
 	public static final String SQL_TICKET_SELECT = "SELECT * FROM hall h, ticket t WHERE h.h_uid = t.h_uid AND t.t_uid = ?";
 	
-	public static final String SQL_RESERVE_INSERT = "INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES(?, ?, ?, ?, ?)"; 
+	public static final String SQL_RESERVE_INSERT = "INSERT INTO reserve (rs_price, rs_seat, u_idnum, t_uid) VALUES(?, ?, ?, ?)"; 
 	public static final String SQL_RESERVE_USER = "SELECT * FROM reserve WHERE u_idnum";
 	public static final String SQL_RESERVE_REVIEW = "SELECT * FROM reserve WHERE rs_num = ?";
 	public static final String SQL_RESERVE_DELETE = "DELETE FROM reserve WHERE rs_num = ?";

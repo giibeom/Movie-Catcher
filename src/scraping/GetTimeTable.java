@@ -2,7 +2,6 @@ package scraping;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Iterator;
 
 import javax.naming.NamingException;
@@ -12,7 +11,10 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.beans.*;
+import com.beans.HallDAO;
+import com.beans.TheaterDAO;
+import com.beans.TheaterDTO;
+import com.beans.TicketDAO;
 
 public class GetTimeTable {
 	public static void main(String[] args) throws SQLException, NamingException {
@@ -47,6 +49,9 @@ public class GetTimeTable {
 				String movieName = movieTitle.text();
 
 				System.out.println("영화이름  : " + movieTitle.text());
+				Elements mGrade = movieInfo.select(".ico-grade");
+				System.out.println("영화등급 : " + mGrade.text());
+				String movieGrade = mGrade.text();
 
 				Iterator<Element> movieHallInfo = movieInfo.select("div.info-hall").iterator();
 				Iterator<Element> movieTimetable = movieInfo.select("div.info-timetable").iterator();
@@ -57,7 +62,7 @@ public class GetTimeTable {
 					String hallLocation = info.next().text();
 					String hallSize = info.next().text();
 					HallDAO hdao = new HallDAO();
-					hdao.insert(hallType, hallLocation, hallSize, theatercode, movieName);
+					hdao.insert(hallType, hallLocation, hallSize, theatercode, movieName, movieGrade);
 					h_uid++;
 					System.out.println("상영관 : " + hallType + "\t" + hallLocation + "\t" + hallSize);
 

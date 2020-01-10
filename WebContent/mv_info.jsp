@@ -58,8 +58,8 @@
 
     <div class="body">
     
-        <div class="col-6 container" style="height: 600px;">
-            <img id="mainPoster" src="" style="width: 80%; height: 550px;">
+        <div class="col-6 container poster" style="height: 600px;">
+            <img id="mainPoster" src="" style="width: 75%; height: 500px;">
         </div>
 
         <div class="col-6">
@@ -67,8 +67,21 @@
             
             <div id = "mv">
             <div id="mv_title"></div><!-- list -->
+            <span>평점:</span>
             <div id="mv_avg"></div><!-- movie db -->
-            <!-- <button type = "button" id = "mv_resv">예매하기</button> -->
+            <div class="starRev">
+                    <span class="starR off">별1</span>
+                    <span class="starR off">별2</span>
+                    <span class="starR off">별3</span>
+                    <span class="starR off">별4</span>
+                    <span class="starR off">별5</span>
+                    <span class="starR off">별6</span>
+                    <span class="starR off">별7</span>
+                    <span class="starR off">별8</span>
+                    <span class="starR off">별9</span>
+                    <span class="starR off">별10</span>
+            </div>
+            <button type = "button" id = "mv_resv">예매하기</button>
             <hr>
 
             <span><h4>감독 : </h4></span>
@@ -103,16 +116,36 @@
             </div>
         </div>
 
-        <div class="container" id="overview">
-
+        <!-- <div class="container" id="overview">
+        </div> -->
+        <div class = "container">
+            <div id = "mv_content">줄거리 </div>
+            <div class = "mv_con" id="overview">
+            </div>
+            <!-- <div class="starRev">
+            <span class="starR on">별1</span>
+            <span class="starR">별2</span>
+            <span class="starR">별3</span>
+            <span class="starR">별4</span>
+            <span class="starR">별5</span>
+            <span class="starR">별6</span>
+            <span class="starR">별7</span>
+            <span class="starR">별8</span>
+            <span class="starR">별9</span>
+            <span class="starR">별10</span>
+            </div> -->
         </div>
+
+
+
+
     </div>
 
 
     <div style="height: 0px;" class="clear"></div> <!-- height 20px - > 0 px-->
     
     <div id="steelCut" class="container" style="height: 400px;">
-            <h3>스틸컷</h3>
+            <h3 id = "cut">스틸컷</h3>
             <div id="scrolling" class="container" style="position:relative;overflow:hidden;width:100%;height:300px;"></div> <!-- height 400px - >300px width 100 -> 95 -->
             
             <!-- 버튼이미지 필요 -->

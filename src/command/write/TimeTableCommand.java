@@ -58,6 +58,10 @@ public class TimeTableCommand implements Command {
 				String movieName = movieTitle.text();
 
 				System.out.println("영화이름  : " + movieTitle.text());
+				
+				Elements mGrade = movieInfo.select(".ico-grade");
+				System.out.println("영화등급 : " + mGrade.text());
+				String movieGrade = mGrade.text();
 
 				Iterator<Element> movieHallInfo = movieInfo.select("div.info-hall").iterator();
 				Iterator<Element> movieTimetable = movieInfo.select("div.info-timetable").iterator();
@@ -69,7 +73,7 @@ public class TimeTableCommand implements Command {
 					String hallSize = info.next().text();
 					HallDAO hdao = new HallDAO();
 					try {
-						hdao.insert(hallType, hallLocation, hallSize, theatercode, movieName);
+						hdao.insert(hallType, hallLocation, hallSize, theatercode, movieName, movieGrade);
 					} catch (SQLException e) {
 						e.printStackTrace();
 					}
