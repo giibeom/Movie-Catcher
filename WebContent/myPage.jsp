@@ -68,11 +68,7 @@
         <div class="disabled_container">
             <p>계정을 비활성화하셔야 하나요?</p>
             <p class="box">
-<<<<<<< HEAD
                 <a href="MyuserDeleteOK.mc?u_id=${u_id }">지금 처리하기</a>
-=======
-                <a href="MyuserDeleteOk.mc?u_id=${u_id }">지금 처리하기</a>
->>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
             </p>
         </div>
                

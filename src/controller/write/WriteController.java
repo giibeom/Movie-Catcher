@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import command.write.Command;
 import command.write.MpUserDeleteCommand;
+import command.write.MpUserUpdateCommand;
 import command.write.MpUserViewCommand;
 import command.write.ReserveOkCommand;
 import command.write.ReviewCommand;
@@ -153,15 +154,21 @@ public class WriteController extends HttpServlet {
 			command = new ReviewCrawlingCommand();
 			command.execute(request, response);
 			break;
-		case "/userDeleteOk.mc":
-			command = new MpUserDeleteCommand();
+		case "/MyuserDeleteOk.mc":
+			command = new MpUserUpdateCommand();
 			command.execute(request, response);
-			viewPage = "userDeleteOk.jsp";
+			viewPage = "MyuserDeleteOk.jsp";
+			break;
+		case "/MyPageUpdateOk.mc":
+			command = new MpUserUpdateCommand();
+			command.execute(request, response);
+			viewPage = "MyPageUpdateOk.jsp";
 			break;
 		case "/reserveOk.mc" :
 			command = new ReserveOkCommand();
 			command.execute(request, response);
 			viewPage = "reserveOk.jsp";
+			break;
 		}
 		
 	

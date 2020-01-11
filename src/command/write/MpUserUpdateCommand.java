@@ -32,7 +32,7 @@ public class MpUserUpdateCommand implements Command {
 		
 		
 		request.setAttribute("result", cnt);
-		request.setAttribute("id", u_id);
+		request.setAttribute("u_id", u_id);
 		
 	}
 
