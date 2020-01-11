@@ -12,8 +12,8 @@
 	<c:otherwise>
 	<script>
 		<%
-			String id = (String)request.getAttribute("id");
-			session.setAttribute("id", id);
+			String u_id = (String)request.getAttribute("u_id");
+			session.setAttribute("u_id", u_id);
 		%>
 		location.href = "main.mc";
 	</script>

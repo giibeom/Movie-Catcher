@@ -45,33 +45,33 @@
     <div id="page_title"><h2>개인 정보</h2></div>
 <div id ="mypage">
     
-<form action="#" method="GET" id="info">
+<form action="MyPageUpdateOk.mc" method="GET" id="info">
     <div class="box">
-        <div class="subject">실명</div>
-        <input type="text" name = "nink" required>
-        <div id="update">수정</div>
+        <div class="subject">닉네임</div>
+        <input type="text" name = "nick" value="${list[0].u_name }"    required>
+        <%--<div class="updateNick">수정</div> --%>
     </div>
     <div class="box">
         <div class="subject">아이디</div>
-        <input type="text" name = "id" required>
+        <input type="text" name = "id" value="${list[0].u_id }" required>
        
     </div>
     <div class="box">
         <div class="subject">비밀번호</div>
-        <input type="password" name = "pw" required>
-        <div id="update">수정</div>
+        <input type="password" name = "pw" value="${list[0].u_pw }" required>
+       <%-- <div class="updatePw">수정</div> --%>
     </div>
     <div class="box">
         <div class="subject">이메일 주소</div>
-        <input type="text" name = "email" required>
-        <div id="update">수정</div>
+        <input type="text" name = "email" value="${list[0].u_email }" required>
+       <%-- <div class="updateEmail">수정</div> --%>
     </div>
     <div class="box">
         <div class="subject">휴대폰 번호</div>
-        <input type="text" name = "phoneNum" required>
-        <div id="update">수정</div>
+        <input type="text" name = "phoneNum" value="${list[0].u_phone }"required>
+     <%--   <div class="updatePhone">수정</div> --%>
     </div>
-    <input type="submit" id="submit" value="저장하기">
+    <input type="submit" id="submit" value="저장하기"> 
     <div class="clear"></div>
 </form>
 </div>

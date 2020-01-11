@@ -2,6 +2,7 @@
   $(document).ready(function(){
 	  totalSeats = totalSeats.split(",").join(" ");
 	  $("#totalSeats").text(totalSeats);
+	  $("#hiddenSeats").val(totalSeats);
 	  var pl = totalPeople.length;
 	  var totalMone = 0;
 	  if(pl == 2){
@@ -141,7 +142,7 @@
 		  }
 	  }
 	  $(".totalMoney").text("₩" + totalMone + ",000");
-	    
+	  $("#hiddenPrice").val("₩" + totalMone + ",000");
 	  
 	  
 	  
