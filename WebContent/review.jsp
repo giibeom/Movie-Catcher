@@ -57,7 +57,14 @@ if(movieName == null){
 	<section class="review">
 	    <div class="review_background"></div>
 	    <div class="contentWrap">
-	    <h3>영화 리뷰</h3>
+	    
+	    <% if(movieName.length() == 0) { %>
+	    	<h3>영화 리뷰</h3>
+	    <%} else { %>
+	    	<h3>검색하신 "<%=movieName %>" 의 연관된 영화 리뷰</h3>
+	    <%} %>
+	    
+	    
 	    <div class="d1">
 	    	<form>
 		        <input id="searchMovieReview" type="text" placeholder="영화 제목">
@@ -103,11 +110,6 @@ if(movieName == null){
 
 </section>
 	
-	
-
-
-
-
 
 
 <footer>
