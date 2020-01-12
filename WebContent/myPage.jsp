@@ -61,12 +61,17 @@
                <h3>예매 내역 &gt</h3>
                <p>내가 예매한 영화 리스트를 한눈에 보세요</p>
                </a></div>
-
-    
+               
+               <div class="content">
+                <a href="MypageReview.mc?rv_id=${rv_id }">    
+               <h3>리뷰  &gt</h3>
+               <p>내가 작성한 리뷰 리스트를 한눈에 보세요</p>
+               </a></div>
+  
         </div>
 
         <div class="disabled_container">
-            <p>계정을 비활성화하셔야 하나요?</p>
+            <p>회원 탈퇴를 하셔야 하나요?</p>
             <p class="box">
                 <a href="MyuserDeleteOK.mc?u_id=${u_id }">지금 처리하기</a>
             </p>
