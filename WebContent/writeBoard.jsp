@@ -22,24 +22,24 @@
     <link href="css/footer.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
-    <div class="topnav" id="myTopnav">
-        <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
-            
-        <div id="nav_ul">
-        <ul>
-            <li  class="icon clear" ><a href="javascript:void(0);"onclick="myFunction()">
-             <i class="fa fa-bars" style="color:black;"></i></a>
-                </li>
-                <li>영화</li>
-                <li>예매하기</li>
-                <li>극장</li>
-                <li>리뷰</li>
-                <li>공지사항</li>
-                <li>마이페이지</li>
-            </ul> 
+     <header>
+        <div class="topnav" id="myTopnav">
+            <h1 id="title"><a href="main.mc">MOVIE CATCHER</a></h1>
+            <div id="logout">로그아웃</div>
+            <div id="nav_ul">
+                <ul>
+                    <li class="icon clear"><a href="javascript:void(0);" onclick="myFunction()">
+                            <i class="fa fa-bars" style="color:black;"></i></a>
+                    </li>
+                    <li id="navMovie">영화</li>
+                    <li id="navReserve">예매하기</li>
+                    <li id="navTheater">극장</li>
+                    <li id="navReview">리뷰</li>
+                    <li id="navNotice">공지사항</li>
+                    <li id="navMypage">마이페이지</li>
+                </ul>
+            </div>
         </div>
-    </div>
     </header>
 
     <!-- 게시판 작성 시작 -->

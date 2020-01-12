@@ -51,7 +51,7 @@
 	<header>
 		<div class="topnav" id="myTopnav">
 			<h1 id="title">
-				<a href="welcome.html">MOVIE CATCHER</a>
+				<a href="main.mc">MOVIE CATCHER</a>
 			</h1>
 		</div>
 	</header>

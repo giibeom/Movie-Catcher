@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -57,37 +59,18 @@
                     <th>결제금액</th>
                     <th>리뷰</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>백두산</td>
-                    <td>2019-12-29</td>
-                    <td>메가박스 강남점</td>
-                    <td>2</td>
-                    <td>18,000</td>
-                    <td><div id="review"><a href="writeBoard.jsp">리뷰 작성 | </a>
-                        <a href="reviewdelete.jsp">리뷰 삭제</a></div></td>
-                </tr>
-                <tr>
-                    <td>2</th>
-                    <td>겨울왕국</td>
-                    <td>2019-12-27</td>
-                    <td>CGV 목동점</td>
-                    <td>1</td>
-                    <td>8,000</td>
-                    <td><div id="review"><a href="writeBoard.jsp">리뷰 작성 |</a>     
-                        <a href="reviewdelete.jsp">리뷰 삭제</a></div></td>
-                   
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>영화제목</td>
-                    <td>관람 날짜</td>
-                    <td>관람 장소</td>
-                    <td>몇명</td>
-                    <td>결제 금액</td>
-                    <td><div id="review"><a href="writeBoard.jsp">리뷰 작성 |</a>
-                        <a href="reviewdelete.jsp">리뷰 삭제</a></td></div>
-                </tr>
+            	<c:forEach var="list" items="${list }" varStatus="status">
+            	<tr>
+            		<th>No.${status.count }</th>
+            		<th>${ticket[status.index][0].h_movie } </th>
+            		<th>${list.rs_date }</th>
+            		<th>${ticket[status.index][0].hallLocation }</th>
+            		<th>${list.rs_seat }</th>            	
+            		<th>${list.rs_price }</th>            	
+            		<th><div id="review"><a href="writeBoard.mc?rs_num=${list.rs_num }">리뷰 작성 | </a>
+                        <a href="reviewdelete.mc?rs_num=${list.rs_num }">리뷰 삭제</a></div></th>            	
+            	</tr>	
+            	</c:forEach>
             </table>
 
 
