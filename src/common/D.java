@@ -5,7 +5,6 @@ public interface D {
 	public static final String URL = "jdbc:mariadb://localhost:3306/movie_catcher";
 	public static final String USERID = "root";
 	public static final String USERPW = "1234";
-//	public static final String USERPW = "0707";
 	
 	// 게시글 관련 쿼리문
 	public static final String SQL_MC_USER_INSERT = "INSERT INTO mc_user (u_id, u_pw, u_name, u_email, u_phone, u_date) VALUES (?, ?, ?, ?, ?, ?)";
@@ -43,6 +42,7 @@ public interface D {
 	public static final String SQL_RESERVE_DELETE = "DELETE FROM reserve WHERE rs_num = ?";
 	
 	public static final String SQL_REVIEW_INSERT = "INSERT INTO review (rv_title, rv_content, rv_star, rs_num, rv_id, rv_date) VALUES (?, ?, ?, ?, ?, ?)";
+	public static final String SQL_REVIEW_USER = "INSERT INTO review (rv_title, rv_content, rv_star, rs_num, rv_id) VALUES (?, ?, ?, ?, ?)";
 	public static final String SQL_REVIEW_SELECT = "SELECT * FROM review";
 	public static final String SQL_REVIEW_SELECT_USER = "SELECT * FROM review where rv_id = ?";
 	public static final String SQL_REVIEW_DELETE = "DELETE FROM review WHERE rv_num=?";

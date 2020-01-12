@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%
+	String u_id = (String)session.getAttribute("u_id");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -11,7 +15,9 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
+	<script>
+		var u_id = <%= u_id %>;
+	</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/header.js" type="text/javascript"></script>
     <script src="js/writeBoard.js" type="text/javascript"></script>
@@ -50,37 +56,35 @@
         </div>
 
         <div id = "Write">
-            <form action = "#" method="GET" id = "write">
+            <form id = "write" method="post" action="writeReviewOk.mc">
                 <div class = "box">
+                	<input type="hidden" name="rs_num" id="rs_num" value="${param.rs_num }" >
+                	<input type="hidden" name="rs_star" id="rs_star">
+                	<input type="hidden" name="rs_id" id="rs_id">
                     <label for = "movieName"><b>제목</b></label>
-                    <input type ="text" id = "review_info" name = "movieName" required>
+                    <input type ="text" id = "review_info" name = "movieName" value="${list[0].h_movie }" required>
                 </div>
 
                 <div class = "box">
                     <label for = "date"><b>별점</b></label>
                     <!-- <input type = "text"  id = "review_info1" name = "date"> -->
                     <div class="starRev">
-                        <span class="starR on">별1</span>
-                        <span class="starR">별2</span>
-                        <span class="starR">별3</span>
-                        <span class="starR">별4</span>
-                        <span class="starR">별5</span>
-                        <span class="starR">별6</span>
-                        <span class="starR">별7</span>
-                        <span class="starR">별8</span>
-                        <span class="starR">별9</span>
-                        <span class="starR">별10</span>
+                        <span class="starR on">1</span>
+                        <span class="starR">2</span>
+                        <span class="starR">3</span>
+                        <span class="starR">4</span>
+                        <span class="starR">5</span>
+                        <span class="starR">6</span>
+                        <span class="starR">7</span>
+                        <span class="starR">8</span>
+                        <span class="starR">9</span>
+                        <span class="starR">10</span>
                       </div>
                 </div>
 
-                <!-- <div class= "box">
-                    <label for = "place"><b>장소</b></label>
-                    <input type = "text" id = "review_info1" name = "place">
-                </div> -->
 
                 <div class = "box">
                     <textarea id = "review_content" name = "content"></textarea>
-                    <!-- <input type = "text" id = "review_content" name = "content" required>  -->
                 </div>
 
                 <div class ="button">
