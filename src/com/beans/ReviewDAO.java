@@ -1,19 +1,20 @@
 package com.beans;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
-import common.D;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+
+import common.D;
 
 public class ReviewDAO {
 	Connection conn;
@@ -78,10 +79,11 @@ public class ReviewDAO {
 			Double rv_star = rs.getDouble("rv_star");
 			int rs_num = rs.getInt("rs_num");
 			String rv_id = rs.getString("rv_id");
-			String rv_date = rs.getString("rv_date");
+			Date d = rs.getDate("rv_date");
+			String rv_date = new SimpleDateFormat("yyyy-MM-dd").format(d);
 			
 			
-			ReviewDTO dto = new ReviewDTO(rv_title, rv_content, rv_star, rs_num, rv_id, rv_date );
+			ReviewDTO dto = new ReviewDTO(rv_title, rv_content, rv_star, rs_num, rv_id, rv_date);
 			list.add(dto);
 		} 
 		int size = list.size();
@@ -103,7 +105,6 @@ public class ReviewDAO {
 		}
 		return arr;
 	}
-	
 	
 	public int delete(int rv_num) throws SQLException, NamingException {
 		int cnt = 0;
@@ -157,6 +158,50 @@ public class ReviewDAO {
 				}
 				return cnt;
 			}
+			
+			
+			// 특정 영화의 리뷰
+			
+			public ReviewDTO [] selectFromRow(int from, int rows, String movieName) throws SQLException, NamingException {
+				ReviewDTO [] arr = null;
+				
+				try {
+					conn = getConnection();
+					pstmt = conn.prepareStatement(D.SQL_REVIEW_SELECT_MOVIE_FROM_ROW);
+					pstmt.setString(1, movieName);
+					pstmt.setInt(2, from);
+					pstmt.setInt(3, rows);
+					rs = pstmt.executeQuery();
+					arr = createArray(rs);
+					
+				} finally { 
+					close();
+				}
+				return arr;
+			}
+			
+			// 총 몇개의 글이 있는지 계산
+				public int countMovie(String movieName) throws SQLException, NamingException {
+					int cnt = 0;
+					try {
+						
+						conn = getConnection();
+						pstmt = conn.prepareStatement(D.SQL_REVIEW_COUNT_MOVIE);
+						pstmt.setString(1, movieName);
+						rs = pstmt.executeQuery();
+						rs.next();
+						cnt = rs.getInt(1); //첫번째 컬럼
+						
+					} finally {
+						close();
+					}
+					return cnt;
+				}
+			
+			
+			
+			
+			
 	
 	
 }

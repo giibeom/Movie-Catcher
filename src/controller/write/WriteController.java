@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import command.write.Command;
+import command.write.MpUserDeleteCommand;
+import command.write.MpUserUpdateCommand;
+import command.write.MpUserViewCommand;
 import command.write.ReviewCommand;
 import command.write.ReviewCrawlingCommand;
 import command.write.TheaterCommand;
@@ -141,7 +144,30 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "b_writeOk.jsp";
 			break;
+		case "/myPage.mc" :
+			viewPage = "myPage.jsp";
+			break;
+		case "/myPagePrivate.mc" :
+			command = new MpUserViewCommand();
+			command.execute(request, response);
+			viewPage = "myPagePrivate.jsp";
+			break;
+		case "/reviewScraping.mc":
+			command = new ReviewCrawlingCommand();
+			command.execute(request, response);
+			break;
+		case "/MyuserDeleteOk.mc":
+			command = new MpUserUpdateCommand();
+			command.execute(request, response);
+			viewPage = "MyuserDeleteOk.jsp";
+			break;
+		case "/MyPageUpdateOk.mc":
+			command = new MpUserUpdateCommand();
+			command.execute(request, response);
+			viewPage = "MyPageUpdateOk.jsp";
+
 		}
+		
 	
 		
 		

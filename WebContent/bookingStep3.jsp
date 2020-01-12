@@ -68,7 +68,7 @@
 			</div>
 			<br>
 			<div id="pay">
-				<form id="payFrm" method="POST" action="myPageResList.html">
+				<form id="payFrm" method="POST" action="reserveOk.mc">
 					결제 수단<br>
 					<div id="cardRadio">
 						<input type="radio" name="card" required />신용카드 &nbsp;&nbsp;&nbsp;<input
@@ -93,7 +93,8 @@
 						required> <br>국가/지역<br>
 					<input type="text" id="country" name="country" placeholder="한국"
 						required>
-
+					<input type="hidden" name="price" id="hiddenPrice">
+					<input type="hidden" name="seats" id="hiddenSeats">
 
 					<div id="button">
 						<input type="submit" value="결제하기" onsubmit="return sandit()">

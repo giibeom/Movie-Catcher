@@ -47,10 +47,9 @@ $("#check > button").click(function(){
     if($("#check > input").val().trim().length != 0 && $.isNumeric($("#check > input").val().trim()) ) {
         $("#check > input").val("");
         $("#check > input").attr({
-            "placeholder" : "인증이 완료되었습니다",
-            "disabled" : true
+            "placeholder" : "인증이 완료되었습니다"
         });
-        $("#pNum > input").attr("disabled", true);
+        $("#pNum").css("background-color", "gray" );
     } else {
         alert("인증번호를 다시 확인해주세요");
     }

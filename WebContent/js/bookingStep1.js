@@ -193,11 +193,16 @@ function parseJSON(jsonObj) {
 		}
 
 		var movietime = arr[i].movietime;
-		movietime = movietime.substring(0, 2) + ":" + movietime.substring(2);
 		var restSeat = arr[i].restSeat;
-		restSeat = restSeat + "석"
-		timeTable += "<div class='ticket " + arr[i].t_uid + "'>" + movietime
-				+ "<br>" + restSeat + "</div>";
+		if(restSeat != 0){
+			movietime = movietime.substring(0, 2) + ":" + movietime.substring(2);
+			restSeat = restSeat + "석"
+			timeTable += "<div class='ticket " + arr[i].t_uid + "'>" + movietime
+			+ "<br>" + restSeat + "</div>";
+			
+		}else{
+			timeTable += "<div class='ticket " + arr[i].t_uid + "'>" + 마감 + "</div>";
+		}
 
 		if (i < arr.length - 1) {
 			if (arr[i].hallLocation != arr[i + 1].hallLocation

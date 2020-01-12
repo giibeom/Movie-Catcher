@@ -44,14 +44,14 @@ public class ReviewCrawlingCommand implements Command{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws NamingException {
 			
-		System.out.println("제발");
 			for(int i = 0; i < movieId.length; i++) {
 				
-				String url = "https://movie.naver.com/movie/point/af/list.nhn?st=mcode&sword="+ movieId[i] +"&target=after";
 				Document doc = null;
-				
-				crawling(url, doc, i);
-				
+				for (int j = 1; j <= 10; j++) {
+					String url = "https://movie.naver.com/movie/point/af/list.nhn?st=mcode&sword="+ movieId[i] +"&target=after&page=" + j;
+					
+					crawling(url, doc, i);
+				}
 				
 			} // end for
 			
@@ -119,70 +119,12 @@ public class ReviewCrawlingCommand implements Command{
 			}
 		
 			
-			url = "https://movie.naver.com/movie/point/af/list.nhn?st=mcode&sword="+ movieId[i] +"&target=after&page=2";
-			crawling2(url, doc, i);
+			
 			
 			
 		} // end crawling
 		
 		
-		public void crawling2(String url, Document doc, int i) {
-			
-			try {
-				doc = Jsoup.connect(url).get();
-				
-				Elements elements = doc.select("#old_content > table > tbody > tr");
-				System.out.println(elements.size());
-
-				for(Element e : elements) {
-					String title = "";
-					String content = "";
-					double star = 0.0;
-					String rv_id = "";
-					String rv_date = "";
-					
-					title = e.selectFirst("td.title > a.movie.color_b").text().trim();
-					star = Double.parseDouble(e.selectFirst("td.title > div.list_netizen_score > em").text().trim());
-					rv_id = e.selectFirst("td.num > a.author").text().trim();
-					
-					// 리뷰 id 삭제
-					e.selectFirst("td.ac.num").remove();
-					// 영화제목 삭제
-					e.selectFirst("td.title > a.movie.color_b").remove();
-					// 평점 삭제
-					e.selectFirst("td.title > div.list_netizen_score").remove();
-					// 작성자 삭제
-					e.selectFirst("td.num > a.author").remove();
-					// 신고 삭제
-					e.selectFirst("td.title > a.report").remove();
-					
-					rv_date = e.selectFirst("td.num").text().trim();
-					
-					e.selectFirst("td.num").remove();
-					
-					if(e.text().trim().length() > 0) {
-						content = e.text().trim();
-					} else {
-						content = "리뷰없이 평점만 등록하셨습니다";
-					}
-					
-					try {
-						ReviewDAO rdao = new ReviewDAO();
-						rdao.insert(title, content, star , rs_num, rv_id, rv_date);
-						rs_num ++;
-					} catch (SQLException e1) {
-						e1.printStackTrace();
-					} catch (NamingException e1) {
-						e1.printStackTrace();
-					}
-					
-				}
-				
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		
-		}
 		
 		
 		

@@ -18,14 +18,14 @@ public class loginCommand implements Command {
 		MC_userDAO dao = new MC_userDAO();
 		
 		//입력한 값 받아오기
-		String id = request.getParameter("uname");
+		String u_id = request.getParameter("uname");
 		String pw = request.getParameter("psw");
 		
 		
 		//parameter 유효성 검증 뒤에 try 시도
-		if(id != null && pw != null && id.trim().length() > 0 && pw.trim().length() > 0) {
+		if(u_id != null && pw != null && u_id.trim().length() > 0 && pw.trim().length() > 0) {
 			try {
-				userPw = dao.password(id);
+				userPw = dao.password(u_id);
 			} catch(SQLException e) {
 				e.printStackTrace();
 			} 
@@ -34,7 +34,7 @@ public class loginCommand implements Command {
 			cnt = 1;
 		}
 		request.setAttribute("result", cnt);
-		request.setAttribute("id", id);
+		request.setAttribute("u_id", u_id);
 	}
 
 }
