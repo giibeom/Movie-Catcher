@@ -2,6 +2,7 @@
   $(document).ready(function(){
 	  totalSeats = totalSeats.split(",").join(" ");
 	  $("#totalSeats").text(totalSeats);
+	  $("#hiddenSeats").val(totalSeats);
 	  var pl = totalPeople.length;
 	  var totalMone = 0;
 	  if(pl == 2){
@@ -141,7 +142,7 @@
 		  }
 	  }
 	  $(".totalMoney").text("₩" + totalMone + ",000");
-	    
+	  $("#hiddenPrice").val(totalMone*1000);
 	  
 	  
 	  
@@ -150,15 +151,6 @@
 	  
 	  
     $("#button").click(function(){
-      var card = $("#card").val();
-      var first_name = $("#first_name").val();
-      var last_name = $("#last_name").val();
-      var card_info = $("#card_info").val();
-      var card_info1 = $("#card_info1").val();
-      var card_info2 = $("#card_info2").val();
-      var post = $("#post").val();
-      var country = $("#country").val();
-
       $("#payFrm").onsubmit(function(){
         alert("결제되었습니다.");
       });

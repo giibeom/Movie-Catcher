@@ -26,6 +26,9 @@
     #review_info, #review_info1{
         padding : 20px;
     }
+    
+
+    
 }
 
 
@@ -108,4 +111,30 @@
 #review_btn:hover {
     cursor: pointer;
     opacity: 1;
+}
+
+/* 별 */
+.starR {
+	background: url("../images/star2.png") no-repeat right 0;
+	background-size: auto 100%;
+	width : 20px;
+	height: 20px;
+	display: inline-block;
+	text-indent : -9999px;
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.starR.on{
+    background-position: 0 0 ;
+    opacity: 1;
+}
+
+.starR.off {
+	display :none;
+}
+
+.starRev {
+    margin-left: 60px;
+    /* padding-bottom: 40px; */
 }

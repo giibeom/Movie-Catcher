@@ -3,14 +3,15 @@ package com.beans;
 public class ReserveDTO {
 	private int rs_num;
 	private String rs_date;
-	private String rs_price;
+	private int rs_price;
 	private String rs_seat;
 	private int u_idnum;
 	private int t_uid;
 	public ReserveDTO() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
-	public ReserveDTO(int rs_num, String rs_date, String rs_price, String rs_seat, int u_idnum, int t_uid) {
+	public ReserveDTO(int rs_num, String rs_date, int rs_price, String rs_seat, int u_idnum, int t_uid) {
 		super();
 		this.rs_num = rs_num;
 		this.rs_date = rs_date;
@@ -31,10 +32,10 @@ public class ReserveDTO {
 	public void setRs_date(String rs_date) {
 		this.rs_date = rs_date;
 	}
-	public String getRs_price() {
+	public int getRs_price() {
 		return rs_price;
 	}
-	public void setRs_price(String rs_price) {
+	public void setRs_price(int rs_price) {
 		this.rs_price = rs_price;
 	}
 	public String getRs_seat() {
@@ -55,6 +56,5 @@ public class ReserveDTO {
 	public void setT_uid(int t_uid) {
 		this.t_uid = t_uid;
 	}
-	
 	
 }

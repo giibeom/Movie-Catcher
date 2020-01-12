@@ -95,7 +95,13 @@ if(movieName == null){
 	        </ul>
   
 
+
+
+
+
+
    		
+	
 	<jsp:include page="pagination.jsp">
 		<jsp:param value="${writePages }" name="writePages"/>
 		<jsp:param value="${totalPage }" name="totalPage"/>
@@ -104,7 +110,6 @@ if(movieName == null){
 	</jsp:include>
 	
 	</div>  
-
 </div>
 
 
