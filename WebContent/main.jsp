@@ -30,7 +30,7 @@
 <body>
     <header>
         <div class="topnav" id="myTopnav">
-            <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
+            <h1 id="title"><a href="main.mc">MOVIE CATCHER</a></h1>
             <div id="logout">로그아웃</div>
             <div id="nav_ul">
                 <ul>
@@ -123,7 +123,7 @@
             <div id = "rankAudiencea">
 
             <div class = "ranking">
-                <h3>누적 관객수 랭킹</h3>
+                <h3>누적 매출액 랭킹</h3>
             </div>
 
             <div id = "rank">

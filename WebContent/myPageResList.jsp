@@ -21,25 +21,25 @@
 <body>
  <!-- header -->
 
- <header>
-    <div class="topnav" id="myTopnav">
-        <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
-            
-        <div id="nav_ul">
-        <ul>
-            <li  class="icon clear" ><a href="javascript:void(0);"onclick="myFunction()">
-             <i class="fa fa-bars" style="color:black;"></i></a>
-                </li>
-                <li>영화</li>
-                <li>예매하기</li>
-                <li>극장</li>
-                <li>리뷰</li>
-                <li>공지사항</li>
-                <li>마이페이지</li>
-            </ul> 
+  <header>
+        <div class="topnav" id="myTopnav">
+            <h1 id="title"><a href="main.mc">MOVIE CATCHER</a></h1>
+            <div id="logout">로그아웃</div>
+            <div id="nav_ul">
+                <ul>
+                    <li class="icon clear"><a href="javascript:void(0);" onclick="myFunction()">
+                            <i class="fa fa-bars" style="color:black;"></i></a>
+                    </li>
+                    <li id="navMovie">영화</li>
+                    <li id="navReserve">예매하기</li>
+                    <li id="navTheater">극장</li>
+                    <li id="navReview">리뷰</li>
+                    <li id="navNotice">공지사항</li>
+                    <li id="navMypage">마이페이지</li>
+                </ul>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 <body>
 
 
@@ -61,14 +61,14 @@
                 </tr>
             	<c:forEach var="list" items="${list }" varStatus="status">
             	<tr>
-            		<th>No.${status.count }</th>
-            		<th>${ticket[status.index][0].h_movie } </th>
-            		<th>${list.rs_date }</th>
-            		<th>${ticket[status.index][0].hallLocation }</th>
-            		<th>${list.rs_seat }</th>            	
-            		<th>${list.rs_price }</th>            	
-            		<th><div id="review"><a href="writeBoard.mc?rs_num=${list.rs_num }">리뷰 작성 | </a>
-                        <a href="reviewdelete.mc?rs_num=${list.rs_num }">리뷰 삭제</a></div></th>            	
+            		<td>No.${status.count }</td>
+            		<td>${ticket[status.index][0].h_movie } </td>
+            		<td>${list.rs_date }</td>
+            		<td>${ticket[status.index][0].hallLocation} ${ticket[status.index][0].hallType}</td>
+            		<td>${list.rs_seat }</td>            	
+            		<td>${list.rs_price }</td>            	
+            		<td><div id="review"><a href="writeBoard.mc?rs_num=${list.rs_num }">리뷰 작성 | </a>
+                        <a href="reviewdelete.mc?rs_num=${list.rs_num }">리뷰 삭제</a></div></td>            	
             	</tr>	
             	</c:forEach>
             </table>
