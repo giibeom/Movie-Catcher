@@ -14,6 +14,7 @@ import command.write.Command;
 import command.write.MpUserDeleteCommand;
 import command.write.MpUserUpdateCommand;
 import command.write.MpUserViewCommand;
+import command.write.MypageReviewCommand;
 import command.write.ResListCommand;
 import command.write.ReserveOkCommand;
 import command.write.ReviewCommand;
@@ -21,6 +22,7 @@ import command.write.ReviewCrawlingCommand;
 import command.write.TheaterCommand;
 import command.write.TimeTableCommand;
 import command.write.WriteReviewCommand;
+import command.write.WriteReviewOkCommand;
 import command.write.b_writeCommand;
 import command.write.boardCommand;
 import command.write.bookingStep1Command;
@@ -180,6 +182,16 @@ public class WriteController extends HttpServlet {
 			command = new WriteReviewCommand();
 			command.execute(request, response);
 			viewPage = "writeReview.jsp";
+			break;
+		case "/writeReviewOk.mc" :
+			command = new WriteReviewOkCommand();
+			command.execute(request, response);
+			viewPage="writeReviewOk.jsp";
+			break;
+		case "/MypageReview.mc" :
+			command = new MypageReviewCommand();
+			command.execute(request, response);
+			viewPage="MypageReview.jsp";
 			break;
 		}
 		

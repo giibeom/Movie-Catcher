@@ -19,6 +19,7 @@
 <link href="css/footer.css" rel="stylesheet" type="text/css">
 <link href="css/header.css" rel="stylesheet" type="text/css">
 <link href="css/public.css" rel="stylesheet" type="text/css">
+<script src="js/header.js" type="text/javascript"></script>
 </head>
 
 <body>

@@ -30,7 +30,6 @@ public class ResListCommand implements Command {
 		try {
 			uarr = udao.select(u_id);
 			int u_idnum = uarr[0].getU_idnum();
-			System.out.println(u_idnum);
 			rarr = rdao.getUserRs(u_idnum);
 			tarr = new HandTDTO[rarr.length][];
 			for(int i = 0; i < rarr.length; i++) {

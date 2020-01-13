@@ -17,7 +17,7 @@ $(document).ready(function(){
 		location.href = "bookingStep1.mc";
 	});
 	$('#navTheater').click(function(){
-		location.href = "finecinema.mc";
+		location.href = "findcinema.mc";
 	});
 	$('#navReview').click(function(){
 		location.href = "review.mc";
