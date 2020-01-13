@@ -14,6 +14,7 @@ import command.write.Command;
 import command.write.MpUserDeleteCommand;
 import command.write.MpUserUpdateCommand;
 import command.write.MpUserViewCommand;
+import command.write.ResListCommand;
 import command.write.ReserveOkCommand;
 import command.write.ReviewCommand;
 import command.write.ReviewCrawlingCommand;
@@ -168,6 +169,11 @@ public class WriteController extends HttpServlet {
 			command = new ReserveOkCommand();
 			command.execute(request, response);
 			viewPage = "reserveOk.jsp";
+			break;
+		case "/myPageResList.mc" :
+			command = new ResListCommand();
+			command.execute(request, response);
+			viewPage = "myPageResList.jsp";
 			break;
 		}
 		

@@ -49,26 +49,19 @@ $(document).ready(function(){
       }
     }); 
 
-    var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=150bfb37a86f8bfb899cdc5192ee9967&openStartDt=2020";
-
-    $.ajax({
-      url : url,
-      type : "GET",
-      cache : false,
-      success : function(data, status){
-         if(status == "success") getUpcoming(data);
-      }
-    }); 
-
-    var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=150bfb37a86f8bfb899cdc5192ee9967&openStartDt=2020&curPage=2";
-    $.ajax({
-      url : url,
-      type : "GET",
-      cache : false,
-      success : function(data, status){
-         if(status == "success") getUpcoming(data);
-      }
-    }); 
+    for(var c = 1; c <= 7; c++){
+    	var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=150bfb37a86f8bfb899cdc5192ee9967&openStartDt=2020&curPage=" + c;
+    	
+    	$.ajax({
+    		url : url,
+    		type : "GET",
+    		cache : false,
+    		success : function(data, status){
+    			if(status == "success") getUpcoming(data);
+    		}
+    	}); 
+    	
+    }
     $('#showNowIn').click(function(){
         $("#upComing").css("display", "none");
         $("#nowIn").css("display", "inline-block");
@@ -202,12 +195,12 @@ function getBoxOffice(jsonObj){
     }
     var rankAudience = "";
     for(var l = 0; l < 10; l ++){
-        rankAudience += "<li>";
+        rankAudience += "<li><div>";
         rankAudience += 1+l+"위 ";
         rankAudience += moneyRankN[l];
-        rankAudience += "   총 매출액 : "
+        rankAudience += "</div><div>총 매출액 : "
         rankAudience += numberWithCommas(moneyRankM[l]);
-        rankAudience += "원";
+        rankAudience += "원</div>";
         rankAudience += "</li>";
     }
     $("#rankAudience").html(rankAudience);
@@ -218,12 +211,12 @@ function getWeekBoxOffice(jsonObj){
     
     var boxrank = "";
     for(var i = 0; i < 10; i ++){
-        boxrank += "<li>";
+        boxrank += "<li><div>";
         boxrank += 1+i+"위 ";
         boxrank += arr[i].movieNm;
-        boxrank += "    주말관객수 : "
+        boxrank += "</div><div>주말관객수 : "
         boxrank += arr[i].audiCnt;
-        boxrank += "명";
+        boxrank += "명</div>";
         boxrank += "</li>";
     }
     $("#weekRanking").html(boxrank);
@@ -249,14 +242,20 @@ function getPoster(jsonObj, movieName, rank){
     var vote;
     var id;
     var mdbName;
+    var releasedate;
     for(var i = 0; i < arr.length; i++){
         if(((arr[i].title) == (movieName)) || (((arr[i].title).toLowerCase().split(" ").join("")).match(movieName.toLowerCase().split(" ").join(""))) ){
-            poster =  arr[i].poster_path;
-            mdbName = arr[i].title;
-            vote = arr[i].vote_average;
-            id = arr[i].id;
-            getTeaserId(arr[i].id, arr[i].title, rank);
-            break;
+        	if(releasedate == null) releasedate = arr[i].release_date;
+            
+            if(arr[i].release_date >= releasedate){
+                releasedate = arr[i].release_date;
+                id = arr[i].id;
+                poster =  arr[i].poster_path;
+                mdbName = arr[i].title;
+                vote = arr[i].vote_average;
+                getTeaserId(arr[i].id, arr[i].title, rank);
+                break;
+            }
         }
     }
     if(poster == null){

@@ -19,9 +19,9 @@ public class ReserveOkCommand implements Command {
 		MC_userDAO udao = new MC_userDAO();
 		MC_userDTO[] arr = null;
 		
+		String u_id = request.getParameter("u_id");
 		int rs_price = Integer.parseInt(request.getParameter("price"));
 		String rs_seat = request.getParameter("seats");
-		String u_id = request.getParameter("u_id");
 		int t_uid = Integer.parseInt(request.getParameter("t_uid"));
 		
 		try {
