@@ -74,9 +74,13 @@ $(document).ready(function(){
     
     
     $("#searchButton").click(function(e){
-       e.preventDefault();
-       var movieName = $("#movieName").val().trim();
-       window.location.href = "searchPage.mc?movieName="+movieName;
+	       e.preventDefault();
+	       var movieName = $("#movieName").val().trim();
+	       if(movieName.length > 0) {
+	    	   location.href = "searchPage.mc?movieName="+movieName;
+	       } else {
+	    	   alert("검색어를 입력해주세요");
+	       }
     });
     
     $("#dot1").click(function(){
@@ -166,6 +170,8 @@ function getBoxOffice(jsonObj){
     var moneyRankM = new Array();
     for(var i = 0; i < 10; i ++){
         
+    	var movieID = 
+    	
         boxrank += "<li>";
         boxrank += 1+i+"위 ";
         boxrank += arr[i].movieNm;
@@ -198,7 +204,7 @@ function getBoxOffice(jsonObj){
         rankAudience += "<li><div>";
         rankAudience += 1+l+"위 ";
         rankAudience += moneyRankN[l];
-        rankAudience += "</div><div>총 매출액 : "
+        rankAudience += "</div><div class='li'>총 매출액 : "
         rankAudience += numberWithCommas(moneyRankM[l]);
         rankAudience += "원</div>";
         rankAudience += "</li>";
@@ -214,7 +220,7 @@ function getWeekBoxOffice(jsonObj){
         boxrank += "<li><div>";
         boxrank += 1+i+"위 ";
         boxrank += arr[i].movieNm;
-        boxrank += "</div><div>주말관객수 : "
+        boxrank += "</div><div class='li'>주말관객수 : "
         boxrank += arr[i].audiCnt;
         boxrank += "명</div>";
         boxrank += "</li>";
@@ -306,7 +312,7 @@ function getTeaser(data, movieName, rank){
                 }
             }
         }
-        if(teaser != null){""
+        if(teaser != null){
         teasers[k] = '<iframe width="900px"  height="500px" src="https://www.youtube.com/embed/' + teaser +  '" frameborder="0" allowfullscreen></iframe>';
         k ++;
         }
@@ -322,7 +328,7 @@ function getTeaser(data, movieName, rank){
            var info = $(this).closest('div').attr('class');
            var clickName = info.split("&&")[0];
            var clickid = info.split("&&")[1];
-           location.href = "mv_info.jsp?movieName=" + clickName + "&movieId=" + clickid;
+           location.href = "mv_info.mc?movieName=" + clickName + "&movieId=" + clickid;
         });
     }
 }

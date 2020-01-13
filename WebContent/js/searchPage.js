@@ -24,6 +24,17 @@ $(document).ready(function(){
 	  });
 	  
 	  
+	  $("#searchButton").click(function(e){
+	       e.preventDefault();
+	       var movieName = $("#movieName").val().trim();
+	       if(movieName.length > 0) {
+	    	   location.href = "searchPage.mc?movieName="+movieName;
+	       } else {
+	    	   alert("검색어를 입력해주세요");
+	       }
+   });
+	  
+	  
 });
 
 
@@ -43,14 +54,10 @@ function getMovieInfo(jsonObj, api_key, mvName) {
 			
 		}
 
-		
 	} else {
 		alert("해당 영화가 존재하지 않습니다");
 		history.back();
 	}
-	
-	
-	
 	
 	
 	// 포스터 클릭
@@ -61,7 +68,6 @@ function getMovieInfo(jsonObj, api_key, mvName) {
 		openYear1 = results[0].release_date.trim().split("-")[0];
 		location.href = "mv_info.mc?movieName=" + title1 + "&movieId=" + movieID1 +"&openYear=" + openYear1;
 		// 위 3개 변수(MovieDB) mv_info에 request.setAttr 작업
-		alert(movieID1 + " , " + title1 + " , "  + openYear1);
 	});
 	$(".container" + 2).click(function(){
 		movieID1 = results[1].id;
@@ -69,7 +75,6 @@ function getMovieInfo(jsonObj, api_key, mvName) {
 		openYear1 = results[1].release_date.trim().split("-")[0];
 		location.href = "mv_info.mc?movieName=" + title1 + "&movieId=" + movieID1 +"&openYear=" + openYear1;
 		// 위 3개 변수(MovieDB) mv_info에 request.setAttr 작업
-		alert(movieID1 + " , " + title1 + " , "  + openYear1);
 	});
 	$(".container" + 3).click(function(){
 		movieID1 = results[2].id;
@@ -77,7 +82,6 @@ function getMovieInfo(jsonObj, api_key, mvName) {
 		openYear1 = results[2].release_date.trim().split("-")[0];
 		location.href = "mv_info.mc?movieName=" + title1 + "&movieId=" + movieID1 +"&openYear=" + openYear1;
 		// 위 3개 변수(MovieDB) mv_info에 request.setAttr 작업
-		alert(movieID1 + " , " + title1 + " , "  + openYear1);
 	});
 	$(".container" + 4).click(function(){
 		movieID1 = results[3].id;
@@ -85,7 +89,6 @@ function getMovieInfo(jsonObj, api_key, mvName) {
 		openYear1 = results[3].release_date.trim().split("-")[0];
 		location.href = "mv_info.mc?movieName=" + title1 + "&movieId=" + movieID1 +"&openYear=" + openYear1;
 		// 위 3개 변수(MovieDB) mv_info에 request.setAttr 작업
-		alert(movieID1 + " , " + title1 + " , "  + openYear1);
 	});
 	$(".container" + 5).click(function(){
 		movieID1 = results[4].id;
@@ -93,7 +96,6 @@ function getMovieInfo(jsonObj, api_key, mvName) {
 		openYear1 = results[4].release_date.trim().split("-")[0];
 		location.href = "mv_info.mc?movieName=" + title1 + "&movieId=" + movieID1 +"&openYear=" + openYear1;
 		// 위 3개 변수(MovieDB) mv_info에 request.setAttr 작업
-		alert(movieID1 + " , " + title1 + " , "  + openYear1);
 	});
 	$(".container" + 6).click(function(){
 		movieID1 = results[5].id;
@@ -101,7 +103,6 @@ function getMovieInfo(jsonObj, api_key, mvName) {
 		openYear1 = results[5].release_date.trim().split("-")[0];
 		location.href = "mv_info.mc?movieName=" + title1 + "&movieId=" + movieID1 +"&openYear=" + openYear1;
 		// 위 3개 변수(MovieDB) mv_info에 request.setAttr 작업
-		alert(movieID1 + " , " + title1 + " , "  + openYear1);
 	});
 	$(".container" + 7).click(function(){
 		movieID1 = results[6].id;
@@ -109,7 +110,6 @@ function getMovieInfo(jsonObj, api_key, mvName) {
 		openYear1 = results[6].release_date.trim().split("-")[0];
 		location.href = "mv_info.mc?movieName=" + title1 + "&movieId=" + movieID1 +"&openYear=" + openYear1;
 		// 위 3개 변수(MovieDB) mv_info에 request.setAttr 작업
-		alert(movieID1 + " , " + title1 + " , "  + openYear1);
 	});
 	$(".container" + 8).click(function(){
 		movieID1 = results[7].id;
@@ -117,7 +117,6 @@ function getMovieInfo(jsonObj, api_key, mvName) {
 		openYear1 = results[7].release_date.trim().split("-")[0];
 		location.href = "mv_info.mc?movieName=" + title1 + "&movieId=" + movieID1 +"&openYear=" + openYear1;
 		// 위 3개 변수(MovieDB) mv_info에 request.setAttr 작업
-		alert(movieID1 + " , " + title1 + " , "  + openYear1);
 	});
 	
 }

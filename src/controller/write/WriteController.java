@@ -10,25 +10,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import command.write.AdminCommand;
-import command.write.AdminDeleteCommand;
 import command.write.Command;
 import command.write.MpUserDeleteCommand;
 import command.write.MpUserUpdateCommand;
 import command.write.MpUserViewCommand;
+import command.write.MypageReviewCommand;
 import command.write.ResListCommand;
 import command.write.ReserveOkCommand;
 import command.write.ReviewCommand;
 import command.write.ReviewCrawlingCommand;
+import command.write.ReviewDeleteCommand;
 import command.write.TheaterCommand;
 import command.write.TimeTableCommand;
-import command.write.b_deleteCommand;
+import command.write.WriteReviewCommand;
+import command.write.WriteReviewOkCommand;
 import command.write.b_writeCommand;
 import command.write.boardCommand;
 import command.write.bookingStep1Command;
 import command.write.bookingStep2Command;
 import command.write.bookingStep3Command;
 import command.write.loginCommand;
+import command.write.ReviewdeleteOkCommand;
 import command.write.searchPageCommand;
 import command.write.signupCommand;
 import command.write.ReviewCommand;
@@ -178,20 +180,30 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "myPageResList.jsp";
 			break;
-		case "/admin.mc":
-			command = new AdminCommand();
+		case "/writeReview.mc" :
+			command = new WriteReviewCommand();
 			command.execute(request, response);
-			viewPage = "admin.jsp";
+			viewPage = "writeReview.jsp";
 			break;
-		case "/adminDeleteOk.mc" :
-			command = new AdminDeleteCommand();
+		case "/writeReviewOk.mc" :
+			command = new WriteReviewOkCommand();
 			command.execute(request, response);
-			viewPage = "adminDeleteOk.jsp";
+			viewPage="writeReviewOk.jsp";
 			break;
-		case "/b_deleteOk.mc" :
-			command  = new b_deleteCommand();
+		case "/MypageReview.mc" :
+			command = new MypageReviewCommand();
 			command.execute(request, response);
-			viewPage = "b_deleteOk.jsp";
+			viewPage="MypageReview.jsp";
+			break;
+		case "/reviewdelete.mc" :
+			command = new ReviewDeleteCommand();
+			command.execute(request, response);
+			viewPage="reviewdelete.jsp";
+			break;
+		case "/reviewdeleteOk.mc" :
+			command = new ReviewdeleteOkCommand();
+			command.execute(request, response);
+			viewPage="reviewdeleteOk.jsp";
 			break;
 		}
 		

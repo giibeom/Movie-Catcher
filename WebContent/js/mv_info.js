@@ -283,7 +283,6 @@ function noMovie() {
       $("#watchGrade").html("없음");
     }
     
-    var starNum =  8;
     var starNum =  parseInt($("#mv_avg").html());
 
     for(var i = 0; i< starNum; i++) {

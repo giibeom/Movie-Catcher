@@ -27,7 +27,7 @@
 <body>
  <header>
         <div class="topnav" id="myTopnav">
-            <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
+            <h1 id="title"><a href="main.mc">MOVIE CATCHER</a></h1>
             <div id="logout">로그아웃</div>
             <div id="nav_ul">
                 <ul>
@@ -45,6 +45,14 @@
         </div>
     </header>
 <div class="clear"></div>
+
+		<div class="d1">
+            <form>
+                <input id="movieName" type="text" placeholder="검색어 입력">
+                <button id="searchButton" type="submit"><img id="m_icon" src="images/m_icon_3.png"></button>
+            </form>
+        </div>
+       <div class="clear"></div>
 
 
 <%-- start api --%>

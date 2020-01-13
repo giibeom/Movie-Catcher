@@ -165,7 +165,6 @@ body {
     background-size: cover;
     text-align: center;
     position: absolute;  
-    top:10%;
     left:5%;
     background-image: url(../images/main3.jpg);
     transform: scale(1.0);
@@ -203,8 +202,8 @@ button:hover {
     width: 100%;
     text-align: center;
     font-size: 40px;
-    font-family: cursive;
     cursor: pointer;
+    font-family: 'Bad Script', cursive;
 }
 
 

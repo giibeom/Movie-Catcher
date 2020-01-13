@@ -67,7 +67,7 @@
             		<td>${ticket[status.index][0].hallLocation} ${ticket[status.index][0].hallType}</td>
             		<td>${list.rs_seat }</td>            	
             		<td>${list.rs_price }</td>            	
-            		<td><div id="review"><a href="writeBoard.mc?rs_num=${list.rs_num }">리뷰 작성 | </a>
+            		<td><div id="review"><a href="writeReview.mc?rs_num=${list.rs_num }">리뷰 작성 | </a>
                         <a href="reviewdelete.mc?rs_num=${list.rs_num }">리뷰 삭제</a></div></td>            	
             	</tr>	
             	</c:forEach>
