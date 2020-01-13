@@ -176,6 +176,7 @@ TRUNCATE table hall;
 TRUNCATE table ticket;
 TRUNCATE table review;
 SELECT u_pw FROM mc_user WHERE u_id = "ksi0678";
+SELECT u_pw FROM mc_user WHERE u_id = "kpmyung";
 select count(*) from hall;
 select count(*) from ticket;
 select count(*) from review;

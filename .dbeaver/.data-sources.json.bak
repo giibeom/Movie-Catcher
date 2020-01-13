@@ -27,20 +27,6 @@
 				"port": "3306",
 				"database": "movie_catcher",
 				"url": "jdbc:mysql://localhost:3306/movie_catcher",
-				"type": "dev"
-			}
-		},
-		"mariaDB-16f9b2759c8-3e74efcdd3df070b": {
-			"provider": "mysql",
-			"driver": "mariaDB",
-			"name": "MariaDB - movie_catcher 3",
-			"save-password": true,
-			"read-only": false,
-			"configuration": {
-				"host": "localhost",
-				"port": "3306",
-				"database": "movie_catcher",
-				"url": "jdbc:mysql://localhost:3306/movie_catcher",
 				"type": "dev",
 				"handlers": {}
 			}

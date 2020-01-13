@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 // 생년월일 검증 
 $("#birthChk > button").click(function(){
-    var petbirth =  /^(19[0-9][0-9]|20\d{2})-(0[0-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+    var petbirth =  /^(19[0-9][0-9]|20\d{2})-?(0[0-9]|1[0-2])-?(0[1-9]|[1-2][0-9]|3[0-1])$/;
     var birth = $("#birth").val().trim();
 
     if (birth.length == 0) {
@@ -19,7 +19,7 @@ $("#birthChk > button").click(function(){
    
 // 휴대폰번호 정규식으로 검증
 $("#pNum > button").click(function(){
-    var phonePat = /^\d{3}-?\d{3,4}-?\d{4}$/;
+    var phonePat = /^01\d{1}-?\d{3,4}-?\d{4}$/;
     var phoneNum = $("#pNum input").val().trim();
 
     if(!phonePat.test(phoneNum)) {
@@ -49,13 +49,21 @@ $("#check > button").click(function(){
         $("#check > input").attr({
             "placeholder" : "인증이 완료되었습니다"
         });
-        $("#pNum").css("background-color", "gray" );
+        $("#pNum > input").css("background-color", "rgb(235, 235, 228)" );
+        $("#check > input").attr("disabled", "true");
     } else {
         alert("인증번호를 다시 확인해주세요");
     }
 
 });
 
+
+
+
+
+
 // 로그인창 이동
 
 });
+
+
