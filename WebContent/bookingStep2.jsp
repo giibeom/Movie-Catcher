@@ -105,7 +105,7 @@ var t_uid = "${list[0].t_uid}"
 			</select>
 			</div>
 			
-			
+			<div class="clear"></div> 
 			<div id="seatSelectAbout">
 			<div id="personNum">
 			<div id="totalNumber"></div>
@@ -139,7 +139,6 @@ var t_uid = "${list[0].t_uid}"
 	</div>
 
 	<!--하단 상태바-->
-	<div class="step">
 		<div class="step-state step2">
 			<ul>
 				<li><p>영화/날짜선택</p></li>
