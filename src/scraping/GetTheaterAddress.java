@@ -53,6 +53,7 @@ public class GetTheaterAddress {
 				e.printStackTrace();
 			}
 			
+			
 			Elements element = doc.select("div.sect-theater");
 			Elements movieTitle = element.select("strong.title");
 			System.out.println(theaterName);

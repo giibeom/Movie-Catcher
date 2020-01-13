@@ -110,7 +110,7 @@ public class WriteController extends HttpServlet {
 			command = new ReviewCommand();
 			command.execute(request, response);
 			viewPage = "review.jsp";
-			break;
+		break;
 		case "/bookingStep1.mc":
 			command = new bookingStep1Command();
 			command.execute(request, response);
@@ -130,6 +130,8 @@ public class WriteController extends HttpServlet {
 		case "/scraping.mc":
 			command = new TheaterCommand();
 			command.execute(request, response);
+		break;
+		case "/scraping2.mc":
 			command = new TimeTableCommand();
 			command.execute(request, response);	
 			command = new ReviewCrawlingCommand();
@@ -140,6 +142,7 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "board.jsp";
 			break;
+			
 		case "/b_write.mc":
 			viewPage = "b_write.jsp";
 			break;

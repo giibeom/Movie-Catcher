@@ -105,38 +105,40 @@ var t_uid = "${list[0].t_uid}"
 			</select>
 			</div>
 			
-			
+			<div class="clear"></div> 
 			<div id="seatSelectAbout">
 			<div id="personNum">
 			<div id="totalNumber"></div>
 			<button id="pNumChk">
-			<img src="images/ok.png" id="popup_img">인원 확정</button>
+			<img src="images/ok.png" id="popup_img"><div id="PNumCon">인원 확정</div></button>
 			</div>
 			<div id="seatNum">
 			<div id="nowSelectSeat"></div>
-			<div id="reSelectSeat">
-			<img src="images/return.png" id="popup_img">좌석 다시 고르기</div>
+			
+			
 			</div>
 			</div>
 		</div>
 
-
 		<!--좌석선택-->
+		
 		<div class="seat">
-			<div id=screen>S C R E E N</div>
+			<div id="screen">S C R E E N</div>
 			<div id="selectSeat">
 			</div>
 		</div>
 		
-		<div id="goPayment">
-			결제하기
+		<div id="BtnContent">
+		<div id="Btn">
+		<div id="reSelectSeat">좌석 다시 고르기</div>
+		<div id="goPayment">결제하기</div>
+		</div>
 		</div>
 	</div>
 	</div>
 	</div>
 
 	<!--하단 상태바-->
-	<div class="step">
 		<div class="step-state step2">
 			<ul>
 				<li><p>영화/날짜선택</p></li>
