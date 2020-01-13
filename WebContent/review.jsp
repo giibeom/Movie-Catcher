@@ -53,8 +53,6 @@ if(movieName == null){
     
     
 
-    
-
    <section class="review">
        <div class="review_background"></div>
        <div class="contentWrap">
@@ -65,7 +63,6 @@ if(movieName == null){
               <button id="submit"><img id="m_icon" src="images/m_icon_3.png"></button>
            </form>
          </div>
-         
          
          
          
@@ -87,7 +84,6 @@ if(movieName == null){
                   </li>
              </c:forEach>
            </ul>
-=======
 	<section class="review">
 	    <div class="review_background"></div>
 	    <div class="contentWrap">
@@ -127,9 +123,6 @@ if(movieName == null){
 		            </li>
 			 	</c:forEach>
 	        </ul>
->>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
-  
-
          
    <jsp:include page="pagination.jsp">
       <jsp:param value="${writePages }" name="writePages"/>
@@ -144,17 +137,7 @@ if(movieName == null){
 
 
 </section>
-<<<<<<< HEAD
    
-   
-
-
-
-
-=======
-	
->>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
-
 
 <footer>
     <div class="policy">
