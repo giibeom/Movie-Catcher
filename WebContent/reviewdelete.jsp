@@ -47,28 +47,24 @@
         </div>
 
         <div id = "Write">
-            <form action = "#" method="GET" id = "write">
+            <form action = "reviewdeleteOk.mc" method="GET" id = "write">
+            	<input type="hidden" name="rv_num" value="${list[0].rv_num }">
                 <div class = "box">
                     <label for = "movieName"><b>영 화 명 :</b></label>
-                    <div id="reviewsend" ><b>백두산</b></div> </div>
+                    <div id="reviewsend" ><b>${list[0].rv_title }</b></div> </div>
                 
                 <div class = "box">
                     <label for = "date"><b>날 짜 :</b></label>
-                    <div id="reviewsend" ><b>2019-12-30</b></div> </div>
-             
-
-                <div class= "box">
-                    <label for = "place"><b>장 소 :</b></label>
-                    <div id="reviewsend" ><b>CGV 강남점</b></div> </div>
-                    
+                    <div id="reviewsend" ><b>${list[0].rv_date}</b></div> </div>
+            
                 <div class= "box">
                     <label for = "place"><b>평 점 :</b></label>
-                    <div id="reviewsend" ><b>5.4</b></div> </div>
+                    <div id="reviewsend" ><b>${list[0].rv_star }</b></div> </div>
                
 
                 <div class = "box">
                     <label for = "place"><b>리뷰 글 :</b></label>
-                    <div id="reviewsend" ><b>아하하하하 영화보고싶네요 하하하하하</b></div> </div>
+                    <div id="reviewsend" ><b>${list[0].rv_content }</b></div> </div>
               
 
                 <div class ="button">

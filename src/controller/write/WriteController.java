@@ -19,6 +19,7 @@ import command.write.ResListCommand;
 import command.write.ReserveOkCommand;
 import command.write.ReviewCommand;
 import command.write.ReviewCrawlingCommand;
+import command.write.ReviewDeleteCommand;
 import command.write.TheaterCommand;
 import command.write.TimeTableCommand;
 import command.write.WriteReviewCommand;
@@ -29,6 +30,7 @@ import command.write.bookingStep1Command;
 import command.write.bookingStep2Command;
 import command.write.bookingStep3Command;
 import command.write.loginCommand;
+import command.write.ReviewdeleteOkCommand;
 import command.write.searchPageCommand;
 import command.write.signupCommand;
 import command.write.ReviewCommand;
@@ -192,6 +194,16 @@ public class WriteController extends HttpServlet {
 			command = new MypageReviewCommand();
 			command.execute(request, response);
 			viewPage="MypageReview.jsp";
+			break;
+		case "/reviewdelete.mc" :
+			command = new ReviewDeleteCommand();
+			command.execute(request, response);
+			viewPage="reviewdelete.jsp";
+			break;
+		case "/reviewdeleteOk.mc" :
+			command = new ReviewdeleteOkCommand();
+			command.execute(request, response);
+			viewPage="reviewdeleteOk.jsp";
 			break;
 		}
 		

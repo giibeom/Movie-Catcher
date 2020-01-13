@@ -14,6 +14,17 @@ public class ReviewDTO {
 	public ReviewDTO() {
 		super();
 	}
+	public ReviewDTO(int rv_num, String rv_title, String rv_content, double rv_star, String rv_id, String rv_date,
+			int rs_num) {
+		super();
+		this.rv_num = rv_num;
+		this.rv_title = rv_title;
+		this.rv_content = rv_content;
+		this.rv_star = rv_star;
+		this.rv_id = rv_id;
+		this.rv_date = rv_date;
+		this.rs_num = rs_num;
+	}
 	public ReviewDTO(String rv_title, String rv_content, double rv_star, int rs_num, String rv_id, String rv_date) {
 		super();
 		this.rv_title = rv_title;
