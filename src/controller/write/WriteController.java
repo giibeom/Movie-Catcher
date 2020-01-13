@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import command.write.AdminCommand;
+import command.write.AdminDeleteCommand;
 import command.write.Command;
 import command.write.MpUserDeleteCommand;
 import command.write.MpUserUpdateCommand;
@@ -24,6 +26,7 @@ import command.write.TheaterCommand;
 import command.write.TimeTableCommand;
 import command.write.WriteReviewCommand;
 import command.write.WriteReviewOkCommand;
+import command.write.b_deleteCommand;
 import command.write.b_writeCommand;
 import command.write.boardCommand;
 import command.write.bookingStep1Command;
@@ -204,6 +207,21 @@ public class WriteController extends HttpServlet {
 			command = new ReviewdeleteOkCommand();
 			command.execute(request, response);
 			viewPage="reviewdeleteOk.jsp";
+			break;
+		case "/admin.mc":
+			command = new AdminCommand();
+			command.execute(request, response);
+			viewPage = "admin.jsp";
+			break;
+		case "/adminDeleteOk.mc" :
+			command = new AdminDeleteCommand();
+			command.execute(request, response);
+			viewPage = "adminDeleteOk.jsp";
+			break;
+		case "/b_deleteOk.mc" :
+			command  = new b_deleteCommand();
+			command.execute(request, response);
+			viewPage = "b_deleteOk.jsp";
 			break;
 		}
 		
