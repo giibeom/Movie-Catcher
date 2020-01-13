@@ -1,3 +1,7 @@
+.clear{
+	clear:both;
+}
+
 
 input:focus {
 	outline: none;
@@ -30,12 +34,13 @@ input:focus {
 #content {
 	border: 1px solid #4c4c4c; 
 	border-top: 3px solid #E31D2E;
-	padding: 30px;
 	margin-top : -31px;
+	padding : 30px;
 	width: 100%; 
 	height : 20%;
 	display: inline-block;
 	overflow:hidden;
+	text-align: center;
 }
 
 .seatSelectAbout {
@@ -52,12 +57,16 @@ input:focus {
 	flex-flow: row wrap;
 }
 
+#nowSelectSeat {
+	color : #E31D2E;
+	font-weight: bolder;
+}
 
 
 
 /*step2 좌석선택 style*/
 .number {
-	margin: 18px;
+	margin: 18px;s
 	font-size: 20px;
 }
 
@@ -116,6 +125,19 @@ input:focus {
 
 #personNum {
 	display: inline-block;
+}
+
+#totalNumber{
+	float:left;
+	width: 150px;
+	height: 50px;
+	margin-top : 10px;
+	margin-bottom : 20px;
+	line-height:50px;
+}
+
+#pNumChk{
+	float:left;
 }
 
 #PNumCon {
@@ -228,21 +250,26 @@ input:focus {
     color: black;
 }
 
+#pNumSelect {
+	display: inline-block;
+}
+
 #pNumChk{
 	float:right;
 	line-height : 30px;
 	width: 150px;
 	height: 50px;
+	margin-top : 10px;
+	margin-bottom : 20px;
 	border-radius : 20px;
 	background-color: darkgray;
 	border : none;
-	margin-top : 10px;
 	color : white;
-	margin-bottom : 20px;
 	display : inline-block;
 	cursor: pointer;
     transition: 800ms ease all;
     outline: none;
+    vertical-align: middle;
 }
 
 #pNumChk:hover {
@@ -300,12 +327,15 @@ input:focus {
 	}
 	
 	#content {
+	display : inline-block;
 	border-left : none;
 	border-right : none;
 	padding: 30px;
 	margin-top : -1px;
 	margin-bottom : 30px;
 	text-align: center;
+	vertical-align: middle;
+	
 	}
 	
 	#booking_title { 
