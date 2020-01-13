@@ -36,7 +36,7 @@ function fnMove(seq){
         <div id="arrow_bottom">
         <button onclick="fnMove('1')">
         <img class="arrow" src="images/arrow_bottom.png"></button></div>
-    </div>
+    </div>n
   
 
     <!--두번째-->

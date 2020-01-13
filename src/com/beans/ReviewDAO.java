@@ -106,6 +106,22 @@ public class ReviewDAO {
 		return arr;
 	}
 	
+	public ReviewDTO[] selectUser(String rv_id) throws SQLException, NamingException {
+		ReviewDTO[] arr = null;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(D.SQL_REVIEW_SELECT_USER);
+			pstmt.setString(1, rv_id);
+			rs = pstmt.executeQuery();
+			
+			arr= createArray(rs);
+		}finally {
+			close();
+		}
+		return arr;
+	}
+	
 	public int delete(int rv_num) throws SQLException, NamingException {
 		int cnt = 0;
 		
