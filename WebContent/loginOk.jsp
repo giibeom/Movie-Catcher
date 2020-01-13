@@ -9,6 +9,15 @@
 		history.back();
 	</script>
 	</c:when>
+	<c:when test="${result == 2 }">
+	<script>
+	<%
+		String a_id = (String)request.getAttribute("a_id");
+		session.setAttribute("a_id", a_id);
+	%>
+		location.href="admin.mc"
+	</script>
+	</c:when>
 	<c:otherwise>
 	<script>
 		<%

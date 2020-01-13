@@ -223,6 +223,7 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "b_deleteOk.jsp";
 			break;
+			
 		}
 		
 	
