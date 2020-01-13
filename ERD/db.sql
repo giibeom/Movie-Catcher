@@ -194,3 +194,4 @@ show grants for 'myuser'@'localhost';
 select * from theater;
 
 
+

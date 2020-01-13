@@ -1,57 +1,4 @@
-[class*="col-"] {
-	float: left;
-	width: 100%;
-}
 
-*{
-	margin:0px;
-	padding:0px;
-	box-sizing: border-box;
-}
-
-
-@media only screen and (min-width: 600px) {
-	.col-1 {
-		width: 8.33%;
-	}
-	.col-2 {
-		width: 16.66%;
-	}
-	.col-3 {
-		width: 25%;
-	}
-	.col-4 {
-		width: 33.33%;
-	}
-	.col-5 {
-		width: 41.66%;
-	}
-	.col-6 {
-		width: 50%;
-	}
-	.col-7 {
-		width: 58.33%;
-	}
-	.col-8 {
-		width: 66.66%;
-	}
-	.col-9 {
-		width: 75%;
-	}
-	.col-10 {
-		width: 83.33%;
-	}
-	.col-11 {
-		width: 91.66%;
-	}
-	.col-12 {
-		width: 100%;
-	}
-}
-
-.clear {
-	clear: both;
-}
 
 input:focus {
 	outline: none;
@@ -77,8 +24,9 @@ input:focus {
 	text-align: center;
 	text-decoration: none; 
 	color: white; 
+	font-weight : lighter;
 	font-family: 'Noto Sans KR', sans-serif;
-	font-size: 22px;
+	font-size: 20px;
 }
 
 #content {
@@ -88,23 +36,6 @@ input:focus {
 	margin-top: -20px;
 	width: 100%; 
 	display: inline-block;
-}
-
-
-body {
-	box-sizing: border-box;
-}
-
-
-
-
-
-.body {
-	max-width: 1200px;
-	margin: 0px auto;
-	min-width: 600px;
-	margin-bottom: 30px;
-	height: 100%;
 }
 
 .selectStep1 {
@@ -117,6 +48,9 @@ body {
 	-webkit-flex-flow: row wrap;
 	flex-flow: row wrap;
 }
+
+
+
 
 /* 영화관 선택 */
 
@@ -313,6 +247,7 @@ input::-moz-placeholder {
 	background-color: #fff;
 }
 
+
 /*날짜 스케줄 선택 style*/
 #selectScd {
 	width: 100%;
@@ -410,10 +345,10 @@ input::-moz-placeholder {
 	font-size: 16px;
 	font-weight: bold;
 }
-
-
-
 }
+
+
 .onClick{
-	background-color: #E31D2E; 
+	background-color: #898989;
+	color : white;
 }

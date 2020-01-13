@@ -14,7 +14,6 @@ if (mm < 10) {
 today = yyyy + '' + mm + dd;
 var nowchk = 0;
 
-
 $(function() {
 	$("#datepicker").datepicker({
 		dateFormat : 'yy/mm/dd',
@@ -38,11 +37,15 @@ $(document).ready(function() {
 								$(".t" + areaCode).show();
 							});
 
-					$(".theaterSelect").click(function() {
+					$(".theaterSelect")
+							.click(
+									function() {
 										$("#demoJSON").html("");
 										var theaterName = $(this).attr("class");
-										theaterNameInfo = theaterName.split(" ")[1];
-										var theaterCode = theaterNames.split(" ")[2];
+										theaterNameInfo = theaterName
+												.split(" ")[1];
+										var theaterCode = theaterName
+												.split(" ")[2];
 										var jsonurl = "http://localhost:8082/Movie_Catcher/ticket.ajax?reqType=json&theaterCode="
 												+ theaterCode;
 										$.ajax({
@@ -54,16 +57,7 @@ $(document).ready(function() {
 													parseJSON(data);
 											}
 										})
-									
-					
-					
-					
-					});
-					
-					
-					
-					
-					
+									});
 				});
 
 
@@ -116,6 +110,7 @@ function parseJSON(jsonObj) {
 						+ hallLocation + "\t" + hallType + "\t" + hallSize
 						+ "</div>";
 			} else if (arr[i - 1].h_movie != arr[i].h_movie) {
+				timeTable += "<div class='hall'><div class='hallinfo'>"
 						+ hallLocation + "\t" + hallType + "\t" + hallSize
 						+ "</div>";
 			}
@@ -126,16 +121,11 @@ function parseJSON(jsonObj) {
 		}
 
 		var movietime = arr[i].movietime;
+		movietime = movietime.substring(0, 2) + ":" + movietime.substring(2);
 		var restSeat = arr[i].restSeat;
-		if(restSeat != 0){
-			movietime = movietime.substring(0, 2) + ":" + movietime.substring(2);
-			restSeat = restSeat + "석"
-			timeTable += "<div class='ticket " + arr[i].t_uid + "'>" + movietime
-			+ "<br>" + restSeat + "</div>";
-			
-		}else{
-			timeTable += "<div class='ticket " + arr[i].t_uid + "'>" + 마감 + "</div>";
-		}
+		restSeat = restSeat + "석"
+		timeTable += "<div class='ticket " + arr[i].t_uid + "'>" + movietime
+				+ "<br>" + restSeat + "</div>";
 
 		if (i < arr.length - 1) {
 			if (arr[i].hallLocation != arr[i + 1].hallLocation
