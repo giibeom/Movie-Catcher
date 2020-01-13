@@ -57,14 +57,19 @@ var t_uid = "${list[0].t_uid}"
     </header>
 	<div class="clear"></div>
 
-	<h2>인원/좌석</h2>
 
-
-	<div class="seatSelect">
-
+	<div id = "window">
+	
+	<div class="selectStep2">
+	
+	
+	<div id="booking_title">
+		<h2>인원/좌석</h2>
+	</div>
 
 		<!--인원 선택-->
-		<div class="number">
+		<div id="content">
+			<div id="pNumSelect">
 			<label>일반</label> <select id="general" name="general">
 				<option value="0" selected>0</option>
 				<option value="1">1</option>
@@ -98,10 +103,13 @@ var t_uid = "${list[0].t_uid}"
 				<option value="7">7</option>
 				<option value="8">8</option>
 			</select>
+			</div>
+			
+			
 			<div id="seatSelectAbout">
 			<div id="personNum">
 			<div id="totalNumber"></div>
-			<button id="pNumChk" >인원 확정</button>
+			<button id="pNumChk">인원 확정</button>
 			</div>
 			<div id="seatNum">
 			<div id="nowSelectSeat"></div>
@@ -113,16 +121,16 @@ var t_uid = "${list[0].t_uid}"
 
 		<!--좌석선택-->
 		<div class="seat">
-			<p>좌석선택</p>
+			<div id=screen>S C R E E N</div>
 			<div id="selectSeat">
-				
-
 			</div>
 		</div>
 		
 		<div id="goPayment">
 			결제하기
 		</div>
+	</div>
+	</div>
 	</div>
 
 	<!--하단 상태바-->
