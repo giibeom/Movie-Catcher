@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+    box-sizing: border-box;
+    height: auto;
+}
+.clear {
+    clear: both;
+}
+header {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    background-color:  #E31D2E;
+    position: fixed;
+    z-index: 7;
+}
+.topnav {
+    margin-left: 10px;
+    background-color:  #E31D2E;
+    color: white;
+    display: inline-block;
+}
+#title {
+    background-color: #E31D2E;
+    color: white;
+    font-family: 'Bad Script', cursive;
+    clear: both;
+}
+.logout {
+    float: right;
+    margin-top: -65px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 70px;
+}
+.topnav a {font-size: 20px;}
+a:hover {color: white;}
+a:active {color:white;}
+
+
+
+  .sidebar {
+    position: absolute;
+    width: 33.3333%;
+    width: 17em;
+    height: 100%;
+    top: 0;
+    overflow:hidden;
+    background-color: #19222a;
+    visibility: visible;
+  }
+
+  .sidebar-nav {
+    position: fixed;
+    width: 13em;
+    background-color: #19222a;
+    height: 100%;
+    font-weight: 400; 
+    font-size: 1.2em;
+    overflow: auto;
+    padding-bottom: 6em;
+    z-index: 1;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 80px;
+  }
+    
+.sidebar-nav ul{
+      list-style:none;
+      display: block;
+      padding: 0;
+      margin: 0; }
+      
+.sidebar-nav ul li{
+        margin-left: 0;
+        padding-left: 0;
+        min-width: 13em;
+        display:inline-block;
+        width: 100%; 
+}
+        
+a{
+    color: rgba(255,255,255,0.9);
+    font-size: 0.75em;
+    padding: 1.05em	1em;
+    position: relative;
+    display:block;
+}
+         
+  /* -------------
+  Sidebar: icons
+  ----------------*/
+i{
+    font-size: 1.8em;
+    padding-right: 0.5em;
+    width: 7em;
+    display: inline;
+    vertical-align:middle;
+}  
+.nav_sub1  {
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+.nav_sub2  {
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+
+/*관리자 공지사항 관리*/
+.admin_board {
+    margin-top: 100px;
+    position: absolute;
+    border: 1px solid red;
+    height: 700px;
+}
+#main {
+    width: 75%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 35px;
+    margin-left: 300px;
+}
+
+.content_box {
+    margin-top: 50px;
+}
+
+table { 
+    width: 100%;	 
+    text-align: center; 
+    border:0; 
+    border-spacing: 0;}
+table tr { 
+    transition: all .5s; 
+    cursor: pointer; }
+table tr:hover { 
+    background-color: #f8f8f8; 
+}
+table th { 
+    height: 50px; 
+    background-color: #f8f8f8; 
+    font-size: 13px; 
+    color: #555; 
+    font-weight: 400;  
+    border-top: 1px solid #ddd; 
+    border: 1px solid #ddd; 
+    box-sizing: border-box; 
+    line-height: 26px;}
+table td { 
+    height: auto; 
+    font-size: 13px; 
+    border: 1px solid #ddd; 
+    box-sizing: border-box; 
+    color: #333;
+    width: auto;
+
+ }
+table td a {
+    margin: 0 auto;
+    width: auto;
+}
+a { text-decoration: none; color: black; font-size: 12px; }
+a:hover { color:black;}
+a:active {color:black;}
+#table_num {
+    width: 5%;
+    padding: 10px;
+}
+#table_title {
+    width: 15%;
+    padding: 10px;
+}
+#table_content {
+    width: 70%;
+    height: auto;
+    padding: 10px;
+}
+#table_delete {
+    width: 15%;
+    padding: 10px;
+}
+
+/*글 작성 버튼*/
+
+input[type=submit] {
+    background: #E31D2E;
+    color: #fff;
+    border: none;
+    width: 200px;
+    height: 35px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+    float: right;
+    margin-top: -15px;
+}
+input[type=submit]:hover {
+    background: #fff;
+    color: black;
+}
+
+
+/*유저관리*/
+.admin_user {
+    margin-bottom: 100px;
+    margin-top: 200px;
+    border: 1px solid blue;
+    height: 600px;
+}
+.admin_user table {
+    height: 10px;
+}
