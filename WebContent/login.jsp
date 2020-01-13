@@ -17,7 +17,7 @@ function chkSubmit(){
 	var pw = frm["psw"].value.trim();
 	if(id == ""){
 		alert("아이디를 입력하셔야 합니다.");
-		frm["ㅕname"].focus();
+		frm["uname"].focus();
 		return false;
 	}
 	if(pw == ""){
