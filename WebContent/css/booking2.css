@@ -38,10 +38,6 @@ input:focus {
 	overflow:hidden;
 }
 
-
-
-
-
 .seatSelectAbout {
 	float : left;
 }
@@ -95,12 +91,6 @@ input:focus {
 	
 }
 
-.selectSeat {
-	/* justify-content: center; */
-	margin : 0 auto;
-	
-}
-
 .bookingChk {
 	background-color: #f0f0f0;
 	height: 200px;
@@ -112,7 +102,23 @@ input:focus {
 	min-height: 380px;
 	background-color: white;
 	overflow:hidden;
-	height:auto;
+	margin: 0 auto;
+	padding-bottom: 30px;
+}
+
+#pNumChk, #reSelectSeat {
+	width: 130px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: darkgray;
+	font-size : 13px;	
+	color : white;
+	text-align: center;
+}
+
+#popup_img {
+	height: 30px;
+	width: 30px;
 }
 
 /* media */
@@ -152,12 +158,6 @@ input:focus {
 	.content .seat {
 		width: 90%;
 	}
-}
-
-#selectSeat{
-	width: auto;
-	margin: auto;
-	padding-bottom: 30px;
 }
 
 .seatrow{
