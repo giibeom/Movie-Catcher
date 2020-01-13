@@ -53,18 +53,11 @@
         <!-- <div class="col-8" id="search"> -->
         <div class="col-12 d1">
             <form>
-                <input type="text" placeholder="검색어 입력">
-                <button type="submit"><img id="m_icon" src="images/m_icon_3.png"></button>
+                <input id="movieName" type="text" placeholder="검색어 입력">
+                <button id="searchButton" type="submit"><img id="m_icon" src="images/m_icon_3.png"></button>
             </form>
         </div>
         <div class="clear"></div>
-
-        <!-- <div class="col-8 d1">
-            <form>
-            <input type="text" placeholder="검색어 입력">
-            <button type="submit"><img id="m_icon" src="images/m_icon_3.png"></button>
-            </form>
-          </div> -->
 
 
 
@@ -119,59 +112,59 @@
         <div class="clear"></div>
 
         <!-- 누적관객수 랭킹  -->
-        <div class="col-6 rankAudiencea">
+        <div class="col-5 rankAudiencea">
             <div id = "rankAudiencea">
 
-            <div class = "ranking">
-                <h3>누적 매출액 랭킹</h3>
-            </div>
-
-            <div id = "rank">
-                <ul id = "rankAudience">                
-                </ul>
-            </div>
-            </div>
+	            <div class = "ranking">
+	                <h3>누적 매출액 랭킹</h3>
+	            </div>
+	
+	            <div id = "rank">
+	                <ul id = "rankAudience">                
+	                </ul>
+	            </div>
+         	</div>
 
 
         <!-- 주말 박스오피스 랭킹 -->
-        <div id = "rankweek">
-        <div class = "ranking">
-           <h3>주말 박스오피스 랭킹</h3>
-        </div>
-        <div id = "rank">
-            <ul id="weekRanking">
-            </ul>
-        </div>
-        </div>
-        
-        <div  id = "dots" style = "text-align: center; height: 20px;">
-                <span class ="dot" id = "dot1" ></span>
-                <span class ="dot" id = "dot2"></span>
-        </div>
-    </div>
+	        <div id = "rankweek">
+		        <div class = "ranking">
+		           <h3>주말 박스오피스 랭킹</h3>
+		        </div>
+		        <div id = "rank">
+		            <ul id="weekRanking">
+		            </ul>
+		        </div>
+	        </div>
+	        
+	        <div  id = "dots" style = "text-align: center; height: 20px;">
+	                <span class ="dot" id = "dot1" ></span>
+	                <span class ="dot" id = "dot2"></span>
+	        </div>
+    	</div>
     
         
 
-    <div class="col-6 Event">
+    <div class="col-7 Event">
 
         <div class = "Eve">
-            <img src = "images/event1.jpg" style="width: 95%; height: 400px;">
+            <img src = "images/event1.jpg" style="width: 95%; height: 500px;">
      
         </div>
 
         <div class = "Eve1">
-            <img src = "images/event2.jpg" style="width: 95%; height: 400px;">
+            <img src = "images/event2.jpg" style="width: 95%; height: 500px;">
         </div>
 
         <div class = "Eve2">
-            <img src = "images/event3.jpg" style="width: 95%; height: 400px;">
+            <img src = "images/event3.jpg" style="width: 95%; height: 500px;">
         </div>
 
         <div  id = "dotsa" style = "text-align: center; height: 20px;">
             <span class ="dota" id = "dota1" ></span>
             <span class ="dota" id = "dota2"></span>
             <span class ="dota" id = "dota3"></span>
-    </div>
+    	</div>
     </div>
         
     <div class="clear"></div>
