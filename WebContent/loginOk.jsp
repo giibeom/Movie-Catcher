@@ -12,7 +12,7 @@
 	<c:when test="${result == 2 }">
 	<script>
 	<%
-		String a_id = (String)request.getAttribute("a_id");
+		String a_id = (String)request.getAttribute("u_id");
 		session.setAttribute("a_id", a_id);
 	%>
 		location.href="admin.mc"

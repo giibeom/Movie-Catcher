@@ -16,6 +16,7 @@ import command.write.Command;
 import command.write.MpUserDeleteCommand;
 import command.write.MpUserUpdateCommand;
 import command.write.MpUserViewCommand;
+import command.write.Mv_infoCommand;
 import command.write.MypageReviewCommand;
 import command.write.ResListCommand;
 import command.write.ReserveOkCommand;
@@ -94,6 +95,8 @@ public class WriteController extends HttpServlet {
 			viewPage = "searchPage.jsp";
 			break;
 		case "/mv_info.mc":
+			command = new Mv_infoCommand();
+			command.execute(request, response);
 			viewPage = "mv_info.jsp";
 			break;
 		case "/loginOk.mc":

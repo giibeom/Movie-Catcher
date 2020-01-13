@@ -161,12 +161,12 @@
             <div id = "review_title">영화제목</div>
 
             <div id = "review-a">
-                <span></span>
-                <div></div>
+                <span>${list[0].rv_id }</span>
+                <div>${list[0].rv_content }</div>
             </div>
             <div id = "review-b">
-                <span></span>
-                <div></div>
+                <span>${list[1].rv_id }</span>
+                <div>${list[1].rv_content }</div>
             </div>
         </div>
 

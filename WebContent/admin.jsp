@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="css/admin.css" rel="stylesheet" type="text/css">
-   
+   	<script src="js/header.js" type="text/javascript"></script>
    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="js/admin.js" type="text/javascript"></script>
     
@@ -30,7 +30,7 @@
         </div>
         <div class="clear"></div>
         <div class="admin_logout">
-        <a href="welcom.mc" class="logout">Logout</a>
+        <a href="welcome.mc" class="logout">Logout</a>
         </div>
 
     </header>
