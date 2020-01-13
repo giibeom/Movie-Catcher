@@ -69,6 +69,23 @@ public class ReviewDAO {
 		}
 		return cnt;
 	}
+	
+	public int insertUser(String rv_title, String rv_content, Double rv_star, int rs_num, String rv_id) throws SQLException, NamingException{
+		int cnt = 0 ;
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(D.SQL_REVIEW_USER);
+			pstmt.setString(1, rv_title);
+			pstmt.setString(2, rv_content);
+			pstmt.setDouble(3, rv_star);
+			pstmt.setInt(4, rs_num);
+			pstmt.setString(5, rv_id);
+			cnt = pstmt.executeUpdate();			
+		} finally {
+			close();
+		}
+		return cnt;
+	}
 
 	public ReviewDTO []  createArray(ResultSet rs) throws SQLException{
 		ArrayList<ReviewDTO> list = new ArrayList<ReviewDTO>();
@@ -101,6 +118,22 @@ public class ReviewDAO {
 			
 			arr = createArray(rs);
 		} finally {
+			close();
+		}
+		return arr;
+	}
+	
+	public ReviewDTO[] selectUser(String rv_id) throws SQLException, NamingException {
+		ReviewDTO[] arr = null;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(D.SQL_REVIEW_SELECT_USER);
+			pstmt.setString(1, rv_id);
+			rs = pstmt.executeQuery();
+			
+			arr= createArray(rs);
+		}finally {
 			close();
 		}
 		return arr;

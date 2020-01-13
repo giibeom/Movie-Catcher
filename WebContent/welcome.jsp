@@ -36,7 +36,7 @@ function fnMove(seq){
         <div id="arrow_bottom">
         <button onclick="fnMove('1')">
         <img class="arrow" src="images/arrow_bottom.png"></button></div>
-    </div>
+    </div>n
   
 
     <!--두번째-->
@@ -107,50 +107,12 @@ function fnMove(seq){
         </div>
     </div>
 
-<!--footer 붙여넣기-->  
+<!--footer 붙여넣기--> 
 <div id="div4">
-<footer>
-        <div class="policy">
-            <ul>
-                <li>회사소개</li>
-                <li>채용정보</li>
-                <li>광고/프로모션문의</li>
-                <li>제휴문의</li>
-                <li>이용약관</li>
-                <li>편성기준</li>
-                <li>개인정보처리방침</li>
-                <li>법적고지</li>
-                <li>상생경영</li>
-                <li>사이트맵</li>
-            </ul>
-        </div>
-        <div class="clear"></div>
-        <div class="comInfo">
-            <div class="comlogo"></div>
-            <div class="sns_link">
-                <div class="facebook"></div>
-                <div class="twitter"></div>
-                <div class="instagram"></div>
-            </div>
-            <div class="comAddress">
-                <address>
-                    기범특별시 성일구 나영동 수진대로 지현길 혜진몰 3층(기범로동)
-                </address>
-                <p class="footCom">
-                    <span>대표이사:성연철</span>
-                    <span>사업자등록번호 : 103-80-12345</span>
-                    <span>통신판매업신고번호: 2019-버미레도-1228</span>
-                    <a href="javasript:void(0);" class="btn_goFtc">
-                        <img src="images/btn_reg.png" alt="사업자정보확인">
-                    </a>            
-                </p>
-            </div>
-        </div>
-    </footer>
+Welcome Movie Catcher!
 </div>
 
-
-    <div id="mask">
+<div id="mask">
         
        <img id="close" src="images/x.JPG" onclick="moveback()">
         <div class="navigation">

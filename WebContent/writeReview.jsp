@@ -1,17 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%
+	String u_id = (String)session.getAttribute("u_id");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>writeBoard</title>
+    <title>writeReview</title>
     <link href="https://fonts.googleapis.com/css?family=Bad+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
+	<script>
+		var u_id = <%= u_id %>;
+	</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/header.js" type="text/javascript"></script>
     <script src="js/writeBoard.js" type="text/javascript"></script>
@@ -22,24 +28,24 @@
     <link href="css/footer.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
-    <div class="topnav" id="myTopnav">
-        <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
-            
-        <div id="nav_ul">
-        <ul>
-            <li  class="icon clear" ><a href="javascript:void(0);"onclick="myFunction()">
-             <i class="fa fa-bars" style="color:black;"></i></a>
-                </li>
-                <li>영화</li>
-                <li>예매하기</li>
-                <li>극장</li>
-                <li>리뷰</li>
-                <li>공지사항</li>
-                <li>마이페이지</li>
-            </ul> 
+     <header>
+        <div class="topnav" id="myTopnav">
+            <h1 id="title"><a href="main.mc">MOVIE CATCHER</a></h1>
+            <div id="logout">로그아웃</div>
+            <div id="nav_ul">
+                <ul>
+                    <li class="icon clear"><a href="javascript:void(0);" onclick="myFunction()">
+                            <i class="fa fa-bars" style="color:black;"></i></a>
+                    </li>
+                    <li id="navMovie">영화</li>
+                    <li id="navReserve">예매하기</li>
+                    <li id="navTheater">극장</li>
+                    <li id="navReview">리뷰</li>
+                    <li id="navNotice">공지사항</li>
+                    <li id="navMypage">마이페이지</li>
+                </ul>
+            </div>
         </div>
-    </div>
     </header>
 
     <!-- 게시판 작성 시작 -->
@@ -50,37 +56,35 @@
         </div>
 
         <div id = "Write">
-            <form action = "#" method="GET" id = "write">
+            <form id = "write" method="post" action="writeReviewOk.mc">
                 <div class = "box">
+                	<input type="hidden" name="rs_num" id="rv_num" value="${param.rs_num }" >
+                	<input type="hidden" name="rv_star" id="rv_star" value="1">
+                	<input type="hidden" name="rv_id" id="rv_id" value="<%= u_id %>">
                     <label for = "movieName"><b>제목</b></label>
-                    <input type ="text" id = "review_info" name = "movieName" required>
+                    <input type ="text" id = "review_info" name = "rv_title" value="${list[0].h_movie }" required>
                 </div>
 
                 <div class = "box">
                     <label for = "date"><b>별점</b></label>
                     <!-- <input type = "text"  id = "review_info1" name = "date"> -->
                     <div class="starRev">
-                        <span class="starR on">별1</span>
-                        <span class="starR">별2</span>
-                        <span class="starR">별3</span>
-                        <span class="starR">별4</span>
-                        <span class="starR">별5</span>
-                        <span class="starR">별6</span>
-                        <span class="starR">별7</span>
-                        <span class="starR">별8</span>
-                        <span class="starR">별9</span>
-                        <span class="starR">별10</span>
+                        <span class="starR on">1</span>
+                        <span class="starR">2</span>
+                        <span class="starR">3</span>
+                        <span class="starR">4</span>
+                        <span class="starR">5</span>
+                        <span class="starR">6</span>
+                        <span class="starR">7</span>
+                        <span class="starR">8</span>
+                        <span class="starR">9</span>
+                        <span class="starR">10</span>
                       </div>
                 </div>
 
-                <!-- <div class= "box">
-                    <label for = "place"><b>장소</b></label>
-                    <input type = "text" id = "review_info1" name = "place">
-                </div> -->
 
                 <div class = "box">
-                    <textarea id = "review_content" name = "content"></textarea>
-                    <!-- <input type = "text" id = "review_content" name = "content" required>  -->
+                    <textarea id = "review_content" name = "rv_content"></textarea>
                 </div>
 
                 <div class ="button">

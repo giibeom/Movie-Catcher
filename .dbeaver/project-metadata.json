@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {"resources":{"ERD/db.sql":{"sql-editor-data-source-id":"mariaDB-16f8e5368ff-7a7eb2d9fedd69f6"}}}
 =======
 {"resources":{"ERD/db.sql":{"sql-editor-data-source-id":"mariaDB-16f99109652-59fbd79b5b1eddd"},"ERD/page.sql":{"sql-editor-data-source-id":"mariaDB-16f654d486a-b5d0a0d3353d3a1"}}}
+>>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
+=======
+{"resources":{"ERD/db.sql":{"sql-editor-data-source-id":"mariaDB-16f9b2759c8-3e74efcdd3df070b"},"ERD/page.sql":{"sql-editor-data-source-id":"mariaDB-16f654d486a-b5d0a0d3353d3a1"}}}
 >>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git

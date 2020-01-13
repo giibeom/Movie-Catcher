@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -19,25 +21,25 @@
 <body>
  <!-- header -->
 
- <header>
-    <div class="topnav" id="myTopnav">
-        <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
-            
-        <div id="nav_ul">
-        <ul>
-            <li  class="icon clear" ><a href="javascript:void(0);"onclick="myFunction()">
-             <i class="fa fa-bars" style="color:black;"></i></a>
-                </li>
-                <li>영화</li>
-                <li>예매하기</li>
-                <li>극장</li>
-                <li>리뷰</li>
-                <li>공지사항</li>
-                <li>마이페이지</li>
-            </ul> 
+  <header>
+        <div class="topnav" id="myTopnav">
+            <h1 id="title"><a href="main.mc">MOVIE CATCHER</a></h1>
+            <div id="logout">로그아웃</div>
+            <div id="nav_ul">
+                <ul>
+                    <li class="icon clear"><a href="javascript:void(0);" onclick="myFunction()">
+                            <i class="fa fa-bars" style="color:black;"></i></a>
+                    </li>
+                    <li id="navMovie">영화</li>
+                    <li id="navReserve">예매하기</li>
+                    <li id="navTheater">극장</li>
+                    <li id="navReview">리뷰</li>
+                    <li id="navNotice">공지사항</li>
+                    <li id="navMypage">마이페이지</li>
+                </ul>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 <body>
 
 
@@ -57,37 +59,18 @@
                     <th>결제금액</th>
                     <th>리뷰</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>백두산</td>
-                    <td>2019-12-29</td>
-                    <td>메가박스 강남점</td>
-                    <td>2</td>
-                    <td>18,000</td>
-                    <td><div id="review"><a href="writeBoard.jsp">리뷰 작성 | </a>
-                        <a href="reviewdelete.jsp">리뷰 삭제</a></div></td>
-                </tr>
-                <tr>
-                    <td>2</th>
-                    <td>겨울왕국</td>
-                    <td>2019-12-27</td>
-                    <td>CGV 목동점</td>
-                    <td>1</td>
-                    <td>8,000</td>
-                    <td><div id="review"><a href="writeBoard.jsp">리뷰 작성 |</a>     
-                        <a href="reviewdelete.jsp">리뷰 삭제</a></div></td>
-                   
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>영화제목</td>
-                    <td>관람 날짜</td>
-                    <td>관람 장소</td>
-                    <td>몇명</td>
-                    <td>결제 금액</td>
-                    <td><div id="review"><a href="writeBoard.jsp">리뷰 작성 |</a>
-                        <a href="reviewdelete.jsp">리뷰 삭제</a></td></div>
-                </tr>
+            	<c:forEach var="list" items="${list }" varStatus="status">
+            	<tr>
+            		<td>No.${status.count }</td>
+            		<td>${ticket[status.index][0].h_movie } </td>
+            		<td>${list.rs_date }</td>
+            		<td>${ticket[status.index][0].hallLocation} ${ticket[status.index][0].hallType}</td>
+            		<td>${list.rs_seat }</td>            	
+            		<td>${list.rs_price }</td>            	
+            		<td><div id="review"><a href="writeReview.mc?rs_num=${list.rs_num }">리뷰 작성 | </a>
+                        <a href="reviewdelete.mc?rs_num=${list.rs_num }">리뷰 삭제</a></div></td>            	
+            	</tr>	
+            	</c:forEach>
             </table>
 
 

@@ -200,12 +200,21 @@ button:hover {
 #div4 {
     margin-top: 50px;
     margin-bottom: 100px;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    cursor: pointer;
+    
+    
+    
+    
+    
 }
 
 
 
 #mask{
-    position: absolute;
+    position: fixed;
     left:0;
     top:0;
     z-index: 10;
@@ -289,3 +298,7 @@ button:hover {
         font-size: 12px;
     }
 }
+
+
+
+

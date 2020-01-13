@@ -167,7 +167,8 @@ select * from hall;
 select * from ticket;
 select * from mc_user mu;
 select * from review;
-select * from reserve r2;
+select * from reserve;
+select * from reserve where u_idnum = 1;
 delete from theater where theaterCode = 1;
 delete from hall where h_uid =1;
 TRUNCATE table theater;
@@ -175,6 +176,7 @@ TRUNCATE table hall;
 TRUNCATE table ticket;
 TRUNCATE table review;
 SELECT u_pw FROM mc_user WHERE u_id = "ksi0678";
+SELECT u_pw FROM mc_user WHERE u_id = "kpmyung";
 select count(*) from hall;
 select count(*) from ticket;
 select count(*) from review;
@@ -193,5 +195,6 @@ flush privileges;
 show grants for 'myuser'@'localhost';
 
 select * from theater;
+
 
 

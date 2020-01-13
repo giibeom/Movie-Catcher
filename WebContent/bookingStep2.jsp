@@ -36,36 +36,40 @@ var t_uid = "${list[0].t_uid}"
 <title>영화 예매하기</title>
 </head>
 <body>
-	<!-- header -->
-	<div class="topnav" id="myTopnav">
-		<h1 id="title">
-			<a href="welcome.html">MOVIE CATCHER</a>
-		</h1>
-
-		<div id="nav_ul">
-			<ul>
-				<li class="icon clear"><a href="javascript:void(0);"
-					onclick="myFunction()"> <i class="fa fa-bars"
-						style="color: black;"></i></a></li>
-				<li>영화</li>
-				<li>예매하기</li>
-				<li>극장</li>
-				<li>리뷰</li>
-				<li>공지사항</li>
-				<li>마이페이지</li>
-			</ul>
-		</div>
-	</div>
+	 <header>
+        <div class="topnav" id="myTopnav">
+            <h1 id="title"><a href="main.mc">MOVIE CATCHER</a></h1>
+            <div id="logout">로그아웃</div>
+            <div id="nav_ul">
+                <ul>
+                    <li class="icon clear"><a href="javascript:void(0);" onclick="myFunction()">
+                            <i class="fa fa-bars" style="color:black;"></i></a>
+                    </li>
+                    <li id="navMovie">영화</li>
+                    <li id="navReserve">예매하기</li>
+                    <li id="navTheater">극장</li>
+                    <li id="navReview">리뷰</li>
+                    <li id="navNotice">공지사항</li>
+                    <li id="navMypage">마이페이지</li>
+                </ul>
+            </div>
+        </div>
+    </header>
 	<div class="clear"></div>
 
-	<h2>인원/좌석</h2>
 
-
-	<div class="seatSelect">
-
+	<div id = "window">
+	
+	<div class="selectStep2">
+	
+	
+	<div id="booking_title">
+		<h2>인원/좌석</h2>
+	</div>
 
 		<!--인원 선택-->
-		<div class="number">
+		<div id="content">
+			<div id="pNumSelect">
 			<label>일반</label> <select id="general" name="general">
 				<option value="0" selected>0</option>
 				<option value="1">1</option>
@@ -99,31 +103,39 @@ var t_uid = "${list[0].t_uid}"
 				<option value="7">7</option>
 				<option value="8">8</option>
 			</select>
+			</div>
+			
+			
 			<div id="seatSelectAbout">
 			<div id="personNum">
 			<div id="totalNumber"></div>
-			<button id="pNumChk" >인원 확정</button>
+			<button id="pNumChk">
+			<img src="images/ok.png" id="popup_img"><div id="PNumCon">인원 확정</div></button>
 			</div>
 			<div id="seatNum">
 			<div id="nowSelectSeat"></div>
-			<div id="reSelectSeat">좌석 다시 고르기</div>
+			
+			
 			</div>
 			</div>
 		</div>
 
-
 		<!--좌석선택-->
+		
 		<div class="seat">
-			<p>좌석선택</p>
+			<div id="screen">S C R E E N</div>
 			<div id="selectSeat">
-				
-
 			</div>
 		</div>
 		
-		<div id="goPayment">
-			결제하기
+		<div id="BtnContent">
+		<div id="Btn">
+		<div id="reSelectSeat">좌석 다시 고르기</div>
+		<div id="goPayment">결제하기</div>
 		</div>
+		</div>
+	</div>
+	</div>
 	</div>
 
 	<!--하단 상태바-->

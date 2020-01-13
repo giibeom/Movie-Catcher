@@ -14,85 +14,6 @@ if (mm < 10) {
 today = yyyy + '' + mm + dd;
 var nowchk = 0;
 
-$(document).ready(function() {
-	var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=150bfb37a86f8bfb899cdc5192ee9967&targetDt="+ today;
-	$.ajax({
-		url : url,
-		type : "GET",
-		cache : false,
-		success : function(data, status) {
-		if (status == "success")
-		getBoxOffice(data);
-		}
-	});
-});
-
-function getBoxOffice(jsonObj) {
-	var arr = jsonObj.boxOfficeResult.dailyBoxOfficeList;
-	for (var i = 0; i < 10; i++) {
-		getRankPoster(arr[i].movieNm, i);
-	}
-}
-
-function getRankPoster(movieName, rank) {
-	checkMovieName = movieName.split(" ")[0];
-	var url = "https://api.themoviedb.org/3/search/movie?api_key=55d244c83c49693b6fd6606c768103eb&language=ko-KR&query="
-			+ checkMovieName + "&include_adult=false";
-	$.ajax({
-		url : url,
-		type : "GET",
-		cache : false,
-		success : function(data, status) {
-			if (status == "success")
-				getPoster(data, movieName, rank);
-		}
-	});
-
-};
-
-function getPoster(jsonObj, movieName, rank) {
-	var arr = jsonObj.results;
-	var poster;
-	var vote;
-	for (var i = 0; i < arr.length; i++) {
-		if (((arr[i].title) == (movieName))
-				|| (((arr[i].title).toLowerCase().split(" ").join(""))
-						.match(movieName.toLowerCase().split(" ").join("")))) {
-			poster = arr[i].poster_path;
-
-			break;
-		}
-	}
-	if (poster == null) {
-		poster = arr[0].poster_path;
-
-	}
-
-	data[rank] = "<img src='http://image.tmdb.org/t/p/w500" + poster
-			+ "' width='200px' height='280px'>";
-	nowchk++;
-	if (nowchk == 10) {
-		bookingStep();
-	}
-
-};
-
-function bookingStep() {
-
-	jQuery("#scrolling").srolling({
-		data : data,
-		auto : true,
-		item_count : 1,
-		cache_count : 5,
-		width : 200,
-		height : 280,
-		delay_frame : 500,
-		move : 'left',
-		prev : '#leftBtn',
-		next : '#rightBtn',
-	});
-};
-
 $(function() {
 	$("#datepicker").datepicker({
 		dateFormat : 'yy/mm/dd',
@@ -108,6 +29,8 @@ $(function() {
 $(document).ready(function() {
 
 							$(".areaClick").click(function() {
+								$(".onClick").removeClass("onClick");
+								$(this).addClass("onClick");
 								var areaName = $(this).attr("class");
 								var areaCode = areaName.split(" ")[1];
 								$(".areaZone").hide();
@@ -193,6 +116,7 @@ function parseJSON(jsonObj) {
 		}
 
 		var movietime = arr[i].movietime;
+		movietime = movietime.substring(0, 2) + ":" + movietime.substring(2);
 		var restSeat = arr[i].restSeat;
 		if(restSeat != 0){
 			movietime = movietime.substring(0, 2) + ":" + movietime.substring(2);

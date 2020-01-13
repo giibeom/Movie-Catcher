@@ -29,7 +29,7 @@
 	<header>
 		<div class="topnav" id="myTopnav">
 			<h1 id="title">
-				<a href="welcome.html">MOVIE CATCHER</a>
+				<a href="welcome.mc">MOVIE CATCHER</a>
 			</h1>
 		</div>
 	</header>
@@ -50,6 +50,8 @@
 				<input id="email" type="email" placeholder="(필수) 이메일 입력" name="email" required> 
 				<input id="nick" type="text" placeholder="(선택) 닉네임 입력" name="nick">
 			</div>
+			
+			
 			<div id="phoneform">
 				<h5>휴대폰인증</h5>
 				<div id="pNum">
@@ -62,13 +64,14 @@
 				</div>
 				<p>* 인증번호가 도착하지 않았을 경우 '인증'버튼을 다시 눌러주세요.</p>
 			</div>
+			
+			
 			<div id="agree">
 				<h5>약관동의</h5>
 				<div id="allAgree">
 					<input type="checkbox">
 					<p>전체동의</p>
 				</div>
-
 				<div id="selectAgree">
 					<div class="s1">
 						<input type="checkbox" required>
