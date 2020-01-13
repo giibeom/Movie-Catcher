@@ -179,12 +179,12 @@ public class ReviewDAO {
 			public int countAll() throws SQLException, NamingException {
 				int cnt = 0;
 				try {
-					
 					conn = getConnection();
 					pstmt = conn.prepareStatement(D.SQL_REVIEW_COUNT_ALL);
-					rs = pstmt.executeQuery();
+					rs = pstmt.executeQuery();					
 					rs.next();
-					cnt = rs.getInt(1); //첫번째 컬럼
+					cnt = rs.getInt(1);
+					
 					
 				} finally {
 					close();

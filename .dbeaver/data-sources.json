@@ -1,7 +1,11 @@
 {
 	"folders": {},
 	"connections": {
+<<<<<<< HEAD
+		"mariaDB-16f8e5368ff-7a7eb2d9fedd69f6": {
+=======
 		"mariaDB-16f8a6532f0-516669bf6396a52e": {
+>>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
 			"provider": "mysql",
 			"driver": "mariaDB",
 			"name": "MariaDB - movie_catcher",
@@ -12,7 +16,12 @@
 				"port": "3306",
 				"database": "movie_catcher",
 				"url": "jdbc:mysql://localhost:3306/movie_catcher",
+<<<<<<< HEAD
+=======
 				"home": "C:\\Program Files\\MariaDB 10.4",
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
+=======
 				"type": "dev"
 			}
 		},
@@ -27,6 +36,9 @@
 				"port": "3306",
 				"database": "movie_catcher",
 				"url": "jdbc:mysql://localhost:3306/movie_catcher",
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
+=======
 				"type": "dev"
 			}
 		},
@@ -41,6 +53,7 @@
 				"port": "3306",
 				"database": "movie_catcher",
 				"url": "jdbc:mysql://localhost:3306/movie_catcher",
+>>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
 				"type": "dev",
 				"handlers": {}
 			}

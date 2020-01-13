@@ -1,7 +1,40 @@
 {
 	"folders": {},
 	"connections": {
+<<<<<<< HEAD
+		"mariaDB-16f654cc267-6b51e9713b5e00fe": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "MariaDB - localhost",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"url": "jdbc:mysql://localhost:3306/",
+				"type": "dev",
+				"handlers": {}
+			}
+		},
+		"mariaDB-16f654d486a-b5d0a0d3353d3a1": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "MariaDB - mydb",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "mydb",
+				"url": "jdbc:mysql://localhost:3306/mydb",
+				"type": "dev",
+				"handlers": {}
+			}
+		},
+		"mariaDB-16f669037b1-36b03ad576e3c6ee": {
+=======
 		"mariaDB-16f8a6532f0-516669bf6396a52e": {
+>>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
 			"provider": "mysql",
 			"driver": "mariaDB",
 			"name": "MariaDB - movie_catcher",
@@ -12,7 +45,27 @@
 				"port": "3306",
 				"database": "movie_catcher",
 				"url": "jdbc:mysql://localhost:3306/movie_catcher",
+<<<<<<< HEAD
+				"type": "dev",
+				"handlers": {}
+			}
+		},
+		"mariaDB-16f89aa8473-493834ee9d930e72": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "MariaDB - movie_catcher 2",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "movie_catcher",
+				"url": "jdbc:mysql://localhost:3306/movie_catcher",
+=======
 				"home": "C:\\Program Files\\MariaDB 10.4",
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
+=======
 				"type": "dev"
 			}
 		},
@@ -27,6 +80,7 @@
 				"port": "3306",
 				"database": "movie_catcher",
 				"url": "jdbc:mysql://localhost:3306/movie_catcher",
+>>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
 				"type": "dev",
 				"handlers": {}
 			}
