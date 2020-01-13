@@ -33,7 +33,7 @@ if(movieName == null){
 <body>
      <header>
         <div class="topnav" id="myTopnav">
-            <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
+            <h1 id="title"><a href="main.mc">MOVIE CATCHER</a></h1>
             <div id="logout">로그아웃</div>
             <div id="nav_ul">
                 <ul>
@@ -53,16 +53,25 @@ if(movieName == null){
     
     
 
+    
    <section class="review">
        <div class="review_background"></div>
        <div class="contentWrap">
-       <h3>영화 리뷰</h3>
+       
+       <% if(movieName.length() == 0) { %>
+          <h3>영화 리뷰</h3>
+       <%} else { %>
+          <h3>검색하신 "<%=movieName %>" 의 연관된 영화 리뷰</h3>
+       <%} %>
+       
+       
        <div class="d1">
           <form>
               <input id="searchMovieReview" type="text" placeholder="영화 제목">
               <button id="submit"><img id="m_icon" src="images/m_icon_3.png"></button>
            </form>
          </div>
+         
          
          
          
@@ -84,46 +93,15 @@ if(movieName == null){
                   </li>
              </c:forEach>
            </ul>
-	<section class="review">
-	    <div class="review_background"></div>
-	    <div class="contentWrap">
-	    
-	    <% if(movieName.length() == 0) { %>
-	    	<h3>영화 리뷰</h3>
-	    <%} else { %>
-	    	<h3>검색하신 "<%=movieName %>" 의 연관된 영화 리뷰</h3>
-	    <%} %>
-	    
-	    
-	    <div class="d1">
-	    	<form>
-		        <input id="searchMovieReview" type="text" placeholder="영화 제목">
-		        <button id="submit"><img id="m_icon" src="images/m_icon_3.png"></button>
-	        </form>
-	      </div>
-	      
-	      
-	      
-	      
-	    <div class="reviewBox">
-	        <ul class="reviewWrap">
-	        
-		        <c:forEach var="dto" items="${list }" varStatus="status">
-		       		    <li>
-		                <div class="reviewer">
-		                    <div class="review_des_title">
-		                    <div class="script">
-		                        <div class="rName">"${dto.rv_id }"</div>
-		                        <div class="rStar">평점 : ${dto.rv_star }</div>
-		                    </div>
-		                    <div class="rMovieTitle">${dto.rv_title }</div>
-		                    <div class="rDesc"><p>${dto.rv_content }</p></div>
-		                        <div class="rDate">${dto.rv_date }</div></div>
-		                </div>
-		            </li>
-			 	</c:forEach>
-	        </ul>
+  
+
+
+
+
+
+
          
+   
    <jsp:include page="pagination.jsp">
       <jsp:param value="${writePages }" name="writePages"/>
       <jsp:param value="${totalPage }" name="totalPage"/>
@@ -132,12 +110,12 @@ if(movieName == null){
    </jsp:include>
    
    </div>  
-
 </div>
 
 
 </section>
    
+
 
 <footer>
     <div class="policy">
