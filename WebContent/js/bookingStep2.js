@@ -131,6 +131,7 @@ $(document).ready(function(){
 	});
 	
 	$("#reSelectSeat").click(function(){
+		$("#nowSelectSeat").text("");
 		selectNum = 0;
 		selectSeats = [];
 		$(".onSelect").removeClass("onSelect");

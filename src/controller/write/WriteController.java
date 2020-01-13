@@ -20,6 +20,7 @@ import command.write.ReviewCommand;
 import command.write.ReviewCrawlingCommand;
 import command.write.TheaterCommand;
 import command.write.TimeTableCommand;
+import command.write.WriteReviewCommand;
 import command.write.b_writeCommand;
 import command.write.boardCommand;
 import command.write.bookingStep1Command;
@@ -174,6 +175,11 @@ public class WriteController extends HttpServlet {
 			command = new ResListCommand();
 			command.execute(request, response);
 			viewPage = "myPageResList.jsp";
+			break;
+		case "/writeReview.mc" :
+			command = new WriteReviewCommand();
+			command.execute(request, response);
+			viewPage = "writeReview.jsp";
 			break;
 		}
 		
