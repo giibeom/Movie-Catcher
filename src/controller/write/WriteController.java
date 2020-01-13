@@ -196,6 +196,10 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage="MypageReview.jsp";
 			break;
+		case "/findcinema.mc" :
+			viewPage = "findcinema.jsp";
+			break;
+			
 		}
 		
 	
