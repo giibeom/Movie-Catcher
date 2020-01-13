@@ -201,7 +201,7 @@ function parseJSON(jsonObj) {
 			+ "<br>" + restSeat + "</div>";
 			
 		}else{
-			timeTable += "<div class='ticket " + arr[i].t_uid + "'>" + 마감 + "</div>";
+			timeTable += "<div class='ticket " + arr[i].t_uid + "'>마감</div>";
 		}
 
 		if (i < arr.length - 1) {

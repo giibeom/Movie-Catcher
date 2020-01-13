@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	String u_id = (String)session.getAttribute("u_id");
 
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -95,9 +98,10 @@
 						required>
 					<input type="hidden" name="price" id="hiddenPrice">
 					<input type="hidden" name="seats" id="hiddenSeats">
-
+					<input type="hidden" name="t_uid" value="${param.t_uid }">
+					<input type="hidden" name="u_id" value="<%= u_id %>">
 					<div id="button">
-						<input type="submit" value="결제하기" onsubmit="return sandit()">
+						<input type="submit" value="결제하기">
 					</div>
 			</form>
 			</div>

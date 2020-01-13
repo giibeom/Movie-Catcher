@@ -19,6 +19,23 @@
 <<<<<<< HEAD
 =======
 				"home": "C:\\Program Files\\MariaDB 10.4",
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
+=======
+				"type": "dev"
+			}
+		},
+		"mariaDB-16f99109652-59fbd79b5b1eddd": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "MariaDB - movie_catcher 2",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "movie_catcher",
+				"url": "jdbc:mysql://localhost:3306/movie_catcher",
 >>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
 				"type": "dev",
 				"handlers": {}

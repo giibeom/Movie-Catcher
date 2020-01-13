@@ -18,7 +18,7 @@ public class ReviewCommand implements Command {
 
 		
 		String movieName = request.getParameter("movieName");
-		System.out.println(movieName);
+		System.out.println("검색한 단어: "+ movieName);
 		// 페이징 관련 세팅 값들
 		int page = 1; // 현재 페이지 (디폴트 1 page)
 		int writePages = 10; // 한 [페이징] 에 몇개의 '페이지' 를 표현할 것인가?
@@ -74,7 +74,6 @@ public class ReviewCommand implements Command {
 
 
 				arr = dao.selectFromRow(fromRow, pageRows, movieName);
-				System.out.println("들어옴");
 
 				request.setAttribute("list", arr);
 				request.setAttribute("page", page);

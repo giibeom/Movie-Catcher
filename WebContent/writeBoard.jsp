@@ -51,26 +51,32 @@
 
         <div id = "Write">
             <form action = "#" method="GET" id = "write">
-              <%--   <div class = "box">
-                    <label for = "movieName"><b>영화명</b></label>
+                <div class = "box">
+                    <label for = "movieName"><b>제목</b></label>
                     <input type ="text" id = "review_info" name = "movieName" required>
                 </div>
-                
-                --%>
-                <div class = "box">
-                    <label for = "date"><b>제목</b></label>
-                    <input type = "text"  id = "review_info1" name = "title">
-                </div>
-                
 
-                <div class= "box">
-                    <label for = "place"><b>별점</b></label>
-                    <input type = "text" id = "review_info1" name = "star">
+                <div class = "box">
+                    <label for = "date"><b>별점</b></label>
+                    <!-- <input type = "text"  id = "review_info1" name = "date"> -->
+                    <div class="starRev">
+                        <span class="starR on">별1</span>
+                        <span class="starR">별2</span>
+                        <span class="starR">별3</span>
+                        <span class="starR">별4</span>
+                        <span class="starR">별5</span>
+                        <span class="starR">별6</span>
+                        <span class="starR">별7</span>
+                        <span class="starR">별8</span>
+                        <span class="starR">별9</span>
+                        <span class="starR">별10</span>
+                      </div>
                 </div>
-				
-				<div class = "box"> <%--예매번호 --%>
-					<input type = "hidden" id = "review_info1" name = "rv_num">
-				</div>
+
+                <!-- <div class= "box">
+                    <label for = "place"><b>장소</b></label>
+                    <input type = "text" id = "review_info1" name = "place">
+                </div> -->
 
                 <div class = "box">
                     <textarea id = "review_content" name = "content"></textarea>
