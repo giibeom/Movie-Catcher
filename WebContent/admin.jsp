@@ -21,7 +21,7 @@
 <body>
     <header>
         <div class="topnav">
-            <h1 id="title"><a href="welcome.html" style="color: white;">MOVIE CATCHER</a></h1>
+            <h1 id="title"><a href="" style="color: white;">MOVIE CATCHER</a></h1>
         </div>
         <div class="clear"></div>
         <div class="admin_logout">
