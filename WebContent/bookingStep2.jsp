@@ -109,11 +109,13 @@ var t_uid = "${list[0].t_uid}"
 			<div id="seatSelectAbout">
 			<div id="personNum">
 			<div id="totalNumber"></div>
-			<button id="pNumChk">인원 확정</button>
+			<button id="pNumChk">
+			<img src="images/ok.png" id="popup_img">인원 확정</button>
 			</div>
 			<div id="seatNum">
 			<div id="nowSelectSeat"></div>
-			<div id="reSelectSeat">좌석 다시 고르기</div>
+			<div id="reSelectSeat">
+			<img src="images/return.png" id="popup_img">좌석 다시 고르기</div>
 			</div>
 			</div>
 		</div>
