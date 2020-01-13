@@ -176,10 +176,10 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "myPageResList.jsp";
 			break;
-		case "/writeBoard.mc" :
+		case "/writeReview.mc" :
 			command = new WriteReviewCommand();
 			command.execute(request, response);
-			viewPage = "writeBoard.jsp";
+			viewPage = "writeReview.jsp";
 			break;
 		}
 		
