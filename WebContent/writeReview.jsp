@@ -58,11 +58,11 @@
         <div id = "Write">
             <form id = "write" method="post" action="writeReviewOk.mc">
                 <div class = "box">
-                	<input type="hidden" name="rs_num" id="rs_num" value="${param.rs_num }" >
-                	<input type="hidden" name="rs_star" id="rs_star">
-                	<input type="hidden" name="rs_id" id="rs_id">
+                	<input type="hidden" name="rs_num" id="rv_num" value="${param.rs_num }" >
+                	<input type="hidden" name="rv_star" id="rv_star" value="1">
+                	<input type="hidden" name="rv_id" id="rv_id" value="<%= u_id %>">
                     <label for = "movieName"><b>제목</b></label>
-                    <input type ="text" id = "review_info" name = "movieName" value="${list[0].h_movie }" required>
+                    <input type ="text" id = "review_info" name = "rv_title" value="${list[0].h_movie }" required>
                 </div>
 
                 <div class = "box">
@@ -84,7 +84,7 @@
 
 
                 <div class = "box">
-                    <textarea id = "review_content" name = "content"></textarea>
+                    <textarea id = "review_content" name = "rv_content"></textarea>
                 </div>
 
                 <div class ="button">
