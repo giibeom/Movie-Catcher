@@ -167,6 +167,8 @@ select * from hall;
 select * from ticket;
 select * from mc_user mu;
 select * from review;
+select * from reserve;
+select * from reserve where u_idnum = 1;
 delete from theater where theaterCode = 1;
 delete from hall where h_uid =1;
 TRUNCATE table theater;

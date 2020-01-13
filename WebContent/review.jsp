@@ -31,22 +31,22 @@ if(movieName == null){
 
 
 <body>
-    <header>
+     <header>
         <div class="topnav" id="myTopnav">
             <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
-                
+            <div id="logout">로그아웃</div>
             <div id="nav_ul">
-            <ul>
-                <li  class="icon clear" ><a href="javascript:void(0);"onclick="myFunction()">
-                 <i class="fa fa-bars" style="color:black;"></i></a>
+                <ul>
+                    <li class="icon clear"><a href="javascript:void(0);" onclick="myFunction()">
+                            <i class="fa fa-bars" style="color:black;"></i></a>
                     </li>
-                    <li>영화</li>
-                    <li>예매하기</li>
-                    <li>극장</li>
-                    <li>리뷰</li>
-                    <li>공지사항</li>
-                    <li>마이페이지</li>
-                </ul> 
+                    <li id="navMovie">영화</li>
+                    <li id="navReserve">예매하기</li>
+                    <li id="navTheater">극장</li>
+                    <li id="navReview">리뷰</li>
+                    <li id="navNotice">공지사항</li>
+                    <li id="navMypage">마이페이지</li>
+                </ul>
             </div>
         </div>
     </header>
@@ -57,7 +57,14 @@ if(movieName == null){
 	<section class="review">
 	    <div class="review_background"></div>
 	    <div class="contentWrap">
-	    <h3>영화 리뷰</h3>
+	    
+	    <% if(movieName.length() == 0) { %>
+	    	<h3>영화 리뷰</h3>
+	    <%} else { %>
+	    	<h3>검색하신 "<%=movieName %>" 의 연관된 영화 리뷰</h3>
+	    <%} %>
+	    
+	    
 	    <div class="d1">
 	    	<form>
 		        <input id="searchMovieReview" type="text" placeholder="영화 제목">
@@ -108,11 +115,6 @@ if(movieName == null){
 
 </section>
 	
-	
-
-
-
-
 
 
 <footer>

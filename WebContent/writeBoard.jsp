@@ -22,24 +22,24 @@
     <link href="css/footer.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
-    <div class="topnav" id="myTopnav">
-        <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
-            
-        <div id="nav_ul">
-        <ul>
-            <li  class="icon clear" ><a href="javascript:void(0);"onclick="myFunction()">
-             <i class="fa fa-bars" style="color:black;"></i></a>
-                </li>
-                <li>영화</li>
-                <li>예매하기</li>
-                <li>극장</li>
-                <li>리뷰</li>
-                <li>공지사항</li>
-                <li>마이페이지</li>
-            </ul> 
+     <header>
+        <div class="topnav" id="myTopnav">
+            <h1 id="title"><a href="main.mc">MOVIE CATCHER</a></h1>
+            <div id="logout">로그아웃</div>
+            <div id="nav_ul">
+                <ul>
+                    <li class="icon clear"><a href="javascript:void(0);" onclick="myFunction()">
+                            <i class="fa fa-bars" style="color:black;"></i></a>
+                    </li>
+                    <li id="navMovie">영화</li>
+                    <li id="navReserve">예매하기</li>
+                    <li id="navTheater">극장</li>
+                    <li id="navReview">리뷰</li>
+                    <li id="navNotice">공지사항</li>
+                    <li id="navMypage">마이페이지</li>
+                </ul>
+            </div>
         </div>
-    </div>
     </header>
 
     <!-- 게시판 작성 시작 -->
@@ -51,26 +51,32 @@
 
         <div id = "Write">
             <form action = "#" method="GET" id = "write">
-              <%--   <div class = "box">
-                    <label for = "movieName"><b>영화명</b></label>
+                <div class = "box">
+                    <label for = "movieName"><b>제목</b></label>
                     <input type ="text" id = "review_info" name = "movieName" required>
                 </div>
-                
-                --%>
-                <div class = "box">
-                    <label for = "date"><b>제목</b></label>
-                    <input type = "text"  id = "review_info1" name = "title">
-                </div>
-                
 
-                <div class= "box">
-                    <label for = "place"><b>별점</b></label>
-                    <input type = "text" id = "review_info1" name = "star">
+                <div class = "box">
+                    <label for = "date"><b>별점</b></label>
+                    <!-- <input type = "text"  id = "review_info1" name = "date"> -->
+                    <div class="starRev">
+                        <span class="starR on">별1</span>
+                        <span class="starR">별2</span>
+                        <span class="starR">별3</span>
+                        <span class="starR">별4</span>
+                        <span class="starR">별5</span>
+                        <span class="starR">별6</span>
+                        <span class="starR">별7</span>
+                        <span class="starR">별8</span>
+                        <span class="starR">별9</span>
+                        <span class="starR">별10</span>
+                      </div>
                 </div>
-				
-				<div class = "box"> <%--예매번호 --%>
-					<input type = "hidden" id = "review_info1" name = "rv_num">
-				</div>
+
+                <!-- <div class= "box">
+                    <label for = "place"><b>장소</b></label>
+                    <input type = "text" id = "review_info1" name = "place">
+                </div> -->
 
                 <div class = "box">
                     <textarea id = "review_content" name = "content"></textarea>
