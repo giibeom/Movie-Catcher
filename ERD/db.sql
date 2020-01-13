@@ -166,6 +166,9 @@ select * from theater;
 select * from hall;
 select * from ticket;
 select * from mc_user mu;
+select * from mc_admin ma;
+select * from board b;
+insert into mc_admin (a_id, a_pw) values ("admin", 1111);
 select * from review;
 select * from reserve;
 select * from reserve where u_idnum = 1;
@@ -195,6 +198,7 @@ flush privileges;
 show grants for 'myuser'@'localhost';
 
 select * from theater;
+
 
 
 

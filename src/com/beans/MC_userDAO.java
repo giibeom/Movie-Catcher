@@ -156,6 +156,22 @@ public class MC_userDAO {
 		return arr;
 	}
 	
+	public MC_userDTO [] selectUser() throws SQLException, NamingException {
+		MC_userDTO [] arr = null;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(D.SQL_MC_ADMIN_SELECT_USER);
+			
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		}finally {
+			close();
+		}
+		return arr;
+	}
+	
+	
 	
 	public String password(String u_id) throws SQLException, NamingException {
 		String pw = null;
