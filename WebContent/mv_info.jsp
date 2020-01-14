@@ -9,7 +9,6 @@
 %>
 
 <script>
-	alert("<%= a%>");
 	var mvName = "<%= movieName %>";
 	var mvId = "<%= movieId %>";
 </script>

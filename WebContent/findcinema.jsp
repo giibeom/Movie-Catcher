@@ -15,8 +15,10 @@
     <link href="https://fonts.googleapis.com/css?family=Bad+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 
+<body>
   <header>
         <div class="topnav" id="myTopnav">
             <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
@@ -37,37 +39,41 @@
         </div>
     </header>
 
-<body>
- <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	 <%-- <div class = "col-6" id = "cinema">  --%>
-	 <div id = "cinema"> 
-	<form name="addressForm" method="post" > 
-	<p>우편번호 : <input type="text" size="5" name="m_zipcode" id="sample6_postcode" placeholder="우편번호" readonly>
-	<p>주소 : <input type="text" name="m_address1" id="sample6_address" placeholder="주소" readonly></p>
-	<p>상세주소 : <input type="text" name="m_address2" id="sample6_detailAddress" placeholder="상세주소" ></p>
-	<p><input type="text" name="m_address3" id="sample6_extraAddress" placeholder="참고항목"></p>
-	<input type="button" onclick="sample6_execDaumPostcode()" value="주소 찾기"></p>
-	</form>
+	 
+<div id="container">
+	 
+		<div id = "cinema"> 
+			<form name="addressForm" method="post" > 
+			<p>우편번호 : <input type="text" size="5" name="m_zipcode" id="sample6_postcode" placeholder="우편번호" readonly>
+			<p>주소 : <input type="text" name="m_address1" id="sample6_address" placeholder="주소" readonly></p>
+			<p>상세주소 : <input type="text" name="m_address2" id="sample6_detailAddress" placeholder="상세주소" ></p>
+			<p><input type="text" name="m_address3" id="sample6_extraAddress" placeholder="참고항목"></p>
+			<input type="button" onclick="sample6_execDaumPostcode()" value="주소 찾기"></p>
+			</form>
+		</div>
+	
+	<div class="map_first">
+		<div class="map_wrap">
+		    <div id="map" style="width:100%;height:100%;position:position;overflow:hidden; border-radius: 4px"></div>
+			
+		    <div id="menu_wrap" class="bg_white">
+		        <div class="option">
+		            <div>
+		                <form onsubmit="searchPlaces(); return false;" style="width:100%;">
+		                    키워드 : <input type="text" value="cgv" id="keyword" size="15"> 
+		                    <button type="submit">검색하기 </button> 
+		                </form>
+		            </div>
+		        </div>
+		        <hr>
+		        <ul id="placesList"></ul>
+		        <div id="pagination"></div>
+		    </div>
+		</div>
 	</div>
 	
-<div class="map_first">
-<div class="map_wrap">
-    <div id="map" style="width:100%;height:100%;position:position;overflow:hidden; border-radius: 4px"></div>
-	
-    <div id="menu_wrap" class="bg_white">
-        <div class="option">
-            <div>
-                <form onsubmit="searchPlaces(); return false;" style="width:100%;">
-                    키워드 : <input type="text" value="cgv" id="keyword" size="15"> 
-                    <button type="submit">검색하기 </button> 
-                </form>
-            </div>
-        </div>
-        <hr>
-        <ul id="placesList"></ul>
-        <div id="pagination"></div>
-    </div>
-</div>
+
 </div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8d892eed4bc5524e1f6fc7e3e00e7ab4&libraries=services"></script>
