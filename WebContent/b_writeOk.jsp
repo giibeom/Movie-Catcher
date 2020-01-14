@@ -13,7 +13,7 @@
 	<c:otherwise>
 			<script>
 			alert("공지사항이 등록되었습니다.");
-			location.href = "board.mc";
+			location.href = "admin.mc";
 			</script>
 	</c:otherwise>
 </c:choose>
