@@ -93,6 +93,11 @@ $(document).ready(function(){
 	}
 	
 	$("#pNumChk").click(function(){
+		$("#nowSelectSeat").text("");
+		$("#totalNumber").text("");
+		selectNum = 0;
+		selectSeats = [];
+		$(".onSelect").removeClass("onSelect");
 		var general = $("#general").val();
 		var teenager = $("#teenager").val();
 		var special = $("#special").val();
