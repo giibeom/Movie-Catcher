@@ -28,6 +28,9 @@ var weekdate = "20200112";
 
 $(document).ready(function(){
    
+	$("#resv").click(function(){
+		location.href = "bookingStep1.mc";
+	});
    
     var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=150bfb37a86f8bfb899cdc5192ee9967&targetDt=" + today;
     $.ajax({
