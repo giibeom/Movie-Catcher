@@ -54,21 +54,21 @@
                     <th>No.</th>
                     <th>영화명</th>
                     <th>날짜</th>
-                    <th>장소</th>
-                    <th>인원</th>
+                    <th>상영관</th>
+                    <th>좌석</th>
                     <th>결제금액</th>
                     <th>리뷰</th>
                 </tr>
             	<c:forEach var="list" items="${list }" varStatus="status">
             	<tr>
-            		<td>No.${status.count }</td>
+            		<td>${status.count }</td>
             		<td>${ticket[status.index][0].h_movie } </td>
             		<td>${list.rs_date }</td>
             		<td>${ticket[status.index][0].hallLocation} ${ticket[status.index][0].hallType}</td>
             		<td>${list.rs_seat }</td>            	
             		<td>${list.rs_price }</td>            	
-            		<td><div id="review"><a href="writeReview.mc?rs_num=${list.rs_num }">리뷰 작성 | </a>
-                        <a href="reviewdelete.mc?rs_num=${list.rs_num }">리뷰 삭제</a></div></td>            	
+            		<td><div id="review"><a href="writeReview.mc?rs_num=${list.rs_num }">리뷰 작성  </a>
+                        </div></td>            	
             	</tr>	
             	</c:forEach>
             </table>
