@@ -21,7 +21,7 @@
 
  <header>
     <div class="topnav" id="myTopnav">
-        <h1 id="title"><a href="welcome.html">MOVIE CATCHER</a></h1>
+        <h1 id="title"><a href="main.mc">MOVIE CATCHER</a></h1>
             
         <div id="nav_ul">
         <ul>
