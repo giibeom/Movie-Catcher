@@ -116,7 +116,6 @@ function parseJSON(jsonObj) {
 		}
 
 		var movietime = arr[i].movietime;
-		movietime = movietime.substring(0, 2) + ":" + movietime.substring(2);
 		var restSeat = arr[i].restSeat;
 		if(restSeat != 0){
 			movietime = movietime.substring(0, 2) + ":" + movietime.substring(2);
@@ -154,6 +153,9 @@ function parseJSON(jsonObj) {
 		e.preventDefault();
 		var t_uid = $(this).attr("class");
 		t_uid = t_uid.split(" ")[1];
-		location.href = "bookingStep2.mc?t_uid=" + t_uid;
+		if($(this).text() != "마감"){
+			
+			location.href = "bookingStep2.mc?t_uid=" + t_uid;
+		}
 	});
 }

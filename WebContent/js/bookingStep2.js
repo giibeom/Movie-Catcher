@@ -132,6 +132,7 @@ $(document).ready(function(){
 	
 	$("#reSelectSeat").click(function(){
 		$("#nowSelectSeat").text("");
+		$("#totalNumber").text("");
 		selectNum = 0;
 		selectSeats = [];
 		$(".onSelect").removeClass("onSelect");
