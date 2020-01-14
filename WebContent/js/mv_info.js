@@ -19,6 +19,11 @@ $(document).ready(function(){
       }
     }
   });
+  
+  $("#mv_resv").click(function(){
+	  location.href = "bookingStep1.mc"
+  });
+  
 });
 
 function noMovie() {

@@ -200,8 +200,15 @@ public class WriteController extends HttpServlet {
 			command = new MypageReviewCommand();
 			command.execute(request, response);
 			viewPage="MypageReview.jsp";
+<<<<<<< HEAD
 			break;
 
+=======
+			break;
+		case "/findcinema.mc" :
+			viewPage="findcinema.jsp";
+			break;
+>>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
 		case "/reviewdelete.mc" :
 			command = new ReviewDeleteCommand();
 			command.execute(request, response);
@@ -227,8 +234,11 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "b_deleteOk.jsp";
 			break;
+<<<<<<< HEAD
 		case "/findcinema.mc":
 			viewPage = "findcinema.jsp";
+=======
+>>>>>>> branch 'master' of https://github.com/ksi0678/Movie-Catcher.git
 		
 		}
 		
