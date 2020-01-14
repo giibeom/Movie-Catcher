@@ -61,7 +61,7 @@ function fnMove(seq){
         <button onclick="fnMove('2')">
         <img class="arrow" src="images/arrow_bottom.png"></button></div>
     </div>
-</div>
+
 
     <!--세번째-->
     <div class="main_wrap3 box">   
@@ -83,7 +83,7 @@ function fnMove(seq){
         <button onclick="fnMove('3')">
         <img class="arrow" src="images/arrow_bottom.png"></button></div>
     </div>
-</div>
+
 
 
     <!--네번째-->

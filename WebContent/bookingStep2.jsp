@@ -136,7 +136,7 @@ var t_uid = "${list[0].t_uid}"
 		</div>
 	</div>
 	</div>
-	</div>
+	
 
 	<!--하단 상태바-->
 	<div class="step">
