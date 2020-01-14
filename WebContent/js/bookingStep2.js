@@ -115,6 +115,7 @@ $(document).ready(function(){
 			totalPeople += "s"+special;
 		}
 		$("#totalNumber").text(totalNumber);
+		
 		pNum = general*1 + teenager*1 + special*1;
 		selectingSeat(pNum);
 	});
