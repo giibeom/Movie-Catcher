@@ -1,6 +1,7 @@
 var posters = [];
 var teasers = [];
 var upcomings = [];
+var boxOffice = [];
 var k = 0;
 var tchk = 0;
 var nowchk = 0;
@@ -182,22 +183,14 @@ function doTeaser() {
 function getBoxOffice(jsonObj){
     var arr = jsonObj.boxOfficeResult.dailyBoxOfficeList;
     
-    var boxrank = "";
+    
     var moneyRankN = new Array();
     var moneyRankM = new Array();
     for(var i = 0; i < 10; i ++){
-        
-    	var movieID = 
-    	
-        boxrank += "<li>";
-        boxrank += 1+i+"위 ";
-        boxrank += arr[i].movieNm;
         moneyRankN[i] = arr[i].movieNm;
         moneyRankM[i] = arr[i].salesAcc;
         getRankPoster(arr[i].movieNm, i);
-        boxrank += "</li>";
     }
-    $("#boxrank").html(boxrank);
 
     for(var j=0; j < 9; j++){
         for(var k=0; k < 9 - j ; k ++){
@@ -282,16 +275,23 @@ function getPoster(jsonObj, movieName, rank){
     }
     if(poster == null){
         mdbName = arr[0].title;
-       id = arr[0].id;
+        id = arr[0].id;
         poster = arr[0].poster_path;
         vote = arr[0].vote_average;
         getTeaser(arr[0].id, arr[0].title);
     }
-
+    	
+    	boxOffice[rank] = "<li class='boxOffice " + mdbName + "&&" + id + "'>" + (rank + 1) + "위 : " + mdbName + "</li>";
+    	
         posters[rank] = "<div class='"+ mdbName + "&&" + id +"'><img class = 'poster' src='http://image.tmdb.org/t/p/w500" + poster +"' width='200px' height='280px'></div>";
         nowchk ++;
         if(nowchk == 10){
             doNowIn();
+            var officeList = "";
+            for(var i = 0; i < 10; i ++){
+            	officeList += boxOffice[i];
+            }
+            $("#boxrank").html(officeList);
         }
     
 };
@@ -346,6 +346,13 @@ function getTeaser(data, movieName, rank){
            var clickName = info.split("&&")[0];
            var clickid = info.split("&&")[1];
            location.href = "mv_info.mc?movieName=" + clickName + "&movieId=" + clickid;
+        });
+        $('.boxOffice').click(function(){
+        	var boxinfo = $(this).attr('class');
+        	var info = boxinfo.substring(10);
+        	 var clickName = info.split("&&")[0];
+             var clickid = info.split("&&")[1];
+             location.href = "mv_info.mc?movieName=" + clickName + "&movieId=" + clickid;
         });
     }
 }
