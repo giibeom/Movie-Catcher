@@ -6,7 +6,7 @@ var seats = "";
 var seatArray = ["", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "U"];
 var row = 1;
 var selectSeats = [];
-
+var total =0;
 function fn(str){
     var res;
     res = str.replace(/[^0-9]/g,"");
@@ -145,7 +145,7 @@ $(document).ready(function(){
 });
 
 function selectingSeat(pNum){
-	var total = pNum*1;
+	total = pNum*1;
 	selectNum = 0;
 	$(".everySeat").click(function(){
 		if(selectNum < total && $(this).text() != "X" && !($(this).attr('class').includes("onSelect")) ){
@@ -157,6 +157,8 @@ function selectingSeat(pNum){
 			$("#nowSelectSeat").text(nowSelectSeat + " " + seatName);
 			selectSeats[selectNum] = seatName; 
 			selectNum ++;		
+		}else{
+			return false;
 		}
 	});
 }
