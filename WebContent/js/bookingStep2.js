@@ -102,6 +102,7 @@ $(document).ready(function(){
 		var teenager = $("#teenager").val();
 		var special = $("#special").val();
 		var totalNumber = "";
+		totalPeople = "";
 		if(general != 0){
 			totalNumber += "성인 " + general + "명 ";
 			totalPeople += "g"+general;
