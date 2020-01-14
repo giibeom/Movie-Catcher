@@ -97,6 +97,14 @@ form {
       width: 20px;
       margin-top: 3px;
   }
+.reviewer  {
+	position: relative;
+}
+ .deleteButton {
+	position: absolute;
+	top: 0px;
+	right: 7px;
+ }
 
 
 @media only screen and (max-width:1200px){

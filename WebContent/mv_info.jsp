@@ -60,7 +60,7 @@
     <div class="body">
     
         <div class="col-6 container poster" style="height: 600px;">
-            <img id="mainPoster" src="" style="width: 75%; height: 500px;">
+            <img id="mainPoster" src="" style="width: 100%; height: 500px;">
         </div>
 
         <div class="col-6">
@@ -158,7 +158,7 @@
 
     <div class="container col-6"><h3>Review</h3>
         <div id ="review">
-            <div id = "review_title">영화제목</div>
+            <div id = "review_title">${param.movieName }</div>
 
             <div id = "review-a">
                 <span>${list[0].rv_id }</span>

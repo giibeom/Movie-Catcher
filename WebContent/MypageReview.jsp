@@ -7,6 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css?family=Bad+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
 <link href="css/footer.css" rel="stylesheet" type="text/css">
 <link href="css/header.css" rel="stylesheet" type="text/css">
