@@ -309,6 +309,12 @@ input::-moz-placeholder {
 	padding-top: 5px;
 	margin: 10px;
 }
+
+.ticket:hover {
+	background: #E31D2E;
+    color: white;
+}
+
 .theaterNameInfo {
 	font-weight: bold;
 	margin-bottom: 20px;
