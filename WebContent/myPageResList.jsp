@@ -54,8 +54,8 @@
                     <th>No.</th>
                     <th>영화명</th>
                     <th>날짜</th>
-                    <th>장소</th>
-                    <th>인원</th>
+                    <th>상영관</th>
+                    <th>좌석</th>
                     <th>결제금액</th>
                     <th>리뷰</th>
                 </tr>
