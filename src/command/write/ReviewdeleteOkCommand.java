@@ -6,26 +6,23 @@ import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.beans.BoardDAO;
+import com.beans.ReviewDAO;
+import com.beans.ReviewDTO;
 
-public class b_deleteCommand implements Command {
+public class ReviewdeleteOkCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws NamingException {
+		int rv_num = Integer.parseInt(request.getParameter("rv_num"));
+		ReviewDAO dao = new ReviewDAO();
 		int cnt = 0;
-		BoardDAO dao = new BoardDAO();
-		
-		//입력한 값을 받아오기
-		int b_num = Integer.parseInt(request.getParameter("b_num"));
-		
-		try {			
-			cnt = dao.delete(b_num);
+		try {
+			cnt = dao.delete(rv_num);
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		request.setAttribute("result", cnt);
-		request.setAttribute("b_num", b_num);
-		
-	} // end execute()
-} // end Command
+	}
+
+}

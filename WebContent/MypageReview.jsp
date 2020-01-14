@@ -41,6 +41,7 @@
 		        <c:forEach var="dto" items="${list }" varStatus="status">
 		       		    <li>
 		                <div class="reviewer">
+		                <div class="deleteButton"><a href="reviewdelete.mc?rv_id=${dto.rv_id }">리뷰 삭제하기</a></div>
 		                    <div class="review_des_title">
 		                    <div class="script">
 		                        <div class="rName">"${dto.rv_id }"</div>

@@ -62,6 +62,28 @@ public class MC_adminDAO {
 		return cnt;
 	}
 	
+	public String password(String a_id) throws SQLException, NamingException {
+		String pw = null;
+		
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(D.SQL_MC_ADMIN_PASSWORD);
+			pstmt.setString(1, a_id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				pw = rs.getString("a_pw");
+			}else {
+				pw = "";	
+			}
+
+			
+		}finally {
+			close();
+		}
+		return pw; 
+	}
+	
 	public int delete(int a_id) throws SQLException, NamingException {
 		int cnt = 0;
 		

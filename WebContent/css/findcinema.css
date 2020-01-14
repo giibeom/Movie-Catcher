@@ -14,7 +14,17 @@
 #menu_wrap .option{text-align: center;}
 #menu_wrap .option p {margin:10px 0;}  
 /*.map_first {width:50%;position:absolute; margin-top:100px; margin-left:900px; display:block; width:800px;}*/
-.map_first {width:50%;position:relative:block; margin-top :-410px; margin-left : 650px; width:500px; margin-bottom : 200px;}
+.map_first {
+	width:50%;
+	position:relative:block;
+	margin-top :-450px;
+	margin-left : 50%;
+ 	width:500px; 
+	margin-bottom : 200px;
+}
+
+
+
 #placesList li {list-style: none;}
 #placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
 #placesList .item span {display: block;margin-top:4px;}
@@ -23,6 +33,9 @@
 #placesList .info .gray {color:#8a8a8a;}
 #placesList .info .jibun {padding-left:26px;background:url(http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;}
 #placesList .info .tel {color:#009900;}
+
+
+/* 지도 marker */
 #placesList .item .markerbg {float:left;position:absolute;width:36px; height:37px;margin:10px 0 0 10px;background:url(http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;}
 #placesList .item .marker_1 {background-position: 0 -10px;}
 #placesList .item .marker_2 {background-position: 0 -56px;}
@@ -39,47 +52,28 @@
 #placesList .item .marker_13 {background-position: 0 -562px;}
 #placesList .item .marker_14 {background-position: 0 -608px;}
 #placesList .item .marker_15 {background-position: 0 -654px;}
+
+
+/* 잘 모르겠지만 아마 지도 ??? */
 #pagination {margin:10px auto;text-align: center;}
 #pagination a {display:inline-block;margin-right:10px;}
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
 
 
-form { width:30%; margin-top:130px; margin-left:200px;}
-
-@media only screen and (min-width: 600px){
-
+.window {
+	width: 1100px;
+	margin : 0 auto;
 }
-
-@media only screen and (max-width: 600px){
-form { width:100%; margin-top:150px; }
-}
-
-#window {
-    max-width : 1024px;
-    margin : auto;
-}
+/* 주소 검색 form */
+form { 
+	width: 35%;
+ 	margin-top:130px;
+ 	margin-left: 10%;
+ }
 
 
-#cinema {
-    height: 350px;
-}
 
-#map {
-    height: 350px;
-}
-
-
-#find {
-    width : 90%;
-    height: 90%;
-    margin: 20px;
-}
-
-#find-a {
-    display: block;
-    width : 100%;
-}
-
+/* 주소검색 할때 */
 input[type=text] {
     width : 100%;
     border: none;
@@ -90,20 +84,8 @@ input[type=text] {
     margin-top: 5px;
 }
 
-label {
-    margin-left: 10px;
-}
 
-
-#addr-d{
-    width : 35%;
-}
-
-
-#addr-s {
-    width : 35%;
-}
-
+/* 주소 검색 버튼 */
 input[type=button] {
     width : 100%;
     height:30px;
@@ -122,7 +104,7 @@ input[type=button]:hover{
     opacity: 1;
 }
 
-
+/* 지도에서 검색 버튼 */
 button[type=submit] {
     width : 100%;
     border : none;

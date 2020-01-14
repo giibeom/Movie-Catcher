@@ -100,7 +100,7 @@ public class ReviewDAO {
 			String rv_date = new SimpleDateFormat("yyyy-MM-dd").format(d);
 			
 			
-			ReviewDTO dto = new ReviewDTO(rv_title, rv_content, rv_star, rs_num, rv_id, rv_date);
+			ReviewDTO dto = new ReviewDTO(rv_num, rv_title, rv_content, rv_star, rv_id, rv_date, rs_num);
 			list.add(dto);
 		} 
 		int size = list.size();
@@ -179,12 +179,12 @@ public class ReviewDAO {
 			public int countAll() throws SQLException, NamingException {
 				int cnt = 0;
 				try {
-					
 					conn = getConnection();
 					pstmt = conn.prepareStatement(D.SQL_REVIEW_COUNT_ALL);
-					rs = pstmt.executeQuery();
+					rs = pstmt.executeQuery();					
 					rs.next();
-					cnt = rs.getInt(1); //첫번째 컬럼
+					cnt = rs.getInt(1);
+					
 					
 				} finally {
 					close();

@@ -24,7 +24,7 @@ if(mm < 10){
 today = yyyy+''+mm+dd;
 
 
-var weekdate = "20191229";
+var weekdate = "20200112";
 
 $(document).ready(function(){
    
@@ -260,7 +260,6 @@ function getPoster(jsonObj, movieName, rank){
                 mdbName = arr[i].title;
                 vote = arr[i].vote_average;
                 getTeaserId(arr[i].id, arr[i].title, rank);
-                break;
             }
         }
     }
@@ -324,6 +323,7 @@ function getTeaser(data, movieName, rank){
     if(tchk == 10){
         doUpcoming();
         doTeaser();
+        $('.poster').css("cursor", "pointer");
         $('.poster').click(function(){
            var info = $(this).closest('div').attr('class');
            var clickName = info.split("&&")[0];
