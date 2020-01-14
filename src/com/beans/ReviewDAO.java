@@ -100,7 +100,7 @@ public class ReviewDAO {
 			String rv_date = new SimpleDateFormat("yyyy-MM-dd").format(d);
 			
 			
-			ReviewDTO dto = new ReviewDTO(rv_title, rv_content, rv_star, rs_num, rv_id, rv_date);
+			ReviewDTO dto = new ReviewDTO(rv_num, rv_title, rv_content, rv_star, rv_id, rv_date, rs_num);
 			list.add(dto);
 		} 
 		int size = list.size();

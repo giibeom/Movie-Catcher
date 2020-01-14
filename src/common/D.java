@@ -15,6 +15,8 @@ public interface D {
 	
 	
 	public static final String SQL_MC_ADMIN_INSERT = "INSERT INTO mc_admin(a_id, a_pw) VALUES (?, ?)";
+	public static final String SQL_MC_ADMIN_PASSWORD = "SELECT a_pw FROM mc_admin WHERE a_id = ?";
+	public static final String SQL_MC_ADMIN_SELECT_USER = "SELECT * FROM mc_user";
 	public static final String SQL_MC_ADMIN_DELETE = "DELETE FROM mc_admin WHERE a_id = ?";
 	
 	public static final String SQL_BOARD_INSERT = "INSERT INTO board (b_title, b_content, a_uid) VALUES (?, ?, ?)";

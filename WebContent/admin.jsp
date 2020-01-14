@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+    
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -13,7 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="css/admin.css" rel="stylesheet" type="text/css">
-   
+   	<script src="js/header.js" type="text/javascript"></script>
+   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="js/admin.js" type="text/javascript"></script>
     
 </head>
@@ -21,11 +25,12 @@
 <body>
     <header>
         <div class="topnav">
-            <h1 id="title"><a href="welcome.html" style="color: white;">MOVIE CATCHER</a></h1>
+
+            <h1 id="title"><a href="" style="color: white;">MOVIE CATCHER</a></h1>
         </div>
         <div class="clear"></div>
         <div class="admin_logout">
-        <a href="#" class="logout">Logout</a>
+        <a href="welcome.mc" class="logout">Logout</a>
         </div>
 
     </header>
@@ -34,10 +39,10 @@
 <nav class="sidebar-nav">
      <ul>
         <li>
-          <a href="#"><i class="ion-bag"><img src="images/admin1.jpg"></i> <span class="nav_sub1">Board</span></a>
+          <button onclick = "fnMove()" id = "move"><i class="ion-bag"><img src="images/admin1.jpg"></i> <span class="nav_sub1">Board</span></button>
         </li>
         <li>
-          <a href="#"><i class="ion-bag"><img src="images/admin2.jpg"></i> <span class="nav_sub2">&nbsp;User</span></a>
+          <button onclick = "fnMove2()" id = "move"><i class="ion-bag"><img src="images/admin2.jpg"></i> <span class="nav_sub2">&nbsp;User</span></button>
         </li>
     </ul>
     </nav>
@@ -60,52 +65,28 @@
                     <th>내용</th>
                     <th>기타</th>
                 </tr>
-                <tr>
-                    <td id="table_num">1</td>
-                    <td id="table_title">'무비캐쳐'는 어떤 서비스인가요?</td>
-                    <td id="table_content">'무비캐쳐'는 '국내 최대 영화 예매 서비스를 제공'하는 플랫폼입니다.
-                        너무나 많은 분들이 영화를 좋아하고 예매하는 과정에서 좀 더 편리하고 효율적인 예매를 하도록 도와드립니다.무비캐쳐'는 '국내 최대 영화 예매 서비스를 제공'하는 플랫폼입니다.
-                        너무나 많은 분들이 영화를 좋아하고 예매하는 과정에서 좀 더 편리하고 효율적인 예매를 하도록 도와드립니다</td>
-                    <td id="table_delete"><a href="b_delete.html">내용 삭제</a></div></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td id="table_title">'무비캐쳐'는 어떤 서비스인가요?</td>
-                    <td id="table_content">'무비캐쳐'는 '국내 최대 영화 예매 서비스를 제공'하는 플랫폼입니다.
-                        너무나 많은 분들이 영화를 좋아하고 예매하는 과정에서 좀 더 편리하고 효율적인 예매를 하도록 도와드립니다.</td>
-                        <td><div id="select"><a href="b_delete.html">내용 삭제</a></div></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td id="table_title">'무비캐쳐'는 어떤 서비스인가요?</td>
-                    <td id="table_content">'무비캐쳐'는 '국내 최대 영화 예매 서비스를 제공'하는 플랫폼입니다.
-                        너무나 많은 분들이 영화를 좋아하고 예매하는 과정에서 좀 더 편리하고 효율적인 예매를 하도록 도와드립니다.</td>
-                        <td><div id="select"><a href="b_delete.html">내용 삭제</a></div></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td id="table_title">'무비캐쳐'는 어떤 서비스인가요?</td>
-                    <td id="table_content">'무비캐쳐'는 '국내 최대 영화 예매 서비스를 제공'하는 플랫폼입니다.
-                        너무나 많은 분들이 영화를 좋아하고 예매하는 과정에서 좀 더 편리하고 효율적인 예매를 하도록 도와드립니다.</td>
-                        <td><div id="select"><a href="b_delete.html">내용 삭제</a></div></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td id="table_title">'무비캐쳐'는 어떤 서비스인가요?</td>
-                    <td id="table_content">'무비캐쳐'는 '국내 최대 영화 예매 서비스를 제공'하는 플랫폼입니다.
-                        너무나 많은 분들이 영화를 좋아하고 예매하는 과정에서 좀 더 편리하고 효율적인 예매를 하도록 도와드립니다.</td>
-                        <td><div id="select"><a href="b_delete.html">내용 삭제</a></div></td>
-                </tr>
+                
+                <c:forEach var="listb" items="${listb }">
+	                <tr>
+	                    <td id="table_num">${listb.b_num }</td>
+	                    <td id="table_title">${listb.b_title }</td>
+	                    <td id="table_content">${listb.b_content }</td>
+	                    <td id="table_delete"><a href="b_deleteOk.mc?b_num=${listb.b_num }">내용 삭제</a></td>
+	                </tr>
+				</c:forEach>
+   
+
+
             </table>
             <div class="content_box">
             <div id="button">
-                <input type="submit" value="글 작성하기" onclick="move()">
-            </div>
-        </div>
-        </div>
-    </div>
-</div>
-</div>
+              <div id = "write"><a href = "b_write.mc">글 작성하기</a> </div>
+            </div> <!-- end button -->
+        </div> <!-- end content_box -->
+        </div> <!--  end container_box -->
+    </div> <!--  container -->
+</div> <!--  main -->
+</div> <!-- admin board -->
 
 
 
@@ -126,53 +107,27 @@
                         <th>가입날짜</th>
                         <th>회원탈퇴</th>
                     </tr>
+                    
+                    <c:forEach var="listm" items="${listm }" varStatus="status">
                     <tr>
-                        <td id="user_num">1</td>
-                        <td id="user_id">chloe.kim</td>
-                        <td id="user_id">김나영</td>
-                        <td id="user_email">nayeongahhi@gmail.com</td>
-                        <td id="user_date">2020-01-01</td>
-                        <td id="out">회원탈퇴</td>
+                        <td id="user_num">${listm.u_idnum}</td>
+                        <td id="user_id">${listm.u_id }</td>
+                        <td id="user_name">${listm.u_name }</td>
+                        <td id="user_email">${listm.u_email }</td>
+                        <td id="user_date">${listm.u_date }</td>
+                        <td id="out"><a href = "adminDeleteOk.mc?u_id=${listm.u_id }">회원탈퇴</a></td>
                     </tr>
-                    <tr>
-                        <td id="user_num">1</td>
-                        <td id="user_id">chloe.kim</td>
-                        <td id="user_id">김나영</td>
-                        <td id="user_email">nayeongahhi@gmail.com</td>
-                        <td id="user_date">2020-01-01</td>
-                        <td id="out">회원탈퇴</td>
-                    </tr>
-                    <tr>
-                        <td id="user_num">1</td>
-                        <td id="user_id">chloe.kim</td>
-                        <td id="user_id">김나영</td>
-                        <td id="user_email">nayeongahhi@gmail.com</td>
-                        <td id="user_date">2020-01-01</td>
-                        <td id="out">회원탈퇴</td>
-                    </tr>
-                    <tr>
-                        <td id="user_num">1</td>
-                        <td id="user_id">chloe.kim</td>
-                        <td id="user_id">김나영</td>
-                        <td id="user_email">nayeongahhi@gmail.com</td>
-                        <td id="user_date">2020-01-01</td>
-                        <td id="out">회원탈퇴</td>
-                    </tr>
+                    </c:forEach>
+
+ 
                 </table>
 
             </div>
         </div>
     </div>
     </div>
+</div>
 
-
-
+</div>
 </body>
-
-<script>
-    function move() {
-        location.href = "b_write.html";
-    }
-</script>
-
 </html>

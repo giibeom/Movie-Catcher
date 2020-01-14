@@ -9,7 +9,6 @@
 %>
 
 <script>
-	alert("<%= a%>");
 	var mvName = "<%= movieName %>";
 	var mvId = "<%= movieId %>";
 </script>
@@ -118,24 +117,11 @@
             </div>
         </div>
 
-        <!-- <div class="container" id="overview">
-        </div> -->
         <div class = "container">
             <div id = "mv_content">줄거리 </div>
             <div class = "mv_con" id="overview">
             </div>
-            <!-- <div class="starRev">
-            <span class="starR on">별1</span>
-            <span class="starR">별2</span>
-            <span class="starR">별3</span>
-            <span class="starR">별4</span>
-            <span class="starR">별5</span>
-            <span class="starR">별6</span>
-            <span class="starR">별7</span>
-            <span class="starR">별8</span>
-            <span class="starR">별9</span>
-            <span class="starR">별10</span>
-            </div> -->
+      
         </div>
 
 
@@ -175,12 +161,12 @@
             <div id = "review_title">영화제목</div>
 
             <div id = "review-a">
-                <span>사용자 아이디</span>
-                <div>내용</div>
+                <span>${list[0].rv_id }</span>
+                <div>${list[0].rv_content }</div>
             </div>
             <div id = "review-b">
-                <span>사용자 아이디</span>
-                <div>내용</div>
+                <span>${list[1].rv_id }</span>
+                <div>${list[1].rv_content }</div>
             </div>
         </div>
 

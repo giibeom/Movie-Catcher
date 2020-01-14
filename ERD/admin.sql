@@ -1,0 +1,1 @@
+insert into mc_admin (a_id, a_pw) values ("admin", 1111);
