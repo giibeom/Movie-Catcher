@@ -65,11 +65,25 @@ $(document).ready(function(){
     $('#showNowIn').click(function(){
         $("#upComing").css("display", "none");
         $("#nowIn").css("display", "inline-block");
+        $('.poster').css("cursor", "pointer");
+        $('.poster').click(function(){
+           var info = $(this).closest('div').attr('class');
+           var clickName = info.split("&&")[0];
+           var clickid = info.split("&&")[1];
+           location.href = "mv_info.mc?movieName=" + clickName + "&movieId=" + clickid;
+        });
     });
     
     $('#showUpComing').click(function(){
         $("#upComing").css("display", "inline-block");
         $("#nowIn").css("display", "none");
+        $('.poster').css("cursor", "pointer");
+        $('.poster').click(function(){
+           var info = $(this).closest('div').attr('class');
+           var clickName = info.split("&&")[0];
+           var clickid = info.split("&&")[1];
+           location.href = "mv_info.mc?movieName=" + clickName + "&movieId=" + clickid;
+        });
     });
     
     

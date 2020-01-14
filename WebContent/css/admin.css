@@ -93,6 +93,7 @@ a{
 }
 
 button {
+	outline : 0;
 	border : none;
 	background:  none;
 	padding : 10px;
@@ -100,13 +101,14 @@ button {
 
 button:hover {
 	cursor: pointer;
+	border : none;
 }
 
 
 #move {
 	margin-top : 10px;
 }
-   
+  
   /* -------------
   Sidebar: icons
   ----------------*/
