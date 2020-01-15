@@ -127,7 +127,6 @@ var t_uid = "${list[0].t_uid}"
 			<div id="selectSeat">
 			</div>
 		</div>
-		
 		<div id="BtnContent">
 		<div id="Btn">
 		<div id="reSelectSeat">좌석 다시 고르기</div>
@@ -137,7 +136,6 @@ var t_uid = "${list[0].t_uid}"
 	</div>
 	</div>
 	
-
 	<!--하단 상태바-->
 	<div class="step">
 		<div class="step-state step2">
