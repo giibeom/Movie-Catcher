@@ -8,6 +8,7 @@ describe ticket;
 describe theater;
 describe mc_user;
 select * from theater;
+select count(*) from theater;
 select * from hall;
 select * from ticket;
 select * from mc_user mu;
