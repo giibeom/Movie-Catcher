@@ -29,7 +29,7 @@
 	<header>
 		<div class="topnav" id="myTopnav">
 			<h1 id="title">
-				<a href="">MOVIE CATCHER</a>
+				<a href="welcome.mc">MOVIE CATCHER</a>
 			</h1>
 		</div>
 	</header>
