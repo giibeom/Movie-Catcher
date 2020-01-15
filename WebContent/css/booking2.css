@@ -14,13 +14,13 @@ input:focus {
 }
 
 #booking_title { 
-	display: block;
 	padding: 10px; 
 	display: inline-block; 
 	border-right: 30px solid transparent; 
 	border-bottom: 30px solid #E31D2E; 
-	height: 0; 
 	line-height: 50px;
+	height: 0px;
+	margin-bottom: -13.5px;
 	}
 
 #booking_title h2 {
@@ -35,7 +35,6 @@ input:focus {
 #content {
 	border: 1px solid #4c4c4c; 
 	border-top: 3px solid #E31D2E;
-	
 	padding : 30px;
 	width: 100%; 
 	height : 200px;
@@ -355,5 +354,4 @@ input:focus {
 	}
 	
 }
-
 
