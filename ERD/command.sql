@@ -1,3 +1,5 @@
+SET SESSION FOREIGN_KEY_CHECKS=0;
+SET SESSION FOREIGN_KEY_CHECKS=1;
 
 show TABLES;
 
@@ -17,6 +19,7 @@ select * from reserve;
 select * from reserve where u_idnum = 1;
 delete from theater where theaterCode = 1;
 delete from hall where h_uid =1;
+TRUNCATE table mc_user;
 TRUNCATE table theater;
 TRUNCATE table hall;
 TRUNCATE table ticket;
