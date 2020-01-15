@@ -68,7 +68,7 @@
             		<td>${ticket[status.index][0].hallLocation} ${ticket[status.index][0].hallType}</td>
             		<td>${list.rs_seat }</td>            	
             		<td>${list.rs_price }</td>       
-            		<td><a href = "">예매취소</a></td>     	
+            		<td><div><a href="reserveDelete.mc?rs_num=${list.rs_num }">예매 취소</a></td>     	
             		<td><div id="review"><a href="writeReview.mc?rs_num=${list.rs_num }">리뷰 작성  </a>
                         </div></td>            	
             	</tr>	
