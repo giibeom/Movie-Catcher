@@ -26,7 +26,9 @@ insert into mc_user (u_id, u_pw, u_name, u_email, u_phone, u_regdate, u_date) va
 INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES
 ("2019-12-30", "9000", "c1", 1, 1);
 INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES
-("2019-12-30", "9000", "c1", 1, 70);
+("2020-1-14", "18000", "c1 c2", 1, 70);
+INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES
+("2019-12-25", "23000", "c1 c2 c3", 1, 40);
 
 INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES
 ("2019-10-22", "18000", "c1 c2", 2, 2);
