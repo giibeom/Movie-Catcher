@@ -26,24 +26,24 @@ insert into mc_user (u_id, u_pw, u_name, u_email, u_phone, u_regdate, u_date) va
 INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES
 ("2019-12-30", "9000", "c1", 1, 1);
 INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES
-("2020-1-14", "18000", "c1 c2", 1, 70);
+("2020-1-14", "18000", "a1 a2", 1, 70);
 INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES
-("2019-12-25", "23000", "c1 c2 c3", 1, 40);
+("2019-12-25", "23000", "f1 f2 f3", 1, 40);
 
 INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES
-("2019-10-22", "18000", "c1 c2", 2, 2);
+("2019-10-22", "18000", "d3 d4", 2, 2);
 INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES
-("2019-10-22", "18000", "c1 c2", 2, 60);
+("2019-10-22", "18000", "e6 e7", 2, 60);
 
 INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES
-("2019-10-22", "18000", "c1 c2", 3, 40);
+("2019-10-22", "10000", "g3 g4", 3, 40);
 INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES
-("2019-10-22", "18000", "c1 c2", 3, 80);
+("2019-10-22", "18000", "d5 d6", 3, 80);
 
 INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES
-("2019-10-22", "18000", "c1 c2", 4, 10);
+("2019-10-22", "18000", "a3 a4", 4, 10);
 INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES
-("2019-10-22", "18000", "c1 c2", 4, 100);
+("2019-10-22", "14000", "c1 c2", 4, 100);
 
 INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES
 ("2019-10-22", "18000", "c1 c2", 5, 30);
@@ -65,6 +65,6 @@ INSERT INTO reserve (rs_date, rs_price, rs_seat, u_idnum, t_uid) VALUES
 
 
 INSERT INTO review (rv_num, rv_title, rv_content, rv_star, rv_id, rv_date, rs_num) VALUES
-("");
+(1, "");
 
 SELECT * FROM mc_user;
