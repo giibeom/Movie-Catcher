@@ -67,7 +67,8 @@ $(document).ready(function(){
     	}); 
     	
     }
-    $('#showNowIn').click(function(){
+    $('#showNowIn').click(function(e){
+    	e.preventDefault();
         $("#upComing").css("display", "none");
         $("#nowIn").css("display", "inline-block");
         $('.poster').css("cursor", "pointer");
@@ -79,7 +80,8 @@ $(document).ready(function(){
         });
     });
     
-    $('#showUpComing').click(function(){
+    $('#showUpComing').click(function(e){
+    	e.preventDefault();
         $("#upComing").css("display", "inline-block");
         $("#nowIn").css("display", "none");
         $('.poster').css("cursor", "pointer");
@@ -342,13 +344,15 @@ function getTeaser(data, movieName, rank){
         doUpcoming();
         doTeaser();
         $('.poster').css("cursor", "pointer");
-        $('.poster').click(function(){
+        $('.poster').click(function(e){
+        	e.preventDefault();
            var info = $(this).closest('div').attr('class');
            var clickName = info.split("&&")[0];
            var clickid = info.split("&&")[1];
            location.href = "mv_info.mc?movieName=" + clickName + "&movieId=" + clickid;
         });
-        $('.boxOffice').click(function(){
+        $('.boxOffice').click(function(e){
+        	e.preventDefault();
         	var boxinfo = $(this).attr('class');
         	var info = boxinfo.substring(10);
         	 var clickName = info.split("&&")[0];

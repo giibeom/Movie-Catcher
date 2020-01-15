@@ -73,9 +73,9 @@ CREATE TABLE reserve
 	rs_date datetime DEFAULT now(),
 	rs_price int NOT NULL,
 	rs_seat varchar(40) NOT NULL,
-	u_idnum int NOT NULL,
+	u_idnum int references mc_user(u_idnum) on delete cascade,
 	t_uid int NOT NULL,
-	PRIMARY KEY (rs_num)
+	PRIMARY KEY (rs_num) 
 );
 
 
@@ -131,12 +131,6 @@ ALTER TABLE board
 ;
 
 
-ALTER TABLE reserve
-	ADD FOREIGN KEY (u_idnum)
-	REFERENCES mc_user (u_idnum)
-	ON UPDATE RESTRICT
-	ON DELETE RESTRICT
-;
 
 
 ALTER TABLE hall
