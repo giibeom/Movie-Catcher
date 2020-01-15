@@ -27,6 +27,7 @@ today = yyyy+''+mm+dd;
 
 var weekdate = "20200112";
 
+
 $(document).ready(function(){
    
 	$("#resv").click(function(){
