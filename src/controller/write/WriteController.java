@@ -19,6 +19,7 @@ import command.write.MpUserViewCommand;
 import command.write.Mv_infoCommand;
 import command.write.MypageReviewCommand;
 import command.write.ResListCommand;
+import command.write.ReserveDeleteCommand;
 import command.write.ReserveOkCommand;
 import command.write.ReviewCommand;
 import command.write.ReviewCrawlingCommand;
@@ -229,7 +230,11 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "b_deleteOk.jsp";
 			break;
-		
+		case "/reserveDelete.mc" :
+			command = new ReserveDeleteCommand();
+			command.execute(request, response);
+			viewPage = "reserveDelete.jsp";
+			break;
 		}
 		
 	
