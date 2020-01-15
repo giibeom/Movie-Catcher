@@ -167,7 +167,7 @@ public class WriteController extends HttpServlet {
 			command.execute(request, response);
 			break;
 		case "/MyuserDeleteOk.mc":
-			command = new MpUserUpdateCommand();
+			command = new MpUserDeleteCommand();
 			command.execute(request, response);
 			viewPage = "MyuserDeleteOk.jsp";
 			break;
