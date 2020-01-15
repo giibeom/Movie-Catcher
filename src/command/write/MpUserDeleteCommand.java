@@ -17,6 +17,7 @@ public class MpUserDeleteCommand implements Command {
 		String u_id = request.getParameter("u_id");
 		try {
 			cnt = dao.delete(u_id);
+			System.out.println(u_id);
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}
