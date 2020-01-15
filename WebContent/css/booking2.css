@@ -2,9 +2,7 @@
 	clear:both;
 }
 
-body{
-	height:120%;
-}
+
 input:focus {
 	outline: none;
 }
@@ -12,6 +10,7 @@ input:focus {
 #window {
 	max-width: 1024px;
 	margin: auto;
+	height:120%;
 }
 
 #booking_title { 
@@ -95,6 +94,7 @@ input:focus {
 	color : white;
 	margin : 0 auto;
 	margin-bottom: 30px;
+	margin-top: 30px;
 	
 }
 
