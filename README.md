@@ -11,6 +11,7 @@
   <p>- 영화진흥원 API 와 themoviedb API를 서로 맞물리게 구현</p>
   <p>- 기타 DB I/O(MVC)</p>
 </div>
+<hr>
 
 우선 사이트에 처음 방문하신다면 welcome 페이지에 들어가게 됩니다.
 
